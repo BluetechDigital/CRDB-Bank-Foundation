@@ -37,6 +37,20 @@ export const getThemesOptionsContent = async () => {
 										sourceUrl
 									}
 								}
+								newsletter {
+									title
+									paragraph
+									mainTitle
+									bottomTextarea
+									icon {
+										altText
+										sourceUrl
+										mediaDetails {
+											height
+											width
+										}
+									}
+								}
 							}
 						}
 					}

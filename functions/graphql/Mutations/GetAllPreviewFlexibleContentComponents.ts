@@ -75,6 +75,42 @@ export const getAllPreviewFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_FeaturesGridTwo {
+                      							fieldGroupName
+                      							cardOne {
+                      							  title
+                      							  subtitle
+                      							  paragraph
+                      							}
+                      							cardTwo {
+                      							  backgroundImage {
+                      							    altText
+                      							    sourceUrl
+                      							    mediaDetails {
+                      							      height
+                      							      width
+                      							    }
+                      							  }
+                      							}
+                      							lastCard {
+                      							  backgroundImage {
+                      							    altText
+                      							    sourceUrl
+                      							    mediaDetails {
+                      							      height
+                      							      width
+                      							    }
+                      							  }
+                      							}
+                      							gridContent {
+                      							  card {
+                      							    title
+                      							    subtitle
+                      							    paragraph
+                      							    backgroundColor
+                      							  }
+                      							}
+											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
@@ -100,6 +136,19 @@ export const getAllPreviewFlexibleContentComponents = async (
 												}
 												backgroundImage {
 													sourceUrl
+												}
+											}
+											... on ${postTypeFlexibleContent}_LinkedinCta {
+												fieldGroupName
+												title
+												highlightText
+												backgroundColor
+												highlightTextColor
+												displayLinkedinIcon
+												buttonLink {
+													url
+													title
+													target
 												}
 											}
 											... on ${postTypeFlexibleContent}_ContactInfo {

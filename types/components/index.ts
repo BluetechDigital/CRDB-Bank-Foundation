@@ -60,6 +60,18 @@ export type IContactInfo = {
 	title: string;
 	paragraph: string;
 };
+export type ILinkedInCta = {
+	title: string;
+	highlightText: string;
+	backgroundColor: string;
+	highlightTextColor: string;
+	displayLinkedinIcon: Boolean;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 export type ICaseStudies = {
 	title: string;
 	italic: string;
@@ -119,6 +131,34 @@ export type INewsThreeCards = {
 	title: string;
 	italic: string;
 	paragraph: string;
+};
+export type IFeaturesGridTwo = {
+	cardOne: {
+		title: string;
+		subtitle: string;
+		paragraph: string;
+	};
+	cardTwo: {
+		backgroundImage: {
+			sourceUrl: string;
+		};
+	};
+	gridContent: [
+		{
+			card: {
+				id: string;
+				title: string;
+				subtitle: string;
+				paragraph: string;
+				backgroundColor: string;
+			};
+		}
+	];
+	lastCard: {
+		backgroundImage: {
+			sourceUrl: string;
+		};
+	};
 };
 export type IBlogsThreeCards = {
 	title: string;
@@ -187,6 +227,12 @@ export type INewsCard = {
 			};
 		};
 	};
+};
+export type IFeaturesGridContentCard = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	backgroundColor: string;
 };
 
 // Elements

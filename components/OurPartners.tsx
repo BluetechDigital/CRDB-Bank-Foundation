@@ -22,14 +22,14 @@ const OurPartners: FC<IOurPartners> = ({
 			<div className={styles.ourPartners + ` py-16 px-4 lg:px-0 bg-white`}>
 				<div className="container px-0 mx-auto">
 					<div className="flex flex-col items-center">
-						<motion.h3
+						<motion.h4
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 uppercase text-center lg:text-center text-lg tracking-[0.15rem] text-yellow-Two"
+							className="mb-1 text-center lg:text-center text-lg text-yellow-Two"
 						>
 							{subtitle}
-						</motion.h3>
+						</motion.h4>
 						<motion.h2
 							initial={initialTwo}
 							whileInView={fadeIn}

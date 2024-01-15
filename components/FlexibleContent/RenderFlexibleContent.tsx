@@ -1,5 +1,3 @@
-// "use Client";
-
 // Imports
 import {FC} from "react";
 import {usePageContext} from "@/context/pages";
@@ -13,9 +11,11 @@ import VideoBlock from "../VideoBlock";
 import ContactInfo from "../ContactInfo";
 import OurPartners from "../OurPartners";
 import Maintenance from "../Maintenance";
+import LinkedInCta from "../LinkedInCta";
 import ErrorPage from "../Global/ErrorPage";
 import TitleParagraph from "../TitleParagraph";
 import NewsThreeCards from "../NewsThreeCards";
+import FeaturesGridTwo from "../FeaturesGridTwo";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -65,6 +65,16 @@ const RenderFlexibleContent: FC = () => {
 									imageGrid={item?.imageGrid}
 								/>
 							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_FeaturesGridTwo` ? (
+							<>
+								<FeaturesGridTwo
+									cardOne={item?.cardOne}
+									cardTwo={item?.cardTwo}
+									lastCard={item?.lastCard}
+									gridContent={item?.gridContent}
+								/>
+							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (
 							<>
 								<Gallery
@@ -81,6 +91,17 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
 									backgroundImage={item?.backgroundImage?.sourceUrl}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_LinkedinCta` ? (
+							<>
+								<LinkedInCta
+									title={item?.title}
+									buttonLink={item?.buttonLink}
+									highlightText={item?.highlightText}
+									backgroundColor={item?.backgroundColor}
+									highlightTextColor={item?.highlightTextColor}
+									displayLinkedinIcon={item?.displayLinkedinIcon}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactInfo` ? (

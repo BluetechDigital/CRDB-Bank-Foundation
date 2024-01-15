@@ -47,7 +47,7 @@ const Navbar: FC = () => {
 	};
 
 	/* Display's Navbar background Color
-	when Mega sublinks are hoveblue*/
+	when Mega sublinks are hovegreen*/
 	const displayNavBackgroundColor = () => {
 		setNavBackgroundSublinksOpen(!navBackgroundSublinksOpen);
 	};
@@ -133,7 +133,7 @@ const Navbar: FC = () => {
 															scrollPosition > 50
 																? "text-pureBlack"
 																: "text-white"
-														} group-hover:text-pureBlack group-hover:hover:text-blue-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
 													>
 														{item?.node?.label}
 													</Link>
@@ -180,7 +180,7 @@ const Navbar: FC = () => {
 															scrollPosition > 50
 																? "text-pureBlack"
 																: "text-white"
-														} group-hover:text-pureBlack group-hover:hover:text-blue-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
 													>
 														{item?.node?.label}
 													</Link>
@@ -221,7 +221,7 @@ const Navbar: FC = () => {
 																	" p-0 w-full flex flex-col z-[999]"
 																}
 															>
-																<li className="w-full hover:bg-blue-default">
+																<li className="w-full hover:bg-green-Two">
 																	<Link
 																		href="/case-studies"
 																		className={` ${
@@ -246,7 +246,7 @@ const Navbar: FC = () => {
 														scrollPosition > 50
 															? "text-pureBlack"
 															: "text-white"
-													} group-hover:text-pureBlack group-hover:hover:text-blue-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+													} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
 												>
 													{item?.node?.label}
 												</Link>

@@ -34,7 +34,6 @@ const SubMegaMenuLinks: FC = () => {
 						>
 							Our Programs
 						</motion.h4>
-
 						<motion.ul
 							initial={initialTwo}
 							whileInView={stagger}
@@ -87,7 +86,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two transition-all ease-in-out duration-500"
+											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two"
 										}
 									>
 										<span>
@@ -118,7 +117,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two transition-all ease-in-out duration-500"
+											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two"
 										}
 									>
 										<span>
@@ -152,7 +151,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two transition-all ease-in-out duration-500"
+											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two"
 										}
 									>
 										<span>
@@ -186,7 +185,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two transition-all ease-in-out duration-500"
+											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-Two"
 										}
 									>
 										<span>
@@ -216,9 +215,9 @@ const SubMegaMenuLinks: FC = () => {
 						style={{
 							backgroundImage: `linear-gradient(
 							    	0deg,
-							    	rgba(1, 90, 1, 0.85),
-							    	rgba(1, 90, 1, 0.85),
-							    	rgba(1, 90, 1, 0.85)
+							    	rgba(0, 0, 0, 0.85),
+							    	rgba(0, 0, 0, 0.85),
+							    	rgba(0, 0, 0, 0.85)
 							    ),url("${globalContext?.themesOptionsContent?.menuColumnThree?.backgroundImage?.sourceUrl}")`,
 						}}
 					>
