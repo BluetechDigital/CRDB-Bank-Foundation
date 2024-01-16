@@ -213,8 +213,8 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_NewsGrid {
 												fieldGroupName
 												title
+												italic
 												paragraph
-												highlightText
 											}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
@@ -225,8 +225,8 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_BlogsGrid {
 												fieldGroupName
 												title
+												italic
 												paragraph
-												highlightText
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
 												fieldGroupName

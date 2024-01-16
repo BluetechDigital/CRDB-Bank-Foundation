@@ -177,7 +177,7 @@ const EnquiryRequestForm: FC<IEnquiryRequestForm> = ({
 							viewport={{once: true}}
 							className="flex items-center justify-center my-4 mb-8 gap-x-2"
 						>
-							<h4 className="mb-10 text-center font-semibold leading-tight lg:text-left text-2xl text-blue-default">
+							<h4 className="mb-10 text-center font-semibold leading-tight lg:text-left text-2xl text-purple-default">
 								Error Message: Something went wrong with sending your message.
 								Please try again.
 							</h4>

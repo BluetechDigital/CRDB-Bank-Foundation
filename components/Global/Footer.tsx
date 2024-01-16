@@ -50,7 +50,7 @@ const Footer: FC = () => {
 						>
 							<Paragraph
 								content={globalContext?.themesOptionsContent?.textarea}
-								tailwindStyling="block px-0 max-w-full lg:max-w-sm text-base text-pureBlack text-center lg:text-left"
+								tailwindStyling="block px-4 lg:px-0 max-w-full lg:max-w-sm text-base text-pureBlack text-center lg:text-left"
 							/>
 						</motion.div>
 						<div className="flex flex-col items-center justify-between w-auto gap-2 py-6 mb-10 md:items-baseline">

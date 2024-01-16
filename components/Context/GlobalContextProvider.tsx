@@ -22,6 +22,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				blogsThreeCards: globalProps?.blogsThreeCards,
 				navbarMenuLinks: globalProps?.navbarMenuLinks,
 				ourProgramsLinks: globalProps?.ourProgramsLinks,
+				newsInsightSublinks: globalProps?.newsInsightSublinks,
 				operationsTeamsJobs: globalProps?.operationsTeamsJobs,
 				themesOptionsContent: globalProps?.themesOptionsContent,
 				boardOfDirectorsGrid: globalProps?.boardOfDirectorsGrid,

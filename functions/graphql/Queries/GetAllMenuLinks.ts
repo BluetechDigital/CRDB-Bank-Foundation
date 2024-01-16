@@ -94,6 +94,39 @@ export const getOurProgramsSublinks = async () => {
 	}
 };
 
+// News Insight Sublinks
+export const getNewsInsightSublinks = async () => {
+	try {
+		const content: any = gql`
+			{
+				newsInsightSublinks: menuItems(
+					where: {location: NEWS_INSIGHT_SUBLINKS}
+					first: 10
+				) {
+					edges {
+						node {
+							id
+							url
+							label
+						}
+					}
+				}
+			}
+		`;
+
+		const response: any = await client.query({
+			query: content,
+		});
+
+		return response?.data?.newsInsightSublinks?.edges;
+	} catch (error) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch news insight sublinks content"
+		);
+	}
+};
+
 // Footer Copyright Links
 export const getCopyrightLinks = async () => {
 	try {

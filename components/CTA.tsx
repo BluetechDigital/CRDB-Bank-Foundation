@@ -18,9 +18,9 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 				style={{
 					backgroundImage: `linear-gradient(
 							0deg,
-							rgba(0, 128, 0, 0.50),
-							rgba(0, 128, 0, 0.85),
-							rgba(0, 128, 0, 0.95)
+							rgba(68, 3, 189, 0.50),
+							rgba(68, 3, 189, 0.85),
+							rgba(68, 3, 189, 0.95)
 						),url("${backgroundImage}")`,
 				}}
 			>

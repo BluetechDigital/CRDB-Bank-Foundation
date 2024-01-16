@@ -50,7 +50,7 @@ const OurPartners: FC<IOurPartners> = ({
 							viewport={{once: true}}
 							className={`grid items-center justify-center grid-cols-2 gap-4 ${
 								imageGrid?.length <= 4 ? "lg:grid-cols-4" : "lg:grid-cols-6"
-							} lg:items-center lg:justify-between py-12`}
+							} lg:items-center lg:justify-between pt-12`}
 						>
 							{imageGrid?.length > 0 ? (
 								imageGrid.map((item: any, keys: any) => (

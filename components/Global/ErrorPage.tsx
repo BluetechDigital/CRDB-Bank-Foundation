@@ -46,7 +46,7 @@ const ErrorPage: FC<IErrorPage> = ({
 							<Link
 								href={buttonLink?.url}
 								target={buttonLink?.target}
-								className="flex flex-row px-6 py-4 leading-4 text-white transition-all duration-500 ease-in-out rounded-lg lg:py-6 lg:px-20 bg-blue-default hover:bg-blue-darker"
+								className="flex flex-row px-6 py-4 leading-4 text-white transition-all duration-500 ease-in-out rounded-lg lg:py-6 lg:px-20 bg-purple-default hover:bg-blue-darker"
 							>
 								<svg
 									className="mr-2.5 text-white"

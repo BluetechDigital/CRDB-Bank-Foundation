@@ -221,18 +221,31 @@ const Navbar: FC = () => {
 																	" p-0 w-full flex flex-col z-[999]"
 																}
 															>
-																<li className="w-full hover:bg-green-Two">
-																	<Link
-																		href="/case-studies"
-																		className={` ${
-																			newsInsightsSublinksOpen
-																				? "text-black hover:text-white"
-																				: "text-black"
-																		} block p-4 text-tiny`}
-																	>
-																		Case Studies
-																	</Link>
-																</li>
+																{globalContext?.newsInsightSublinks?.length >
+																0 ? (
+																	globalContext?.newsInsightSublinks?.map(
+																		(item: any, keys: any) => (
+																			<Fragment key={keys}>
+																				<Link href={`${item?.node?.url}`}>
+																					<li className="w-full hover:bg-green-Two">
+																						<Link
+																							href={`${item?.node?.url}`}
+																							className={` ${
+																								newsInsightsSublinksOpen
+																									? "text-black hover:text-white"
+																									: "text-black"
+																							} block p-4 text-tiny`}
+																						>
+																							{item?.node?.label}
+																						</Link>
+																					</li>
+																				</Link>
+																			</Fragment>
+																		)
+																	)
+																) : (
+																	<></>
+																)}
 															</ul>
 														</>
 													) : null}

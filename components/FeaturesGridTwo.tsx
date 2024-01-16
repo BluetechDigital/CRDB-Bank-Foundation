@@ -4,6 +4,9 @@ import {motion} from "framer-motion";
 import {IFeaturesGridTwo} from "@/types/components";
 import fadeInUp, {initial, stagger} from "@/animations/animations";
 
+// Styling
+import styles from "../styles/components/FeaturesGridTwo.module.scss";
+
 // Components
 import Paragraph from "./Elements/Paragraph";
 import FeaturesGridContentCard from "./Cards/FeaturesGridContentCard";
@@ -15,7 +18,9 @@ const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
 	gridContent,
 }) => {
 	return (
-		<div className="overflow-hidden bg-white lg:px-4">
+		<div
+			className={styles.featuresGridTwo + ` overflow-hidden bg-white lg:px-4`}
+		>
 			<div className="container px-4 mx-auto">
 				<div className="mx-auto max-w-7xl pt-28 pb-36">
 					<motion.div

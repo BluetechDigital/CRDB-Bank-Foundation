@@ -1,16 +1,15 @@
 // Imports
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
+import {IBlogs} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
-import {INews} from "@/types/components";
 import {initial, fadeInUp, stagger} from "@/animations/animations";
 
 // Components
+import BlogsCard from "./Cards/BlogsCard";
 import Paragraph from "./Elements/Paragraph";
-import NewsCard from "./Cards/NewsCard";
 
-const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
-	// eslint-disable-next-line react-hooks/rules-of-hooks
+const BlogsThreeCards: FC<IBlogs> = ({title, italic, paragraph}) => {
 	const globalContext = useGlobalContext();
 
 	return (
@@ -59,11 +58,11 @@ const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
 					viewport={{once: true}}
 					className="grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 				>
-					{globalContext?.newsThreeCards?.length > 0 ? (
-						globalContext?.newsThreeCards?.map((item: any, keys: any) => (
+					{globalContext?.blogsThreeCards?.length > 0 ? (
+						globalContext?.blogsThreeCards?.map((item: any, keys: any) => (
 							<Fragment key={keys}>
-								<NewsCard
-									slug={item?.node?.slug}
+								<BlogsCard
+									uri={item?.node?.uri}
 									title={item?.node?.title}
 									paragraph={item?.node?.excerpt}
 									featuredImage={item?.node?.featuredImage}
@@ -79,4 +78,4 @@ const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
 	);
 };
 
-export default newsThreeCards;
+export default BlogsThreeCards;

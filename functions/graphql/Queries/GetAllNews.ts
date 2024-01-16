@@ -13,7 +13,7 @@ export const getAllNewsPostsSlugs = async (): Promise<ISlug> => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				newsSlugs: posts(where: {status: PUBLISH}, last: 100) {
+				newsSlugs: news(where: {status: PUBLISH}, last: 100) {
 					nodes {
 						slug
 						modified
@@ -38,11 +38,11 @@ export const getAllNewsContent = async () => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				newsContent: posts(where: {status: PUBLISH}, last: 100) {
+				newsContent: news(where: {status: PUBLISH}, last: 100) {
 					edges {
 						node {
 							id
-							uri
+							slug
 							date
 							excerpt
 							title(format: RENDERED)
@@ -78,11 +78,11 @@ export const getThreeNewsContent = async () => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				newsContent: posts(where: {status: PUBLISH}, first: 3) {
+				newsContent: news(where: {status: PUBLISH}, first: 3) {
 					edges {
 						node {
 							id
-							uri
+							slug
 							date
 							excerpt
 							title(format: RENDERED)

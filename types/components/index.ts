@@ -229,11 +229,10 @@ export type IErrorPage = {
 	};
 };
 // Cards
-export type IBlogsCard = {
-	uri: string;
-	date: string;
+export type INewsCard = {
+	slug: string;
 	title: string;
-	excerpt: string;
+	paragraph: string;
 	featuredImage: {
 		node: {
 			altText: string;
@@ -245,7 +244,7 @@ export type IBlogsCard = {
 		};
 	};
 };
-export type INewsCard = {
+export type IBlogsCard = {
 	uri: string;
 	title: string;
 	paragraph: string;

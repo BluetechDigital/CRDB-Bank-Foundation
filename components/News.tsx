@@ -58,9 +58,9 @@ const News: FC<INews> = ({title, italic, paragraph}) => {
 						globalContext?.news?.map((item: any, keys: any) => (
 							<Fragment key={keys}>
 								<NewsCard
-									uri={item?.node?.uri}
 									title={item?.node?.title}
 									paragraph={item?.node?.excerpt}
+									slug={`news/${item?.node?.slug}`}
 									featuredImage={item?.node?.featuredImage}
 								/>
 							</Fragment>

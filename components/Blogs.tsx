@@ -1,36 +1,31 @@
 // Imports
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
+import {IBlogs} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
-import {INews} from "@/types/components";
 import {initial, fadeInUp, stagger} from "@/animations/animations";
 
 // Components
+import BlogsCard from "./Cards/BlogsCard";
 import Paragraph from "./Elements/Paragraph";
-import NewsCard from "./Cards/NewsCard";
 
-const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
-	// eslint-disable-next-line react-hooks/rules-of-hooks
+const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
 	const globalContext = useGlobalContext();
 
 	return (
 		<>
-			<div className="py-16 bg-white container px-4 mx-auto">
+			<div className="py-24 bg-white container px-4 mx-auto">
 				<motion.div
 					initial={initial}
 					whileInView={stagger}
 					viewport={{once: true}}
-					className={
-						title && italic
-							? "max-w-2xl mx-auto mb-24 text-center flex flex-col items-center lg:max-w-5xl"
-							: "hidden"
-					}
+					className="max-w-2xl mx-auto mb-24 text-center lg:max-w-5xl"
 				>
 					<motion.h2
 						initial={initial}
 						whileInView={stagger}
 						viewport={{once: true}}
-						className="my-2 max-w-2xl mx-auto mb-6 text-center font-semibold leading-tight text-4xl lg:text-5xl"
+						className="my-2 mb-6 max-w-2xl mx-auto text-center font-semibold leading-tight text-4xl lg:text-5xl"
 					>
 						<motion.span
 							initial={initial}
@@ -57,13 +52,13 @@ const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
 					initial={initial}
 					whileInView={stagger}
 					viewport={{once: true}}
-					className="grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
+					className="grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 				>
-					{globalContext?.newsThreeCards?.length > 0 ? (
-						globalContext?.newsThreeCards?.map((item: any, keys: any) => (
+					{globalContext?.blogs?.length > 0 ? (
+						globalContext?.blogs?.map((item: any, keys: any) => (
 							<Fragment key={keys}>
-								<NewsCard
-									slug={item?.node?.slug}
+								<BlogsCard
+									uri={item?.node?.uri}
 									title={item?.node?.title}
 									paragraph={item?.node?.excerpt}
 									featuredImage={item?.node?.featuredImage}
@@ -79,4 +74,4 @@ const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
 	);
 };
 
-export default newsThreeCards;
+export default Blogs;

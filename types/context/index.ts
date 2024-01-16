@@ -31,7 +31,7 @@ export type INews = [
 	{
 		node: {
 			id: string;
-			uri: string;
+			slug: string;
 			date: string;
 			title: string;
 			excerpt: string;
@@ -87,7 +87,7 @@ export type ICaseStudies = [
 	{
 		node: {
 			id: string;
-			uri: string;
+			slug: string;
 			date: string;
 			title: string;
 			excerpt: string;
@@ -172,6 +172,15 @@ export type INavbarMenuLinks = [
 	}
 ];
 export type IOurProgramsLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type INewsInsightSublinks = [
 	{
 		node: {
 			id: string;
@@ -276,6 +285,7 @@ export type IGlobalProps = {
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	ourProgramsLinks: IOurProgramsLinks;
+	newsInsightSublinks: INewsInsightSublinks;
 	operationsTeamsJobs: IOperationsTeamsJobs;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
@@ -294,6 +304,7 @@ export type IGlobalContext = {
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	ourProgramsLinks: IOurProgramsLinks;
+	newsInsightSublinks: INewsInsightSublinks;
 	operationsTeamsJobs: IOperationsTeamsJobs;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;

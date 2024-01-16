@@ -4,8 +4,8 @@ import type {NextPage, GetStaticProps} from "next";
 import {flexibleContentType, postType} from "@/context/pages";
 
 // Queries Functions
-import {getAllSeoContent} from "@/functions/graphql/Queries/GetAllSeoContent";
 import {getAllNewsPostsSlugs} from "@/functions/graphql/Queries/GetAllNews";
+import {getAllSeoContent} from "@/functions/graphql/Queries/GetAllSeoContent";
 import {getAllFlexibleContentComponents} from "@/functions/graphql/Queries/GetAllFlexibleContentComponents";
 
 // Components
@@ -47,11 +47,11 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({params}: any) => {
 	// Fetch priority content
-	const seoContent: any = await getAllSeoContent(params?.slug, postType.posts);
+	const seoContent: any = await getAllSeoContent(params?.slug, postType.news);
 
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,
-		postType.posts,
+		postType.news,
 		flexibleContentType?.pages
 	);
 

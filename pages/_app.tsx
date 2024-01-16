@@ -18,6 +18,7 @@ import {
 	getNavbarMenuLinks,
 	getFooterMenuLinks,
 	getOurProgramsSublinks,
+	getNewsInsightSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
 import {
 	getAllNewsContent,
@@ -77,12 +78,12 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	// PUBLIC PAGES //
 	/* Fetch all global content
 	remaining content simultaneously */
-
 	const mobileLinks: any = await getMobileLinks();
 	const copyrightLinks: any = await getCopyrightLinks();
 	const navbarMenuLinks: any = await getNavbarMenuLinks();
 	const footerMenuLinks: any = await getFooterMenuLinks();
 	const ourProgramsLinks: any = await getOurProgramsSublinks();
+	const newsInsightSublinks: any = await getNewsInsightSublinks();
 	const themesOptionsContent: any = await getThemesOptionsContent();
 
 	const news: any = await getAllNewsContent();
@@ -97,46 +98,6 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	const executiveLeadershipsGrid: any =
 		await getAllExecutiveLeadershipsContent();
 
-	// const [
-	// 	mobileLinks,
-	// 	copyrightLinks,
-	// 	navbarMenuLinks,
-	// 	footerMenuLinks,
-	// 	ourProgramsLinks,
-	// 	themesOptionsContent,
-	// ]: any = await Promise.all([
-	// 	getMobileLinks(),
-	// 	getCopyrightLinks(),
-	// 	getNavbarMenuLinks(),
-	// 	getFooterMenuLinks(),
-	// 	getOurProgramsSublinks(),
-	// 	getThemesOptionsContent(),
-	// ]);
-
-	// const [
-	// 	news,
-	// 	blogs,
-	// 	caseStudies,
-	// 	testimonials,
-	// 	managementsJobs,
-	// 	newsThreeCards,
-	// 	blogsThreeCards,
-	// 	operationsTeamsJobs,
-	// 	boardOfDirectorsGrid,
-	// 	executiveLeadershipsGrid,
-	// ]: any = await Promise.all([
-	// 	getAllNewsContent(),
-	// 	getAllBlogsContent(),
-	// 	getAllCaseStudiesContent(),
-	// 	getAllTestimonialsContent(),
-	// 	getAllManagementsTaxonomyJobs(),
-	// 	getThreeNewsContent(),
-	// 	getThreeBlogsContent(),
-	// 	getAllOperationsTeamsTaxonomyJobs(),
-	// 	getAllBoardOfDirectorsContent(),
-	// 	getAllExecutiveLeadershipsContent(),
-	// ]);
-
 	const globalProps: IGlobalProps = {
 		news: news,
 		blogs: blogs,
@@ -150,6 +111,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		ourProgramsLinks: ourProgramsLinks,
+		newsInsightSublinks: newsInsightSublinks,
 		operationsTeamsJobs: operationsTeamsJobs,
 		boardOfDirectorsGrid: boardOfDirectorsGrid,
 		themesOptionsContent: themesOptionsContent,

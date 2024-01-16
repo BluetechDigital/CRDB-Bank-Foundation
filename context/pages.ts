@@ -8,7 +8,7 @@ import {IPostTypes, IPageContext, IFlexibleContentType} from "@/types/context";
 /* PREVIEW PAGES & POSTS */
 export const postType: IPostTypes = {
 	// Public pages
-	news: "pages",
+	news: "news",
 	pages: "pages",
 	posts: "posts",
 	caseStudies: "caseStudies",

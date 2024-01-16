@@ -64,7 +64,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 								className="leading-[3.5rem] my-2 max-w-2xl mx-auto mb-6 text-center lg:text-left font-semibold text-4xl lg:text-5xl"
 							>
 								{title}
-								<span className="p-2 ml-3 bg-green-default text-white">
+								<span className="p-2 ml-3 bg-green-Two text-white">
 									{highlightText}
 								</span>
 							</motion.h2>

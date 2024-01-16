@@ -6,6 +6,7 @@ import {usePageContext} from "@/context/pages";
 import CTA from "../CTA";
 import Hero from "../Hero";
 import News from "../News";
+import Blogs from "../Blogs";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
 import VideoBlock from "../VideoBlock";
@@ -17,6 +18,7 @@ import ErrorPage from "../Global/ErrorPage";
 import TitleParagraph from "../TitleParagraph";
 import NewsThreeCards from "../NewsThreeCards";
 import FeaturesGridTwo from "../FeaturesGridTwo";
+import BlogsThreeCards from "../BlogsThreeCards";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -147,10 +149,22 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_BlogsGrid` ? (
-							<></>
+							<>
+								<Blogs
+									title={item?.title}
+									italic={item?.italic}
+									paragraph={item?.paragraph}
+								/>
+							</>
 						) : item?.fieldGroupName ===
 						  `${FlexibleContent}_BlogsThreeCards` ? (
-							<></>
+							<>
+								<BlogsThreeCards
+									title={item?.title}
+									italic={item?.italic}
+									paragraph={item?.paragraph}
+								/>
+							</>
 						) : item?.fieldGroupName ===
 						  `${FlexibleContent}_CaseStudiesGrid` ? (
 							<></>

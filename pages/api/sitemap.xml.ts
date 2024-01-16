@@ -2,7 +2,7 @@
 import {Readable} from "stream";
 import {SitemapStream, streamToPromise} from "sitemap";
 import {
-	getAllJobsPositionsPostsSlugs,
+	getAllJobsPositionsSlugs,
 	getAllOperationsTeamsTaxonomyJobs,
 	getAllJobsPositionsManagementsSlugs,
 } from "@/functions/graphql/Queries/GetAllJobsPositions";
@@ -31,7 +31,7 @@ export default async (req: any, res: any) => {
 		getAllCaseStudiesSlugs(),
 		getAllNewsPostsSlugs(),
 		getAllBoardOfDirectorsPostsSlugs(),
-		getAllJobsPositionsPostsSlugs(),
+		getAllJobsPositionsSlugs(),
 		getAllExecutiveLeadershipsPostsSlugs(),
 		getAllOperationsTeamsTaxonomyJobs(),
 		getAllJobsPositionsManagementsSlugs(),

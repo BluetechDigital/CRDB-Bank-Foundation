@@ -29,7 +29,7 @@ const Gallery: FC<IGallery> = ({title, highlightText, paragraph, gallery}) => {
 						className="max-w-2xl mx-auto text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black"
 					>
 						{title}
-						<span className="p-2 ml-3 bg-blue-default text-white">
+						<span className="p-2 ml-3 bg-purple-default text-white">
 							{highlightText}
 						</span>
 					</motion.h2>

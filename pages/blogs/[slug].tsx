@@ -5,15 +5,15 @@ import {flexibleContentType, postType} from "@/context/pages";
 
 // Queries Functions
 import {getAllSeoContent} from "@/functions/graphql/Queries/GetAllSeoContent";
+import {getAllBlogsPostsSlugs} from "@/functions/graphql/Queries/GetAllBlogs";
 import {getAllFlexibleContentComponents} from "@/functions/graphql/Queries/GetAllFlexibleContentComponents";
 
 // Components
 import Layout from "@/components/Layout/Layout";
+import BackHoverButton from "@/components/Elements/BackHoverButton";
 import BackToTopButton from "@/components/Elements/BackToTopButton";
 import PageContextProvider from "@/components/Context/PageContextProvider";
-import BackToVacanciesButton from "@/components/Elements/BackToVacanciesButton";
 import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
-import {getAllJobsPositionsSlugs} from "@/functions/graphql/Queries/GetAllJobsPositions";
 
 const dynamicSinglePosts: NextPage<IPageContext> = ({
 	seo,
@@ -28,11 +28,7 @@ const dynamicSinglePosts: NextPage<IPageContext> = ({
 		>
 			<Layout>
 				<BackToTopButton link={`#`} />
-				<BackToVacanciesButton
-					fullWidth={false}
-					link={`/job-positions`}
-					title="Back to Vacancies"
-				/>
+				<BackHoverButton link={`/blogs`} />
 				<RenderFlexibleContent />
 			</Layout>
 		</PageContextProvider>
@@ -40,7 +36,7 @@ const dynamicSinglePosts: NextPage<IPageContext> = ({
 };
 
 export async function getStaticPaths() {
-	const data = await getAllJobsPositionsSlugs();
+	const data = await getAllBlogsPostsSlugs();
 	const paths = data.map((item: any) => ({
 		params: {
 			slug: item?.slug as String,
@@ -51,14 +47,11 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({params}: any) => {
 	// Fetch priority content
-	const seoContent: any = await getAllSeoContent(
-		params?.slug,
-		postType?.jobPositions
-	);
+	const seoContent: any = await getAllSeoContent(params?.slug, postType.posts);
 
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,
-		postType?.jobPositions,
+		postType.posts,
 		flexibleContentType?.pages
 	);
 

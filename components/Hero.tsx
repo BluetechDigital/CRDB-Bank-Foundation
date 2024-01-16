@@ -1,17 +1,16 @@
 // Imports
 import {
+	fadeIn,
 	initial,
-	fadeInUp,
 	stagger,
+	fadeInUp,
+	initialTwo,
 	slideInLeftInitial,
 	slideInRightFinish,
 	slideInRightInitial,
-	initialTwo,
-	fadeIn,
 } from "@/animations/animations";
 import {FC} from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components";
 
@@ -35,7 +34,7 @@ const Hero: FC<IHero> = ({
 	return (
 		<div className={styles.hero + `relative p-0 overflow-hidden bg-white`}>
 			<div
-				className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-Two"
+				className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-green-Three bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-Two"
 				style={{
 					clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 					backgroundImage: `url("${
@@ -46,7 +45,7 @@ const Hero: FC<IHero> = ({
 				}}
 			/>
 			<div
-				className={`block container mx-auto relative z-50 lg:pb-10 mt-[-195px] sm:mt-[-125px] lg:mt-[-100px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row`}
+				className={`block container mx-auto relative z-50 pb-10 mt-[-195px] sm:mt-[-125px] lg:mt-[-100px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row`}
 			>
 				<motion.div
 					viewport={{once: true}}
@@ -89,7 +88,7 @@ const Hero: FC<IHero> = ({
 									viewport={{once: true}}
 									className={
 										buttonLink?.title
-											? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid border-green-Two hover:bg-yellow-default hover:border-yellow-default transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-yellow-default after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-yellow-default`
+											? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid border-purple-default hover:bg-yellow-default hover:border-yellow-default transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-yellow-default after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-yellow-default`
 											: `hidden`
 									}
 								>
@@ -128,13 +127,13 @@ const Hero: FC<IHero> = ({
 												<path
 													d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
 													transform="translate(4870 -143)"
-													fill="#43b02a"
+													fill="#f6ad37"
 												></path>
 												<g transform="translate(4890.311 -1111.861)">
 													<path
 														d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
 														transform="translate(0 0)"
-														fill="#pureBlack"
+														fill="#000"
 													></path>
 												</g>
 											</g>
@@ -153,7 +152,7 @@ const Hero: FC<IHero> = ({
 									viewport={{once: true}}
 									className={
 										buttonLinkTwo?.title
-											? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-green-Two border-green-Two hover:bg-green-dark hover:border-green-dark transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-green-Two hover:before:bg-green-dark after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] $after:bg-white hover:after:bg-green-dark`
+											? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-green-Two border-green-Two hover:bg-green-Three hover:border-green-Three transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-green-Two hover:before:bg-green-Three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-green-Two hover:after:bg-green-Three`
 											: `hidden`
 									}
 								>
@@ -169,7 +168,7 @@ const Hero: FC<IHero> = ({
 												<path
 													d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
 													transform="translate(4870 -143)"
-													fill="#e4a002"
+													fill="#f6ad37"
 												></path>
 												<g transform="translate(4890.311 -1111.861)">
 													<path
@@ -213,7 +212,7 @@ const Hero: FC<IHero> = ({
 					viewport={{once: true}}
 					initial={slideInRightInitial}
 					whileInView={slideInRightFinish}
-					className={`w-full lg:w-1/2 bg-cover bg-no-repeat bg-center relative mt-[-125px] ${
+					className={`w-full lg:w-1/2 bg-cover bg-no-repeat bg-center relative mt-0 lg:mt-[-125px] ${
 						displayVideo
 							? `h-[375px] sm:h-[445px] lg:h-[450px] xl:h-[500px]`
 							: `h-[300px] lg:h-[400px] xl:h-[450px]`

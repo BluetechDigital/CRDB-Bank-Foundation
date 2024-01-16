@@ -10,10 +10,15 @@
 }
 
 @font-face {
+	font-family: Kanit;
+	src: url("../fonts/Kanit-Regular.ttf");
+}
+
+@font-face {
 	font-family: BebasNeue;
 	src: url("../fonts/BebasNeue-Regular.ttf");
 }
 
 // Font Stack Properties
-$main: "BebasNeue", sans-serif;
+$main: "Kanit", sans-serif;
 $body: "PlusJakartaSans", "Inter", sans-serif;

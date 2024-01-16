@@ -9,7 +9,7 @@ type SlugResponse = {
 interface ISlug extends Array<SlugResponse> {}
 
 /* JOBS POSITIONS SLUGS (URLS) */
-export const getAllJobsPositionsPostsSlugs = async (): Promise<ISlug> => {
+export const getAllJobsPositionsSlugs = async (): Promise<ISlug> => {
 	try {
 		const content: DocumentNode = gql`
 			{
