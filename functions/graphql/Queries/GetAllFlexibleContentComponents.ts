@@ -19,6 +19,39 @@ export const getAllFlexibleContentComponents = async (
 								... on DefaultTemplate {
 									flexibleContent {
 										flexibleContent {
+											... on ${postTypeFlexibleContent}_Hero {
+												fieldGroupName
+												title
+												video
+												paragraph
+												displayVideo
+												buttonLink {
+													url
+													title
+													target
+												}
+												buttonLinkTwo {
+													url
+													title
+													target
+												}
+												backgroundImage {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+												rightSideImage {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_HeroTwo {
 												fieldGroupName
 												title

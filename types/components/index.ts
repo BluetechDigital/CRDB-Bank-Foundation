@@ -14,6 +14,38 @@ export type INews = {
 	italic: string;
 	paragraph: string;
 };
+export type IHero = {
+	video: string;
+	title: string;
+	paragraph: string;
+	displayVideo: boolean;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	buttonLinkTwo: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	rightSideImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
+	};
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type IBlogs = {
 	title: string;
 	italic: string;
