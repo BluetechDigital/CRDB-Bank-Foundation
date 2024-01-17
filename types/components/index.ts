@@ -208,10 +208,62 @@ export type IEnquiryRequestForm = {
 	contentTwoOpen: boolean;
 	contentThreeOpen: boolean;
 };
+export type IJumboContentSection = {
+	jumboContentSection: [
+		{
+			content: {
+				title: string;
+				subtitle: string;
+				paragraph: string;
+				imageLocation: string;
+				backgroundDisplay: string;
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						height: number;
+						width: number;
+					};
+				};
+				buttonLink: {
+					url: string;
+					title: string;
+					target: string;
+				};
+			};
+		}
+	];
+};
 export type IExecutiveLeaderships = {
 	title: string;
 	italic: string;
 	paragraph: string;
+};
+export type IContentAchievementsImageBlock = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
+	};
+	achievementsContent: [
+		{
+			card: {
+				textOne: string;
+				textTwo: string;
+			};
+		}
+	];
 };
 
 // Global
@@ -228,6 +280,7 @@ export type IErrorPage = {
 		target: string;
 	};
 };
+
 // Cards
 export type INewsCard = {
 	slug: string;
@@ -265,14 +318,34 @@ export type IFeaturesGridContentCard = {
 	paragraph: string;
 	backgroundColor: string;
 };
+export type IJumboContentSectionCard = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	imageLocation: string;
+	backgroundDisplay: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
+	};
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 
 // Elements
-export type ISideMenu = {
-	menuActive: boolean;
-};
 export type ITitle = {
 	content: string;
 	tailwindStyling: string;
+};
+export type ISideMenu = {
+	menuActive: boolean;
 };
 export type IParagraph = {
 	content: string;

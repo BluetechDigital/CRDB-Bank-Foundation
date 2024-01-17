@@ -19,6 +19,7 @@ import TitleParagraph from "../TitleParagraph";
 import NewsThreeCards from "../NewsThreeCards";
 import FeaturesGridTwo from "../FeaturesGridTwo";
 import BlogsThreeCards from "../BlogsThreeCards";
+import ContentAchievementsImageBlock from "../ContentAchievementsImageBlock";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -70,6 +71,18 @@ const RenderFlexibleContent: FC = () => {
 									highlightText={item?.highlightText}
 									displayYoutubeIcon={item?.displayYoutubeIcon}
 									videoBackgroundImage={item?.videoBackgroundImage?.sourceUrl}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_ContentAchievementsImageBlock` ? (
+							<>
+								<ContentAchievementsImageBlock
+									title={item?.title}
+									image={item?.image}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+									achievementsContent={item?.achievementsContent}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurPartners` ? (

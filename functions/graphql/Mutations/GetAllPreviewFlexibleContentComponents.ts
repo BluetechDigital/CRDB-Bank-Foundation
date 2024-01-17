@@ -87,6 +87,24 @@ export const getAllPreviewFlexibleContentComponents = async (
             										sourceUrl
               									}
 											}
+											... on ${postTypeFlexibleContent}_ContentStripesVideoBlock {
+												fieldGroupName
+												title
+												video
+												subtitle
+												paragraph
+												displayVideo
+												contentStripesText
+												displayYoutubeIcon
+												buttonLink {
+													url
+													title
+													target
+												}
+												videoBackgroundImage {
+            										sourceUrl
+              									}
+											}
 											... on ${postTypeFlexibleContent}_OurPartners {
 												fieldGroupName
 												title

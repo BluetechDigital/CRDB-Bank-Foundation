@@ -84,6 +84,31 @@ export const getAllFlexibleContentComponents = async (
             										sourceUrl
               									}
 											}
+											... on ${postTypeFlexibleContent}_ContentAchievementsImageBlock {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+												image {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+												achievementsContent {
+													card {
+														textOne
+														textTwo
+                      								}
+												}
+											}
 											... on ${postTypeFlexibleContent}_OurPartners {
 												fieldGroupName
 												title
@@ -108,37 +133,37 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_FeaturesGridTwo {
                       							fieldGroupName
                       							cardOne {
-                      							  title
-                      							  subtitle
-                      							  paragraph
+													title
+													subtitle
+													paragraph
                       							}
                       							cardTwo {
-                      							  backgroundImage {
-                      							    altText
-                      							    sourceUrl
-                      							    mediaDetails {
-                      							      height
-                      							      width
-                      							    }
-                      							  }
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
                       							}
                       							lastCard {
-                      							  backgroundImage {
-                      							    altText
-                      							    sourceUrl
-                      							    mediaDetails {
-                      							      height
-                      							      width
-                      							    }
-                      							  }
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
                       							}
                       							gridContent {
-                      							  card {
-                      							    title
-                      							    subtitle
-                      							    paragraph
-                      							    backgroundColor
-                      							  }
+                      								card {
+														title
+														subtitle
+														paragraph
+														backgroundColor
+                      								}
                       							}
 											}
 											... on ${postTypeFlexibleContent}_Gallery {
