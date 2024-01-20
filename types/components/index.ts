@@ -9,6 +9,32 @@ export type ICTA = {
 		target: string;
 	};
 };
+export type IFAQ = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
+	};
+	faqContent: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+			};
+		}
+	];
+};
 export type INews = {
 	title: string;
 	italic: string;
@@ -142,6 +168,40 @@ export type IOurPartners = {
 		}
 	];
 };
+export type IOurPrograms = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	programsGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+				Link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				icon: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		}
+	];
+};
 export type IMaintenance = {
 	title: string;
 	paragraph: string;
@@ -151,6 +211,24 @@ export type IMaintenance = {
 		mediaDetails: {
 			width: number;
 			height: number;
+		};
+	};
+};
+export type IContentImage = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
 		};
 	};
 };
@@ -191,6 +269,26 @@ export type IFeaturesGridTwo = {
 			sourceUrl: string;
 		};
 	};
+};
+export type ITestimonialsTwo = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
+export type IAchievementsTwo = {
+	title: string;
+	backgroundColor: string;
+	achievementsGrid: [
+		{
+			textOne: string;
+			textTwo: string;
+		}
+	];
 };
 export type IBlogsThreeCards = {
 	title: string;
@@ -239,32 +337,6 @@ export type IExecutiveLeaderships = {
 	italic: string;
 	paragraph: string;
 };
-export type IContentAchievementsImageBlock = {
-	title: string;
-	subtitle: string;
-	paragraph: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	image: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			height: number;
-			width: number;
-		};
-	};
-	achievementsContent: [
-		{
-			card: {
-				textOne: string;
-				textTwo: string;
-			};
-		}
-	];
-};
 
 // Global
 export type ILayout = {
@@ -282,6 +354,11 @@ export type IErrorPage = {
 };
 
 // Cards
+export type IFAQCard = {
+	index: number;
+	title: string;
+	paragraph: string;
+};
 export type INewsCard = {
 	slug: string;
 	title: string;
@@ -371,4 +448,17 @@ export type IYoutubeButtonBorderSliced = {
 	title: string;
 	fullWidth: boolean;
 	displayYoutubeIcon: boolean;
+};
+export type ITestimonialsTwoCardElement = {
+	name: string;
+	jobTitle: string;
+	paragraph: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 };

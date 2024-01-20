@@ -35,7 +35,10 @@ const VideoBlock: FC<IVideoBlock> = ({
 		<>
 			<div
 				id="VideoBlock"
-				className={styles.videoBlock + " py-12 px-4 bg-lightGreyTwo"}
+				className={
+					styles.videoBlock +
+					" py-12 px-4 bg-white bg-cover bg-no-repeat bg-center"
+				}
 			>
 				<div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-x-4 xl:gap-x-16">
 					<motion.div
@@ -100,6 +103,9 @@ const VideoBlock: FC<IVideoBlock> = ({
 							backgroundImage: `url("${
 								displayVideo ? "none" : videoBackgroundImage
 							}")`,
+							boxShadow: `${
+								displayVideo ? "none" : "28px 28px 2px -20px rgba(0,0,0,0.1)"
+							}`,
 						}}
 					>
 						{displayVideo ? <VideoWrapper>{video}</VideoWrapper> : <></>}

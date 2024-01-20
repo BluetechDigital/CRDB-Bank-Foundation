@@ -9,13 +9,13 @@ const YoutubeButtonBorderSliced: FC<IYoutubeButtonBorderSliced> = ({
 	fullWidth,
 	displayYoutubeIcon,
 }) => {
-	const sgvOneColor = "#ffffff";
-	const sgvTwoColor = "#ffffff";
+	const sgvOneColor = "#000";
+	const sgvTwoColor = "#e4a002";
 	const sgvOneColorHover = "#ffffff";
 	const sgvTwoColorHover = "#ffffff";
 
-	const sgvYoutubeColor = "#ffffff";
-	const sgvYoutubeTextColor = "#ffffff";
+	const sgvYoutubeColor = "#ff0008";
+	const sgvYoutubeTextColor = "#000";
 	const sgvYoutubeColorHover = "#ffffff";
 	const sgvYoutubeTextColorHover = "#ffffff";
 
@@ -27,7 +27,7 @@ const YoutubeButtonBorderSliced: FC<IYoutubeButtonBorderSliced> = ({
 				viewport={{once: true}}
 				className={
 					title
-						? `flex items-center justify-center w-fit mx-auto lg:mx-0 group mt-3 relative gap-3 px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-white hover:bg-yellow-default hover:border-yellow-default transition-all ease-in-out duration-500 text-white hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-lightGreyTwo hover:before:bg-yellow-default after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGreyTwo hover:after:bg-yellow-default`
+						? `flex items-center justify-center w-fit mx-auto lg:mx-0 group mt-3 relative gap-3 px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-pureBlack hover:bg-purple-default hover:border-purple-default transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-purple-default after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-purple-default`
 						: `hidden`
 				}
 			>

@@ -2,9 +2,7 @@
 @import "../base/fonts";
 @import "../base/colors";
 
-.contentAchievementsImageBlock {
-	clip-path: polygon(76% 4%, 100% 0, 100% 100%, 0 100%, 0 0);
-
+.contentImage {
 	h4 {
 		font-family: $body;
 	}

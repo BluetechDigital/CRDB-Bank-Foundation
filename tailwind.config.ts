@@ -53,8 +53,12 @@ const config: Config = {
 					default: "#f6ad37",
 					Two: "#e8b042",
 					Three: "#fac546",
+					Four: "#de8b27",
+					Five: "#d8781d",
+					Six: "#d16415",
+					light: "#fbbc57",
 					dark: "#e4a002",
-					darker: "#e39001",
+					darker: "#bc7700",
 				},
 				purple: {
 					default: "#833df4",

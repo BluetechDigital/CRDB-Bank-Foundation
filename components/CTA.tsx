@@ -3,7 +3,7 @@ import {FC} from "react";
 import Link from "next/link";
 import {motion} from "framer-motion";
 import {ICTA} from "@/types/components/index";
-import {initial, stagger} from "../animations/animations";
+import {fadeIn, initial, initialTwo, stagger} from "../animations/animations";
 
 // Components
 import Title from "./Elements/Title";
@@ -18,9 +18,9 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 				style={{
 					backgroundImage: `linear-gradient(
 							0deg,
-							rgba(68, 3, 189, 0.50),
-							rgba(68, 3, 189, 0.85),
-							rgba(68, 3, 189, 0.95)
+							rgba(4, 61, 43, 0.75),
+							rgba(4, 61, 43, 0.85),
+							rgba(4, 61, 43, 1)
 						),url("${backgroundImage}")`,
 				}}
 			>
@@ -32,10 +32,14 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 						className="flex flex-col items-center justify-between gap-10 px-0 lg:px-4 lg:flex-row"
 					>
 						<div className="flex flex-col justify-between gap-4">
-							<Title
-								content={title}
-								tailwindStyling="mb-4 max-w-3xl text-center font-semibold leading-tight lg:text-left text-4xl lg:text-5xl text-white"
-							/>
+							<motion.h2
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className="my-2 max-w-2xl mx-auto xl:mx-0 mb-6 text-white text-center xl:text-left font-semibold leading-tight text-4xl lg:text-5xl"
+							>
+								{title}
+							</motion.h2>
 							<Paragraph
 								content={paragraph}
 								tailwindStyling="max-w-3xl text-white leading-[1.75rem] text-paragraph text-center lg:text-left"

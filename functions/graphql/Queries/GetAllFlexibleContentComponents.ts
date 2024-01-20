@@ -84,7 +84,7 @@ export const getAllFlexibleContentComponents = async (
             										sourceUrl
               									}
 											}
-											... on ${postTypeFlexibleContent}_ContentAchievementsImageBlock {
+											... on ${postTypeFlexibleContent}_ContentImage {
 												fieldGroupName
 												title
 												subtitle
@@ -102,12 +102,15 @@ export const getAllFlexibleContentComponents = async (
 														width
 													}
 												}
-												achievementsContent {
-													card {
-														textOne
-														textTwo
-                      								}
-												}
+											}
+											... on ${postTypeFlexibleContent}_AchievementsTwo {
+                      							fieldGroupName
+                      							title
+												backgroundColor
+              									achievementsGrid {
+              									  textOne
+              									  textTwo
+              									}
 											}
 											... on ${postTypeFlexibleContent}_OurPartners {
 												fieldGroupName
@@ -126,6 +129,39 @@ export const getAllFlexibleContentComponents = async (
 														mediaDetails {
 															height
 															width
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_OurPrograms {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												programsGrid {
+													card {
+														title
+														paragraph
+														link {
+															url
+															title
+															target
+														}
+														icon {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
 														}
 													}
 												}
@@ -166,6 +202,17 @@ export const getAllFlexibleContentComponents = async (
                       								}
                       							}
 											}
+											... on ${postTypeFlexibleContent}_TestimonialsTwo {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
@@ -178,6 +225,31 @@ export const getAllFlexibleContentComponents = async (
             											height
             											width
             										}
+												}
+											}
+											... on ${postTypeFlexibleContent}_Faq {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+												image {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+												faqContent {
+													card {
+														title
+														paragraph
+													}
 												}
 											}
 											... on ${postTypeFlexibleContent}_Cta {

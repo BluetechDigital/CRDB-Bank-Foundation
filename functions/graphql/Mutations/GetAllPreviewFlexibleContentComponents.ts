@@ -46,7 +46,7 @@ export const getAllPreviewFlexibleContentComponents = async (
 														width
 													}
 												}
-												rightsideImage {
+												rightSideImage {
 													altText
 													sourceUrl
 													mediaDetails {
@@ -87,22 +87,32 @@ export const getAllPreviewFlexibleContentComponents = async (
             										sourceUrl
               									}
 											}
-											... on ${postTypeFlexibleContent}_ContentStripesVideoBlock {
+											... on ${postTypeFlexibleContent}_ContentImage {
 												fieldGroupName
 												title
-												video
 												subtitle
 												paragraph
-												displayVideo
-												contentStripesText
-												displayYoutubeIcon
 												buttonLink {
 													url
 													title
 													target
 												}
-												videoBackgroundImage {
-            										sourceUrl
+												image {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_AchievementsTwo {
+                      							fieldGroupName
+                      							title
+												backgroundColor
+              									achievementsGrid {
+              									  textOne
+              									  textTwo
               									}
 											}
 											... on ${postTypeFlexibleContent}_OurPartners {
@@ -126,40 +136,73 @@ export const getAllPreviewFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_OurPrograms {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												programsGrid {
+													card {
+														title
+														paragraph
+														link {
+															url
+															title
+															target
+														}
+														icon {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_FeaturesGridTwo {
                       							fieldGroupName
                       							cardOne {
-                      							  title
-                      							  subtitle
-                      							  paragraph
+													title
+													subtitle
+													paragraph
                       							}
                       							cardTwo {
-                      							  backgroundImage {
-                      							    altText
-                      							    sourceUrl
-                      							    mediaDetails {
-                      							      height
-                      							      width
-                      							    }
-                      							  }
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
                       							}
                       							lastCard {
-                      							  backgroundImage {
-                      							    altText
-                      							    sourceUrl
-                      							    mediaDetails {
-                      							      height
-                      							      width
-                      							    }
-                      							  }
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
                       							}
                       							gridContent {
-                      							  card {
-                      							    title
-                      							    subtitle
-                      							    paragraph
-                      							    backgroundColor
-                      							  }
+                      								card {
+														title
+														subtitle
+														paragraph
+														backgroundColor
+                      								}
                       							}
 											}
 											... on ${postTypeFlexibleContent}_Gallery {
@@ -174,6 +217,31 @@ export const getAllPreviewFlexibleContentComponents = async (
             											height
             											width
             										}
+												}
+											}
+											... on ${postTypeFlexibleContent}_Faq {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+												image {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+												faqContent {
+													card {
+														title
+														paragraph
+													}
 												}
 											}
 											... on ${postTypeFlexibleContent}_Cta {
@@ -234,8 +302,8 @@ export const getAllPreviewFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_NewsGrid {
 												fieldGroupName
 												title
+												italic
 												paragraph
-												highlightText
 											}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
@@ -246,8 +314,8 @@ export const getAllPreviewFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_BlogsGrid {
 												fieldGroupName
 												title
+												italic
 												paragraph
-												highlightText
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
 												fieldGroupName

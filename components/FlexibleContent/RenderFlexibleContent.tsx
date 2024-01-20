@@ -4,6 +4,7 @@ import {usePageContext} from "@/context/pages";
 
 // Components
 import CTA from "../CTA";
+import FAQ from "../FAQ";
 import Hero from "../Hero";
 import News from "../News";
 import Blogs from "../Blogs";
@@ -14,12 +15,15 @@ import ContactInfo from "../ContactInfo";
 import OurPartners from "../OurPartners";
 import Maintenance from "../Maintenance";
 import LinkedInCta from "../LinkedInCta";
+import OurPrograms from "../OurPrograms";
+import ContentImage from "../ContentImage";
 import ErrorPage from "../Global/ErrorPage";
 import TitleParagraph from "../TitleParagraph";
 import NewsThreeCards from "../NewsThreeCards";
+import TestimonialsTwo from "../TestimonialsTwo";
+import AchievementsTwo from "../AchievementsTwo";
 import FeaturesGridTwo from "../FeaturesGridTwo";
 import BlogsThreeCards from "../BlogsThreeCards";
-import ContentAchievementsImageBlock from "../ContentAchievementsImageBlock";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -73,16 +77,32 @@ const RenderFlexibleContent: FC = () => {
 									videoBackgroundImage={item?.videoBackgroundImage?.sourceUrl}
 								/>
 							</>
-						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_ContentAchievementsImageBlock` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_ContentImage` ? (
 							<>
-								<ContentAchievementsImageBlock
+								<ContentImage
 									title={item?.title}
 									image={item?.image}
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
-									achievementsContent={item?.achievementsContent}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_AchievementsTwo` ? (
+							<>
+								<AchievementsTwo
+									title={item?.title}
+									backgroundColor={item?.backgroundColor}
+									achievementsGrid={item?.achievementsGrid}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_OurPrograms` ? (
+							<>
+								<OurPrograms
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									programsGrid={item?.programsGrid}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurPartners` ? (
@@ -104,6 +124,16 @@ const RenderFlexibleContent: FC = () => {
 									gridContent={item?.gridContent}
 								/>
 							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_TestimonialsTwo` ? (
+							<>
+								<TestimonialsTwo
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+								/>
+							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (
 							<>
 								<Gallery
@@ -111,6 +141,17 @@ const RenderFlexibleContent: FC = () => {
 									gallery={item?.gallery}
 									paragraph={item?.paragraph}
 									highlightText={item?.highlightText}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_Faq` ? (
+							<>
+								<FAQ
+									title={item?.title}
+									image={item?.image}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+									faqContent={item?.faqContent}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Cta` ? (

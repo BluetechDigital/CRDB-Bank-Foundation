@@ -17,23 +17,15 @@ body {
 }
 
 body::-webkit-scrollbar {
-	display: none;
-	width: 0.65rem;
-	height: 0.65rem;
+	@apply block w-[0.90rem] h-[0.90rem];
 }
 
 body::-webkit-scrollbar-track {
-	background: $white;
+	@apply bg-green-darker;
 }
 
 body::-webkit-scrollbar-thumb {
-	background: $green;
-	border-radius: 100px;
-
-	&:hover {
-		transition: all 0.5s;
-		background-color: $greenTwo;
-	}
+	@apply rounded-[2px] bg-green-Three transition-all duration-500 hover:bg-purple-default;
 }
 
 a {

@@ -7,14 +7,14 @@ export const getAllTestimonialsContent = async () => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				testimonialsContent: testimonials(where: {status: PUBLISH}, last: 10) {
+				testimonialsContent: testimonials(where: {status: PUBLISH}, last: 100) {
 					edges {
 						node {
-							slug
-							excerpt
-							title(format: RENDERED)
-							featuredImage {
-								node {
+							testimonialReview {
+								name
+								jobTitle
+								paragraph
+								image {
 									altText
 									sourceUrl
 									mediaDetails {
