@@ -47,7 +47,7 @@ const CookiePolicyCard: FC = () => {
 						Cookie Policy
 					</motion.h3>
 					<Paragraph
-						content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioning of the site. By using this website, you agree to the use of cookies in accordance with this Cookie Policy.</p>`}
+						content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioning of the site. By using this website, you agree to the use of cookies in accordance with this <a href="/cookie-policy">Cookie Policy</a>.</p>`}
 						tailwindStyling="mt-1 mb-2 text-sm text-left text-pureBlack"
 					/>
 					<motion.div
@@ -61,7 +61,7 @@ const CookiePolicyCard: FC = () => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200 ease-in-out bg-blue-Two hover:bg-yellow-dark"
+							className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200 ease-in-out bg-green-Two hover:bg-green-Three"
 						>
 							Accept Cookies
 						</motion.button>
@@ -70,7 +70,7 @@ const CookiePolicyCard: FC = () => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="inline-block px-6 py-3 text-xs leading-none text-white bg-blue-dark hover:bg-blue-darkerTwo"
+							className="inline-block px-6 py-3 text-xs leading-none text-white bg-green-dark hover:bg-green-darker"
 						>
 							Refuse Cookies
 						</motion.button>

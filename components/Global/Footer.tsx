@@ -366,12 +366,7 @@ const Footer: FC = () => {
 							</motion.div>
 						</motion.div>
 					</div>
-					<div
-						className={
-							styles.linksGrid +
-							" grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 mt-8 lg:mt-0 w-full lg:w-[65%] gap-6"
-						}
-					>
+					<div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 mt-8 lg:mt-0 w-full lg:w-[65%] gap-6">
 						<div className="flex flex-col col-span-1 px-0">
 							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase lg:text-left">
 								Company Info
@@ -465,7 +460,7 @@ const Footer: FC = () => {
 								CRDB BANK
 							</h4>
 							<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-								<Link href="https://crdbbank.co.tz" target="_black">
+								<Link href="https://www.crdbbankmarathon.co.tz" target="_black">
 									<motion.button
 										initial={initial}
 										whileInView={fadeInUp}
@@ -479,7 +474,7 @@ const Footer: FC = () => {
 											<Image
 												width={500}
 												height={500}
-												alt="CRDB Bank Marathon Logo Green"
+												alt="CRDB Bank Marathon Logo White"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
