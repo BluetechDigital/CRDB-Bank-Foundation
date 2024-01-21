@@ -53,7 +53,7 @@ const Footer: FC = () => {
 								tailwindStyling="block px-4 lg:px-0 max-w-full lg:max-w-sm text-base text-pureBlack text-center lg:text-left"
 							/>
 						</motion.div>
-						<div className="flex flex-col items-center justify-between w-auto gap-2 py-6 mb-10 md:items-baseline">
+						<div className="flex flex-col items-center justify-between w-auto gap-2 py-6 mb-10 lg:items-baseline">
 							<motion.div
 								initial={initialTwo}
 								whileInView={fadeIn}
@@ -366,8 +366,13 @@ const Footer: FC = () => {
 							</motion.div>
 						</motion.div>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 mt-8 lg:mt-0 w-full lg:w-[65%] gap-6">
-						<div className="flex flex-col px-0">
+					<div
+						className={
+							styles.linksGrid +
+							" grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 mt-8 lg:mt-0 w-full lg:w-[65%] gap-6"
+						}
+					>
+						<div className="flex flex-col col-span-1 px-0">
 							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase lg:text-left">
 								Company Info
 							</h4>
@@ -420,7 +425,7 @@ const Footer: FC = () => {
 								)}
 							</motion.ul>
 						</div>
-						<div className="flex flex-col px-0">
+						<div className="flex flex-col col-span-1 px-0">
 							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase lg:text-left">
 								Our Programs
 							</h4>
@@ -455,7 +460,7 @@ const Footer: FC = () => {
 								)}
 							</motion.ul>
 						</div>
-						<div className="xl:ml-16 flex flex-col gap-4 sm:gap-0 items-center justify-center lg:justify-between">
+						<div className="xl:ml-16 flex flex-col sm:col-span-2 xl:col-span-1 gap-4 sm:gap-0 items-center justify-center lg:justify-between">
 							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase md:text-left">
 								CRDB BANK
 							</h4>

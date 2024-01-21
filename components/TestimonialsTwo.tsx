@@ -29,12 +29,12 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 					viewport={{once: true}}
 					className="flex flex-col xl:flex-row gap-6 xl:gap-4"
 				>
-					<div className="w-full xl:w-1/3 flex py-8 px-4 xl:px-16 flex-col items-center xl:items-baseline justify-center">
+					<div className="w-full xl:w-1/3 flex py-16 lg:py-12 px-4 xl:px-16 flex-col items-center xl:items-baseline justify-center">
 						<motion.h4
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className=" text-center xl:text-left text-paragraph text-white"
+							className="mb-1 text-center lg:text-center text-lg text-white"
 						>
 							{subtitle}
 						</motion.h4>

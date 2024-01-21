@@ -6,4 +6,11 @@
 	.externalLink {
 		font-family: $main;
 	}
+
+	.linksGrid:last-child {
+		display: none;
+	}
+
+	@media screen and (min-width: 992px) {
+	}
 }

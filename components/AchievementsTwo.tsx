@@ -13,7 +13,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 	return (
 		<>
 			<div
-				className="relative py-16 md:py-10 overflow-hidden"
+				className="relative py-16 lg:py-10 overflow-hidden"
 				style={{
 					backgroundColor: `${backgroundColor}`,
 					clipPath: `polygon(77% 0, 100% 0, 100% 98%, 21% 89%, 0 98%, 0 0)`,
@@ -40,7 +40,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 							initial={initial}
 							whileInView={stagger}
 							viewport={{once: true}}
-							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16 lg:my-10 xl:mb-0"
+							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16 lg:my-10 xl:mb-0 px-4"
 						>
 							{achievementsGrid?.length > 0 ? (
 								achievementsGrid.map((item: any, keys: any) => (
@@ -51,7 +51,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 													initial={initial}
 													whileInView={stagger}
 													viewport={{once: true}}
-													className="mb-3 text-white text-center text-6xl md:text-7xl font-bold tracking-px-n leading-tight"
+													className="mb-3 text-white text-center text-5xl lg:text-6xl xl:text-7xl font-bold tracking-px-n leading-tight"
 												>
 													{item?.textOne}
 												</motion.h3>
