@@ -83,13 +83,15 @@ const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
 						{gridContent?.length > 0 ? (
 							gridContent?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
-									<FeaturesGridContentCard
-										key={keys}
-										title={item?.card?.title}
-										subtitle={item?.card?.subtitle}
-										paragraph={item?.card?.paragraph}
-										backgroundColor={item?.card?.backgroundColor}
-									/>
+									<>
+										<FeaturesGridContentCard
+											key={keys}
+											title={item?.card?.title}
+											subtitle={item?.card?.subtitle}
+											paragraph={item?.card?.paragraph}
+											backgroundColor={item?.card?.backgroundColor}
+										/>
+									</>
 								</Fragment>
 							))
 						) : (

@@ -22,25 +22,25 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 	switch (backgroundColor) {
 		case "Green":
 			titleStyling = "text-white";
-			subtitleStyling = "text-yellow-Two";
+			subtitleStyling = "text-yellow-light";
 			paragraphStyling = "text-white";
 			backgroundWaveStyling = "none";
-			backgroundColorStyling = "bg-green-default";
+			backgroundColorStyling = "bg-green-Two";
 
 			break;
 		case "Grey":
 			titleStyling = "text-pureBlack";
-			subtitleStyling = "text-yellow-Two";
+			subtitleStyling = "text-yellow-light";
 			paragraphStyling = "text-pureBlack";
 			backgroundWaveStyling = "none";
 			backgroundColorStyling = "bg-lightGreyTwo";
 			break;
-		case "BlueWave":
+		case "GreenStrips":
 			titleStyling = "text-white";
-			subtitleStyling = "text-yellow-Two";
+			subtitleStyling = "text-yellow-light";
 			paragraphStyling = "text-white";
 			backgroundColorStyling = "bg-transparent";
-			backgroundWaveStyling = "stacked-waves-haikei-blue-darkblue";
+			backgroundWaveStyling = "stacked-waves-haikei-green-strips";
 			break;
 		case "YellowWave":
 			titleStyling = "text-white";
@@ -48,6 +48,13 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 			paragraphStyling = "text-white";
 			backgroundColorStyling = "bg-transparent";
 			backgroundWaveStyling = "stacked-waves-haikei-orange-yellow";
+			break;
+		case "PurpleWave":
+			titleStyling = "text-white";
+			subtitleStyling = "text-white";
+			paragraphStyling = "text-white";
+			backgroundColorStyling = "bg-transparent";
+			backgroundWaveStyling = "stacked-waves-haikei-purple";
 			break;
 		default:
 			titleStyling = "text-pureBlack";
@@ -82,7 +89,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 						initial={initial}
 						viewport={{once: true}}
 						whileInView={fadeInUp}
-						className={`mb-2 text-center lg:text-center text-paragraph text-yellow-Two ${subtitleStyling}`}
+						className={`mb-2 text-center lg:text-center text-paragraph ${subtitleStyling}`}
 					>
 						{subtitle}
 					</motion.h4>
