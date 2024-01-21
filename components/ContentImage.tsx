@@ -41,7 +41,7 @@ const ContentImage: FC<IContentImage> = ({
 						initial={initial}
 						whileInView={stagger}
 						viewport={{once: true}}
-						className="max-w-2xl mx-auto py-20 px-4 g:px-12 lg:py-20 lg:max-w-5xl w-full xl:w-1/2 2xl:w-1/3 bg-cover bg-no-repeat bg-center"
+						className="max-w-2xl mx-auto py-20 px-4 lg:px-12 lg:py-20 lg:max-w-5xl w-full xl:w-1/2 2xl:w-1/3 bg-cover bg-no-repeat bg-center"
 						style={{
 							backgroundImage: `url("/svg/background/layered-peaks-haikei-green-flatgreen.svg")`,
 						}}
@@ -97,7 +97,7 @@ const ContentImage: FC<IContentImage> = ({
 							height={image?.mediaDetails.height}
 							className={`${
 								image?.sourceUrl
-									? "w-full h-[500px] lg:h-[568px] 2xl:h-[575px] object-cover object-center"
+									? "w-full h-[500px] lg:h-[568px] xl:h-[575px] 2xl:h-[635px] object-cover object-center"
 									: "hidden"
 							}`}
 						/>
