@@ -49,12 +49,12 @@ export const getStaticProps: GetStaticProps = async ({params}: any) => {
 	// Fetch priority content
 	const seoContent: any = await getAllSeoContent(
 		params?.slug,
-		postType?.executiveLeaderships
+		postType?.boardofDirectors
 	);
 
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,
-		postType?.executiveLeaderships,
+		postType?.boardofDirectors,
 		flexibleContentType?.pages
 	);
 

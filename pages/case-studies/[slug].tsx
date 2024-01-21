@@ -47,11 +47,14 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({params}: any) => {
 	// Fetch priority content
-	const seoContent: any = await getAllSeoContent(params?.slug, postType.posts);
+	const seoContent: any = await getAllSeoContent(
+		params?.slug,
+		postType.caseStudies
+	);
 
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,
-		postType.posts,
+		postType.caseStudies,
 		flexibleContentType?.pages
 	);
 
