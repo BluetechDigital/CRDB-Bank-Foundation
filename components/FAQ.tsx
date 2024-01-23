@@ -34,7 +34,7 @@ const FAQ: FC<IFAQ> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="text-center text-paragraph text-yellow-Two"
+							className="text-center text-paragraph text-yellow-two"
 						>
 							{subtitle}
 						</motion.h4>
@@ -89,7 +89,7 @@ const FAQ: FC<IFAQ> = ({
 										viewport={{once: true}}
 										className={
 											buttonLink?.title
-												? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-purple-Two border-purple-Two hover:bg-yellow-Two hover:border-yellow-Two transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-purple-Two hover:before:bg-yellow-Two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-purple-Two hover:after:bg-yellow-Two`
+												? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-purple-two border-purple-two hover:bg-yellow-two hover:border-yellow-two transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-purple-two hover:before:bg-yellow-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-purple-two hover:after:bg-yellow-two`
 												: `hidden`
 										}
 									>

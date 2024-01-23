@@ -3,33 +3,35 @@ import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {IOurPrograms} from "@/types/components/index";
-import {fadeIn, initialTwo} from "../animations/animations";
+import {IMainPrograms} from "@/types/components/index";
+import {fadeIn, initial, initialTwo, stagger} from "../animations/animations";
 
 // Styling
-import styles from "../styles/components/OurPrograms.module.scss";
+import styles from "../styles/components/MainPrograms.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
 
-const OurPrograms: FC<IOurPrograms> = ({
+const MainPrograms: FC<IMainPrograms> = ({
 	title,
 	subtitle,
 	paragraph,
 	programsGrid,
+	highlightText,
 }) => {
 	return (
 		<>
 			<div
 				className={
-					styles.ourPrograms +
-					" relative py-12 lg:py-40 sm:py-24 px-4 bg-white bg-cover bg-no-repeat bg-center"
+					styles.mainPrograms +
+					" relative py-16 lg:py-28 px-4 bg-white bg-cover bg-no-repeat bg-center"
 				}
 				style={{
+					clipPath: `polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)`,
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
 				}}
 			>
-				<div className="container relative m-auto flex flex-col items-center gap-6">
+				<div className="container relative m-auto flex flex-col items-center gap-6 sm:gap-12">
 					<div className="flex flex-col items-center">
 						<motion.h4
 							initial={initialTwo}
@@ -40,19 +42,27 @@ const OurPrograms: FC<IOurPrograms> = ({
 							{subtitle}
 						</motion.h4>
 						<motion.h3
-							initial={initialTwo}
-							whileInView={fadeIn}
+							initial={initial}
+							whileInView={stagger}
 							viewport={{once: true}}
-							className="my-2 text-center font-semibold leading-tight lg:text-left text-4xl lg:text-5xl text-black"
+							className="text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
 						>
 							{title}
+							<span className="p-2 ml-3 bg-green-two text-white">
+								{highlightText}
+							</span>
 						</motion.h3>
 						<Paragraph
 							content={paragraph}
 							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
 						/>
 					</div>
-					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-16 px-0 sm:px-4 gap-6 items-start justify-center">
+					<motion.div
+						initial={initial}
+						whileInView={stagger}
+						viewport={{once: true}}
+						className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-16 px-0 sm:px-4 gap-6 items-start justify-center"
+					>
 						{programsGrid?.length > 0 ? (
 							programsGrid.map((item: any, keys: any) => (
 								<Fragment key={keys}>
@@ -248,11 +258,11 @@ const OurPrograms: FC<IOurPrograms> = ({
 						) : (
 							<></>
 						)}
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</>
 	);
 };
 
-export default OurPrograms;
+export default MainPrograms;

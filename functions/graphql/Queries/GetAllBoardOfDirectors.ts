@@ -44,8 +44,8 @@ export const getAllBoardOfDirectorsContent = async () => {
 		const content: DocumentNode = gql`
 			{
 				boardofDirectorsContent: boardofDirectors(
-					where: {status: PUBLISH}
-					last: 10
+					where: {status: PUBLISH, orderby: {field: DATE, order: ASC}}
+					last: 100
 				) {
 					edges {
 						node {

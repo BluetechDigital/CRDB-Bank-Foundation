@@ -225,6 +225,40 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_MainPrograms {
+            								  	fieldGroupName
+            								  	title
+            								  	subtitle
+            								  	paragraph
+            								  	highlightText
+            								  	programsGrid {
+													card {
+														title
+														paragraph
+														link {
+															url
+															title
+															target
+														}
+														icon {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+            								}
 											... on ${postTypeFlexibleContent}_FeaturesGridTwo {
                       							fieldGroupName
                       							cardOne {

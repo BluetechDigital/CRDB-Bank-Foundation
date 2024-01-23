@@ -168,6 +168,41 @@ export type IOurPartners = {
 		}
 	];
 };
+export type IMainPrograms = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	highlightText: string;
+	programsGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+				Link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				icon: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		}
+	];
+};
 export type IOurPrograms = {
 	title: string;
 	subtitle: string;
@@ -340,10 +375,17 @@ export type IJumboContentSection = {
 		}
 	];
 };
-export type IExecutiveLeaderships = {
+export type IBoardOfDirectorsGrid = {
 	title: string;
-	italic: string;
+	subtitle: string;
 	paragraph: string;
+	highlightText: string;
+};
+export type IExecutiveLeadershipsGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	highlightText: string;
 };
 export type IIndividualExecutiveMember = {
 	title: string;
@@ -422,6 +464,21 @@ export type IBlogsCard = {
 		};
 	};
 };
+export type IBoardOfDirectorsCard = {
+	slug: string;
+	title: string;
+	paragraph: string;
+	featuredImage: {
+		node: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+};
 export type IFeaturesGridContentCard = {
 	title: string;
 	subtitle: string;
@@ -453,6 +510,21 @@ export type IJumboContentSectionCard = {
 		mediaDetails: {
 			height: number;
 			width: number;
+		};
+	};
+};
+export type IExecutiveLeadershipsCard = {
+	slug: string;
+	title: string;
+	paragraph: string;
+	featuredImage: {
+		node: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
 		};
 	};
 };

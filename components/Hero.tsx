@@ -35,7 +35,7 @@ const Hero: FC<IHero> = ({
 		<>
 			<div className={styles.hero + `relative p-0 overflow-hidden bg-white`}>
 				<div
-					className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-green-Three bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-Two"
+					className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-green-three bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-two"
 					style={{
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 						backgroundImage: `url("${
@@ -153,7 +153,7 @@ const Hero: FC<IHero> = ({
 										viewport={{once: true}}
 										className={
 											buttonLinkTwo?.title
-												? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-green-Two border-green-Two hover:bg-green-Three hover:border-green-Three transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-green-Two hover:before:bg-green-Three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-green-Two hover:after:bg-green-Three`
+												? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-green-two border-green-two hover:bg-green-three hover:border-green-three transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-green-two hover:before:bg-green-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-green-two hover:after:bg-green-three`
 												: `hidden`
 										}
 									>

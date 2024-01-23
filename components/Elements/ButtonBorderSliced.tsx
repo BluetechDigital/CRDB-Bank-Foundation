@@ -59,15 +59,15 @@ const ButtonBorderSliced: FC<IButtonBorderSliced> = ({
 			sgvTwoColor = "#e4a002";
 			sgvOneColorHover = "#ffffff";
 			sgvTwoColorHover = "#e4a002";
-			textColor = "text-purple-Two";
-			borderColor = "border-purple-Two";
+			textColor = "text-purple-two";
+			borderColor = "border-purple-two";
 			textColorHover = "hover:text-white";
-			borderColorHover = "hover:border-purple-Two";
-			backgroundColorHover = "hover:bg-purple-Two";
+			borderColorHover = "hover:border-purple-two";
+			backgroundColorHover = "hover:bg-purple-two";
 			afterBackgroundColor = "after:bg-white";
 			beforeBackgroundColor = "before:bg-white";
-			afterBackgroundColorHover = "hover:after:bg-purple-Two";
-			beforeBackgroundColorHover = "hover:before:bg-purple-Two";
+			afterBackgroundColorHover = "hover:after:bg-purple-two";
+			beforeBackgroundColorHover = "hover:before:bg-purple-two";
 			break;
 		case "yellow-default":
 			sgvOneColor = "#f6ad37";
@@ -89,30 +89,30 @@ const ButtonBorderSliced: FC<IButtonBorderSliced> = ({
 			sgvTwoColor = "#008000";
 			sgvOneColorHover = "#ffffff";
 			sgvTwoColorHover = "#ffffff";
-			textColor = "text-green-Two";
+			textColor = "text-green-two";
 			textColorHover = "hover:text-white";
-			borderColor = "border-green-Two";
-			borderColorHover = "hover:border-green-Two";
-			backgroundColorHover = "hover:bg-green-Two";
+			borderColor = "border-green-two";
+			borderColorHover = "hover:border-green-two";
+			backgroundColorHover = "hover:bg-green-two";
 			afterBackgroundColor = "after:bg-white";
 			beforeBackgroundColor = "before:bg-white";
-			afterBackgroundColorHover = "hover:after:bg-green-Two";
-			beforeBackgroundColorHover = "hover:before:bg-green-Two";
+			afterBackgroundColorHover = "hover:after:bg-green-two";
+			beforeBackgroundColorHover = "hover:before:bg-green-two";
 			break;
 		default:
-			sgvOneColor = "#cb0007";
+			sgvOneColor = "#000";
 			sgvTwoColor = "#e4a002";
 			sgvOneColorHover = "#ffffff";
 			sgvTwoColorHover = "#e4a002";
-			textColor = "text-purple-Two";
-			borderColor = "border-purple-Two";
+			textColor = "text-black";
+			borderColor = "border-green-two";
 			textColorHover = "hover:text-white";
-			borderColorHover = "hover:border-purple-Two";
-			backgroundColorHover = "hover:bg-purple-Two";
+			borderColorHover = "hover:border-green-two";
+			backgroundColorHover = "hover:bg-green-two";
 			afterBackgroundColor = "after:bg-white";
 			beforeBackgroundColor = "before:bg-white";
-			afterBackgroundColorHover = "hover:after:bg-purple-Two";
-			beforeBackgroundColorHover = "hover:before:bg-purple-Two";
+			afterBackgroundColorHover = "hover:after:bg-green-two";
+			beforeBackgroundColorHover = "hover:before:bg-green-two";
 			break;
 	}
 	return (

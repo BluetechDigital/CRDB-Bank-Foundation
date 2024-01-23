@@ -52,7 +52,7 @@ const LinkedInCta: FC<ILinkedInCta> = ({
 						<span
 							className={`font-bold px-6 flex ${
 								displayLinkedinIcon ? "flex-col sm:flex-row" : "flex-row"
-							} justify-center items-center gap-y-2 text-white border-2 border-white p-3 uppercase hover:border-green-Two hover:bg-green-Two`}
+							} justify-center items-center gap-y-2 text-white border-2 border-white p-3 uppercase hover:border-green-two hover:bg-green-two`}
 						>
 							<span className="w-full text-center sm:text-left text-base mx-auto sm:mx-0">
 								{buttonLink?.title}

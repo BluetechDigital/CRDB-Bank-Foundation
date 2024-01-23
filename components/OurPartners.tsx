@@ -26,7 +26,7 @@ const OurPartners: FC<IOurPartners> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-lg text-yellow-Two"
+							className="mb-1 text-center lg:text-center text-lg text-yellow-two"
 						>
 							{subtitle}
 						</motion.h4>

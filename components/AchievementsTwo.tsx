@@ -59,7 +59,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 													initial={initial}
 													whileInView={stagger}
 													viewport={{once: true}}
-													className="text-paragraph xl:text-lg text-center lg:text-left text-white font-medium leading-normal"
+													className="text-paragraph xl:text-lg text-center text-white font-medium leading-normal"
 												>
 													{item?.textTwo}
 												</motion.p>

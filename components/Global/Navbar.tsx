@@ -141,7 +141,7 @@ const Navbar: FC = () => {
 															scrollPosition > 50
 																? "text-pureBlack"
 																: "text-white"
-														} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														} group-hover:text-pureBlack group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
 													>
 														{item?.node?.label}
 													</Link>
@@ -187,7 +187,7 @@ const Navbar: FC = () => {
 																		(item: any, keys: any) => (
 																			<Fragment key={keys}>
 																				<Link href={`${item?.node?.url}`}>
-																					<li className="w-full hover:bg-green-Two">
+																					<li className="w-full hover:bg-green-two">
 																						<Link
 																							href={`${item?.node?.url}`}
 																							className={` ${
@@ -223,7 +223,7 @@ const Navbar: FC = () => {
 															scrollPosition > 50
 																? "text-pureBlack"
 																: "text-white"
-														} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														} group-hover:text-pureBlack group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
 													>
 														{item?.node?.label}
 													</Link>
@@ -270,7 +270,7 @@ const Navbar: FC = () => {
 															scrollPosition > 50
 																? "text-pureBlack"
 																: "text-white"
-														} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														} group-hover:text-pureBlack group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
 													>
 														{item?.node?.label}
 													</Link>
@@ -317,7 +317,7 @@ const Navbar: FC = () => {
 																		(item: any, keys: any) => (
 																			<Fragment key={keys}>
 																				<Link href={`${item?.node?.url}`}>
-																					<li className="w-full hover:bg-green-Two">
+																					<li className="w-full hover:bg-green-two">
 																						<Link
 																							href={`${item?.node?.url}`}
 																							className={` ${
@@ -349,7 +349,7 @@ const Navbar: FC = () => {
 														scrollPosition > 50
 															? "text-pureBlack"
 															: "text-white"
-													} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+													} group-hover:text-pureBlack group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
 												>
 													{item?.node?.label}
 												</Link>

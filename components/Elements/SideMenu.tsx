@@ -1,16 +1,17 @@
 // Imports
+import {
+	fadeIn,
+	stagger,
+	initial,
+	fadeInUp,
+	initialTwo,
+} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {FC, Fragment, useState} from "react";
 import {ISideMenu} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
-import fadeInUp, {
-	fadeIn,
-	initial,
-	stagger,
-	initialTwo,
-} from "@/animations/animations";
 
 // Styling
 import styles from "@/styles/components/Navbar.module.scss";
@@ -81,7 +82,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														href={`${item?.node?.url}`}
-														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-Two transition-all ease-in-out duration-500"
+														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
 													</Link>
@@ -115,7 +116,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																						keys < 1
 																							? "border-t-[1px] border-darkGrey border-opacity-50"
 																							: "border-t-[0px]"
-																					} hover:border-green-Two hover:bg-green-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
 																				>
 																					<Link
 																						href={`${item?.node?.url}`}
@@ -143,7 +144,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														href={`${item?.node?.url}`}
-														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-Two transition-all ease-in-out duration-500"
+														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
 													</Link>
@@ -177,7 +178,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																						keys < 1
 																							? "border-t-[1px] border-darkGrey border-opacity-50"
 																							: "border-t-[0px]"
-																					} hover:border-green-Two hover:bg-green-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
 																				>
 																					<Link
 																						href={`${item?.node?.url}`}
@@ -205,7 +206,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														href={item?.node?.url}
-														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-Two transition-all ease-in-out duration-500"
+														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
 													</Link>
@@ -240,7 +241,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																						keys < 1
 																							? "border-t-[1px] border-darkGrey border-opacity-50"
 																							: "border-t-[0px]"
-																					} hover:border-green-Two hover:bg-green-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
 																				>
 																					<Link
 																						href={`${item?.node?.url}`}
@@ -264,7 +265,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											<li className="border-b-[1px] border-yellow-dark border-opacity-50">
 												<Link
 													href={`${item?.node?.url}`}
-													className="block py-4 text-base font-semibold text-pureBlack hover:text-green-Two"
+													className="block py-4 text-base font-semibold text-pureBlack hover:text-green-two"
 												>
 													{item?.node?.label}
 												</Link>
@@ -442,7 +443,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
 										<svg
 											width="20"
 											height="20"
@@ -460,7 +461,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-Two"
+										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-two"
 										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 									>
 										{globalContext?.themesOptionsContent?.email}
@@ -476,7 +477,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
 										<svg
 											width="20"
 											height="20"
@@ -494,7 +495,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-Two"
+										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-two"
 										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 									>
 										{globalContext?.themesOptionsContent?.emailTwo}
@@ -520,7 +521,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 									viewport={{once: true}}
 									className={
 										styles.borderButton +
-										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 									}
 								>
 									<span>
@@ -549,7 +550,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 									viewport={{once: true}}
 									className={
 										styles.borderButton +
-										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 									}
 								>
 									<span>
@@ -581,7 +582,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 									viewport={{once: true}}
 									className={
 										styles.borderButton +
-										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 									}
 								>
 									<span>
@@ -613,7 +614,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 									viewport={{once: true}}
 									className={
 										styles.borderButton +
-										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 									}
 								>
 									<span>

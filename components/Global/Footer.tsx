@@ -25,7 +25,7 @@ const Footer: FC = () => {
 		<footer
 			className={
 				styles.footer +
-				" px-0 overflow-hidden border-t-4 bg-lightGreyTwo border-green-Two"
+				" px-0 overflow-hidden border-t-4 bg-lightGreyTwo border-green-two"
 			}
 		>
 			<div className="container relative z-50 px-4 mx-auto ">
@@ -64,7 +64,7 @@ const Footer: FC = () => {
 										: "hidden"
 								}
 							>
-								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-1">
+								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-1">
 									<svg
 										width="20"
 										height="20"
@@ -82,7 +82,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-Two"
+									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
 									href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 								>
 									{globalContext?.themesOptionsContent?.email}
@@ -98,7 +98,7 @@ const Footer: FC = () => {
 										: "hidden"
 								}
 							>
-								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-1">
+								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-1">
 									<svg
 										width="20"
 										height="20"
@@ -116,7 +116,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-Two"
+									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
 									href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.emailTwo}
@@ -132,7 +132,7 @@ const Footer: FC = () => {
 										: "hidden"
 								}
 							>
-								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-1">
+								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-1">
 									<svg
 										width="20"
 										height="20"
@@ -147,7 +147,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-Two"
+									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
 									href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
 								>
 									{globalContext?.themesOptionsContent?.phoneNumber}
@@ -163,7 +163,7 @@ const Footer: FC = () => {
 										: "hidden"
 								}
 							>
-								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-1">
+								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-1">
 									<svg
 										width="20"
 										height="20"
@@ -178,7 +178,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-Two"
+									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
 									href={`tel:${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.phoneNumberTwo}
@@ -391,7 +391,7 @@ const Footer: FC = () => {
 														>
 															<Link
 																href={`${item?.node?.url}`}
-																className="text-pureBlack text-base text-center lg:text-left hover:text-green-Two"
+																className="text-pureBlack text-base text-center lg:text-left hover:text-green-two"
 															>
 																{item?.node?.label}
 															</Link>
@@ -406,7 +406,7 @@ const Footer: FC = () => {
 													>
 														<Link
 															href={`${item?.node?.url}`}
-															className="text-pureBlack text-base text-center lg:text-left hover:text-green-Two"
+															className="text-pureBlack text-base text-center lg:text-left hover:text-green-two"
 														>
 															{item?.node?.label}
 														</Link>
@@ -442,7 +442,7 @@ const Footer: FC = () => {
 												>
 													<Link
 														href={`${item?.node?.url}`}
-														className="text-pureBlack text-base text-center lg:text-left hover:text-green-Two"
+														className="text-pureBlack text-base text-center lg:text-left hover:text-green-two"
 													>
 														{item?.node?.label}
 													</Link>
@@ -467,7 +467,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -496,7 +496,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -530,7 +530,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -562,7 +562,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-Two hover:bg-green-Two hover:border-green-Two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-Two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-Two"
+											" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -637,7 +637,7 @@ const Footer: FC = () => {
 									>
 										<Link
 											href={`${item?.node?.url}`}
-											className="text-pureBlack transition-all duration-200 ease-in-out text-base lg:text-sm hover:text-green-Two"
+											className="text-pureBlack transition-all duration-200 ease-in-out text-base lg:text-sm hover:text-green-two"
 										>
 											{item?.node?.label}
 										</Link>

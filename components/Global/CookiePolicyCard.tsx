@@ -61,7 +61,7 @@ const CookiePolicyCard: FC = () => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200 ease-in-out bg-green-Two hover:bg-green-Three"
+							className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200 ease-in-out bg-green-two hover:bg-green-three"
 						>
 							Accept Cookies
 						</motion.button>

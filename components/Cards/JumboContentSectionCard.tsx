@@ -42,7 +42,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 	switch (backgroundDisplay) {
 		case "White":
 			titleColor = "text-black";
-			subtitleColor = "text-yellow-Two";
+			subtitleColor = "text-yellow-two";
 			buttonColor = "blue-default";
 			borderImageColor = "border-white";
 			backgroundColor = "bg-white";
@@ -51,7 +51,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			break;
 		case "lightGrey":
 			titleColor = "text-black";
-			subtitleColor = "text-blue-Two";
+			subtitleColor = "text-purple-two";
 			buttonColor = "lightGrey";
 			borderImageColor = "border-lightGrey";
 			backgroundColor = "bg-lightGreyTwo";
@@ -60,18 +60,18 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			break;
 		case "Purple":
 			titleColor = "text-white";
-			subtitleColor = "text-yellow-Two";
+			subtitleColor = "text-yellow-two";
 			buttonColor = "white";
-			borderImageColor = "border-purple-Two";
+			borderImageColor = "border-purple-two";
 			paragraphColor = "text-white";
-			backgroundColor = "bg-purple-Two";
+			backgroundColor = "bg-purple-two";
 			backgroundImage = `none`;
 			break;
 		case "GreenStrips":
 			titleColor = "text-white";
 			subtitleColor = "text-yellow-light";
 			buttonColor = "white";
-			borderImageColor = "border-green-Two";
+			borderImageColor = "border-green-two";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-transparent";
 			backgroundImage = "/svg/background/stacked-waves-haikei-green-strips.svg";
@@ -80,7 +80,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			titleColor = "text-white";
 			subtitleColor = "text-white";
 			buttonColor = "white";
-			borderImageColor = "border-yellow-Two";
+			borderImageColor = "border-yellow-two";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-transparent";
 			backgroundImage =

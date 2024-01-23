@@ -125,7 +125,7 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium tracking-wide text-black hover:text-yellow-Two"
+									className="font-medium tracking-wide text-black hover:text-yellow-two"
 									href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 								>
 									{globalContext?.themesOptionsContent?.email}
@@ -159,7 +159,7 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium tracking-wide text-black hover:text-yellow-Two"
+									className="font-medium tracking-wide text-black hover:text-yellow-two"
 									href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.emailTwo}

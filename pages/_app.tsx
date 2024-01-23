@@ -50,22 +50,24 @@ export default function App({
 	globalProps,
 }: AppProps | any) {
 	return (
-		<ApolloProvider client={client}>
-			<GlobalContextProvider globalProps={globalProps}>
-				<motion.div
-					exit={{
-						opacity: 0,
-					}}
-					initial="initial"
-					animate="animate"
-				>
-					<PageLoadingSquares />
-					{/* Cookie Policy Pop Up */}
-					<PostHogContextProvider />
-					<Component {...pageProps} />
-				</motion.div>
-			</GlobalContextProvider>
-		</ApolloProvider>
+		<>
+			<ApolloProvider client={client}>
+				<GlobalContextProvider globalProps={globalProps}>
+					<motion.div
+						exit={{
+							opacity: 0,
+						}}
+						initial="initial"
+						animate="animate"
+					>
+						<PageLoadingSquares />
+						{/* Cookie Policy Pop Up */}
+						<PostHogContextProvider />
+						<Component {...pageProps} />
+					</motion.div>
+				</GlobalContextProvider>
+			</ApolloProvider>
+		</>
 	);
 }
 

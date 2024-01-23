@@ -45,8 +45,8 @@ export const getAllExecutiveLeadershipsContent = async () => {
 		const content: DocumentNode = gql`
 			{
 				executiveLeadershipsContent: executiveLeaderships(
-					where: {status: PUBLISH}
-					last: 10
+					where: {status: PUBLISH, orderby: {field: DATE, order: ASC}}
+					last: 100
 				) {
 					edges {
 						node {

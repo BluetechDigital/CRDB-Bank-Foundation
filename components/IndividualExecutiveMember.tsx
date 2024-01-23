@@ -65,13 +65,13 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 					clipPath: `polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)`,
 				}}
 			>
-				<div className="container relative px-0 mx-auto lg:px-4 flex flex-col gap-16">
+				<div className="container relative px-0 mx-auto lg:px-4 flex flex-col gap-16 xl:gap-24">
 					<div className="flex flex-col items-center">
 						<motion.h4
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-lg text-yellow-Two"
+							className="mb-1 text-center lg:text-center text-lg text-yellow-two"
 						>
 							{subtitle}
 						</motion.h4>
@@ -79,7 +79,7 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-2 text-center font-semibold leading-tight lg:text-left text-4xl lg:text-5xl text-black"
+							className="my-2 lg:max-w-3xl mx-auto text-center font-semibold leading-tight text-4xl lg:text-5xl text-black"
 						>
 							{title}
 						</motion.h2>
@@ -123,7 +123,7 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="mb-1 text-center lg:text-left text-paragraph text-yellow-Two"
+									className="mb-1 text-center lg:text-left text-paragraph text-yellow-two"
 								>
 									{executiveTitle}
 								</motion.h4>
@@ -164,7 +164,7 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="mb-1 text-left text-paragraph text-yellow-Two"
+									className="mb-1 text-left text-paragraph text-yellow-two"
 								>
 									{executiveTitle}
 								</motion.h4>
