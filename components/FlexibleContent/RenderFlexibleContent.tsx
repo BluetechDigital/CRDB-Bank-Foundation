@@ -24,6 +24,8 @@ import TestimonialsTwo from "../TestimonialsTwo";
 import AchievementsTwo from "../AchievementsTwo";
 import FeaturesGridTwo from "../FeaturesGridTwo";
 import BlogsThreeCards from "../BlogsThreeCards";
+import JumboContentSection from "../JumboContentSection";
+import IndividualExecutiveMember from "../IndividualExecutiveMember";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -85,6 +87,28 @@ const RenderFlexibleContent: FC = () => {
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_JumboContentSection` ? (
+							<>
+								<JumboContentSection
+									jumboContentSection={item?.contentSection}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_IndividualExecutiveMember` ? (
+							<>
+								<IndividualExecutiveMember
+									title={item?.title}
+									image={item?.image}
+									imageTwo={item?.imageTwo}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									executiveName={item?.executiveName}
+									executiveTitle={item?.executiveTitle}
+									paragraphTitle={item?.paragraphTitle}
+									displayBackgroundIcon={item?.displayBackgroundIcon}
 								/>
 							</>
 						) : item?.fieldGroupName ===

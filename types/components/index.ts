@@ -315,7 +315,12 @@ export type IJumboContentSection = {
 				paragraph: string;
 				imageLocation: string;
 				backgroundDisplay: string;
-				image: {
+				buttonLink: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				smallImage: {
 					altText: string;
 					sourceUrl: string;
 					mediaDetails: {
@@ -323,10 +328,13 @@ export type IJumboContentSection = {
 						width: number;
 					};
 				};
-				buttonLink: {
-					url: string;
-					title: string;
-					target: string;
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						height: number;
+						width: number;
+					};
 				};
 			};
 		}
@@ -336,6 +344,31 @@ export type IExecutiveLeaderships = {
 	title: string;
 	italic: string;
 	paragraph: string;
+};
+export type IIndividualExecutiveMember = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	executiveName: string;
+	executiveTitle: string;
+	paragraphTitle: string;
+	displayBackgroundIcon: boolean;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
+	};
+	imageTwo: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
+	};
 };
 
 // Global
@@ -401,6 +434,11 @@ export type IJumboContentSectionCard = {
 	paragraph: string;
 	imageLocation: string;
 	backgroundDisplay: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	image: {
 		altText: string;
 		sourceUrl: string;
@@ -409,10 +447,13 @@ export type IJumboContentSectionCard = {
 			width: number;
 		};
 	};
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
+	smallImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
 	};
 };
 

@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import {
 	initial,
@@ -6,10 +8,10 @@ import {
 	slideInRightFinish,
 	slideInRightInitial,
 } from "../../animations/animations";
-import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
+import {FC, useEffect, useState} from "react";
 import {IJumboContentSectionCard} from "@/types/components/index";
 
 // Styling
@@ -25,12 +27,14 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 	subtitle,
 	paragraph,
 	buttonLink,
+	smallImage,
 	imageLocation,
 	backgroundDisplay,
 }) => {
 	let titleColor;
 	let subtitleColor;
 	let buttonColor;
+	let borderImageColor;
 	let paragraphColor;
 	let backgroundColor;
 	let backgroundImage;
@@ -40,6 +44,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			titleColor = "text-black";
 			subtitleColor = "text-yellow-Two";
 			buttonColor = "blue-default";
+			borderImageColor = "border-white";
 			backgroundColor = "bg-white";
 			paragraphColor = "text-black";
 			backgroundImage = `none`;
@@ -48,6 +53,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			titleColor = "text-black";
 			subtitleColor = "text-blue-Two";
 			buttonColor = "lightGrey";
+			borderImageColor = "border-lightGrey";
 			backgroundColor = "bg-lightGreyTwo";
 			paragraphColor = "text-black";
 			backgroundImage = `none`;
@@ -56,50 +62,73 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			titleColor = "text-white";
 			subtitleColor = "text-yellow-Two";
 			buttonColor = "white";
+			borderImageColor = "border-purple-Two";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-purple-Two";
 			backgroundImage = `none`;
 			break;
 		case "GreenStrips":
 			titleColor = "text-white";
-			subtitleColor = "text-white";
+			subtitleColor = "text-yellow-light";
 			buttonColor = "white";
-			paragraphColor = "text-yellow-light";
+			borderImageColor = "border-green-Two";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-transparent";
-			backgroundImage = "stacked-waves-haikei-green-strips";
+			backgroundImage = "/svg/background/stacked-waves-haikei-green-strips.svg";
 			break;
 		case "YellowWave":
 			titleColor = "text-white";
 			subtitleColor = "text-white";
 			buttonColor = "white";
-			paragraphColor = "text-yellow-light";
+			borderImageColor = "border-yellow-Two";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-transparent";
-			backgroundImage = "stacked-waves-haikei-orange-yellow";
+			backgroundImage =
+				"/svg/background/stacked-waves-haikei-orange-yellow.svg";
 			break;
 		case "PurpleWave":
 			titleColor = "text-white";
-			subtitleColor = "text-white";
+			subtitleColor = "text-yellow-light";
 			buttonColor = "white";
-			paragraphColor = "text-yellow-light";
+			borderImageColor = "border-purple-Three";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-transparent";
-			backgroundImage = "stacked-waves-haikei-purple";
+			backgroundImage = "/svg/background/stacked-waves-haikei-purple.svg";
 			break;
 	}
+
+	// Returns True if current window width is less than 640px
+	const [isWindowBelow640, setIsWindowBelow640] = useState(
+		typeof window !== "undefined" && window.innerWidth < 640
+	);
+
+	const updateWindowWidth = () => {
+		setIsWindowBelow640(
+			typeof window !== "undefined" && window.innerWidth < 640
+		);
+	};
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			window.addEventListener("resize", updateWindowWidth);
+
+			return () => {
+				window.removeEventListener("resize", updateWindowWidth);
+			};
+		}
+	}, []);
 
 	return (
 		<>
 			<div
 				className={
 					styles.jumboContentSectionCard +
-					` relative pb-20 pt-10 sm:py-10 overflow-hidden bg-center bg-no-repeat bg-cover ${backgroundColor}`
+					` relative pb-28 pt-10 lg:pb-32 lg:py-10 overflow-hidden bg-center bg-no-repeat bg-cover ${backgroundColor}`
 				}
 				style={{
 					backgroundImage: `url("${backgroundImage}")`,
 					clipPath: `${
-						backgroundDisplay === "GoldYellow" ||
+						backgroundDisplay === "YellowWave" ||
 						backgroundDisplay === "lightGrey"
 							? "polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)"
 							: "none"
@@ -131,11 +160,29 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 								height={image?.mediaDetails?.height}
 								className={
 									image?.sourceUrl
-										? `block object-cover object-center w-full h-[350px] sm:h-[400px]`
+										? `block object-cover object-center w-full h-[300px] sm:h-[400px]`
 										: `hidden`
 								}
 								style={{
 									clipPath: `polygon(0 0, 100% 0%, 95% 95%, 0 100%)`,
+								}}
+							/>
+							<Image
+								alt={smallImage?.altText}
+								src={smallImage?.sourceUrl}
+								width={smallImage?.mediaDetails?.width}
+								height={smallImage?.mediaDetails?.height}
+								className={
+									smallImage?.sourceUrl
+										? `block sm:absolute top-[225px] lg:top-[275px] xl:top-[250px] left-[0px] mt-6 lg:ml-0 lg:left-[-50px] object-cover object-center w-full sm:w-[300px] lg:h-[175px] lg:w-[375px] lg:h-[225px] border-none sm:border-solid border-[0.5rem] ${borderImageColor}`
+										: `hidden`
+								}
+								style={{
+									clipPath: `${
+										isWindowBelow640
+											? "polygon(0 0, 100% 0%, 100% 98%, 7% 95%)"
+											: "none"
+									}`,
 								}}
 							/>
 						</motion.div>
@@ -198,11 +245,29 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 								height={image?.mediaDetails?.height}
 								className={
 									image?.sourceUrl
-										? `block object-cover object-center w-full h-[350px] sm:h-[400px]`
+										? `block object-cover object-center w-full h-[300px] sm:h-[400px]`
 										: `hidden`
 								}
 								style={{
 									clipPath: `polygon(0 0, 100% 0%, 100% 98%, 7% 95%)`,
+								}}
+							/>
+							<Image
+								alt={smallImage?.altText}
+								src={smallImage?.sourceUrl}
+								width={smallImage?.mediaDetails?.width}
+								height={smallImage?.mediaDetails?.height}
+								className={
+									smallImage?.sourceUrl
+										? `block sm:absolute top-[225px] lg:top-[275px] xl:top-[250px] right-[0px] mt-6 lg:ml-0 lg:right-[-50px] object-cover object-center w-full sm:w-[300px] lg:h-[175px] lg:w-[375px] lg:h-[225px] border-none sm:border-solid border-[0.5rem] ${borderImageColor}`
+										: `hidden`
+								}
+								style={{
+									clipPath: `${
+										isWindowBelow640
+											? "polygon(0 0, 100% 0%, 95% 95%, 0 100%)"
+											: "none"
+									}`,
 								}}
 							/>
 						</motion.div>

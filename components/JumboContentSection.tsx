@@ -14,15 +14,18 @@ const JumboContentSection: FC<IJumboContentSection> = ({
 				{jumboContentSection?.length > 0 ? (
 					jumboContentSection?.map((item: any, keys: any) => (
 						<Fragment key={keys}>
-							<JumboContentSectionCard
-								title={item?.content?.title}
-								image={item?.content?.image}
-								subtitle={item?.content?.subtitle}
-								paragraph={item?.content?.paragraph}
-								buttonLink={item?.content?.buttonLink}
-								imageLocation={item?.content?.imageLocation}
-								backgroundDisplay={item?.content?.backgroundDisplay}
-							/>
+							<>
+								<JumboContentSectionCard
+									title={item?.content?.title}
+									image={item?.content?.image}
+									subtitle={item?.content?.subtitle}
+									paragraph={item?.content?.paragraph}
+									smallImage={item?.content?.smallImage}
+									buttonLink={item?.content?.buttonLink}
+									imageLocation={item?.content?.imageLocation}
+									backgroundDisplay={item?.content?.backgroundDisplay}
+								/>
+							</>
 						</Fragment>
 					))
 				) : (

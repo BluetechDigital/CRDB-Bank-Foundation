@@ -103,6 +103,65 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_JumboContentSection {
+												fieldGroupName
+												contentSection {
+													content {
+														title
+														subtitle
+														paragraph
+														imageLocation
+														backgroundDisplay
+														buttonLink {
+															url
+															title
+															target
+														}
+														smallImage {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_IndividualExecutiveMember {
+            									fieldGroupName
+												title
+            									subtitle
+            									paragraph
+            									executiveName
+            									executiveTitle
+            									paragraphTitle
+            									displayBackgroundIcon
+            									image {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
+												imageTwo {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
+            								}
 											... on ${postTypeFlexibleContent}_AchievementsTwo {
                       							fieldGroupName
                       							title
