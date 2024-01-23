@@ -178,7 +178,7 @@ const Navbar: FC = () => {
 														<>
 															<ul
 																className={
-																	styles.aboutUsSublinksOpen +
+																	styles.aboutUsSublinks +
 																	" p-0 w-full flex flex-col z-[999]"
 																}
 															>

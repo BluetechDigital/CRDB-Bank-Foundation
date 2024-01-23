@@ -73,7 +73,69 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 							{globalContext?.mobileLinks?.length > 0 ? (
 								globalContext?.mobileLinks.map((item: any, keys: number) => (
 									<Fragment key={keys}>
-										{item?.node?.label === "Our Programs" ? (
+										{item?.node?.url === "/about" ? (
+											<li
+												onClick={displayAboutUsSublinks}
+												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+											>
+												<div className="py-4 flex flex-row justify-between items-center gap-2">
+													<Link
+														href={`${item?.node?.url}`}
+														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-Two transition-all ease-in-out duration-500"
+													>
+														{item?.node?.label}
+													</Link>
+													<Image
+														width={550}
+														height={550}
+														alt="Black Arrow Icon"
+														src="/svg/navigation-menu-dropdown-arrow-black.svg"
+														className="w-[25px] h-[25px] object-contain object-center"
+													/>
+												</div>
+												{aboutUsSublinksOpen ? (
+													<>
+														<motion.ul
+															initial={initialTwo}
+															whileInView={stagger}
+															viewport={{once: true}}
+															className={
+																styles.aboutUsSublinks +
+																` flex flex-col my-4 z-[999]`
+															}
+														>
+															{/* Menu Link*/}
+															{globalContext?.aboutUsSublinks?.length > 0 ? (
+																globalContext?.aboutUsSublinks?.map(
+																	(item: any, keys: any) => (
+																		<Fragment key={keys}>
+																			<Link href={`${item?.node?.url}`}>
+																				<li
+																					className={`${
+																						keys < 1
+																							? "border-t-[1px] border-darkGrey border-opacity-50"
+																							: "border-t-[0px]"
+																					} hover:border-green-Two hover:bg-green-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																				>
+																					<Link
+																						href={`${item?.node?.url}`}
+																						className="block p-4 text-base font-semibold"
+																					>
+																						{item?.node?.label}
+																					</Link>
+																				</li>
+																			</Link>
+																		</Fragment>
+																	)
+																)
+															) : (
+																<></>
+															)}
+														</motion.ul>
+													</>
+												) : null}
+											</li>
+										) : item?.node?.label === "Our Programs" ? (
 											<li
 												onClick={displayOurServicesSublinks}
 												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
@@ -81,7 +143,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														href={`${item?.node?.url}`}
-														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-blue-Two transition-all ease-in-out duration-500"
+														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-Two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
 													</Link>
@@ -115,7 +177,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																						keys < 1
 																							? "border-t-[1px] border-darkGrey border-opacity-50"
 																							: "border-t-[0px]"
-																					} hover:border-blue-Two hover:bg-blue-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																					} hover:border-green-Two hover:bg-green-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
 																				>
 																					<Link
 																						href={`${item?.node?.url}`}
@@ -141,14 +203,12 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
-													<span className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem]hover:text-blue-Two transition-all ease-in-out duration-500">
-														<Link
-															href="/career"
-															className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-blue-Two transition-all ease-in-out duration-500"
-														>
-															{item?.node?.label}
-														</Link>
-													</span>
+													<Link
+														href={item?.node?.url}
+														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-Two transition-all ease-in-out duration-500"
+													>
+														{item?.node?.label}
+													</Link>
 													<Image
 														width={550}
 														height={550}
@@ -159,21 +219,44 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												</div>
 												{newsInsightsSublinksOpen ? (
 													<>
-														<ul
+														<motion.ul
+															initial={initialTwo}
+															whileInView={stagger}
+															viewport={{once: true}}
 															className={
 																styles.newsInsightsSublinks +
-																" py-4 w-full flex flex-col z-[999]"
+																` flex flex-col my-4 z-[999]`
 															}
 														>
-															<li className="hover:border-blue-Two hover:bg-blue-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white">
-																<Link
-																	href="/case-studies"
-																	className="block p-4 text-base font-semibold"
-																>
-																	Case Studies
-																</Link>
-															</li>
-														</ul>
+															{/* Menu Link*/}
+															{globalContext?.newsInsightSublinks?.length >
+															0 ? (
+																globalContext?.newsInsightSublinks?.map(
+																	(item: any, keys: any) => (
+																		<Fragment key={keys}>
+																			<Link href={`${item?.node?.url}`}>
+																				<li
+																					className={`${
+																						keys < 1
+																							? "border-t-[1px] border-darkGrey border-opacity-50"
+																							: "border-t-[0px]"
+																					} hover:border-green-Two hover:bg-green-Two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																				>
+																					<Link
+																						href={`${item?.node?.url}`}
+																						className="block p-4 text-base font-semibold"
+																					>
+																						{item?.node?.label}
+																					</Link>
+																				</li>
+																			</Link>
+																		</Fragment>
+																	)
+																)
+															) : (
+																<></>
+															)}
+														</motion.ul>
 													</>
 												) : null}
 											</li>
@@ -181,7 +264,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											<li className="border-b-[1px] border-yellow-dark border-opacity-50">
 												<Link
 													href={`${item?.node?.url}`}
-													className="block py-4 text-base font-semibold text-pureBlack hover:text-blue-Two"
+													className="block py-4 text-base font-semibold text-pureBlack hover:text-green-Two"
 												>
 													{item?.node?.label}
 												</Link>
@@ -359,7 +442,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-Two sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-3">
 										<svg
 											width="20"
 											height="20"
@@ -393,7 +476,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-Two sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-Two sm:mr-3">
 										<svg
 											width="20"
 											height="20"
@@ -429,7 +512,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 						<h4 className="mb-5 text-base font-semibold tracking-normal text-center uppercase md:text-left text-pureBlack">
 							CRDB Bank
 						</h4>
-						<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+						<div className="flex flex-col items-center justify-center gap-4">
 							<Link href="https://crdbbank.co.tz" target="_black">
 								<motion.button
 									initial={initial}
