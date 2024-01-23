@@ -20,6 +20,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				copyrightLinks: globalProps?.copyrightLinks,
 				footerMenuLinks: globalProps?.footerMenuLinks,
 				blogsThreeCards: globalProps?.blogsThreeCards,
+				aboutUsSublinks: globalProps?.aboutUsSublinks,
 				navbarMenuLinks: globalProps?.navbarMenuLinks,
 				ourProgramsLinks: globalProps?.ourProgramsLinks,
 				newsInsightSublinks: globalProps?.newsInsightSublinks,

@@ -132,6 +132,15 @@ export type ICopyrightLinks = [
 		};
 	}
 ];
+export type IAboutUsSublinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
 export type IFooterMenuLinks = [
 	{
 		node: {
@@ -280,6 +289,7 @@ export type IGlobalProps = {
 	testimonials: ITestimonials;
 	managements: IManagementsJobs;
 	copyrightLinks: ICopyrightLinks;
+	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	ourProgramsLinks: IOurProgramsLinks;
@@ -299,6 +309,7 @@ export type IGlobalContext = {
 	testimonials: ITestimonials;
 	managements: IManagementsJobs;
 	copyrightLinks: ICopyrightLinks;
+	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	ourProgramsLinks: IOurProgramsLinks;

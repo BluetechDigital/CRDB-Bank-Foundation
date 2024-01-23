@@ -17,6 +17,7 @@ import {
 	getCopyrightLinks,
 	getNavbarMenuLinks,
 	getFooterMenuLinks,
+	getAboutUsSublinks,
 	getOurProgramsSublinks,
 	getNewsInsightSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
@@ -78,25 +79,47 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	// PUBLIC PAGES //
 	/* Fetch all global content
 	remaining content simultaneously */
-	const mobileLinks: any = await getMobileLinks();
-	const copyrightLinks: any = await getCopyrightLinks();
-	const navbarMenuLinks: any = await getNavbarMenuLinks();
-	const footerMenuLinks: any = await getFooterMenuLinks();
-	const ourProgramsLinks: any = await getOurProgramsSublinks();
-	const newsInsightSublinks: any = await getNewsInsightSublinks();
-	const themesOptionsContent: any = await getThemesOptionsContent();
+	const promises: Promise<any>[] = [
+		getMobileLinks(),
+		getCopyrightLinks(),
+		getNavbarMenuLinks(),
+		getFooterMenuLinks(),
+		getAboutUsSublinks(),
+		getOurProgramsSublinks(),
+		getNewsInsightSublinks(),
+		getThemesOptionsContent(),
+		getAllNewsContent(),
+		getAllBlogsContent(),
+		getAllCaseStudiesContent(),
+		getThreeNewsContent(),
+		getThreeBlogsContent(),
+		getAllTestimonialsContent(),
+		getAllManagementsTaxonomyJobs(),
+		getAllOperationsTeamsTaxonomyJobs(),
+		getAllBoardOfDirectorsContent(),
+		getAllExecutiveLeadershipsContent(),
+	];
 
-	const news: any = await getAllNewsContent();
-	const blogs: any = await getAllBlogsContent();
-	const caseStudies: any = await getAllCaseStudiesContent();
-	const newsThreeCards: any = await getThreeNewsContent();
-	const blogsThreeCards: any = await getThreeBlogsContent();
-	const testimonials: any = await getAllTestimonialsContent();
-	const managementsJobs: any = await getAllManagementsTaxonomyJobs();
-	const operationsTeamsJobs: any = await getAllOperationsTeamsTaxonomyJobs();
-	const boardOfDirectorsGrid: any = await getAllBoardOfDirectorsContent();
-	const executiveLeadershipsGrid: any =
-		await getAllExecutiveLeadershipsContent();
+	const [
+		mobileLinks,
+		copyrightLinks,
+		navbarMenuLinks,
+		footerMenuLinks,
+		aboutUsSublinks,
+		ourProgramsLinks,
+		newsInsightSublinks,
+		themesOptionsContent,
+		news,
+		blogs,
+		caseStudies,
+		newsThreeCards,
+		blogsThreeCards,
+		testimonials,
+		managementsJobs,
+		operationsTeamsJobs,
+		boardOfDirectorsGrid,
+		executiveLeadershipsGrid,
+	] = await Promise.all(promises);
 
 	const globalProps: IGlobalProps = {
 		news: news,
@@ -108,6 +131,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		copyrightLinks: copyrightLinks,
 		newsThreeCards: newsThreeCards,
 		blogsThreeCards: blogsThreeCards,
+		aboutUsSublinks: aboutUsSublinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		ourProgramsLinks: ourProgramsLinks,

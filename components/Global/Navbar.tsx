@@ -34,6 +34,7 @@ const Navbar: FC = () => {
 
 	// Display all sublinks & Mobile Links
 	const [menuActive, setMenuActive] = useState(false);
+	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
 	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
 		useState(false);
 	const [navBackgroundSublinksOpen, setNavBackgroundSublinksOpen]: any =
@@ -47,24 +48,34 @@ const Navbar: FC = () => {
 	};
 
 	/* Display's Navbar background Color
-	when Mega sublinks are hovegreen*/
+	when Mega sublinks are hover green*/
 	const displayNavBackgroundColor = () => {
 		setNavBackgroundSublinksOpen(!navBackgroundSublinksOpen);
 	};
 
+	// Hides or Display About Us Sublinks
+	const displayAboutUsSublinks = () => {
+		setNewsInsightsSublinksOpen(false);
+		setOurServicesSublinksOpen(false);
+		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
+	};
+
 	// Hides or Display Our Programs Sublinks
 	const displayOurServicesSublinks = () => {
+		setAboutUsSublinksOpen(false);
 		setNewsInsightsSublinksOpen(false);
 		setOurServicesSublinksOpen(!ourServicesSublinksOpen);
 	};
 
 	// Hides or Display News & Insights Sublinks
 	const displayNewsInsightsSublinks = () => {
+		setAboutUsSublinksOpen(false);
 		setOurServicesSublinksOpen(false);
 		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
 	};
 
 	const resetNavbarStyling = () => {
+		setAboutUsSublinksOpen(false);
 		setNewsInsightsSublinksOpen(false);
 		setNavBackgroundSublinksOpen(false);
 		setOurServicesSublinksOpen(false);
@@ -121,7 +132,86 @@ const Navbar: FC = () => {
 							{globalContext?.navbarMenuLinks?.length > 0 ? (
 								globalContext?.navbarMenuLinks?.map((item: any, keys: any) => (
 									<Fragment key={keys}>
-										{item?.node?.label === "Our Programs" ? (
+										{item?.node?.url === "/about" ? (
+											<li className="relative">
+												<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
+													<Link
+														href={`${item?.node?.url}`}
+														className={`${
+															scrollPosition > 50
+																? "text-pureBlack"
+																: "text-white"
+														} group-hover:text-pureBlack group-hover:hover:text-green-Two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+													>
+														{item?.node?.label}
+													</Link>
+													<Image
+														width={550}
+														height={550}
+														alt="White Arrow Icon"
+														onClick={displayAboutUsSublinks}
+														src="/svg/navigation-menu-dropdown-arrow-white.svg"
+														className={`${
+															scrollPosition > 50 || navBackgroundSublinksOpen
+																? "hidden"
+																: "block"
+														} group-hover:hidden cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+													/>
+													<Image
+														width={550}
+														height={550}
+														alt="Black Arrow Icon"
+														onClick={displayAboutUsSublinks}
+														src="/svg/navigation-menu-dropdown-arrow-black.svg"
+														className={`${
+															scrollPosition > 50 || navBackgroundSublinksOpen
+																? "block"
+																: "hidden"
+														} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+													/>
+												</span>
+												<div
+													onMouseLeave={resetNavbarStyling}
+													className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center"
+												>
+													{aboutUsSublinksOpen ? (
+														<>
+															<ul
+																className={
+																	styles.aboutUsSublinksOpen +
+																	" p-0 w-full flex flex-col z-[999]"
+																}
+															>
+																{globalContext?.aboutUsSublinks?.length > 0 ? (
+																	globalContext?.aboutUsSublinks?.map(
+																		(item: any, keys: any) => (
+																			<Fragment key={keys}>
+																				<Link href={`${item?.node?.url}`}>
+																					<li className="w-full hover:bg-green-Two">
+																						<Link
+																							href={`${item?.node?.url}`}
+																							className={` ${
+																								aboutUsSublinksOpen
+																									? "text-black hover:text-white"
+																									: "text-black"
+																							} block p-4 text-tiny`}
+																						>
+																							{item?.node?.label}
+																						</Link>
+																					</li>
+																				</Link>
+																			</Fragment>
+																		)
+																	)
+																) : (
+																	<></>
+																)}
+															</ul>
+														</>
+													) : null}
+												</div>
+											</li>
+										) : item?.node?.label === "Our Programs" ? (
 											<li
 												className="relative"
 												onClick={displayOurServicesSublinks}

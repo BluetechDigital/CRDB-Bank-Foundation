@@ -18,10 +18,18 @@ import styles from "@/styles/components/Navbar.module.scss";
 const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 	const globalContext = useGlobalContext();
 
+	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
 	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
 		useState(false);
 	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
 		useState(false);
+
+	// Hides or Display About Us Sublinks
+	const displayAboutUsSublinks = () => {
+		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
+		setNewsInsightsSublinksOpen(false);
+		setOurServicesSublinksOpen(false);
+	};
 
 	// Hides or Display Our Programs Sublinks
 	const displayOurServicesSublinks = () => {
