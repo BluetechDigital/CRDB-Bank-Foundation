@@ -20,6 +20,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 	const globalContext = useGlobalContext();
 
 	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
+	const [careersSublinksOpen, setCareersSublinksOpen]: any = useState(false);
 	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
 		useState(false);
 	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
@@ -27,19 +28,32 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 
 	// Hides or Display About Us Sublinks
 	const displayAboutUsSublinks = () => {
-		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
+		setCareersSublinksOpen(false);
 		setNewsInsightsSublinksOpen(false);
 		setOurServicesSublinksOpen(false);
+		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
 	};
 
 	// Hides or Display Our Programs Sublinks
 	const displayOurServicesSublinks = () => {
+		setAboutUsSublinksOpen(false);
+		setCareersSublinksOpen(false);
 		setNewsInsightsSublinksOpen(false);
 		setOurServicesSublinksOpen(!ourServicesSublinksOpen);
 	};
 
+	// Hides or Display Careers Sublinks
+	const displayCareersSublinks = () => {
+		setAboutUsSublinksOpen(false);
+		setNewsInsightsSublinksOpen(false);
+		setOurServicesSublinksOpen(false);
+		setCareersSublinksOpen(!careersSublinksOpen);
+	};
+
 	// Hides or Display News & Insights Sublinks
 	const displayNewsInsightsSublinks = () => {
+		setCareersSublinksOpen(false);
+		setAboutUsSublinksOpen(false);
 		setOurServicesSublinksOpen(false);
 		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
 	};
@@ -226,6 +240,69 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 															viewport={{once: true}}
 															className={
 																styles.newsInsightsSublinks +
+																` flex flex-col my-4 z-[999]`
+															}
+														>
+															{/* Menu Link*/}
+															{globalContext?.newsInsightSublinks?.length >
+															0 ? (
+																globalContext?.newsInsightSublinks?.map(
+																	(item: any, keys: any) => (
+																		<Fragment key={keys}>
+																			<Link href={`${item?.node?.url}`}>
+																				<li
+																					className={`${
+																						keys < 1
+																							? "border-t-[1px] border-darkGrey border-opacity-50"
+																							: "border-t-[0px]"
+																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																				>
+																					<Link
+																						href={`${item?.node?.url}`}
+																						className="block p-4 text-base font-semibold"
+																					>
+																						{item?.node?.label}
+																					</Link>
+																				</li>
+																			</Link>
+																		</Fragment>
+																	)
+																)
+															) : (
+																<></>
+															)}
+														</motion.ul>
+													</>
+												) : null}
+											</li>
+										) : item?.node?.url === "/careers" ? (
+											<li
+												onClick={displayCareersSublinks}
+												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+											>
+												<div className="py-4 flex flex-row justify-between items-center gap-2">
+													<Link
+														href={item?.node?.url}
+														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
+													>
+														{item?.node?.label}
+													</Link>
+													<Image
+														width={550}
+														height={550}
+														alt="Black Arrow Icon"
+														src="/svg/navigation-menu-dropdown-arrow-black.svg"
+														className="w-[25px] h-[25px] object-contain object-center"
+													/>
+												</div>
+												{careersSublinksOpen ? (
+													<>
+														<motion.ul
+															initial={initialTwo}
+															whileInView={stagger}
+															viewport={{once: true}}
+															className={
+																styles.careersSublinks +
 																` flex flex-col my-4 z-[999]`
 															}
 														>

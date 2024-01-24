@@ -39,7 +39,7 @@ const Navbar: FC = () => {
 		useState(false);
 	const [navBackgroundSublinksOpen, setNavBackgroundSublinksOpen]: any =
 		useState(false);
-	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
+	const [ourProgramsSublinksOpen, setOurProgramsSublinksOpen]: any =
 		useState(false);
 
 	/* Hides or Displays the Full Nav Menu */
@@ -56,7 +56,7 @@ const Navbar: FC = () => {
 	// Hides or Display About Us Sublinks
 	const displayAboutUsSublinks = () => {
 		setNewsInsightsSublinksOpen(false);
-		setOurServicesSublinksOpen(false);
+		setOurProgramsSublinksOpen(false);
 		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
 	};
 
@@ -64,13 +64,13 @@ const Navbar: FC = () => {
 	const displayOurServicesSublinks = () => {
 		setAboutUsSublinksOpen(false);
 		setNewsInsightsSublinksOpen(false);
-		setOurServicesSublinksOpen(!ourServicesSublinksOpen);
+		setOurProgramsSublinksOpen(!ourProgramsSublinksOpen);
 	};
 
 	// Hides or Display News & Insights Sublinks
 	const displayNewsInsightsSublinks = () => {
 		setAboutUsSublinksOpen(false);
-		setOurServicesSublinksOpen(false);
+		setOurProgramsSublinksOpen(false);
 		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
 	};
 
@@ -78,7 +78,7 @@ const Navbar: FC = () => {
 		setAboutUsSublinksOpen(false);
 		setNewsInsightsSublinksOpen(false);
 		setNavBackgroundSublinksOpen(false);
-		setOurServicesSublinksOpen(false);
+		setOurProgramsSublinksOpen(false);
 	};
 
 	return (
@@ -250,7 +250,7 @@ const Navbar: FC = () => {
 														} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
 													/>
 												</div>
-												{ourServicesSublinksOpen ? (
+												{ourProgramsSublinksOpen ? (
 													<>
 														<div
 															onMouseLeave={resetNavbarStyling}

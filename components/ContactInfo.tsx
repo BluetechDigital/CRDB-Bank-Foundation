@@ -39,7 +39,7 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 					initial={initial}
 					whileInView={stagger}
 					viewport={{once: true}}
-					className="flex flex-col w-full gap-8 px-4 w-full lg:w-1/2"
+					className="flex flex-col w-full gap-8 px-4 lg:w-1/2"
 				>
 					<motion.div
 						initial={initial}
@@ -60,7 +60,7 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 							viewport={{once: true}}
 							className="flex items-center justify-center lg:justify-start gap-2"
 						>
-							<div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-Two sm:mr-3">
+							<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
 								<svg
 									fill="#ffffff"
 									width="800px"
@@ -107,7 +107,7 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 										: "hidden"
 								}
 							>
-								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-Two sm:mr-3">
+								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
 									<svg
 										width="20"
 										height="20"
@@ -141,7 +141,7 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 										: "hidden"
 								}
 							>
-								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-Two sm:mr-3">
+								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
 									<svg
 										width="20"
 										height="20"
