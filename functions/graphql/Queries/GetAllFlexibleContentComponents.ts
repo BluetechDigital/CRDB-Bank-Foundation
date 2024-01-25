@@ -313,6 +313,20 @@ export const getAllFlexibleContentComponents = async (
 													target
 												}
 											}
+											... on ${postTypeFlexibleContent}_JobPositionsGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												highlightText
+											}
+											... on ${postTypeFlexibleContent}_JobPositionsThreeCardsGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												highlightText
+											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
@@ -352,6 +366,7 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											
 											... on ${postTypeFlexibleContent}_Cta {
 												fieldGroupName
 												title

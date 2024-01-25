@@ -30,6 +30,8 @@ import JumboContentSection from "../JumboContentSection";
 import BoardOfDirectorsGrid from "../BoardOfDirectorsGrid";
 import ExecutiveLeadershipsGrid from "../ExecutiveLeadershipsGrid";
 import IndividualExecutiveMember from "../IndividualExecutiveMember";
+import JobPositionsThreeCards from "../JobPositionsThreeCards";
+import JobPositions from "../JobPositions";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -180,6 +182,26 @@ const RenderFlexibleContent: FC = () => {
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_JobPositionsGrid` ? (
+							<>
+								<JobPositions
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									highlightText={item?.highlightText}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_JobPositionsThreeCardsGrid` ? (
+							<>
+								<JobPositionsThreeCards
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									highlightText={item?.highlightText}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (

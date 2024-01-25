@@ -168,41 +168,6 @@ export type IOurPartners = {
 		}
 	];
 };
-export type IMainPrograms = {
-	title: string;
-	subtitle: string;
-	paragraph: string;
-	highlightText: string;
-	programsGrid: [
-		{
-			card: {
-				title: string;
-				paragraph: string;
-				Link: {
-					url: string;
-					title: string;
-					target: string;
-				};
-				icon: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-				image: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-			};
-		}
-	];
-};
 export type IOurPrograms = {
 	title: string;
 	subtitle: string;
@@ -248,6 +213,47 @@ export type IMaintenance = {
 			height: number;
 		};
 	};
+};
+export type IMainPrograms = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	highlightText: string;
+	programsGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+				Link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				icon: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		}
+	];
+};
+export type IJobPositions = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	highlightText: string;
 };
 export type IContentImage = {
 	title: string;
@@ -470,6 +476,12 @@ export type IBlogsCard = {
 		};
 	};
 };
+export type IJobPositionsCard = {
+	slug: string;
+	title: string;
+	paragraph: string;
+	tailwindStyling: string;
+};
 export type ITestimonialsCard = {
 	name: string;
 	jobTitle: string;
@@ -547,6 +559,12 @@ export type IExecutiveLeadershipsCard = {
 		};
 	};
 };
+export type IJobPositionsThreeCardsGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	highlightText: string;
+};
 
 // Elements
 export type ITitle = {
@@ -570,6 +588,11 @@ export type IButtonBorderSliced = {
 	title: string;
 	fullWidth: boolean;
 	tailwindColor: string;
+};
+export type IJobsCategoryButton = {
+	title: string;
+	active: boolean;
+	onClick: any;
 };
 export type IBackToVacanciesButton = {
 	link: string;

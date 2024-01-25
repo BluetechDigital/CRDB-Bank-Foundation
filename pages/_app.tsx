@@ -34,6 +34,7 @@ import {
 import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
 import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
 import {
+	getAllJobsPositionsContent,
 	getAllManagementsTaxonomyJobs,
 	getAllOperationsTeamsTaxonomyJobs,
 } from "@/functions/graphql/Queries/GetAllJobsPositions";
@@ -98,6 +99,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		getThreeNewsContent(),
 		getThreeBlogsContent(),
 		getAllTestimonialsContent(),
+		getAllJobsPositionsContent(),
 		getAllManagementsTaxonomyJobs(),
 		getAllOperationsTeamsTaxonomyJobs(),
 		getAllBoardOfDirectorsContent(),
@@ -120,6 +122,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		newsThreeCards,
 		blogsThreeCards,
 		testimonials,
+		jobsPositions,
 		managementsJobs,
 		operationsTeamsJobs,
 		boardOfDirectorsGrid,
@@ -132,11 +135,12 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		mobileLinks: mobileLinks,
 		caseStudies: caseStudies,
 		testimonials: testimonials,
-		managements: managementsJobs,
+		jobsPositions: jobsPositions,
 		careerSublinks: careerSublinks,
 		copyrightLinks: copyrightLinks,
 		newsThreeCards: newsThreeCards,
 		blogsThreeCards: blogsThreeCards,
+		managementsJobs: managementsJobs,
 		aboutUsSublinks: aboutUsSublinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,

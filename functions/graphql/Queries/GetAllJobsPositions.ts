@@ -257,6 +257,7 @@ export const getAllJobsPositionsOperationsTeamsSlugs = async () => {
 		);
 	}
 };
+
 // All Operations Teams Taxonomy Jobs Positions Content
 export const getAllOperationsTeamsTaxonomyJobs = async () => {
 	try {

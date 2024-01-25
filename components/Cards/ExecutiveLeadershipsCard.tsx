@@ -51,7 +51,7 @@ const ExecutiveLeadershipsCard: FC<IExecutiveLeadershipsCard> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-lg font-semibold text-pureBlack transition-all ease-in-out duration-200 hover:text-red-default"
+								className="text-lg font-semibold text-pureBlack transition-all ease-in-out duration-200 hover:text-green-default"
 							>
 								{title}
 							</motion.h2>
