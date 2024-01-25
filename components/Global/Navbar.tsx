@@ -86,9 +86,9 @@ const Navbar: FC = () => {
 			<nav
 				className={
 					styles.navbar +
-					` z-[999] w-full fixed group bg-transparent hover:bg-white transition-all ease-in-out duration-500 ${
+					` z-[999] w-full fixed group bg-transparent hover:bg-white transition-all ease-in-out duration-500 hover:border-t-4 hover:border-green-two hover:border-solid ${
 						scrollPosition > 50 || navBackgroundSublinksOpen
-							? "bg-white"
+							? "bg-white border-t-4 border-green-two border-solid"
 							: "bg-transparent"
 					}`
 				}
