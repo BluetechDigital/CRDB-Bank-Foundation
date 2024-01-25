@@ -15,6 +15,7 @@ import {IGlobalProps} from "@/types/context";
 import {
 	getMobileLinks,
 	getCopyrightLinks,
+	getCareerSublinks,
 	getNavbarMenuLinks,
 	getFooterMenuLinks,
 	getAboutUsSublinks,
@@ -83,6 +84,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	remaining content simultaneously */
 	const promises: Promise<any>[] = [
 		getMobileLinks(),
+		getCareerSublinks(),
 		getCopyrightLinks(),
 		getNavbarMenuLinks(),
 		getFooterMenuLinks(),
@@ -104,6 +106,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 
 	const [
 		mobileLinks,
+		careerSublinks,
 		copyrightLinks,
 		navbarMenuLinks,
 		footerMenuLinks,
@@ -130,6 +133,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		caseStudies: caseStudies,
 		testimonials: testimonials,
 		managements: managementsJobs,
+		careerSublinks: careerSublinks,
 		copyrightLinks: copyrightLinks,
 		newsThreeCards: newsThreeCards,
 		blogsThreeCards: blogsThreeCards,

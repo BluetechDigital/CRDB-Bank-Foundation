@@ -16,6 +16,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				managements: globalProps?.managements,
 				caseStudies: globalProps?.caseStudies,
 				testimonials: globalProps?.testimonials,
+				careerSublinks: globalProps?.careerSublinks,
 				newsThreeCards: globalProps?.newsThreeCards,
 				copyrightLinks: globalProps?.copyrightLinks,
 				footerMenuLinks: globalProps?.footerMenuLinks,

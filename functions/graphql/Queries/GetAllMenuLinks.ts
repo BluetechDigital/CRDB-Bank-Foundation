@@ -157,6 +157,39 @@ export const getNewsInsightSublinks = async () => {
 	}
 };
 
+// Career Sublinks
+export const getCareerSublinks = async () => {
+	try {
+		const content: any = gql`
+			{
+				careerSublinks: menuItems(
+					where: {location: CAREER_SUBLINKS}
+					first: 10
+				) {
+					edges {
+						node {
+							id
+							url
+							label
+						}
+					}
+				}
+			}
+		`;
+
+		const response: any = await client.query({
+			query: content,
+		});
+
+		return response?.data?.careerSublinks?.edges;
+	} catch (error) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch career sublinks content"
+		);
+	}
+};
+
 // Footer Copyright Links
 export const getCopyrightLinks = async () => {
 	try {

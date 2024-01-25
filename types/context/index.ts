@@ -123,6 +123,15 @@ export type ITestimonials = [
 		};
 	}
 ];
+export type ICareerSublinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
 export type ICopyrightLinks = [
 	{
 		node: {
@@ -288,6 +297,7 @@ export type IGlobalProps = {
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
 	managements: IManagementsJobs;
+	careerSublinks: ICareerSublinks;
 	copyrightLinks: ICopyrightLinks;
 	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;
@@ -308,6 +318,7 @@ export type IGlobalContext = {
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
 	managements: IManagementsJobs;
+	careerSublinks: ICareerSublinks;
 	copyrightLinks: ICopyrightLinks;
 	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;

@@ -446,13 +446,13 @@ const Footer: FC = () => {
 																}
 															/>
 														</span>
-														<div className="">
+														<div>
 															{aboutUsSublinksOpen ? (
 																<>
 																	<ul
 																		className={
 																			styles.aboutUsSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999]"
+																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start"
 																		}
 																	>
 																		{globalContext?.aboutUsSublinks?.length >
@@ -464,7 +464,7 @@ const Footer: FC = () => {
 																							<li className="w-full">
 																								<Link
 																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-purple-three border-b-2 border-solid border-yellow-four"
+																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																								>
 																									{item?.node?.label}
 																								</Link>
@@ -520,13 +520,13 @@ const Footer: FC = () => {
 																}
 															/>
 														</span>
-														<div className="">
+														<div>
 															{newsInsightsSublinksOpen ? (
 																<>
 																	<ul
 																		className={
 																			styles.newsInsightsSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999]"
+																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start"
 																		}
 																	>
 																		{globalContext?.newsInsightSublinks
@@ -538,7 +538,7 @@ const Footer: FC = () => {
 																							<li className="w-full">
 																								<Link
 																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-purple-three border-b-2 border-solid border-yellow-four"
+																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																								>
 																									{item?.node?.label}
 																								</Link>
@@ -594,25 +594,25 @@ const Footer: FC = () => {
 																}
 															/>
 														</span>
-														<div className="">
+														<div>
 															{careersSublinksOpen ? (
 																<>
 																	<ul
 																		className={
 																			styles.careersSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999]"
+																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start"
 																		}
 																	>
-																		{globalContext?.newsInsightSublinks
-																			?.length > 0 ? (
-																			globalContext?.newsInsightSublinks?.map(
+																		{globalContext?.careerSublinks?.length >
+																		0 ? (
+																			globalContext?.careerSublinks?.map(
 																				(item: any, keys: any) => (
 																					<Fragment key={keys}>
 																						<Link href={`${item?.node?.url}`}>
 																							<li className="w-full">
 																								<Link
 																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-purple-three border-b-2 border-solid border-yellow-four"
+																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																								>
 																									{item?.node?.label}
 																								</Link>

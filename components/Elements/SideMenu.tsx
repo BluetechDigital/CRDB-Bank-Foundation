@@ -307,9 +307,8 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 															}
 														>
 															{/* Menu Link*/}
-															{globalContext?.newsInsightSublinks?.length >
-															0 ? (
-																globalContext?.newsInsightSublinks?.map(
+															{globalContext?.careerSublinks?.length > 0 ? (
+																globalContext?.careerSublinks?.map(
 																	(item: any, keys: any) => (
 																		<Fragment key={keys}>
 																			<Link href={`${item?.node?.url}`}>
