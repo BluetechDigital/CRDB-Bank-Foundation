@@ -452,7 +452,7 @@ const Footer: FC = () => {
 																	<ul
 																		className={
 																			styles.aboutUsSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start"
+																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start  ml-2 my-2 border-l-2 border-solid border-green-two"
 																		}
 																	>
 																		{globalContext?.aboutUsSublinks?.length >
@@ -461,7 +461,7 @@ const Footer: FC = () => {
 																				(item: any, keys: any) => (
 																					<Fragment key={keys}>
 																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full">
+																							<li className="w-full ml-2">
 																								<Link
 																									href={`${item?.node?.url}`}
 																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
@@ -526,7 +526,7 @@ const Footer: FC = () => {
 																	<ul
 																		className={
 																			styles.newsInsightsSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start"
+																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start ml-2 my-2 border-l-2 border-solid border-green-two"
 																		}
 																	>
 																		{globalContext?.newsInsightSublinks
@@ -535,7 +535,7 @@ const Footer: FC = () => {
 																				(item: any, keys: any) => (
 																					<Fragment key={keys}>
 																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full">
+																							<li className="w-full ml-2">
 																								<Link
 																									href={`${item?.node?.url}`}
 																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
@@ -600,7 +600,7 @@ const Footer: FC = () => {
 																	<ul
 																		className={
 																			styles.careersSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start"
+																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start ml-2 my-2 border-l-2 border-solid border-green-two"
 																		}
 																	>
 																		{globalContext?.careerSublinks?.length >
@@ -609,7 +609,7 @@ const Footer: FC = () => {
 																				(item: any, keys: any) => (
 																					<Fragment key={keys}>
 																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full">
+																							<li className="w-full ml-2">
 																								<Link
 																									href={`${item?.node?.url}`}
 																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
