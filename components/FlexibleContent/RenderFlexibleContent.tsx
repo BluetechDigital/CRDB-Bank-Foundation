@@ -25,6 +25,7 @@ import TestimonialsTwo from "../TestimonialsTwo";
 import AchievementsTwo from "../AchievementsTwo";
 import FeaturesGridTwo from "../FeaturesGridTwo";
 import BlogsThreeCards from "../BlogsThreeCards";
+import TestimonialsGrid from "../TestimonialsGrid";
 import JumboContentSection from "../JumboContentSection";
 import BoardOfDirectorsGrid from "../BoardOfDirectorsGrid";
 import ExecutiveLeadershipsGrid from "../ExecutiveLeadershipsGrid";
@@ -159,6 +160,16 @@ const RenderFlexibleContent: FC = () => {
 									cardTwo={item?.cardTwo}
 									lastCard={item?.lastCard}
 									gridContent={item?.gridContent}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_TestimonialsGrid` ? (
+							<>
+								<TestimonialsGrid
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									highlightText={item?.highlightText}
 								/>
 							</>
 						) : item?.fieldGroupName ===

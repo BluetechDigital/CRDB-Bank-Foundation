@@ -5,6 +5,9 @@ import {motion} from "framer-motion";
 import {ITestimonialsTwo} from "@/types/components/index";
 import {fadeIn, initial, initialTwo, stagger} from "../animations/animations";
 
+// Styling
+import styles from "../styles/components/Testimonials.module.scss";
+
 // Components
 import Paragraph from "./Elements/Paragraph";
 import TestimonialsTwoCard from "./Cards/TestimonialsTwoCard";
@@ -18,7 +21,10 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 	return (
 		<>
 			<div
-				className="bg-blue-default overflow-hidden bg-cover bg-no-repeat bg-center"
+				className={
+					styles.testimonials +
+					` bg-green-default overflow-hidden bg-cover bg-no-repeat bg-center`
+				}
 				style={{
 					backgroundImage: `url("/svg/background/stacked-waves-haikei-green-bright-green.svg")`,
 				}}

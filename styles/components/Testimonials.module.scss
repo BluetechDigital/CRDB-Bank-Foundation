@@ -1,0 +1,15 @@
+// Imports
+@import "../base/fonts";
+@import "../base/colors";
+
+.testimonials {
+	h4 {
+		font-family: $body;
+	}
+
+	p {
+		a {
+			@apply font-semibold underline text-green-two hover:text-yellow-two transition-all ease-in-out duration-500;
+		}
+	}
+}

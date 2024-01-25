@@ -335,6 +335,12 @@ export type IBoardOfDirectors = {
 	italic: string;
 	paragraph: string;
 };
+export type ITestimonialsGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	highlightText: string;
+};
 export type IEnquiryRequestForm = {
 	title: string;
 	contentOneOpen: boolean;
@@ -461,6 +467,19 @@ export type IBlogsCard = {
 				width: number;
 				height: number;
 			};
+		};
+	};
+};
+export type ITestimonialsCard = {
+	name: string;
+	jobTitle: string;
+	paragraph: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
 		};
 	};
 };

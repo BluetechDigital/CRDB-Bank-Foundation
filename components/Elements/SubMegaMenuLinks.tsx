@@ -8,6 +8,8 @@ import fadeInUp, {
 	fadeIn,
 	initial,
 	initialTwo,
+	slideInRightFinish,
+	slideInRightInitial,
 	stagger,
 } from "@/animations/animations";
 
@@ -215,16 +217,16 @@ const SubMegaMenuLinks: FC = () => {
 						style={{
 							backgroundImage: `linear-gradient(
 							    	0deg,
-							    	rgba(0, 0, 0, 0.85),
-							    	rgba(0, 0, 0, 0.85),
-							    	rgba(0, 0, 0, 0.85)
+							    	rgba(4, 61, 43, 0.85),
+							    	rgba(4, 61, 43, 0.85),
+							    	rgba(4, 61, 43, 1)
 							    ),url("${globalContext?.themesOptionsContent?.menuColumnThree?.backgroundImage?.sourceUrl}")`,
 						}}
 					>
 						<motion.div
-							initial={initial}
-							whileInView={stagger}
 							viewport={{once: true}}
+							initial={slideInRightInitial}
+							whileInView={slideInRightFinish}
 							className="flex flex-col"
 						>
 							<motion.h4
