@@ -23,7 +23,7 @@ const BackToVacanciesButton: FC<IBackToVacanciesButton> = ({
 								title
 									? `flex items-center justify-center group mt-3 relative gap-3 px-6 py-3 font-semibold tracking-widest text-base ${
 											fullWidth ? "w-full" : "w-fit"
-									  } sm:mx-0 border-2 border-solid border-green-default hover:bg-green-default hover:border-green-default transition-all ease-in-out duration-500 text-green-default hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-default after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-default`
+									  } sm:mx-0 border-2 border-solid border-green-two bg-green-two hover:bg-green-default hover:border-green-default transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-green-two hover:before:bg-green-default after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-green-two hover:after:bg-green-default`
 									: `hidden`
 							}
 						>
@@ -69,7 +69,7 @@ const BackToVacanciesButton: FC<IBackToVacanciesButton> = ({
 											<path
 												d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
 												transform="translate(0 0)"
-												fill="#ff0008"
+												fill="#ffffff"
 											></path>
 										</g>
 									</g>

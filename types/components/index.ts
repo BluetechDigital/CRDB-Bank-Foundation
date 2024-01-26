@@ -84,8 +84,10 @@ export type IHeroTwo = {
 };
 export type IGallery = {
 	title: string;
-	highlightText: string;
+	subtitle: string;
 	paragraph: string;
+	highlightText: string;
+	itemsDisplayedPerPage: string;
 	gallery: [
 		{
 			altText: string;

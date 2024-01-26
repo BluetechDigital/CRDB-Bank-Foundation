@@ -333,6 +333,7 @@ export const getAllPreviewFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
+												subtitle
 												paragraph
 												highlightText
 												gallery {

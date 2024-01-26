@@ -330,8 +330,10 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
+												subtitle
 												paragraph
 												highlightText
+												itemsDisplayedPerPage
 												gallery {
             										altText
             										sourceUrl
