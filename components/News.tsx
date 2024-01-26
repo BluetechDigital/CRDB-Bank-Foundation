@@ -1,13 +1,13 @@
 // Imports
-import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {useGlobalContext} from "@/context/global";
 import {INews} from "@/types/components";
-import {initial, fadeInUp, stagger} from "@/animations/animations";
+import {FC} from "react";
+import {useGlobalContext} from "@/context/global";
+import {stagger, initial, fadeInUp} from "@/animations/animations";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
-import NewsCard from "./Cards/NewsCard";
+import Pagination from "./Elements/Pagination";
 
 const News: FC<INews> = ({title, italic, paragraph}) => {
 	const globalContext = useGlobalContext();
@@ -48,27 +48,12 @@ const News: FC<INews> = ({title, italic, paragraph}) => {
 						tailwindStyling="max-w-3xl mx-auto text-black text-paragraph"
 					/>
 				</motion.div>
-				<motion.div
-					initial={initial}
-					whileInView={stagger}
-					viewport={{once: true}}
-					className="grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
-				>
-					{globalContext?.news?.length > 0 ? (
-						globalContext?.news?.map((item: any, keys: any) => (
-							<Fragment key={keys}>
-								<NewsCard
-									title={item?.node?.title}
-									paragraph={item?.node?.excerpt}
-									slug={`news/${item?.node?.slug}`}
-									featuredImage={item?.node?.featuredImage}
-								/>
-							</Fragment>
-						))
-					) : (
-						<></>
-					)}
-				</motion.div>
+				<Pagination
+					contentType="NewsCard"
+					numberOfItemsRenderedPerPage={12}
+					contentArray={globalContext?.news}
+					tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3`}
+				/>
 			</div>
 		</>
 	);

@@ -441,6 +441,12 @@ export type IErrorPage = {
 		target: string;
 	};
 };
+export type IPagination = {
+	contentArray: any;
+	contentType: string;
+	tailwindStyling: string;
+	numberOfItemsRenderedPerPage: number;
+};
 
 // Cards
 export type IFAQCard = {

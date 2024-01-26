@@ -1,13 +1,13 @@
 // Imports
-import {FC, Fragment} from "react";
+import {FC} from "react";
 import {motion} from "framer-motion";
 import {IBlogs} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
-import {initial, fadeInUp, stagger} from "@/animations/animations";
+import {stagger, initial, fadeInUp} from "@/animations/animations";
 
 // Components
-import BlogsCard from "./Cards/BlogsCard";
 import Paragraph from "./Elements/Paragraph";
+import Pagination from "./Elements/Pagination";
 
 const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
 	const globalContext = useGlobalContext();
@@ -48,27 +48,12 @@ const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
 						tailwindStyling="max-w-3xl mx-auto text-black text-paragraph"
 					/>
 				</motion.div>
-				<motion.div
-					initial={initial}
-					whileInView={stagger}
-					viewport={{once: true}}
-					className="grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
-				>
-					{globalContext?.blogs?.length > 0 ? (
-						globalContext?.blogs?.map((item: any, keys: any) => (
-							<Fragment key={keys}>
-								<BlogsCard
-									uri={item?.node?.uri}
-									title={item?.node?.title}
-									paragraph={item?.node?.excerpt}
-									featuredImage={item?.node?.featuredImage}
-								/>
-							</Fragment>
-						))
-					) : (
-						<></>
-					)}
-				</motion.div>
+				<Pagination
+					contentType="BlogsCard"
+					numberOfItemsRenderedPerPage={12}
+					contentArray={globalContext?.blogs}
+					tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3`}
+				/>
 			</div>
 		</>
 	);
