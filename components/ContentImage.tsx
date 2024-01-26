@@ -36,7 +36,7 @@ const ContentImage: FC<IContentImage> = ({
 					clipPath: `polygon(76% 4%, 100% 0, 100% 100%, 0 100%, 0 0)`,
 				}}
 			>
-				<div className="flex flex-col xl:flex-row items-center justify-center">
+				<div className="flex flex-col xl:flex-row justify-center">
 					<motion.div
 						initial={initial}
 						whileInView={stagger}
@@ -97,7 +97,7 @@ const ContentImage: FC<IContentImage> = ({
 							height={image?.mediaDetails.height}
 							className={`${
 								image?.sourceUrl
-									? "w-full h-[500px] lg:h-[568px] xl:h-[575px] 2xl:h-[635px] object-cover object-center"
+									? "w-full h-full min-h-[500px] max-h-[500px] xl:max-h-[750px] object-cover object-center"
 									: "hidden"
 							}`}
 						/>
