@@ -28,8 +28,6 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 }) => {
 	const globalContext = useGlobalContext();
 
-	console.log(globalContext?.operationsTeamsJobs);
-
 	const [allJobsOpen, setAllJobsOpen]: any = useState(true);
 	const [operationsTeamsJobsOpen, setOperationsTeamsJobsOpen]: any =
 		useState(false);

@@ -47,7 +47,6 @@ const Gallery: FC<IGallery> = ({
 		}
 	};
 
-	console.log(totalPages);
 	return (
 		<>
 			<div
