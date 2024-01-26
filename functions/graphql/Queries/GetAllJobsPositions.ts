@@ -205,12 +205,7 @@ export const getAllManagementsTaxonomyJobs = async () => {
 					featuredImage: subKeys?.node?.featuredImage,
 				};
 
-				if (
-					object?.slug &&
-					object?.excerpt &&
-					object?.title &&
-					object?.featuredImage
-				) {
+				if (object?.slug && object?.excerpt && object?.title) {
 					finalArray.push(object);
 				}
 			});
@@ -230,7 +225,7 @@ export const getAllJobsPositionsOperationsTeamsSlugs = async () => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				agricomsTaxonomySlugs: agricoms(last: 100) {
+				operationsTeamsTaxonomySlugs: operationsTeams(last: 100) {
 					edges {
 						node {
 							jobPositions(where: {status: PUBLISH}) {
@@ -249,7 +244,7 @@ export const getAllJobsPositionsOperationsTeamsSlugs = async () => {
 			query: content,
 		});
 
-		return response?.data?.agricomsTaxonomySlugs?.edges;
+		return response?.data?.operationsTeamsTaxonomySlugs?.edges;
 	} catch (error) {
 		console.log(error);
 		throw new Error(
@@ -301,7 +296,7 @@ export const getAllOperationsTeamsTaxonomyJobs = async () => {
 		// Setting the initial Array
 		initialArray = response?.data?.operationsTeamsTaxonomyJobs?.edges;
 
-		// Operations Teams Taxonomy Dynamic Links
+		// Managements Taxonomy Dynamic Links
 		initialArray?.forEach((keys: any) => {
 			keys?.node?.jobPositions?.edges?.forEach((subKeys: any) => {
 				const object = {
@@ -311,12 +306,7 @@ export const getAllOperationsTeamsTaxonomyJobs = async () => {
 					featuredImage: subKeys?.node?.featuredImage,
 				};
 
-				if (
-					object?.slug &&
-					object?.excerpt &&
-					object?.title &&
-					object?.featuredImage
-				) {
+				if (object?.slug && object?.excerpt && object?.title) {
 					finalArray.push(object);
 				}
 			});

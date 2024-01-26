@@ -122,12 +122,16 @@ const JobPositions: FC<IJobPositions> = ({
 							{globalContext?.jobsPositions?.length > 0 ? (
 								globalContext?.jobsPositions?.map((item: any, keys: any) => (
 									<Fragment key={keys}>
-										<JobPositionsCard
-											slug={item?.node?.slug}
-											title={item?.node?.title}
-											paragraph={item?.node?.excerpt}
-											tailwindStyling="bg-green-dark hover:bg-purple-two"
-										/>
+										{keys <= 2 ? (
+											<JobPositionsCard
+												slug={item?.node?.slug}
+												title={item?.node?.title}
+												paragraph={item?.node?.excerpt}
+												tailwindStyling="bg-green-default hover:bg-purple-three"
+											/>
+										) : (
+											<></>
+										)}
 									</Fragment>
 								))
 							) : (
@@ -139,12 +143,16 @@ const JobPositions: FC<IJobPositions> = ({
 							{globalContext?.managementsJobs?.length > 0 ? (
 								globalContext?.managementsJobs?.map((item: any, keys: any) => (
 									<Fragment key={keys}>
-										<JobPositionsCard
-											slug={item?.slug}
-											title={item?.title}
-											paragraph={item?.excerpt}
-											tailwindStyling="bg-green-two hover:bg-green-dark"
-										/>
+										{keys <= 2 ? (
+											<JobPositionsCard
+												slug={item?.slug}
+												title={item?.title}
+												paragraph={item?.excerpt}
+												tailwindStyling="bg-green-three hover:bg-yellow-dark"
+											/>
+										) : (
+											<></>
+										)}
 									</Fragment>
 								))
 							) : (
@@ -157,12 +165,16 @@ const JobPositions: FC<IJobPositions> = ({
 								globalContext?.operationsTeamsJobs?.map(
 									(item: any, keys: any) => (
 										<Fragment key={keys}>
-											<JobPositionsCard
-												slug={item?.slug}
-												title={item?.title}
-												paragraph={item?.excerpt}
-												tailwindStyling="bg-green-Three hover:bg-green-dark"
-											/>
+											{keys <= 2 ? (
+												<JobPositionsCard
+													slug={item?.slug}
+													title={item?.title}
+													paragraph={item?.excerpt}
+													tailwindStyling="bg-purple-three hover:bg-purple-dark"
+												/>
+											) : (
+												<></>
+											)}
 										</Fragment>
 									)
 								)

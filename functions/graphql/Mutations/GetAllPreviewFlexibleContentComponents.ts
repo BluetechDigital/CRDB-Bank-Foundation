@@ -106,6 +106,65 @@ export const getAllPreviewFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_JumboContentSection {
+												fieldGroupName
+												contentSection {
+													content {
+														title
+														subtitle
+														paragraph
+														imageLocation
+														backgroundDisplay
+														buttonLink {
+															url
+															title
+															target
+														}
+														smallImage {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_IndividualExecutiveMember {
+            									fieldGroupName
+												title
+            									subtitle
+            									paragraph
+            									executiveName
+            									executiveTitle
+            									paragraphTitle
+            									displayBackgroundIcon
+            									image {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
+												imageTwo {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
+            								}
 											... on ${postTypeFlexibleContent}_AchievementsTwo {
                       							fieldGroupName
                       							title
@@ -169,6 +228,40 @@ export const getAllPreviewFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_MainPrograms {
+            								  	fieldGroupName
+            								  	title
+            								  	subtitle
+            								  	paragraph
+            								  	highlightText
+            								  	programsGrid {
+													card {
+														title
+														paragraph
+														link {
+															url
+															title
+															target
+														}
+														icon {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+            								}
 											... on ${postTypeFlexibleContent}_FeaturesGridTwo {
                       							fieldGroupName
                       							cardOne {
@@ -204,6 +297,38 @@ export const getAllPreviewFlexibleContentComponents = async (
 														backgroundColor
                       								}
                       							}
+											}
+											... on ${postTypeFlexibleContent}_TestimonialsGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												highlightText
+											}
+											... on ${postTypeFlexibleContent}_TestimonialsTwo {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+											}
+											... on ${postTypeFlexibleContent}_JobPositionsGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												highlightText
+											}
+											... on ${postTypeFlexibleContent}_JobPositionsThreeCardsGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												highlightText
 											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
@@ -244,6 +369,7 @@ export const getAllPreviewFlexibleContentComponents = async (
 													}
 												}
 											}
+											
 											... on ${postTypeFlexibleContent}_Cta {
 												fieldGroupName
 												title

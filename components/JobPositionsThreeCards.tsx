@@ -28,6 +28,8 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 }) => {
 	const globalContext = useGlobalContext();
 
+	console.log(globalContext?.operationsTeamsJobs);
+
 	const [allJobsOpen, setAllJobsOpen]: any = useState(true);
 	const [operationsTeamsJobsOpen, setOperationsTeamsJobsOpen]: any =
 		useState(false);
@@ -128,7 +130,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 												slug={item?.node?.slug}
 												title={item?.node?.title}
 												paragraph={item?.node?.excerpt}
-												tailwindStyling="bg-green-dark hover:bg-purple-two"
+												tailwindStyling="bg-green-default hover:bg-purple-three"
 											/>
 										) : (
 											<></>
@@ -149,7 +151,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 												slug={item?.slug}
 												title={item?.title}
 												paragraph={item?.excerpt}
-												tailwindStyling="bg-green-two hover:bg-green-dark"
+												tailwindStyling="bg-green-three hover:bg-yellow-dark"
 											/>
 										) : (
 											<></>
@@ -171,7 +173,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 													slug={item?.slug}
 													title={item?.title}
 													paragraph={item?.excerpt}
-													tailwindStyling="bg-green-Three hover:bg-green-dark"
+													tailwindStyling="bg-purple-three hover:bg-purple-dark"
 												/>
 											) : (
 												<></>

@@ -7,6 +7,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 	children,
 	globalProps,
 }) => {
+	// console.log(globalProps?.operationsTeamsJobs);
 	return (
 		<GlobalContext.Provider
 			value={{
