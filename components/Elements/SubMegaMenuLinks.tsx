@@ -88,7 +88,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
+											" group/CRDBBank w-[200px] h-[125px] xl:w-[150px] xl:h-[150px] 2xl:w-[200px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -97,17 +97,17 @@ const SubMegaMenuLinks: FC = () => {
 												height={500}
 												alt="CRDB Bank Marathon Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
-												className="block group-hover:hidden object-contain object-center w-full h-[35px] mb-4"
+												className="block group-hover/CRDBBank:hidden object-contain object-center w-full h-[35px] mb-4"
 											/>
 											<Image
 												width={500}
 												height={500}
 												alt="CRDB Bank Marathon Logo White"
 												src="/img/logos/CRDB-bank-logo.svg"
-												className="hidden group-hover:block object-contain object-center w-full h-[35px] mb-4"
+												className="hidden group-hover/CRDBBank:block object-contain object-center w-full h-[35px] mb-4"
 											/>
 										</span>
-										<span className="text-pureBlack group-hover:text-white">
+										<span className="text-pureBlack group-hover/CRDBBank:text-white">
 											CRDB Bank
 										</span>
 									</motion.button>
@@ -119,7 +119,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
+											" group/Marathon w-[200px] h-[125px] xl:w-[150px] xl:h-[150px] 2xl:w-[200px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -128,17 +128,19 @@ const SubMegaMenuLinks: FC = () => {
 												height={500}
 												alt="CRDB Bank Marathon Logo Green"
 												src="/img/logos/CRDB-bank-marathon-logo-green.webp"
-												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
+												className="block group-hover/Marathon:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
 												width={500}
 												height={500}
 												alt="CRDB Bank Marathon Logo White"
 												src="/img/logos/CRDB-bank-marathon-logo-white.webp"
-												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
+												className="hidden group-hover/Marathon:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 										</span>
-										<span>Marathon</span>
+										<span className="text-pureBlack group-hover/Marathon:text-white">
+											Marathon
+										</span>
 									</motion.button>
 								</Link>
 							</div>
@@ -153,7 +155,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
+											" group/Simbanking w-[200px] h-[125px] xl:w-[150px] xl:h-[150px] 2xl:w-[200px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -162,17 +164,17 @@ const SubMegaMenuLinks: FC = () => {
 												height={500}
 												alt="CRDB Bank Simbanking Logo Green"
 												src="/img/logos/CRDB-bank-simbanking.svg"
-												className="block group-hover:hidden object-contain object-center w-full h-[35px] mb-4"
+												className="block group-hover/Simbanking:hidden object-contain object-center w-full h-[35px] mb-4"
 											/>
 											<Image
 												width={500}
 												height={500}
 												alt="CRDB Bank Simbanking Logo Green"
 												src="/img/logos/CRDB-bank-simbanking.svg"
-												className="hidden group-hover:block object-contain object-center w-full h-[35px] mb-4"
+												className="hidden group-hover/Simbanking:block object-contain object-center w-full h-[35px] mb-4"
 											/>
 										</span>
-										<span className="text-pureBlack group-hover:text-white">
+										<span className="text-pureBlack group-hover/Simbanking:text-white">
 											Simbanking
 										</span>
 									</motion.button>
@@ -187,7 +189,7 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group w-full h-full 2xl:w-[200px] 2xl:h-[125px] 2xl:min-h-[150px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
+											" group/InternetBanking w-[200px] h-[125px] xl:w-[150px] xl:h-[150px] 2xl:w-[200px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -196,17 +198,19 @@ const SubMegaMenuLinks: FC = () => {
 												height={500}
 												alt="CRDB Bank Internet Banking Logo Green"
 												src="/img/logos/CRDB-bank-internet_banking.svg"
-												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
+												className="block group-hover/InternetBanking:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
 												width={500}
 												height={500}
 												alt="CRDB Bank Internet Banking Logo Green"
 												src="/img/logos/CRDB-bank-internet_banking.svg"
-												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
+												className="hidden group-hover/InternetBanking:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 										</span>
-										<span>Internet Banking</span>
+										<span className="text-pureBlack group-hover/InternetBanking:text-white">
+											Internet Banking
+										</span>
 									</motion.button>
 								</Link>
 							</div>
