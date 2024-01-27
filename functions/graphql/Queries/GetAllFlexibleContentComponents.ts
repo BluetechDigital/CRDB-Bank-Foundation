@@ -368,7 +368,6 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
-											
 											... on ${postTypeFlexibleContent}_Cta {
 												fieldGroupName
 												title
