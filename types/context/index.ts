@@ -52,7 +52,7 @@ export type IBlogs = [
 	{
 		node: {
 			id: string;
-			uri: string;
+			slug: string;
 			date: string;
 			title: string;
 			excerpt: string;

@@ -483,7 +483,7 @@ export type INewsCard = {
 	};
 };
 export type IBlogsCard = {
-	uri: string;
+	slug: string;
 	title: string;
 	paragraph: string;
 	featuredImage: {

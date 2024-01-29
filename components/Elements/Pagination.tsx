@@ -78,7 +78,7 @@ const Pagination: FC<IPagination> = ({
 							) : contentType === `BlogsCard` ? (
 								<>
 									<BlogsCard
-										uri={item?.node?.uri}
+										slug={item?.node?.slug}
 										title={item?.node?.title}
 										paragraph={item?.node?.excerpt}
 										featuredImage={item?.node?.featuredImage}

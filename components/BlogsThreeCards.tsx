@@ -62,7 +62,7 @@ const BlogsThreeCards: FC<IBlogs> = ({title, italic, paragraph}) => {
 						globalContext?.blogsThreeCards?.map((item: any, keys: any) => (
 							<Fragment key={keys}>
 								<BlogsCard
-									uri={item?.node?.uri}
+									slug={item?.node?.slug}
 									title={item?.node?.title}
 									paragraph={item?.node?.excerpt}
 									featuredImage={item?.node?.featuredImage}

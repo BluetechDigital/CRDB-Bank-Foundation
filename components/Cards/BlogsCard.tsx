@@ -16,7 +16,7 @@ import {IBlogsCard} from "@/types/components/index";
 import Paragraph from "../Elements/Paragraph";
 import ButtonBorderSliced from "../Elements/ButtonBorderSliced";
 
-const BlogsCard: FC<IBlogsCard> = ({uri, title, paragraph, featuredImage}) => {
+const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 	return (
 		<>
 			<div
@@ -31,7 +31,7 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, paragraph, featuredImage}) => {
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 					}}
 				>
-					<Link target="" href={uri ? `news${uri}` : `/`}>
+					<Link target="" href={slug ? `blogs/${slug}` : `/`}>
 						<Image
 							alt={featuredImage?.node?.altText}
 							src={featuredImage?.node?.sourceUrl}
@@ -51,7 +51,7 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, paragraph, featuredImage}) => {
 					viewport={{once: true}}
 					className="flex flex-col items-baseline justify-between px-8 pt-10 pb-4"
 				>
-					<Link target="" href={uri ? `blogs${uri}` : `/`}>
+					<Link target="" href={slug ? `blogs/${slug}` : `/`}>
 						<motion.h2
 							initial={initial}
 							whileInView={fadeInUp}
@@ -79,8 +79,8 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, paragraph, featuredImage}) => {
 					>
 						<Link
 							target=""
-							href={uri ? `blogs${uri}` : `/`}
-							className={uri ? "block" : "hidden"}
+							href={slug ? `blogs/${slug}` : `/`}
+							className={slug ? "block" : "hidden"}
 						>
 							<ButtonBorderSliced
 								fullWidth={true}

@@ -42,7 +42,7 @@ export const getAllBlogsContent = async () => {
 					edges {
 						node {
 							id
-							uri
+							slug
 							date
 							excerpt
 							title(format: RENDERED)
@@ -82,7 +82,7 @@ export const getThreeBlogsContent = async () => {
 					edges {
 						node {
 							id
-							uri
+							slug
 							date
 							excerpt
 							title(format: RENDERED)
