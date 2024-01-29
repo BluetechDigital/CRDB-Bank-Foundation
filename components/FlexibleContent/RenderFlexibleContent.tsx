@@ -10,12 +10,14 @@ import News from "../News";
 import Blogs from "../Blogs";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
+import FAQGrid from "../FAQGrid";
 import VideoBlock from "../VideoBlock";
 import ContactInfo from "../ContactInfo";
 import OurPartners from "../OurPartners";
 import Maintenance from "../Maintenance";
 import LinkedInCta from "../LinkedInCta";
 import OurPrograms from "../OurPrograms";
+import JobPositions from "../JobPositions";
 import MainPrograms from "../MainPrograms";
 import ContentImage from "../ContentImage";
 import ErrorPage from "../Global/ErrorPage";
@@ -31,7 +33,6 @@ import BoardOfDirectorsGrid from "../BoardOfDirectorsGrid";
 import ExecutiveLeadershipsGrid from "../ExecutiveLeadershipsGrid";
 import IndividualExecutiveMember from "../IndividualExecutiveMember";
 import JobPositionsThreeCards from "../JobPositionsThreeCards";
-import JobPositions from "../JobPositions";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -224,6 +225,15 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
 									faqContent={item?.faqContent}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_FaqGrid` ? (
+							<>
+								<FAQGrid
+									title={item?.title}
+									faqGrid={item?.faqGrid}
+									paragraph={item?.paragraph}
+									highlightText={item?.highlightText}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Cta` ? (

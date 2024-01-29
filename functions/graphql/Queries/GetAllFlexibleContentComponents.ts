@@ -368,6 +368,18 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_FaqGrid {
+												fieldGroupName
+              									title
+              									paragraph
+              									highlightText
+              									faqGrid {
+              										card {
+              											title
+              											paragraph
+              										}
+              									}
+											}
 											... on ${postTypeFlexibleContent}_Cta {
 												fieldGroupName
 												title

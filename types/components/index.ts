@@ -77,6 +77,19 @@ export type IBlogs = {
 	italic: string;
 	paragraph: string;
 };
+export type IFAQGrid = {
+	title: string;
+	paragraph: string;
+	highlightText: string;
+	faqGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+			};
+		}
+	];
+};
 export type IHeroTwo = {
 	title: string;
 	paragraph: string;
