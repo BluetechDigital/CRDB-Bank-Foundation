@@ -5,8 +5,8 @@ import {IFAQGrid} from "@/types/components/index";
 import {initial, stagger} from "../animations/animations";
 
 // Components
-import FAQCard from "./Cards/FAQCard";
 import Paragraph from "./Elements/Paragraph";
+import FAQGridCard from "./Cards/FAQGridCard";
 
 const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 	return (
@@ -45,7 +45,7 @@ const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 						{faqGrid?.length > 0 ? (
 							faqGrid.map((item: any, keys: any) => (
 								<Fragment key={keys}>
-									<FAQCard
+									<FAQGridCard
 										index={keys}
 										title={item?.card?.title}
 										paragraph={item?.card?.paragraph}
