@@ -30,9 +30,9 @@ import BlogsThreeCards from "../BlogsThreeCards";
 import TestimonialsGrid from "../TestimonialsGrid";
 import JumboContentSection from "../JumboContentSection";
 import BoardOfDirectorsGrid from "../BoardOfDirectorsGrid";
+import JobPositionsThreeCards from "../JobPositionsThreeCards";
 import ExecutiveLeadershipsGrid from "../ExecutiveLeadershipsGrid";
 import IndividualExecutiveMember from "../IndividualExecutiveMember";
-import JobPositionsThreeCards from "../JobPositionsThreeCards";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
