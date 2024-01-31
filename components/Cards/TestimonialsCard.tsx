@@ -27,7 +27,11 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({
 			>
 				<div className="pb-6">
 					<Paragraph
-						content={paragraph.substring(0, 250) + "..."}
+						content={
+							paragraph?.length > 250
+								? paragraph?.substring(0, 250) + "..."
+								: paragraph
+						}
 						tailwindStyling="mb-3 text-center lg:text-left text-black text-base leading-relaxed"
 					/>
 					<motion.div

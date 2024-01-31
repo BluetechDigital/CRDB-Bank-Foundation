@@ -55,7 +55,11 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 							viewport={{once: true}}
 						>
 							<Paragraph
-								content={paragraph ? paragraph.substring(0, 200) + "..." : ""}
+								content={
+									paragraph?.length > 200
+										? paragraph?.substring(0, 200) + "..."
+										: paragraph
+								}
 								tailwindStyling="block px-0 text-base text-white"
 							/>
 						</motion.div>
