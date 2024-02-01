@@ -2,11 +2,11 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		remotePatterns: [
-			{
-				protocol: "https",
-				hostname: "**",
-			},
+		domains: [
+			"mydummysite.co.uk",
+			"vzt.nmy.mybluehost.me",
+			"cmscrbankfoundation.com",
+			"cmscrdbbankfoundation.local",
 		],
 	},
 };
