@@ -109,10 +109,10 @@ const OurPrograms: FC<IOurPrograms> = ({
 													</motion.h3>
 													<Paragraph
 														content={
-															item?.card?.paragraph
+															item?.card?.paragraph?.length > 200
 																? item?.card?.paragraph?.substring(0, 150) +
 																  "..."
-																: ``
+																: item?.card?.paragraph
 														}
 														tailwindStyling="text-darkGrey group-hover:text-white text-base text-center"
 													/>

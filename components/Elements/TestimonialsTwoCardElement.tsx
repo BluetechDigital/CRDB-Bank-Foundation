@@ -35,7 +35,11 @@ const TestimonialsTwoCardElement: FC<ITestimonialsTwoCardElement> = ({
 					></path>
 				</svg>
 				<Paragraph
-					content={paragraph?.substring(0, 150) + "..."}
+					content={
+						paragraph?.length > 150
+							? paragraph?.substring(0, 150) + "..."
+							: paragraph
+					}
 					tailwindStyling="mb-6 text-black leading-[1.65rem] text-base text-center xl:text-left"
 				/>
 				<div className="flex justify-between items-center">
