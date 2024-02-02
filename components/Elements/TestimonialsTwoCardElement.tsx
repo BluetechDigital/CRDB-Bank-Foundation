@@ -21,7 +21,7 @@ const TestimonialsTwoCardElement: FC<ITestimonialsTwoCardElement> = ({
 }) => {
 	return (
 		<>
-			<div className="max-w-md pt-8 px-8 pb-6 mb-8 sm:mb-0 sm:mr-8 bg-white rounded-md">
+			<div className="max-w-md pt-8 px-8 pb-6 mb-8 sm:mb-0 sm:mr-8 bg-white">
 				<svg
 					width="24"
 					height="16"

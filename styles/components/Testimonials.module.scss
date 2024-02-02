@@ -2,7 +2,8 @@
 @import "../base/fonts";
 @import "../base/colors";
 
-.testimonials {
+.testimonials,
+.testimonialsTwo {
 	h4 {
 		font-family: $body;
 	}
@@ -11,5 +12,13 @@
 		a {
 			@apply font-semibold underline text-green-two hover:text-yellow-two transition-all ease-in-out duration-500;
 		}
+	}
+}
+
+.testimonialsTwo {
+	background-image: url("/svg/background/layered-peaks-haikei-flatgreen-flatdark-mobile.svg");
+
+	@media screen and (min-width: 992px) {
+		background-image: url("/svg/background/layered-peaks-haikei-flatgreen-flatdark.svg");
 	}
 }

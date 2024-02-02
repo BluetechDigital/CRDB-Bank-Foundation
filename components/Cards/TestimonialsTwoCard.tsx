@@ -25,7 +25,7 @@ const TestimonialsTwoCard: FC = () => {
 				initial={initial}
 				whileInView={stagger}
 				viewport={{once: true}}
-				className="flex items-center justify-center"
+				className="flex flex-col lg:flex-row lg:items-center justify-center"
 			>
 				{globalContext?.testimonials?.length > 0 ? (
 					<>

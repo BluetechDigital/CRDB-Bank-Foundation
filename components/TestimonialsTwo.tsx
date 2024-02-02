@@ -22,12 +22,9 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 		<>
 			<div
 				className={
-					styles.testimonials +
+					styles.testimonialsTwo +
 					` bg-green-default overflow-hidden bg-cover bg-no-repeat bg-center`
 				}
-				style={{
-					backgroundImage: `url("/svg/background/stacked-waves-haikei-green-bright-green.svg")`,
-				}}
 			>
 				<motion.div
 					initial={initial}
