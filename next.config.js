@@ -3,9 +3,9 @@ const nextConfig = {
 	reactStrictMode: true,
 	images: {
 		domains: [
+			"mydummysite.co.uk",
 			"vzt.nmy.mybluehost.me",
 			"cmscrbankfoundation.com",
-			"mydummysite.co.uk/Toddcrdb",
 			"cmscrdbbankfoundation.local",
 		],
 	},
