@@ -38,7 +38,12 @@ const Hero: FC<IHero> = ({
 					className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-green-three bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-two"
 					style={{
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
-						backgroundImage: `url("${
+						backgroundImage: `linear-gradient(
+							0deg,
+							rgba(4, 61, 43, 0.85),
+							rgba(4, 61, 43, 0.05),
+							rgba(4, 61, 43, 0)
+						),url("${
 							backgroundImage?.sourceUrl
 								? backgroundImage?.sourceUrl
 								: `/svg/background/stacked-waves-haikei-green.svg`
@@ -46,7 +51,7 @@ const Hero: FC<IHero> = ({
 					}}
 				/>
 				<div
-					className={`block container mx-auto relative z-50 pb-10 mt-[-195px] sm:mt-[-125px] lg:mt-[-100px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row`}
+					className={`container mx-auto relative z-50 pb-10 mt-[-195px] sm:mt-[-125px] lg:mt-[-100px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row`}
 				>
 					<motion.div
 						viewport={{once: true}}
