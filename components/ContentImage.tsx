@@ -33,7 +33,7 @@ const ContentImage: FC<IContentImage> = ({
 				id="ContentStripesVideoBlock"
 				className={styles.contentImage + " p-0 bg-green-flat"}
 				style={{
-					clipPath: `polygon(76% 4%, 100% 0, 100% 100%, 0 100%, 0 0)`,
+					clipPath: `polygon(75% 5%, 100% 0, 100% 100%, 0 100%, 0 0)`,
 				}}
 			>
 				<div className="flex flex-col xl:flex-row justify-center">
