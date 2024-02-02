@@ -833,7 +833,7 @@ const Footer: FC = () => {
 							tailwindStyling="text-pureBlack text-sm text-center lg:text-left"
 						/>
 						<Link
-							className="inline-block px-1 text-pureBlack hover:text-[#2563eb] hover:underline"
+							className="inline-block px-1 text-pureBlack hover:text-purple-default hover:underline"
 							href={`https://bluetech-digital.co.uk`}
 							target="_blank"
 						>

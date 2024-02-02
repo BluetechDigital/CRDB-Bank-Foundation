@@ -170,7 +170,7 @@ const JobPositions: FC<IJobPositions> = ({
 													slug={item?.slug}
 													title={item?.title}
 													paragraph={item?.excerpt}
-													tailwindStyling="bg-purple-three hover:bg-purple-dark"
+													tailwindStyling="bg-purple-three hover:bg-purple-two"
 												/>
 											) : (
 												<></>

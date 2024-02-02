@@ -51,7 +51,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			break;
 		case "lightGrey":
 			titleColor = "text-black";
-			subtitleColor = "text-purple-two";
+			subtitleColor = "text-purple-default";
 			buttonColor = "lightGrey";
 			borderImageColor = "border-lightGrey";
 			backgroundColor = "bg-lightGreyTwo";
@@ -62,9 +62,9 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			titleColor = "text-white";
 			subtitleColor = "text-yellow-two";
 			buttonColor = "white";
-			borderImageColor = "border-purple-two";
+			borderImageColor = "border-purple-default";
 			paragraphColor = "text-white";
-			backgroundColor = "bg-purple-two";
+			backgroundColor = "bg-purple-default";
 			backgroundImage = `none`;
 			break;
 		case "GreenStrips":
