@@ -35,7 +35,7 @@ const Hero: FC<IHero> = ({
 		<>
 			<div className={styles.hero + `relative p-0 overflow-hidden bg-white`}>
 				<div
-					className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-green-three bg-bottom lg:bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-two"
+					className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-green-three bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-two"
 					style={{
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 						backgroundImage: `linear-gradient(
