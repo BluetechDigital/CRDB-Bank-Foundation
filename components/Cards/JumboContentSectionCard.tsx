@@ -76,24 +76,23 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			backgroundColor = "bg-transparent";
 			backgroundImage = "/svg/background/stacked-waves-haikei-green-strips.svg";
 			break;
-		case "YellowWave":
+		case "PurpleStrips":
 			titleColor = "text-white";
-			subtitleColor = "text-white";
+			subtitleColor = "text-yellow-light";
 			buttonColor = "white";
-			borderImageColor = "border-yellow-two";
+			borderImageColor = "border-purple-default";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-transparent";
-			backgroundImage =
-				"/svg/background/stacked-waves-haikei-orange-yellow.svg";
+			backgroundImage = "/svg/background/stacked-waves-haikei-purple.svg";
 			break;
 		case "PurpleWave":
 			titleColor = "text-white";
 			subtitleColor = "text-yellow-light";
 			buttonColor = "white";
-			borderImageColor = "border-purple-three";
+			borderImageColor = "border-purple-default";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-transparent";
-			backgroundImage = "/svg/background/stacked-waves-haikei-purple.svg";
+			backgroundImage = "/svg/background/blob-scene-haikei-purplewave.svg";
 			break;
 	}
 

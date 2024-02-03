@@ -71,10 +71,10 @@ const config: Config = {
 				},
 				purple: {
 					default: "#5a287d",
-					two: "#5e10b1",
-					flat: "#f2eaf9",
+					two: "#51177a",
+					flat: "#b698d1",
 					three: "#3c1053",
-					dark: "#2d2378",
+					dark: "#2a0a3b",
 				},
 			},
 		},
