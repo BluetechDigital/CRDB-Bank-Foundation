@@ -14,6 +14,9 @@ import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import {IJobPositionsThreeCardsGrid} from "@/types/components";
 
+// Styling
+import styles from "../styles/components/JobPositions.module.scss";
+
 // Components
 import Paragraph from "./Elements/Paragraph";
 import JobPositionsCard from "./Cards/JobPositionsCard";
@@ -59,7 +62,11 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 
 	return (
 		<>
-			<div className="py-10 bg-white container px-4 mx-auto">
+			<div
+				className={
+					styles.jobPositionsCard + " py-10 bg-white container px-4 mx-auto"
+				}
+			>
 				<motion.div
 					initial={initial}
 					whileInView={stagger}
@@ -70,7 +77,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="mb-1 text-center lg:text-center text-lg text-yellow-two"
+						className="mb-1 text-center lg:text-center text-lg text-green-two"
 					>
 						{subtitle}
 					</motion.h4>

@@ -51,7 +51,7 @@ const ContentImage: FC<IContentImage> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center xl:text-left text-paragraph text-yellow-light"
+								className="text-center xl:text-left text-paragraph text-green-two"
 							>
 								{subtitle}
 							</motion.h4>

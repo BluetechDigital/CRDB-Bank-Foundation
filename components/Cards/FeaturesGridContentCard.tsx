@@ -22,7 +22,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 	switch (backgroundColor) {
 		case "Green":
 			titleStyling = "text-white";
-			subtitleStyling = "text-yellow-light";
+			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
 			backgroundWaveStyling = "none";
 			backgroundColorStyling = "bg-green-two";
@@ -30,35 +30,35 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 			break;
 		case "Grey":
 			titleStyling = "text-pureBlack";
-			subtitleStyling = "text-yellow-light";
+			subtitleStyling = "text-white";
 			paragraphStyling = "text-pureBlack";
 			backgroundWaveStyling = "none";
 			backgroundColorStyling = "bg-lightGreyTwo";
 			break;
 		case "GreenStrips":
 			titleStyling = "text-white";
-			subtitleStyling = "text-yellow-light";
+			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
 			backgroundColorStyling = "bg-transparent";
 			backgroundWaveStyling = "stacked-waves-haikei-green-strips";
 			break;
 		case "PurpleStrips":
 			titleStyling = "text-white";
-			subtitleStyling = "text-yellow-light";
+			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
 			backgroundColorStyling = "bg-transparent";
 			backgroundWaveStyling = "stacked-waves-haikei-purple";
 			break;
 		case "PurpleWave":
 			titleStyling = "text-white";
-			subtitleStyling = "text-yellow-light";
+			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
 			backgroundColorStyling = "bg-transparent";
 			backgroundWaveStyling = "blob-scene-haikei-purplewave";
 			break;
 		default:
 			titleStyling = "text-pureBlack";
-			subtitleStyling = "text-yellow-two";
+			subtitleStyling = "text-green-two";
 			paragraphStyling = "text-pureBlack";
 			backgroundWaveStyling = "none";
 			backgroundColorStyling = "bg-lightGrey";

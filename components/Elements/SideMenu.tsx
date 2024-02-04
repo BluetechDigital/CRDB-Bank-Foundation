@@ -537,7 +537,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-two"
+										className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
 										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 									>
 										{globalContext?.themesOptionsContent?.email}
@@ -571,7 +571,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-two"
+										className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
 										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 									>
 										{globalContext?.themesOptionsContent?.emailTwo}

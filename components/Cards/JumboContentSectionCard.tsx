@@ -42,7 +42,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 	switch (backgroundDisplay) {
 		case "White":
 			titleColor = "text-black";
-			subtitleColor = "text-yellow-two";
+			subtitleColor = "text-green-two";
 			buttonColor = "blue-default";
 			borderImageColor = "border-white";
 			backgroundColor = "bg-white";
@@ -60,7 +60,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			break;
 		case "Purple":
 			titleColor = "text-white";
-			subtitleColor = "text-yellow-two";
+			subtitleColor = "text-green-two";
 			buttonColor = "white";
 			borderImageColor = "border-purple-default";
 			paragraphColor = "text-white";
@@ -69,7 +69,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			break;
 		case "GreenStrips":
 			titleColor = "text-white";
-			subtitleColor = "text-yellow-light";
+			subtitleColor = "text-white";
 			buttonColor = "white";
 			borderImageColor = "border-green-two";
 			paragraphColor = "text-white";
@@ -78,7 +78,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			break;
 		case "PurpleStrips":
 			titleColor = "text-white";
-			subtitleColor = "text-yellow-light";
+			subtitleColor = "text-white";
 			buttonColor = "white";
 			borderImageColor = "border-purple-default";
 			paragraphColor = "text-white";
@@ -87,7 +87,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			break;
 		case "PurpleWave":
 			titleColor = "text-white";
-			subtitleColor = "text-yellow-light";
+			subtitleColor = "text-white";
 			buttonColor = "white";
 			borderImageColor = "border-purple-default";
 			paragraphColor = "text-white";

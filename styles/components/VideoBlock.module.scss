@@ -3,12 +3,11 @@
 @import "../base/colors";
 
 .videoBlock {
-	background-image: url("/svg/background/layered-peaks-haikei-green-flatgreen-two-mobile.svg");
-
 	h4 {
 		font-family: $body;
-		font-family: "Kanit";
 	}
+
+	background-image: url("/svg/background/layered-peaks-haikei-green-flatgreen-two-mobile.svg");
 
 	@media screen and (min-width: 992px) {
 		background-image: url("/svg/background/layered-peaks-haikei-green-flatgreen-two.svg");

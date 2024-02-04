@@ -34,7 +34,7 @@ const FAQ: FC<IFAQ> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="text-center text-paragraph text-yellow-two"
+							className="text-center text-paragraph text-green-two"
 						>
 							{subtitle}
 						</motion.h4>

@@ -820,7 +820,7 @@ const Footer: FC = () => {
 						</div>
 					</div>
 				</div>
-				<div className="border-b border-yellow-darker opacity-50" />
+				<div className="border-b border-purple-default" />
 				<div className="py-6 flex flex-col-reverse items-center justify-between m-0 lg:-m-6 lg:flex-row">
 					<motion.div
 						initial={initialTwo}
