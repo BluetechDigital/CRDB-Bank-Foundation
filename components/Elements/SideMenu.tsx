@@ -16,7 +16,7 @@ import {useGlobalContext} from "@/context/global";
 // Styling
 import styles from "@/styles/components/Navbar.module.scss";
 
-const SideMenu: FC<ISideMenu> = ({menuActive}) => {
+const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	const globalContext = useGlobalContext();
 
 	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
@@ -25,6 +25,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 		useState(false);
 	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
 		useState(false);
+
+	const toggleMenu = () => {
+		setMenuActive(!menuActive);
+	};
 
 	// Hides or Display About Us Sublinks
 	const displayAboutUsSublinks = () => {
@@ -67,7 +71,12 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 						: `hidden ${styles.nav}`
 				}
 			>
-				<div className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-white">
+				<div
+					className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-white  bg-cover bg-center bg-no-repeat"
+					style={{
+						backgroundImage: `url("/svg/background/polygon-scatter-haikei-lightgrey-two.svg")`,
+					}}
+				>
 					<div className="flex flex-col items-center mb-8">
 						<Link className="mr-auto text-3xl font-bold leading-none" href="/">
 							<Image
@@ -91,10 +100,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										{item?.node?.url === "/about" ? (
 											<li
 												onClick={displayAboutUsSublinks}
-												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-green-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
+														onClick={toggleMenu}
 														href={`${item?.node?.url}`}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
@@ -133,6 +143,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
 																				>
 																					<Link
+																						onClick={toggleMenu}
 																						href={`${item?.node?.url}`}
 																						className="block p-4 text-base font-semibold"
 																					>
@@ -153,10 +164,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										) : item?.node?.label === "Our Programs" ? (
 											<li
 												onClick={displayOurServicesSublinks}
-												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-green-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
+														onClick={toggleMenu}
 														href={`${item?.node?.url}`}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
@@ -195,6 +207,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
 																				>
 																					<Link
+																						onClick={toggleMenu}
 																						href={`${item?.node?.url}`}
 																						className="block p-4 text-base font-semibold"
 																					>
@@ -215,10 +228,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										) : item?.node?.url === "/news" ? (
 											<li
 												onClick={displayNewsInsightsSublinks}
-												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-green-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
+														onClick={toggleMenu}
 														href={item?.node?.url}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
@@ -258,6 +272,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
 																				>
 																					<Link
+																						onClick={toggleMenu}
 																						href={`${item?.node?.url}`}
 																						className="block p-4 text-base font-semibold"
 																					>
@@ -278,10 +293,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										) : item?.node?.url === "/careers" ? (
 											<li
 												onClick={displayCareersSublinks}
-												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-green-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
+														onClick={toggleMenu}
 														href={item?.node?.url}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
@@ -320,6 +336,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
 																				>
 																					<Link
+																						onClick={toggleMenu}
 																						href={`${item?.node?.url}`}
 																						className="block p-4 text-base font-semibold"
 																					>
@@ -338,8 +355,9 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												) : null}
 											</li>
 										) : (
-											<li className="border-b-[1px] border-yellow-dark border-opacity-50">
+											<li className="border-b-[1px] border-green-dark border-opacity-50">
 												<Link
+													onClick={toggleMenu}
 													href={`${item?.node?.url}`}
 													className="block py-4 text-base font-semibold text-black hover:text-green-two"
 												>

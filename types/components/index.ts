@@ -599,6 +599,7 @@ export type ITitle = {
 };
 export type ISideMenu = {
 	menuActive: boolean;
+	setMenuActive: any;
 };
 export type IParagraph = {
 	content: string;

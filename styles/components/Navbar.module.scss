@@ -17,22 +17,24 @@
 
 	.nav {
 		top: 0;
-		right: 0;
 		bottom: 0;
+		right: 0;
 		z-index: 998;
 		display: flex;
+		width: 83.33%;
 		position: fixed;
-		max-width: 35rem;
+		max-width: 30rem;
 		overflow: hidden;
-		width: 83.333333%;
 		visibility: hidden;
-		transition: all 500ms ease-in-out;
-		clip-path: circle(30px at calc(100% - 45px) 45px);
 	}
 
-	.nav {
+	// Reveal Fullscreen Nav
+	.navReveal {
+		right: 0px;
+		visibility: visible;
+		transition: all 0.5s ease-in-out;
+
 		::-webkit-scrollbar {
-			// display: none;
 			width: 0.65rem;
 			height: 0.65rem;
 		}
@@ -50,12 +52,6 @@
 				background-color: $greenTwo;
 			}
 		}
-	}
-
-	// Reveal Fullscreen Nav
-	.navReveal {
-		visibility: visible;
-		clip-path: circle(100%);
 	}
 
 	.navToggle {
