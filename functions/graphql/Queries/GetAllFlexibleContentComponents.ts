@@ -25,6 +25,7 @@ export const getAllFlexibleContentComponents = async (
 												video
 												paragraph
 												displayVideo
+												heroBackgroundColor
 												buttonLink {
 													url
 													title

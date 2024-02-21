@@ -45,6 +45,7 @@ export type IHero = {
 	title: string;
 	paragraph: string;
 	displayVideo: boolean;
+	heroBackgroundColor: string;
 	buttonLink: {
 		url: string;
 		title: string;

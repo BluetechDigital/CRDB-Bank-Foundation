@@ -54,6 +54,7 @@ const RenderFlexibleContent: FC = () => {
 									buttonLinkTwo={item?.buttonLinkTwo}
 									rightSideImage={item?.rightSideImage}
 									backgroundImage={item?.backgroundImage}
+									heroBackgroundColor={item?.heroBackgroundColor}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_HeroTwo` ? (

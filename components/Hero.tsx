@@ -30,20 +30,31 @@ const Hero: FC<IHero> = ({
 	buttonLinkTwo,
 	rightSideImage,
 	backgroundImage,
+	heroBackgroundColor,
 }) => {
+	let backgroundColor;
+	let linearGradientBackgroundColor;
+
+	switch (heroBackgroundColor) {
+		case "Green":
+			backgroundColor = "bg-green-three border-r-green-darker border-green-two";
+			break;
+		case "Purple":
+			backgroundColor =
+				"bg-purple-three border-r-purple-dark border-purple-two";
+			break;
+		default:
+			backgroundColor = "bg-green-three border-r-green-darker border-green-two";
+			break;
+	}
 	return (
 		<>
 			<div className={styles.hero + `relative p-0 overflow-hidden bg-white`}>
 				<div
-					className="relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-green-three bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] border-r-green-darker border-green-two"
+					className={`relative w-full h-[65vh] lg:h-[75vh] xl:h-[65vh] bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] ${backgroundColor}`}
 					style={{
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
-						backgroundImage: `linear-gradient(
-							0deg,
-							rgba(4, 61, 43, 0.85),
-							rgba(4, 61, 43, 0.05),
-							rgba(4, 61, 43, 0)
-						),url("${
+						backgroundImage: `url("${
 							backgroundImage?.sourceUrl
 								? backgroundImage?.sourceUrl
 								: `/svg/background/stacked-waves-haikei-green.svg`
