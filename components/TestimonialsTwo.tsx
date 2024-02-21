@@ -23,8 +23,11 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 			<div
 				className={
 					styles.testimonialsTwo +
-					` bg-green-default overflow-hidden bg-cover bg-no-repeat bg-center`
+					` bg-white overflow-hidden bg-cover bg-no-repeat bg-center`
 				}
+				style={{
+					backgroundImage: `url("/svg/background/polygon-scatter-haikei-lightgrey.svg")`,
+				}}
 			>
 				<motion.div
 					initial={initial}
@@ -37,7 +40,7 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-lg text-white"
+							className="mb-1 text-center lg:text-center text-lg text-black"
 						>
 							{subtitle}
 						</motion.h4>
@@ -45,13 +48,13 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-2 max-w-2xl mx-auto xl:mx-0 mb-6 text-white text-center xl:text-left font-semibold leading-tight text-4xl lg:text-5xl"
+							className="my-2 max-w-2xl mx-auto xl:mx-0 mb-6 text-black text-center xl:text-left font-semibold leading-tight text-4xl lg:text-5xl"
 						>
 							{title}
 						</motion.h2>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="mb-6 lg:max-w-3xl mx-auto text-white leading-[1.75rem] text-paragraph text-center xl:text-left"
+							tailwindStyling="mb-6 lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center xl:text-left"
 						/>
 						<Link
 							href={`${buttonLink?.url}`}
@@ -118,7 +121,7 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 							</motion.button>
 						</Link>
 					</div>
-					<div className="xl:relative w-full xl:w-2/3 py-8 px-4 flex flex-col items-center justify-center">
+					<div className="w-full xl:w-2/3 py-8 px-4">
 						<TestimonialsTwoCard />
 					</div>
 				</motion.div>
