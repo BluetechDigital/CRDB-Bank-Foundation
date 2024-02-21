@@ -42,13 +42,13 @@ const BackToTopButton: FC<IBackHoverButton> = ({link}) => {
 								width="30.237"
 								viewBox="0 0 30.237 35"
 								xmlns="http://www.w3.org/2000/svg"
-								className="w-[35px] h-[35px] object-center object-contain rotate-[270deg]"
+								className="w-[30px] h-[30px] object-center object-contain rotate-[270deg]"
 							>
 								<g transform="translate(-4906.763 143)">
 									<path
 										d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
 										transform="translate(4870 -143)"
-										fill="#e4a002"
+										fill="#ffffff"
 									></path>
 									<g transform="translate(4890.311 -1111.861)">
 										<path

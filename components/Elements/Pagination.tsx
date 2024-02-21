@@ -154,7 +154,7 @@ const Pagination: FC<IPagination> = ({
 								viewport={{once: true}}
 								onClick={handlePrevPage}
 								disabled={currentPage === 1}
-								className="flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-green-two hover:bg-green-three hover:border-green-three transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-three"
+								className="flex items-center justify-center cursor-pointer mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-black hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
 							>
 								<span className="hidden group-hover:block">
 									<svg
@@ -192,7 +192,7 @@ const Pagination: FC<IPagination> = ({
 											<path
 												d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
 												transform="translate(4870 -143)"
-												fill="#f6ad37"
+												fill="#000"
 											></path>
 											<g transform="translate(4890.311 -1111.861)">
 												<path
@@ -213,7 +213,7 @@ const Pagination: FC<IPagination> = ({
 								viewport={{once: true}}
 								onClick={handleNextPage}
 								disabled={currentPage === totalPages}
-								className="flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-green-two hover:bg-green-three hover:border-green-three transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-three"
+								className="flex items-center justify-center cursor-pointer mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-black hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
 							>
 								<span>Next</span>
 								<span className="hidden group-hover:block">
@@ -250,7 +250,7 @@ const Pagination: FC<IPagination> = ({
 											<path
 												d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
 												transform="translate(4870 -143)"
-												fill="#f6ad37"
+												fill="#000"
 											></path>
 											<g transform="translate(4890.311 -1111.861)">
 												<path

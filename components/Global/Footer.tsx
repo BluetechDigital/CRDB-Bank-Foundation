@@ -76,7 +76,7 @@ const Footer: FC = () => {
 						>
 							<Paragraph
 								content={globalContext?.themesOptionsContent?.textarea}
-								tailwindStyling="block px-4 lg:px-0 max-w-full lg:max-w-sm text-base text-pureBlack text-center lg:text-left"
+								tailwindStyling="block px-4 lg:px-0 max-w-full lg:max-w-sm text-base text-black text-center lg:text-left"
 							/>
 						</motion.div>
 						<div className="flex flex-col items-center justify-between w-auto gap-2 py-6 mb-10 lg:items-baseline">
@@ -108,7 +108,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
+									className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 								>
 									{globalContext?.themesOptionsContent?.email}
@@ -142,7 +142,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
+									className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.emailTwo}
@@ -173,7 +173,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
+									className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
 								>
 									{globalContext?.themesOptionsContent?.phoneNumber}
@@ -204,7 +204,7 @@ const Footer: FC = () => {
 									</svg>
 								</div>
 								<Link
-									className="font-medium text-base tracking-wide text-pureBlack hover:text-green-two"
+									className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									href={`tel:${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.phoneNumberTwo}
@@ -394,7 +394,7 @@ const Footer: FC = () => {
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 mt-8 lg:mt-0 w-full lg:w-[65%] gap-6">
 						<div className="flex flex-col col-span-1 px-0">
-							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase lg:text-left">
+							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-black uppercase lg:text-left">
 								Company Info
 							</h4>
 							<motion.ul
@@ -417,7 +417,7 @@ const Footer: FC = () => {
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
-																className="text-pureBlack group-hover:text-pureBlack group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
+																className="text-black group-hover:text-black group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
 															>
 																{item?.node?.label}
 															</Link>
@@ -464,7 +464,7 @@ const Footer: FC = () => {
 																							<li className="w-full ml-2">
 																								<Link
 																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
+																									className="text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																								>
 																									{item?.node?.label}
 																								</Link>
@@ -491,7 +491,7 @@ const Footer: FC = () => {
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
-																className="text-pureBlack group-hover:text-pureBlack group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
+																className="text-black group-hover:text-black group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
 															>
 																{item?.node?.label}
 															</Link>
@@ -538,7 +538,7 @@ const Footer: FC = () => {
 																							<li className="w-full ml-2">
 																								<Link
 																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
+																									className="text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																								>
 																									{item?.node?.label}
 																								</Link>
@@ -565,7 +565,7 @@ const Footer: FC = () => {
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
-																className="text-pureBlack group-hover:text-pureBlack group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
+																className="text-black group-hover:text-black group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
 															>
 																{item?.node?.label}
 															</Link>
@@ -612,7 +612,7 @@ const Footer: FC = () => {
 																							<li className="w-full ml-2">
 																								<Link
 																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
+																									className="text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																								>
 																									{item?.node?.label}
 																								</Link>
@@ -638,7 +638,7 @@ const Footer: FC = () => {
 													>
 														<Link
 															href={`${item?.node?.url}`}
-															className="text-pureBlack text-base text-center lg:text-left hover:text-green-two"
+															className="text-black text-base text-center lg:text-left hover:text-green-two"
 														>
 															{item?.node?.label}
 														</Link>
@@ -653,7 +653,7 @@ const Footer: FC = () => {
 							</motion.ul>
 						</div>
 						<div className="flex flex-col col-span-1 px-0">
-							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase lg:text-left">
+							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-black uppercase lg:text-left">
 								Our Programs
 							</h4>
 							<motion.ul
@@ -674,7 +674,7 @@ const Footer: FC = () => {
 												>
 													<Link
 														href={`${item?.node?.url}`}
-														className="text-pureBlack text-base text-center lg:text-left hover:text-green-two"
+														className="text-black text-base text-center lg:text-left hover:text-green-two"
 													>
 														{item?.node?.label}
 													</Link>
@@ -688,7 +688,7 @@ const Footer: FC = () => {
 							</motion.ul>
 						</div>
 						<div className="xl:ml-16 flex flex-col sm:col-span-2 xl:col-span-1 gap-4 sm:gap-0 items-center justify-center lg:justify-between">
-							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase md:text-left">
+							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-black uppercase md:text-left">
 								CRDB BANK
 							</h4>
 							<div className="flex flex-col sm:flex-row items-start justify-start gap-4">
@@ -699,7 +699,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
+											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -728,7 +728,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
+											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -762,7 +762,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
+											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -794,7 +794,7 @@ const Footer: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
+											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
@@ -830,10 +830,10 @@ const Footer: FC = () => {
 					>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
-							tailwindStyling="text-pureBlack text-sm text-center lg:text-left"
+							tailwindStyling="text-black text-sm text-center lg:text-left"
 						/>
 						<Link
-							className="inline-block px-1 text-pureBlack hover:text-purple-default hover:underline"
+							className="inline-block px-1 text-black hover:text-purple-default hover:underline"
 							href={`https://bluetech-digital.co.uk`}
 							target="_blank"
 						>
@@ -869,7 +869,7 @@ const Footer: FC = () => {
 									>
 										<Link
 											href={`${item?.node?.url}`}
-											className="text-pureBlack transition-all duration-200 ease-in-out text-base lg:text-sm hover:text-green-two"
+											className="text-black transition-all duration-200 ease-in-out text-base lg:text-sm hover:text-green-two"
 										>
 											{item?.node?.label}
 										</Link>

@@ -56,7 +56,7 @@ const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="mb-2 text-lg font-semibold text-pureBlack transition-all ease-in-out duration-200 hover:text-purple-default"
+							className="mb-2 text-lg font-semibold text-black transition-all ease-in-out duration-200 hover:text-purple-default"
 						>
 							{title}
 						</motion.h2>

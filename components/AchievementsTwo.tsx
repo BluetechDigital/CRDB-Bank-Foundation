@@ -13,7 +13,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 	return (
 		<>
 			<div
-				className="relative py-16 lg:py-10 overflow-hidden"
+				className="py-16 lg:py-10 overflow-hidden bg-cover bg-no-repeat bg-center"
 				style={{
 					backgroundColor: `${backgroundColor}`,
 					clipPath: `polygon(77% 0, 100% 0, 100% 98%, 21% 89%, 0 98%, 0 0)`,
@@ -73,15 +73,6 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 						</motion.div>
 					</div>
 				</motion.div>
-				<div className="hidden xl:block xl:absolute top-[-150px] left-[-190px]">
-					<Image
-						width={500}
-						height={500}
-						alt={`white paper arrow svg`}
-						src={`/svg/background/white-paper-arrow.svg`}
-						className="w-[600px] h-[600px] opacity-50 object-contain object-center"
-					/>
-				</div>
 			</div>
 		</>
 	);

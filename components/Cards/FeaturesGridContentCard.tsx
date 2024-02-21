@@ -29,9 +29,9 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 
 			break;
 		case "Grey":
-			titleStyling = "text-pureBlack";
-			subtitleStyling = "text-white";
-			paragraphStyling = "text-pureBlack";
+			titleStyling = "text-black";
+			subtitleStyling = "text-green-two";
+			paragraphStyling = "text-black";
 			backgroundWaveStyling = "none";
 			backgroundColorStyling = "bg-lightGreyTwo";
 			break;
@@ -57,9 +57,9 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 			backgroundWaveStyling = "blob-scene-haikei-purplewave";
 			break;
 		default:
-			titleStyling = "text-pureBlack";
+			titleStyling = "text-black";
 			subtitleStyling = "text-green-two";
-			paragraphStyling = "text-pureBlack";
+			paragraphStyling = "text-black";
 			backgroundWaveStyling = "none";
 			backgroundColorStyling = "bg-lightGrey";
 	}

@@ -113,7 +113,7 @@ const MainPrograms: FC<IMainPrograms> = ({
 														initial={initialTwo}
 														whileInView={fadeIn}
 														viewport={{once: true}}
-														className="text-pureBlack group-hover:text-white font-extrabold text-xl leading-tight text-center tracking-[0.10rem]"
+														className="text-black group-hover:text-white font-extrabold text-xl leading-tight text-center tracking-[0.10rem]"
 													>
 														{item?.card?.title}
 													</motion.h3>

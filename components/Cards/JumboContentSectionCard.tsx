@@ -37,7 +37,6 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 	let borderImageColor;
 	let paragraphColor;
 	let backgroundColor;
-	let backgroundImage;
 
 	switch (backgroundDisplay) {
 		case "White":
@@ -47,7 +46,6 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			borderImageColor = "border-white";
 			backgroundColor = "bg-white";
 			paragraphColor = "text-black";
-			backgroundImage = `none`;
 			break;
 		case "lightGrey":
 			titleColor = "text-black";
@@ -56,7 +54,6 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			borderImageColor = "border-lightGrey";
 			backgroundColor = "bg-lightGreyTwo";
 			paragraphColor = "text-black";
-			backgroundImage = `none`;
 			break;
 		case "Purple":
 			titleColor = "text-white";
@@ -65,34 +62,22 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 			borderImageColor = "border-purple-default";
 			paragraphColor = "text-white";
 			backgroundColor = "bg-purple-default";
-			backgroundImage = `none`;
 			break;
-		case "GreenStrips":
+		case "GreenFlat":
 			titleColor = "text-white";
 			subtitleColor = "text-white";
 			buttonColor = "white";
 			borderImageColor = "border-green-two";
 			paragraphColor = "text-white";
-			backgroundColor = "bg-transparent";
-			backgroundImage = "/svg/background/stacked-waves-haikei-green-strips.svg";
+			backgroundColor = "bg-green-flat";
 			break;
-		case "PurpleStrips":
-			titleColor = "text-white";
-			subtitleColor = "text-white";
-			buttonColor = "white";
-			borderImageColor = "border-purple-default";
-			paragraphColor = "text-white";
-			backgroundColor = "bg-transparent";
-			backgroundImage = "/svg/background/stacked-waves-haikei-purple.svg";
-			break;
-		case "PurpleWave":
-			titleColor = "text-white";
-			subtitleColor = "text-white";
-			buttonColor = "white";
-			borderImageColor = "border-purple-default";
-			paragraphColor = "text-white";
-			backgroundColor = "bg-transparent";
-			backgroundImage = "/svg/background/blob-scene-haikei-purplewave.svg";
+		default:
+			titleColor = "text-black";
+			subtitleColor = "text-green-two";
+			buttonColor = "blue-default";
+			borderImageColor = "border-white";
+			backgroundColor = "bg-white";
+			paragraphColor = "text-black";
 			break;
 	}
 
@@ -125,7 +110,6 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 					` relative pb-28 pt-10 lg:pb-32 lg:py-10 overflow-hidden bg-center bg-no-repeat bg-cover ${backgroundColor}`
 				}
 				style={{
-					backgroundImage: `url("${backgroundImage}")`,
 					clipPath: `${
 						backgroundDisplay === "YellowWave" ||
 						backgroundDisplay === "lightGrey"

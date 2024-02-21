@@ -5,7 +5,7 @@
 .backToTopButton {
 	font-family: $body;
 
-	@apply bg-green-dark py-2 px-3 hover:bg-green-darker transition-all ease-in-out duration-500;
+	@apply bg-green-three py-2 px-3 hover:bg-green-default transition-all ease-in-out duration-500;
 
 	&:focus {
 		outline: none;

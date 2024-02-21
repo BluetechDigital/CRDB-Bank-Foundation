@@ -67,7 +67,7 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 								viewport={{once: true}}
 								className={
 									buttonLink?.title
-										? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-purple-default border-purple-default hover:bg-purple-two hover:border-purple-two transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-purple-default hover:before:bg-purple-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-purple-default hover:after:bg-purple-two`
+										? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-purple-default border-purple-default hover:bg-purple-three hover:border-purple-three transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-purple-default hover:before:bg-purple-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-purple-default hover:after:bg-purple-three`
 										: `hidden`
 								}
 							>
@@ -83,7 +83,7 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 											<path
 												d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
 												transform="translate(4870 -143)"
-												fill="#e4a002"
+												fill="#ffffff"
 											></path>
 											<g transform="translate(4890.311 -1111.861)">
 												<path
