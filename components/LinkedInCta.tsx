@@ -148,7 +148,7 @@ const LinkedInCta: FC<ILinkedInCta> = ({
 													data-name="Subtraction 2"
 													d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
 													transform="translate(168 13)"
-													fill="#e96500"
+													fill="#43b02a"
 												></path>
 											</g>
 										</svg>

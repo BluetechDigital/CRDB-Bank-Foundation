@@ -58,7 +58,7 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 			<div
 				className={
 					styles.individualExecutiveMember +
-					` relative pb-28 pt-10 lg:pb-32 lg:py-10 overflow-hidden bg-center bg-no-repeat bg-cover bg-white`
+					` relative pb-28 pt-10 lg:pb-32 xl:pb-44 lg:py-10 overflow-hidden bg-center bg-no-repeat bg-cover bg-white`
 				}
 				style={{
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,

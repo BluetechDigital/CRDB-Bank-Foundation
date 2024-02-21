@@ -41,10 +41,10 @@ const ButtonBorderSliced: FC<IButtonBorderSliced> = ({
 			break;
 		case "lightGrey":
 			sgvOneColor = "#000";
-			sgvTwoColor = "#000";
+			sgvTwoColor = "#43b02a";
 			sgvOneColorHover = "#ffffff";
 			sgvTwoColorHover = "#ffffff";
-			textColor = "text-black";
+			textColor = "text-pureBlack";
 			borderColor = "border-pureBlack";
 			textColorHover = "hover:text-white";
 			borderColorHover = "hover:border-purple-default";
@@ -55,10 +55,10 @@ const ButtonBorderSliced: FC<IButtonBorderSliced> = ({
 			beforeBackgroundColorHover = "hover:before:bg-purple-default";
 			break;
 		case "purple-default":
-			sgvOneColor = "#5a287d";
-			sgvTwoColor = "#5a287d";
+			sgvOneColor = "#001e55";
+			sgvTwoColor = "#e4a002";
 			sgvOneColorHover = "#ffffff";
-			sgvTwoColorHover = "#ffffff";
+			sgvTwoColorHover = "#e4a002";
 			textColor = "text-purple-default";
 			borderColor = "border-purple-default";
 			textColorHover = "hover:text-white";
@@ -86,9 +86,9 @@ const ButtonBorderSliced: FC<IButtonBorderSliced> = ({
 			break;
 		default:
 			sgvOneColor = "#000";
-			sgvTwoColor = "#e4a002";
+			sgvTwoColor = "#000";
 			sgvOneColorHover = "#ffffff";
-			sgvTwoColorHover = "#e4a002";
+			sgvTwoColorHover = "#43b02a";
 			textColor = "text-black";
 			borderColor = "border-green-two";
 			textColorHover = "hover:text-white";
