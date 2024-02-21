@@ -1,11 +1,5 @@
 // Imports
-import {
-	fadeIn,
-	initial,
-	stagger,
-	initialTwo,
-} from "../../animations/animations";
-import Image from "next/image";
+import {initial, stagger} from "../../animations/animations";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
@@ -15,11 +9,8 @@ import TestimonialsTwoCardElement from "../Elements/TestimonialsTwoCardElement";
 // Swiper.js Slider
 import "swiper/css";
 import "swiper/css/navigation";
-import {Navigation} from "swiper/modules";
+import {Autoplay, Navigation} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-
-// Components
-import Paragraph from "../Elements/Paragraph";
 
 const TestimonialsTwoCard: FC = () => {
 	const globalContext = useGlobalContext();
@@ -32,7 +23,17 @@ const TestimonialsTwoCard: FC = () => {
 				viewport={{once: true}}
 				className="flex flex-col lg:flex-row lg:items-center justify-center  mx-16"
 			>
-				<Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+				<Swiper
+					navigation={true}
+					spaceBetween={30}
+					centeredSlides={true}
+					modules={[Autoplay, Navigation]}
+					autoplay={{
+						delay: 2500,
+						disableOnInteraction: false,
+					}}
+					className="mySwiper"
+				>
 					{globalContext?.testimonials?.length > 0 ? (
 						globalContext?.testimonials?.map((item: any, keys: number) => (
 							<Fragment key={keys}>
