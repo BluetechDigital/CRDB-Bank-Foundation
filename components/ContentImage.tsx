@@ -31,78 +31,65 @@ const ContentImage: FC<IContentImage> = ({
 		<>
 			<div
 				id="ContentStripesVideoBlock"
-				className={styles.contentImage + " p-0 bg-green-flat"}
-				style={{
-					clipPath: `polygon(75% 5%, 100% 0, 100% 100%, 0 100%, 0 0)`,
-				}}
+				className={
+					styles.contentImage +
+					" p-0 bg-white flex flex-col lg:flex-row items-center "
+				}
 			>
-				<div className="flex flex-col xl:flex-row justify-center">
-					<motion.div
-						initial={initial}
-						whileInView={stagger}
-						viewport={{once: true}}
-						className="max-w-2xl mx-auto py-20 px-4 lg:px-12 lg:py-20 lg:max-w-5xl w-full xl:w-1/2 2xl:w-1/3 bg-cover bg-no-repeat bg-center"
-						style={{
-							backgroundImage: `url("/svg/background/layered-peaks-haikei-green-flatgreen.svg")`,
-						}}
-					>
-						<div className="max-w-2xl mx-auto">
-							<motion.h4
-								initial={initialTwo}
-								whileInView={fadeIn}
-								viewport={{once: true}}
-								className="text-center xl:text-left text-paragraph text-green-two"
-							>
-								{subtitle}
-							</motion.h4>
-							<motion.h2
-								initial={initial}
-								whileInView={stagger}
-								viewport={{once: true}}
-								className="my-2 max-w-2xl mx-auto mb-6 text-white text-center xl:text-left font-semibold text-4xl lg:text-5xl"
-							>
-								{title}
-							</motion.h2>
-						</div>
+				<motion.div
+					initial={initial}
+					whileInView={stagger}
+					viewport={{once: true}}
+					className="py-20 px-4 lg:p-20 lg:max-w-5xl w-full lg:w-1/2 h-full"
+				>
+					<div className="lg:max-w-2xl mx-auto lg:mx-0">
+						<motion.h4
+							initial={initialTwo}
+							whileInView={fadeIn}
+							viewport={{once: true}}
+							className="text-center lg:text-left text-paragraph text-green-two"
+						>
+							{subtitle}
+						</motion.h4>
+						<motion.h2
+							initial={initial}
+							whileInView={stagger}
+							viewport={{once: true}}
+							className="my-2 mb-6 text-black text-center lg:text-left font-semibold text-4xl lg:text-5xl"
+						>
+							{title}
+						</motion.h2>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="text-center xl:text-left text-white text-paragraph"
+							tailwindStyling="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left text-black text-paragraph"
 						/>
-						<Link
-							href={`${buttonLink?.url}`}
-							target={buttonLink?.target}
-							className={
-								buttonLink?.url
-									? "flex mt-6 lg:mt-0 items-center justify-center xl:justify-start"
-									: "hidden"
-							}
-						>
-							<ButtonBorderSliced
-								fullWidth={false}
-								title={buttonLink?.title}
-								tailwindColor="white"
-							/>
-						</Link>
-					</motion.div>
-					<motion.div
-						viewport={{once: true}}
-						initial={slideInRightInitial}
-						whileInView={slideInRightFinish}
-						className="flex flex-col w-full xl:w-1/2 2xl:w-2/3"
+					</div>
+
+					<Link
+						href={`${buttonLink?.url}`}
+						target={buttonLink?.target}
+						className={
+							buttonLink?.url
+								? "flex mt-6 items-center justify-center lg:justify-start"
+								: "hidden"
+						}
 					>
-						<Image
-							alt={image?.altText}
-							src={image?.sourceUrl}
-							width={image?.mediaDetails.width}
-							height={image?.mediaDetails.height}
-							className={`${
-								image?.sourceUrl
-									? "w-full h-full min-h-[500px] max-h-[500px] xl:max-h-[750px] object-cover object-center"
-									: "hidden"
-							}`}
+						<ButtonBorderSliced
+							fullWidth={false}
+							title={buttonLink?.title}
+							tailwindColor="green-Two"
 						/>
-					</motion.div>
-				</div>
+					</Link>
+				</motion.div>
+				<motion.div
+					viewport={{once: true}}
+					initial={slideInRightInitial}
+					whileInView={slideInRightFinish}
+					className="w-full h-full lg:w-1/2 h-[500px] lg:h-[775px] xl:h-[725px] 2xl:h-[635px] bg-cover bg-center bg-no-repeat"
+					style={{
+						backgroundImage: `url("${image?.sourceUrl}")`,
+					}}
+				></motion.div>
 			</div>
 		</>
 	);
