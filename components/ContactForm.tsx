@@ -63,10 +63,10 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 			errors.phoneNumber = "Please inform us about the topic.";
 		}
 
-		if (!values?.selectedServices) {
-			errors.selectedServices = "Required*";
-		} else if (values?.selectedServices.length <= 0) {
-			errors.selectedServices = "Please inform us about the topic.";
+		if (!values?.selectedPrograms) {
+			errors.selectedPrograms = "Required*";
+		} else if (values?.selectedPrograms.length <= 0) {
+			errors.selectedPrograms = "Please inform us about the topic.";
 		}
 
 		if (!values?.subject) {
@@ -103,7 +103,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 			lastName: "",
 			email: "",
 			phoneNumber: "",
-			selectedServices: "",
+			selectedPrograms: "",
 			subject: "",
 			message: "",
 		},
@@ -596,22 +596,22 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									viewport={{once: true}}
 									className="w-full"
 								>
-									{formik?.touched?.selectedServices &&
-									formik?.errors?.selectedServices ? (
+									{formik?.touched?.selectedPrograms &&
+									formik?.errors?.selectedPrograms ? (
 										<div>
 											<p className="py-1 text-left text-tiny text-blue-darker ">
-												{formik?.errors?.selectedServices}
+												{formik?.errors?.selectedPrograms}
 											</p>
 										</div>
 									) : null}
 									<Field
 										as="select"
-										id="selectedServices"
-										name="selectedServices"
+										id="selectedPrograms"
+										name="selectedPrograms"
 										placeholder="Pick a Service"
 										onBlur={formik?.handleBlur}
 										onChange={formik?.handleChange}
-										value={formik?.values?.selectedServices}
+										value={formik?.values?.selectedPrograms}
 										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
 									>
 										{globalContext?.ourProgramsLinks?.length > 0 ? (
@@ -672,7 +672,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										!formik?.values?.lastName ||
 										!formik?.values?.email ||
 										!formik?.values?.phoneNumber ||
-										!formik?.values?.selectedServices ||
+										!formik?.values?.selectedPrograms ||
 										!formik?.values?.subject ||
 										!formik?.values?.message ||
 										reCaptchaResult === null ||

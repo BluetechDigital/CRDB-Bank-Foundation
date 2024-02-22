@@ -26,7 +26,7 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 	updatedDate,
 	phoneNumber,
 	imagesDirUrl,
-	selectedServices,
+	selectedPrograms,
 	themesOptionsContent,
 }) => {
 	const formattedDate = new Intl.DateTimeFormat("en", {
@@ -50,7 +50,7 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 							<Text style={introParagraph}>Hi {firstName},</Text>
 							<Text style={paragraph}>
 								Thank you for reaching out to AWL Carpentry & Developments Ltd
-								regarding {subject} and our {selectedServices} services. We have
+								regarding {subject} and our {selectedPrograms} services. We have
 								received your website inquiry on {formattedDate} and are eager
 								to assist you with your goals. At this moment there is no
 								further action is required from you.
@@ -88,11 +88,11 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 							</Text>
 							<Text style={paragraph}>Best regards,</Text>
 							<Text style={paragraph}>
-								Adam Long,
+								Ms. Tully Esther Mwambapa,
 								<br />
 								Director,
 								<br />
-								AWL Carpentry & Developments Ltd
+								CRDB Bank Foundation (CBF)
 							</Text>
 							<Text style={paragraph}>
 								Tel:{" "}
@@ -126,11 +126,8 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 								</Link>
 								<br />
 								Website:{" "}
-								<Link
-									style={link}
-									href={`https://awlcarpentrydevelopments.co.uk`}
-								>
-									awlcarpentrydevelopments.co.uk
+								<Link style={link} href={`https://crdbbankfoundation.co.tz`}>
+									crdbbankfoundation.co.tz
 								</Link>
 							</Text>
 						</Section>
@@ -177,6 +174,6 @@ const content: ICustomerEmail.IContent = {
 	padding: "10px",
 };
 const link: ICustomerEmail.ILink = {
-	color: "#20ce88",
+	color: "#43b02a",
 	textDecoration: "underline",
 };

@@ -12,10 +12,10 @@ const EmailHeader: React.FC<IEmailHeader.IEmailHeader> = ({imagesDirUrl}) => {
 					height="105"
 					style={logo}
 					src={imagesDirUrl}
-					alt="AWL Carpentry Developments Ltd Logo"
+					alt="CRDB Bank Foundation (CBF) Banner"
 				/>
 			</Section>
-			<Section style={{border: "5px solid", borderColor: "#116dff"}}></Section>
+			<Section style={{border: "5px solid", borderColor: "#00ab00"}}></Section>
 		</>
 	);
 };
@@ -28,7 +28,7 @@ const imageSection: IEmailHeader.IImageSection = {
 	display: "flex",
 	alignItems: "center",
 	justifyContent: "center",
-	backgroundColor: "#001640",
+	backgroundColor: "#015a01",
 };
 
 const logo: IEmailHeader.ILogo = {

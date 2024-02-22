@@ -21,7 +21,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 			!data?.lastName ||
 			!data?.firstName ||
 			!data?.phoneNumber ||
-			!data?.selectedServices
+			!data?.selectedPrograms
 		) {
 			return res.status(400).json({
 				status: "error",

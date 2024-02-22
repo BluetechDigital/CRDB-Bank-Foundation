@@ -81,7 +81,7 @@ export namespace ICustomerEmail {
 		updatedDate?: Date;
 		phoneNumber?: number;
 		imagesDirUrl?: string;
-		selectedServices?: string;
+		selectedPrograms?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type IMain = {
@@ -160,7 +160,7 @@ export namespace IBusinessEmail {
 		updatedDate?: Date;
 		phoneNumber?: number;
 		imagesDirUrl?: string;
-		selectedServices?: string;
+		selectedPrograms?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type IMain = {

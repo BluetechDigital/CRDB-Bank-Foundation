@@ -27,7 +27,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 	updatedDate,
 	phoneNumber,
 	imagesDirUrl,
-	selectedServices,
+	selectedPrograms,
 	themesOptionsContent,
 }) => {
 	const formattedDate = new Intl.DateTimeFormat("en", {
@@ -38,19 +38,19 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 	return (
 		<Html>
 			<Head />
-			<Preview>New Website Inquiry: {`${selectedServices}`}</Preview>
+			<Preview>New Website Inquiry: {`${selectedPrograms}`}</Preview>
 			<Body style={main}>
 				<Container style={container}>
 					<EmailHeader
-						imagesDirUrl={`${imagesDirUrl}/AWL-Carpentry-Developments-Ltd-Email-Header-1.png`}
+						imagesDirUrl={`${imagesDirUrl}/CRDB-Bank-Foundation-Ltd-Email-Header-1.png`}
 					/>
 					<Section style={content}>
 						<Text style={introParagraph}>Hello Team,</Text>
 						<Text style={paragraph}>
 							We&apos;ve just received a new inquiry through our website&apos;s
-							regarding {subject} and our general carpentry & developments
-							services. The customer as contacted us on {formattedDate} their
-							details are below.
+							regarding {subject} and our {selectedPrograms} programs. The
+							customer as contacted us on {formattedDate} their details are
+							below.
 						</Text>
 						<Text style={detailsParagraph}>Inquiry Details:</Text>
 						<Text style={paragraph}>
@@ -68,7 +68,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 								{phoneNumber}
 							</Link>
 							<br />
-							<strong>Services Inquired:</strong> {selectedServices} Services
+							<strong>Programs Inquired:</strong> {selectedPrograms}
 						</Text>
 						<Text style={paragraph}>
 							<strong>Subject:</strong> {subject}
@@ -82,11 +82,11 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 						</Text>
 						<Text style={paragraph}>Best regards,</Text>
 						<Text style={paragraph}>
-							Adam Long,
+							Ms. Tully Esther Mwambapa,
 							<br />
 							Director,
 							<br />
-							AWL Carpentry & Developments Ltd
+							CRDB Bank Foundation (CBF)
 						</Text>
 					</Section>
 					<EmailFooter

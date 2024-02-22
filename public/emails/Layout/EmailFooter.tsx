@@ -7,10 +7,9 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 	imagesDirUrl,
 	themesOptionsContent,
 }) => {
-	console.log(imagesDirUrl);
 	return (
 		<>
-			<Section style={{border: "5px solid", borderColor: "#116dff"}}></Section>
+			<Section style={{border: "5px solid", borderColor: "#00ab00"}}></Section>
 			<Section style={footer}>
 				<Section style={footerLogoSection}>
 					<Link href={`https://awlcarpentrydevelopments.co.uk`}>
@@ -18,7 +17,7 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 							width="105px"
 							height="105px"
 							style={footerLogo}
-							alt="AWL Carpentry Developments Ltd Logo White"
+							alt="CRDB Bank Foundation (CBF) Logo White"
 							src={`${imagesDirUrl}/awl-carpentry-developments-logo-white.png`}
 						/>
 					</Link>
@@ -84,13 +83,13 @@ const footer: IEmailFooter.IFooter = {
 	maxWidth: "580px",
 	margin: "0 auto",
 	marginBottom: "30px",
-	backgroundColor: "#001640",
+	backgroundColor: "#015a01",
 };
 
 const footerLogoSection: IEmailFooter.IFooterLogoSection = {
 	width: "100%",
 	padding: "0px",
-	backgroundColor: "#001640",
+	backgroundColor: "#015a01",
 };
 
 const footerLogo: IEmailFooter.IFooterLogo = {
