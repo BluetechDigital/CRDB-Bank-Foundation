@@ -415,14 +415,7 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_ContactForm {
 												fieldGroupName
 												title
-												image {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
+												paragraph
 											}
 											... on ${postTypeFlexibleContent}_BoardOfDirectorsGrid {
 												fieldGroupName

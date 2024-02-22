@@ -1,0 +1,691 @@
+"use client";
+
+// Imports
+import {
+	fadeIn,
+	initial,
+	stagger,
+	fadeInUp,
+	initialTwo,
+} from "@/animations/animations";
+import Link from "next/link";
+import {motion} from "framer-motion";
+import {useRouter} from "next/router";
+import ReCAPTCHA from "react-google-recaptcha";
+import {IContactForm} from "@/types/components";
+import {useGlobalContext} from "@/context/global";
+import {sendContactForm} from "@/lib/contactForm";
+import React, {useState, FC, Fragment} from "react";
+import {useFormik, Formik, Field, Form} from "formik";
+
+// Styling
+import styles from "@/styles/components/ContactForm.module.scss";
+
+// Components
+import Paragraph from "./Elements/Paragraph";
+
+const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
+	const router = useRouter();
+	const globalContext = useGlobalContext();
+
+	// Loading, Send & Error Message States
+	const [loading, setLoading] = useState(false);
+	const [messageSent, setMessageSent] = useState(false);
+	const [errorMessage, setErrorMessage] = useState(false);
+
+	// A custom validation function. This must return an object
+	// which keys are symmetrical to our values/initialValues
+	const validate: any = (values: any) => {
+		const errors: any = {};
+		if (!values?.firstName) {
+			errors.firstName = "Required*";
+		} else if (values?.firstName.length >= 16) {
+			errors.firstName = "Must be 15 characters or less";
+		}
+
+		if (!values.lastName) {
+			errors.lastName = "Required*";
+		} else if (values.lastName.length >= 21) {
+			errors.lastName = "Must be 20 characters or less";
+		}
+
+		if (!values?.email) {
+			errors.email = "Required*";
+		} else if (
+			!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values?.email)
+		) {
+			errors.email = "Invalid email address";
+		}
+
+		if (!values?.phoneNumber) {
+			errors.phoneNumber = "Required*";
+		} else if (values?.phoneNumber.length < 1) {
+			errors.phoneNumber = "Please inform us about the topic.";
+		}
+
+		if (!values?.selectedServices) {
+			errors.selectedServices = "Required*";
+		} else if (values?.selectedServices.length <= 0) {
+			errors.selectedServices = "Please inform us about the topic.";
+		}
+
+		if (!values?.subject) {
+			errors.subject = "Required*";
+		} else if (values?.subject.length <= 0) {
+			errors.subject = "Please inform us about the topic.";
+		}
+
+		if (!values?.message) {
+			errors.message = "Required*";
+		} else if (values?.message.length <= 0) {
+			errors.message = "Please tell us about your enquiry.";
+		}
+
+		return errors;
+	};
+
+	// Google ReCaptcha Validation
+	const [reCaptchaResult, setReCaptchaResult] = useState(null);
+	const googleReCaptchaValidate = (value: any) => {
+		return value;
+	};
+
+	const handleReCaptchaChange = (response: any) => {
+		const result = googleReCaptchaValidate(response);
+		setReCaptchaResult(result);
+	};
+
+	/* Contact Form Fields
+	And Initial Values */
+	const formik: any = useFormik({
+		initialValues: {
+			firstName: "",
+			lastName: "",
+			email: "",
+			phoneNumber: "",
+			selectedServices: "",
+			subject: "",
+			message: "",
+		},
+		validate,
+		onSubmit: async (values: any) => {
+			if (reCaptchaResult) {
+				try {
+					console.log(values);
+					await sendContactForm(values);
+				} catch (error) {
+					setErrorMessage(true);
+					throw new Error(
+						"Error Message: Something went wrong with Sending your Message. Please try again."
+					);
+				}
+			} else {
+				throw new Error(
+					"Error Message: Something went wrong with your Google Recaptcha validation. Please try again."
+				);
+			}
+		},
+	});
+
+	// Form Submission
+	const onFormSubmit = (event: any) => {
+		event.preventDefault();
+		setErrorMessage(false);
+		if (reCaptchaResult) {
+			try {
+				setLoading(true);
+				/* Send Form Content */
+				formik.handleSubmit();
+				setLoading(false);
+				setMessageSent(true);
+				setTimeout(() => {
+					router.reload();
+				}, 3000);
+			} catch (error) {
+				setErrorMessage(true);
+				throw new Error(
+					"Error Message: Something went wrong with Sending your Message. Please try again."
+				);
+			}
+		} else {
+			throw new Error(
+				"Error Message: Something went wrong with your Google Recaptcha validation. Please try again."
+			);
+		}
+	};
+
+	return (
+		<>
+			<div
+				className="px-4 py-10 bg-cover bg-center bg-no-repeat"
+				style={{
+					backgroundImage: `url("/svg/background/layered-peaks-haikei-lightgrey-grey-one.svg")`,
+				}}
+			>
+				<div className="container mx-auto flex flex-col lg:flex-row items-baseline ">
+					<div className="w-full lg:w-1/2 sm:p-6 flex flex-col">
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
+							className="mb-6"
+						>
+							<motion.h2
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className="lg:max-w-lg mb-6 text-center lg:text-left font-semibold leading-tight text-4xl lg:text-5xl text-black"
+							>
+								{title}
+							</motion.h2>
+							<Paragraph
+								content={paragraph}
+								tailwindStyling="lg:max-w-lg text-center lg:text-left text-black text-paragraph"
+							/>
+						</motion.div>
+						<motion.div
+							initial={initial}
+							viewport={{once: true}}
+							variants={stagger}
+							whileInView="animate"
+							className="mb-6"
+						>
+							<motion.h3
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className="mb-6 text-2xl font-semibold text-center lg:text-left"
+							>
+								Contacts
+							</motion.h3>
+							<motion.div
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								viewport={{once: true}}
+								className="flex flex-col items-center lg:items-start gap-3 text-center lg:text-left"
+							>
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className={
+										globalContext?.themesOptionsContent?.email
+											? "flex items-center justify-center gap-2"
+											: "hidden"
+									}
+								>
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M2.5 6.66669L9.0755 11.0504C9.63533 11.4236 10.3647 11.4236 10.9245 11.0504L17.5 6.66669M4.16667 15.8334H15.8333C16.7538 15.8334 17.5 15.0872 17.5 14.1667V5.83335C17.5 4.91288 16.7538 4.16669 15.8333 4.16669H4.16667C3.24619 4.16669 2.5 4.91288 2.5 5.83335V14.1667C2.5 15.0872 3.24619 15.8334 4.16667 15.8334Z"
+												stroke="white"
+												strokeWidth="1.5"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+											></path>
+										</svg>
+									</div>
+									<Link
+										className="font-medium tracking-wide text-black hover:text-green-two"
+										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
+									>
+										{globalContext?.themesOptionsContent?.email}
+									</Link>
+								</motion.div>
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className={
+										globalContext?.themesOptionsContent?.emailTwo
+											? "flex items-center justify-center gap-2"
+											: "hidden"
+									}
+								>
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M2.5 6.66669L9.0755 11.0504C9.63533 11.4236 10.3647 11.4236 10.9245 11.0504L17.5 6.66669M4.16667 15.8334H15.8333C16.7538 15.8334 17.5 15.0872 17.5 14.1667V5.83335C17.5 4.91288 16.7538 4.16669 15.8333 4.16669H4.16667C3.24619 4.16669 2.5 4.91288 2.5 5.83335V14.1667C2.5 15.0872 3.24619 15.8334 4.16667 15.8334Z"
+												stroke="white"
+												strokeWidth="1.5"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+											></path>
+										</svg>
+									</div>
+									<Link
+										className="font-medium tracking-wide text-black hover:text-green-two"
+										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
+									>
+										{globalContext?.themesOptionsContent?.emailTwo}
+									</Link>
+								</motion.div>
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className={
+										globalContext?.themesOptionsContent?.phoneNumber
+											? "flex items-center justify-center gap-2"
+											: "hidden"
+									}
+								>
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.61 14.99 15.86 14.89 16.12 14.89C16.22 14.89 16.33 14.9 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3Z"
+												fill="#ffffff"
+											/>
+										</svg>
+									</div>
+									<Link
+										className="font-medium tracking-wide text-black hover:text-green-two"
+										href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
+									>
+										{globalContext?.themesOptionsContent?.phoneNumber}
+									</Link>
+								</motion.div>
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className={
+										globalContext?.themesOptionsContent?.phoneNumberTwo
+											? "flex items-center justify-center gap-2"
+											: "hidden"
+									}
+								>
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.61 14.99 15.86 14.89 16.12 14.89C16.22 14.89 16.33 14.9 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3Z"
+												fill="#ffffff"
+											/>
+										</svg>
+									</div>
+									<Link
+										className="font-medium tracking-wide text-black hover:text-green-two"
+										href={`tel:${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
+									>
+										{globalContext?.themesOptionsContent?.phoneNumberTwo}
+									</Link>
+								</motion.div>
+							</motion.div>
+						</motion.div>
+						<motion.div
+							initial={initial}
+							viewport={{once: true}}
+							variants={stagger}
+							whileInView="animate"
+							className="mb-6"
+						>
+							<motion.h3
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className="mb-6 text-2xl font-semibold text-center lg:text-left"
+							>
+								Address
+							</motion.h3>
+							<motion.div
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className={
+									globalContext?.themesOptionsContent?.phoneNumberTwo
+										? "flex items-center lg:justify-start justify-center gap-2"
+										: "hidden"
+								}
+							>
+								<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
+									<svg
+										fill="#ffffff"
+										width="800px"
+										height="800px"
+										viewBox="-7 -7 46 46"
+										version="1.1"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path d="M16.114-0.011c-6.559 0-12.114 5.587-12.114 12.204 0 6.93 6.439 14.017 10.77 18.998 0.017 0.020 0.717 0.797 1.579 0.797h0.076c0.863 0 1.558-0.777 1.575-0.797 4.064-4.672 10-12.377 10-18.998 0-6.618-4.333-12.204-11.886-12.204zM16.515 29.849c-0.035 0.035-0.086 0.074-0.131 0.107-0.046-0.032-0.096-0.072-0.133-0.107l-0.523-0.602c-4.106-4.71-9.729-11.161-9.729-17.055 0-5.532 4.632-10.205 10.114-10.205 6.829 0 9.886 5.125 9.886 10.205 0 4.474-3.192 10.416-9.485 17.657zM16.035 6.044c-3.313 0-6 2.686-6 6s2.687 6 6 6 6-2.687 6-6-2.686-6-6-6zM16.035 16.044c-2.206 0-4.046-1.838-4.046-4.044s1.794-4 4-4c2.207 0 4 1.794 4 4 0.001 2.206-1.747 4.044-3.954 4.044z"></path>
+									</svg>
+								</div>
+								<Paragraph
+									content={globalContext?.themesOptionsContent?.address}
+									tailwindStyling="w-fit lg:max-w-xl text-center lg:text-left text-black text-paragraph"
+								/>
+							</motion.div>
+						</motion.div>
+					</div>
+					<Formik
+						onSubmit={formik?.onSubmit}
+						initialValues={formik?.initialValues}
+						className="w-full lg:w-1/2"
+					>
+						<Form className="container mx-auto py-10 md:max-w-xl">
+							{loading ? (
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className="flex items-center justify-center my-4 mb-8 gap-x-2"
+								>
+									<h3 className="text-xl font-semibold uppercase text-blue-default">
+										Sending Message...
+									</h3>
+								</motion.div>
+							) : messageSent ? (
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className="flex items-center justify-center my-4 mb-8 gap-x-2"
+								>
+									<h3 className="text-xl font-semibold text-center uppercase text-aqua-default">
+										Message Sent!
+									</h3>
+								</motion.div>
+							) : errorMessage ? (
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className="flex items-center justify-center my-4 mb-8 gap-x-2"
+								>
+									<h3 className="text-xl font-semibold text-center uppercase text-blue-darker">
+										Error Message: Something went wrong with sending your
+										message. Please try again.
+									</h3>
+								</motion.div>
+							) : (
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className="mb-6"
+								>
+									<motion.h2
+										initial={initial}
+										whileInView={fadeInUp}
+										viewport={{once: true}}
+										className="max-w-xl mx-auto xl:mx-0 mb-6 text-center font-semibold leading-tight text-4xl lg:text-5xl text-black"
+									>
+										Get In Touch
+									</motion.h2>
+								</motion.div>
+							)}
+
+							<motion.div
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								viewport={{once: true}}
+								className="flex flex-col gap-4"
+							>
+								<div className="flex flex-col sm:flex-row gap-4">
+									<motion.div
+										initial={initial}
+										whileInView={fadeInUp}
+										viewport={{once: true}}
+										className="w-full"
+									>
+										{formik?.touched?.firstName && formik?.errors?.firstName ? (
+											<div>
+												<p className="py-1 text-left text-tiny text-blue-darker ">
+													{formik?.errors?.firstName}
+												</p>
+											</div>
+										) : null}
+										<Field
+											id="firstName"
+											name="firstName"
+											placeholder="First Name"
+											onBlur={formik?.handleBlur}
+											onChange={formik?.handleChange}
+											value={formik?.values?.firstName}
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+										/>
+									</motion.div>
+									<motion.div
+										initial={initial}
+										whileInView={fadeInUp}
+										viewport={{once: true}}
+										className="w-full"
+									>
+										{formik?.touched?.lastName && formik?.errors?.lastName ? (
+											<div>
+												<p className="py-1 text-left text-tiny text-blue-darker ">
+													{formik?.errors?.lastName}
+												</p>
+											</div>
+										) : null}
+										<Field
+											id="lastName"
+											name="lastName"
+											placeholder="Last Name"
+											onBlur={formik?.handleBlur}
+											onChange={formik?.handleChange}
+											value={formik?.values?.lastName}
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+										/>
+									</motion.div>
+								</div>
+								<div className="flex flex-col sm:flex-row gap-4">
+									<motion.div
+										initial={initial}
+										whileInView={fadeInUp}
+										viewport={{once: true}}
+										className="w-full"
+									>
+										{formik?.touched?.phoneNumber &&
+										formik?.errors?.phoneNumber ? (
+											<div>
+												<p className="py-1 text-left text-tiny text-blue-darker ">
+													{formik?.errors?.phoneNumber}
+												</p>
+											</div>
+										) : null}
+										<Field
+											id="phoneNumber"
+											name="phoneNumber"
+											type="number"
+											placeholder="Phone Number"
+											onBlur={formik?.handleBlur}
+											onChange={formik?.handleChange}
+											value={formik?.values?.phoneNumber}
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+										/>
+									</motion.div>
+									<motion.div
+										initial={initial}
+										whileInView={fadeInUp}
+										viewport={{once: true}}
+										className="w-full"
+									>
+										{formik?.touched?.subject && formik?.errors?.subject ? (
+											<div>
+												<p className="py-1 text-left text-tiny text-blue-darker ">
+													{formik?.errors?.subject}
+												</p>
+											</div>
+										) : null}
+										<Field
+											id="subject"
+											name="subject"
+											type="text"
+											placeholder="Subject"
+											onBlur={formik?.handleBlur}
+											onChange={formik?.handleChange}
+											value={formik?.values?.subject}
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+										/>
+									</motion.div>
+								</div>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="w-full"
+								>
+									{formik?.touched?.email && formik?.errors?.email ? (
+										<div>
+											<p className="py-1 text-left text-tiny text-blue-darker ">
+												{formik?.errors?.email}
+											</p>
+										</div>
+									) : null}
+									<Field
+										id="email"
+										name="email"
+										type="email"
+										placeholder="Email Address"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.email}
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+									/>
+								</motion.div>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="w-full"
+								>
+									{formik?.touched?.selectedServices &&
+									formik?.errors?.selectedServices ? (
+										<div>
+											<p className="py-1 text-left text-tiny text-blue-darker ">
+												{formik?.errors?.selectedServices}
+											</p>
+										</div>
+									) : null}
+									<Field
+										as="select"
+										id="selectedServices"
+										name="selectedServices"
+										placeholder="Pick a Service"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.selectedServices}
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+									>
+										{globalContext?.ourProgramsLinks?.length > 0 ? (
+											globalContext?.ourProgramsLinks?.map(
+												(item: any, keys: number) => (
+													<Fragment key={keys}>
+														<option value={item?.node?.label}>
+															{item?.node?.label}
+														</option>
+													</Fragment>
+												)
+											)
+										) : (
+											<></>
+										)}
+									</Field>
+								</motion.div>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+								>
+									{formik?.touched?.message && formik?.errors?.message ? (
+										<div>
+											<p className="py-1 text-left text-tiny text-blue-darker ">
+												{formik?.errors?.message}
+											</p>
+										</div>
+									) : null}
+									<textarea
+										rows={5}
+										id="message"
+										name="message"
+										placeholder="Your message"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.message}
+										className="p-4 w-full h-48  text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker resize-none focus:ring-[1px] focus:ring-blue-darker"
+									/>
+								</motion.div>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+								>
+									<ReCAPTCHA
+										sitekey={`6LdhQXMpAAAAAM8HcXfwQs2JOgVKLeNaKPYgYQvF`}
+										onChange={handleReCaptchaChange}
+									/>
+								</motion.div>
+								<motion.button
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									onClick={onFormSubmit}
+									disabled={
+										!formik?.values?.firstName ||
+										!formik?.values?.lastName ||
+										!formik?.values?.email ||
+										!formik?.values?.phoneNumber ||
+										!formik?.values?.selectedServices ||
+										!formik?.values?.subject ||
+										!formik?.values?.message ||
+										reCaptchaResult === null ||
+										reCaptchaResult === undefined
+									}
+									className="w-full text-white disabled:bg-opacity-20 disabled:cursor-not-allowed"
+									type="submit"
+								>
+									<span
+										className={
+											messageSent
+												? `${styles.messageSent}`
+												: `${styles.submitButton}`
+										}
+									>
+										<h3 className="tracking-widest text-white uppercase text-sm">
+											{loading
+												? "Sending Message..."
+												: messageSent
+												? "Message Sent!"
+												: errorMessage
+												? "Sending Error!"
+												: "Send Message"}
+										</h3>
+									</span>
+								</motion.button>
+							</motion.div>
+						</Form>
+					</Formik>
+				</div>
+			</div>
+		</>
+	);
+};
+
+export default ContactForm;

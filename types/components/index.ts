@@ -153,14 +153,7 @@ export type ICaseStudies = {
 };
 export type IContactForm = {
 	title: string;
-	image: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
+	paragraph: string;
 };
 export type IOurPartners = {
 	title: string;
@@ -362,12 +355,6 @@ export type ITestimonialsGrid = {
 	subtitle: string;
 	paragraph: string;
 	highlightText: string;
-};
-export type IEnquiryRequestForm = {
-	title: string;
-	contentOneOpen: boolean;
-	contentTwoOpen: boolean;
-	contentThreeOpen: boolean;
 };
 export type IJumboContentSection = {
 	jumboContentSection: [

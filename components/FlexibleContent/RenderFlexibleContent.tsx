@@ -12,6 +12,7 @@ import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
 import FAQGrid from "../FAQGrid";
 import VideoBlock from "../VideoBlock";
+import ContactForm from "../ContactForm";
 import ContactInfo from "../ContactInfo";
 import OurPartners from "../OurPartners";
 import Maintenance from "../Maintenance";
@@ -262,7 +263,9 @@ const RenderFlexibleContent: FC = () => {
 								<ContactInfo title={item?.title} paragraph={item?.paragraph} />
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` ? (
-							<></>
+							<>
+								<ContactForm title={item?.title} paragraph={item?.paragraph} />
+							</>
 						) : item?.fieldGroupName ===
 						  `${FlexibleContent}_BoardOfDirectorsGrid` ? (
 							<>
