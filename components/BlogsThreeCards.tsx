@@ -17,7 +17,8 @@ const BlogsThreeCards: FC<IBlogs> = ({title, italic, paragraph}) => {
 			<div className="py-16 bg-white container px-4 mx-auto">
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className={
 						title && italic
@@ -27,7 +28,8 @@ const BlogsThreeCards: FC<IBlogs> = ({title, italic, paragraph}) => {
 				>
 					<motion.h2
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="my-2 max-w-2xl mx-auto mb-6 text-center font-semibold leading-tight text-4xl lg:text-5xl"
 					>
@@ -54,7 +56,8 @@ const BlogsThreeCards: FC<IBlogs> = ({title, italic, paragraph}) => {
 				</motion.div>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 				>

@@ -34,7 +34,8 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 				<div className="container relative m-auto flex flex-col items-center gap-6 sm:gap-12 lg:gap-20">
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="flex flex-col items-center"
 					>
@@ -48,7 +49,8 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 						</motion.h4>
 						<motion.h3
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="max-w-none lg:max-w-3xl mx-auto text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
 						>

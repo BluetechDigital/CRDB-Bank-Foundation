@@ -38,7 +38,8 @@ const ContentImage: FC<IContentImage> = ({
 			>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="py-20 px-4 lg:p-20 lg:max-w-5xl w-full lg:w-1/2 h-full"
 				>
@@ -53,7 +54,8 @@ const ContentImage: FC<IContentImage> = ({
 						</motion.h4>
 						<motion.h2
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="my-2 mb-6 text-black text-center lg:text-left font-semibold text-4xl lg:text-5xl"
 						>

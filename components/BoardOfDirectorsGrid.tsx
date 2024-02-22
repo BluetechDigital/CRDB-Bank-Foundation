@@ -38,7 +38,8 @@ const ExecutiveLeadershipsGrid: FC<IExecutiveLeadershipsGrid> = ({
 						</motion.h4>
 						<motion.h3
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
 						>
@@ -54,7 +55,8 @@ const ExecutiveLeadershipsGrid: FC<IExecutiveLeadershipsGrid> = ({
 					</div>
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="grid mb-32 px-4 lg:px-16 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 					>

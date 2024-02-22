@@ -19,7 +19,8 @@ const TestimonialsTwoCard: FC = () => {
 		<>
 			<motion.div
 				initial={initial}
-				whileInView={stagger}
+				variants={stagger}
+				whileInView="animate"
 				viewport={{once: true}}
 				className="flex flex-col lg:flex-row lg:items-center justify-center  mx-16"
 			>

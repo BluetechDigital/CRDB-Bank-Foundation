@@ -69,7 +69,8 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 			>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="flex flex-col items-center"
 				>
@@ -83,7 +84,8 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 					</motion.h4>
 					<motion.h3
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="max-w-none lg:max-w-3xl mx-auto text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
 					>
@@ -99,7 +101,8 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 				</motion.div>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="flex flex-col sm:flex-row py-8 mb-12 items-center justify-center gap-4 lg:gap-12"
 				>
@@ -121,7 +124,8 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 				</motion.div>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="grid mb-12 px-4 gap-4 grid-col md:grid-cols-2 lg:grid-cols-3"
 				>

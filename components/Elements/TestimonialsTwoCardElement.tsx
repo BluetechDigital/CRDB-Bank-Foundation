@@ -45,7 +45,8 @@ const TestimonialsTwoCardElement: FC<ITestimonialsTwoCardElement> = ({
 				<div className="flex justify-between items-center">
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="flex items-center"
 					>

@@ -43,7 +43,8 @@ const MainPrograms: FC<IMainPrograms> = ({
 						</motion.h4>
 						<motion.h3
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
 						>
@@ -59,7 +60,8 @@ const MainPrograms: FC<IMainPrograms> = ({
 					</div>
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-16 px-0 sm:px-4 gap-6 items-start justify-center"
 					>

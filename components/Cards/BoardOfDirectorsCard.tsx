@@ -41,7 +41,8 @@ const BoardOfDirectorsCard: FC<IBoardOfDirectorsCard> = ({
 				</div>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="relative flex flex-row items-center justify-between px-8 pt-2 pb-4"
 				>

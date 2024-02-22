@@ -38,7 +38,8 @@ const SubMegaMenuLinks: FC = () => {
 						</motion.h4>
 						<motion.ul
 							initial={initialTwo}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className={
 								styles.ourServicesLinks + " p-8 w-full flex flex-col z-[999]"
@@ -76,7 +77,8 @@ const SubMegaMenuLinks: FC = () => {
 						</motion.h4>
 						<motion.div
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="flex flex-col items-center justify-center gap-4 mb-6"
 						>
@@ -252,7 +254,8 @@ const SubMegaMenuLinks: FC = () => {
 						</motion.div>
 						<motion.div
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="flex flex-col items-center justify-center px-6 gap-4"
 						>

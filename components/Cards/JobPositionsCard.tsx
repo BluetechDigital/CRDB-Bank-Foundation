@@ -35,7 +35,8 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 				<Link href={`/job-positions/${slug}`} target="">
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="flex flex-col items-baseline justify-between gap-4 p-10"
 					>

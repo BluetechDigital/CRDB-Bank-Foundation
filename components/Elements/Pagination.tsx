@@ -50,7 +50,8 @@ const Pagination: FC<IPagination> = ({
 		<>
 			<motion.div
 				initial={initial}
-				whileInView={stagger}
+				variants={stagger}
+				whileInView="animate"
 				viewport={{once: true}}
 				className={`${tailwindStyling}`}
 			>
@@ -117,7 +118,8 @@ const Pagination: FC<IPagination> = ({
 						>
 							<motion.div
 								initial={initial}
-								whileInView={stagger}
+								variants={stagger}
+								whileInView="animate"
 								viewport={{once: true}}
 								className="flex flex-col gap-4 p-10"
 							>

@@ -31,7 +31,8 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 			>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="flex flex-col xl:flex-row gap-6 xl:gap-4"
 				>

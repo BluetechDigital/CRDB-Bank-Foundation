@@ -26,7 +26,8 @@ const Gallery: FC<IGallery> = ({
 			>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className={
 						title && highlightText
@@ -44,7 +45,8 @@ const Gallery: FC<IGallery> = ({
 					</motion.h4>
 					<motion.h2
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="max-w-2xl mx-auto text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black"
 					>

@@ -24,7 +24,8 @@ const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 					{/* Background Video & Image */}
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="absolute top-0 bottom-0 left-0 w-full h-full overflow-hidden"
 					>
@@ -41,7 +42,8 @@ const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 					</motion.div>
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="container relative flex flex-col items-baseline justify-center px-4 m-auto text-center sm:text-left"
 					>

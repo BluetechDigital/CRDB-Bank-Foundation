@@ -90,7 +90,8 @@ const Hero: FC<IHero> = ({
 							/>
 							<motion.div
 								initial={initial}
-								whileInView={stagger}
+								variants={stagger}
+								whileInView="animate"
 								viewport={{once: true}}
 								className="flex flex-col items-center justify-center gap-6 pt-8 lg:justify-start sm:flex-row"
 							>

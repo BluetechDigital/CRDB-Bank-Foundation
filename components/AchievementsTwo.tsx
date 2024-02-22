@@ -21,7 +21,8 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 			>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="container px-4 mx-auto"
 				>
@@ -38,7 +39,8 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 						</div>
 						<motion.div
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16 lg:my-10 xl:mb-0 px-4"
 						>
@@ -49,7 +51,8 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 											<div className="md:w-56 mx-auto">
 												<motion.h3
 													initial={initial}
-													whileInView={stagger}
+													variants={stagger}
+													whileInView="animate"
 													viewport={{once: true}}
 													className="mb-3 text-white text-center text-5xl lg:text-6xl xl:text-7xl font-bold tracking-px-n leading-tight"
 												>
@@ -57,7 +60,8 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 												</motion.h3>
 												<motion.p
 													initial={initial}
-													whileInView={stagger}
+													variants={stagger}
+													whileInView="animate"
 													viewport={{once: true}}
 													className="text-paragraph xl:text-lg text-center text-white font-medium leading-normal"
 												>
