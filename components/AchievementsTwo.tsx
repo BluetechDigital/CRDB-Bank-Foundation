@@ -45,7 +45,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16 lg:my-10 xl:mb-0 px-4"
 						>
 							{achievementsGrid?.length > 0 ? (
-								achievementsGrid.map((item: any, keys: any) => (
+								achievementsGrid.map((item: any, keys: number) => (
 									<Fragment key={keys}>
 										<>
 											<div className="md:w-56 mx-auto">

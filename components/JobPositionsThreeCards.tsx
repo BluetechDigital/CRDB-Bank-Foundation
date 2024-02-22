@@ -132,7 +132,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 					{allJobsOpen ? (
 						<>
 							{globalContext?.jobsPositions?.length > 0 ? (
-								globalContext?.jobsPositions?.map((item: any, keys: any) => (
+								globalContext?.jobsPositions?.map((item: any, keys: number) => (
 									<Fragment key={keys}>
 										{keys <= 2 ? (
 											<JobPositionsCard
@@ -153,20 +153,22 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 					) : managementJobsOpen ? (
 						<>
 							{globalContext?.managementsJobs?.length > 0 ? (
-								globalContext?.managementsJobs?.map((item: any, keys: any) => (
-									<Fragment key={keys}>
-										{keys <= 2 ? (
-											<JobPositionsCard
-												slug={item?.slug}
-												title={item?.title}
-												paragraph={item?.excerpt}
-												tailwindStyling="bg-green-three hover:bg-yellow-dark"
-											/>
-										) : (
-											<></>
-										)}
-									</Fragment>
-								))
+								globalContext?.managementsJobs?.map(
+									(item: any, keys: number) => (
+										<Fragment key={keys}>
+											{keys <= 2 ? (
+												<JobPositionsCard
+													slug={item?.slug}
+													title={item?.title}
+													paragraph={item?.excerpt}
+													tailwindStyling="bg-green-three hover:bg-yellow-dark"
+												/>
+											) : (
+												<></>
+											)}
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}
@@ -175,7 +177,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 						<>
 							{globalContext?.operationsTeamsJobs?.length > 0 ? (
 								globalContext?.operationsTeamsJobs?.map(
-									(item: any, keys: any) => (
+									(item: any, keys: number) => (
 										<Fragment key={keys}>
 											{keys <= 2 ? (
 												<JobPositionsCard

@@ -11,6 +11,7 @@ import Blogs from "../Blogs";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
 import FAQGrid from "../FAQGrid";
+import Newsletter from "../Newsletter";
 import VideoBlock from "../VideoBlock";
 import ContactForm from "../ContactForm";
 import ContactInfo from "../ContactInfo";
@@ -42,7 +43,7 @@ const RenderFlexibleContent: FC = () => {
 	return (
 		<>
 			{content?.content?.length > 0 ? (
-				content?.content?.map((item: any, keys: any) => (
+				content?.content?.map((item: any, keys: number) => (
 					<section key={keys}>
 						{item?.fieldGroupName === `${FlexibleContent}_Hero` ? (
 							<>
@@ -256,6 +257,16 @@ const RenderFlexibleContent: FC = () => {
 									backgroundColor={item?.backgroundColor}
 									highlightTextColor={item?.highlightTextColor}
 									displayLinkedinIcon={item?.displayLinkedinIcon}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_Newsletter` ? (
+							<>
+								<Newsletter
+									title={item?.title}
+									subtitle={item?.subtitle}
+									textarea={item?.textarea}
+									paragraph={item?.paragraph}
+									formTitle={item?.formTitle}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactInfo` ? (

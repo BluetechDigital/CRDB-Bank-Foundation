@@ -66,7 +66,7 @@ const MainPrograms: FC<IMainPrograms> = ({
 						className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-16 px-0 sm:px-4 gap-6 items-start justify-center"
 					>
 						{programsGrid?.length > 0 ? (
-							programsGrid.map((item: any, keys: any) => (
+							programsGrid.map((item: any, keys: number) => (
 								<Fragment key={keys}>
 									<>
 										<Link

@@ -9,3 +9,18 @@
 .messageSent {
 	@apply w-fit flex items-center justify-center py-3 px-6 bg-purple-default;
 }
+
+// Newsletter
+.newsletter {
+	h4 {
+		font-family: $body;
+	}
+}
+
+.newsletterSubmitButton {
+	@apply w-full flex items-center justify-center py-3 px-6 bg-purple-default hover:bg-purple-two transition-all duration-200 ease-in-out;
+}
+
+.newsletterMessageSent {
+	@apply w-full flex items-center justify-center py-3 px-6 bg-purple-default;
+}

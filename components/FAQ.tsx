@@ -6,6 +6,7 @@ import {
 	initialTwo,
 	slideInLeftInitial,
 	slideInRightFinish,
+	arrayLoopStaggerChildren,
 } from "../animations/animations";
 import Link from "next/link";
 import Image from "next/image";
@@ -154,13 +155,22 @@ const FAQ: FC<IFAQ> = ({
 							}`}
 						>
 							{faqContent?.length > 0 ? (
-								faqContent.map((item: any, keys: any) => (
+								faqContent.map((item: any, keys: number) => (
 									<Fragment key={keys}>
-										<FAQCard
-											index={keys}
-											title={item?.card?.title}
-											paragraph={item?.card?.paragraph}
-										/>
+										<motion.div
+											custom={keys}
+											initial={initial}
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+											className="w-full"
+										>
+											<FAQCard
+												index={keys}
+												title={item?.card?.title}
+												paragraph={item?.card?.paragraph}
+											/>
+										</motion.div>
 									</Fragment>
 								))
 							) : (

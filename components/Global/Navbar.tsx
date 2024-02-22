@@ -4,7 +4,13 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 import {useState, FC, Fragment, useEffect} from "react";
-import {fadeIn, initial, initialTwo, stagger} from "@/animations/animations";
+import {
+	arrayLoopStaggerChildren,
+	fadeIn,
+	initial,
+	initialTwo,
+	stagger,
+} from "@/animations/animations";
 
 // Styling
 import styles from "./../../styles/components/Navbar.module.scss";
@@ -131,225 +137,268 @@ const Navbar: FC = () => {
 							className="hidden xl:flex lg:items-center lg:gap-x-6"
 						>
 							{globalContext?.navbarMenuLinks?.length > 0 ? (
-								globalContext?.navbarMenuLinks?.map((item: any, keys: any) => (
-									<Fragment key={keys}>
-										{item?.node?.url === "/about" ? (
-											<li className="relative">
-												<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
-													<Link
-														href={`${item?.node?.url}`}
-														className={`${
-															scrollPosition > 50 ? "text-black" : "text-white"
-														} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
-													>
-														{item?.node?.label}
-													</Link>
-													<Image
-														width={550}
-														height={550}
-														alt="White Arrow Icon"
-														onClick={displayAboutUsSublinks}
-														src="/svg/navigation-menu-dropdown-arrow-white.svg"
-														className={`${
-															scrollPosition > 50 || navBackgroundSublinksOpen
-																? "hidden"
-																: "block"
-														} group-hover:hidden cursor-pointer w-[22px] h-[22px] object-contain object-center`}
-													/>
-													<Image
-														width={550}
-														height={550}
-														alt="Black Arrow Icon"
-														onClick={displayAboutUsSublinks}
-														src="/svg/navigation-menu-dropdown-arrow-black.svg"
-														className={`${
-															scrollPosition > 50 || navBackgroundSublinksOpen
-																? "block"
-																: "hidden"
-														} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
-													/>
-												</span>
-												<div
-													onMouseLeave={resetNavbarStyling}
-													className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center"
+								globalContext?.navbarMenuLinks?.map(
+									(item: any, keys: number) => (
+										<Fragment key={keys}>
+											{item?.node?.url === "/about" ? (
+												<motion.li
+													custom={keys}
+													initial={initial}
+													whileInView="animate"
+													viewport={{once: true}}
+													variants={arrayLoopStaggerChildren}
+													className="relative"
 												>
-													{aboutUsSublinksOpen ? (
-														<>
-															<ul
-																className={
-																	styles.aboutUsSublinks +
-																	" p-0 w-full flex flex-col z-[999]"
-																}
-															>
-																{globalContext?.aboutUsSublinks?.length > 0 ? (
-																	globalContext?.aboutUsSublinks?.map(
-																		(item: any, keys: any) => (
-																			<Fragment key={keys}>
-																				<Link href={`${item?.node?.url}`}>
-																					<li className="w-full hover:bg-green-two">
+													<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
+														<Link
+															href={`${item?.node?.url}`}
+															className={`${
+																scrollPosition > 50
+																	? "text-black"
+																	: "text-white"
+															} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														>
+															{item?.node?.label}
+														</Link>
+														<Image
+															width={550}
+															height={550}
+															alt="White Arrow Icon"
+															onClick={displayAboutUsSublinks}
+															src="/svg/navigation-menu-dropdown-arrow-white.svg"
+															className={`${
+																scrollPosition > 50 || navBackgroundSublinksOpen
+																	? "hidden"
+																	: "block"
+															} group-hover:hidden cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+														/>
+														<Image
+															width={550}
+															height={550}
+															alt="Black Arrow Icon"
+															onClick={displayAboutUsSublinks}
+															src="/svg/navigation-menu-dropdown-arrow-black.svg"
+															className={`${
+																scrollPosition > 50 || navBackgroundSublinksOpen
+																	? "block"
+																	: "hidden"
+															} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+														/>
+													</span>
+													<div
+														onMouseLeave={resetNavbarStyling}
+														className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center"
+													>
+														{aboutUsSublinksOpen ? (
+															<>
+																<ul
+																	className={
+																		styles.aboutUsSublinks +
+																		" p-0 w-full flex flex-col z-[999]"
+																	}
+																>
+																	{globalContext?.aboutUsSublinks?.length >
+																	0 ? (
+																		globalContext?.aboutUsSublinks?.map(
+																			(item: any, keys: number) => (
+																				<Fragment key={keys}>
+																					<motion.li
+																						custom={keys}
+																						initial={initial}
+																						whileInView="animate"
+																						viewport={{once: true}}
+																						variants={arrayLoopStaggerChildren}
+																					>
 																						<Link
 																							href={`${item?.node?.url}`}
 																							className={` ${
 																								aboutUsSublinksOpen
-																									? "text-black hover:text-white"
+																									? "w-full hover:bg-green-two text-black hover:text-white"
 																									: "text-black"
 																							} block p-4 text-tiny`}
 																						>
 																							{item?.node?.label}
 																						</Link>
-																					</li>
-																				</Link>
-																			</Fragment>
+																					</motion.li>
+																				</Fragment>
+																			)
 																		)
-																	)
-																) : (
-																	<></>
-																)}
-															</ul>
+																	) : (
+																		<></>
+																	)}
+																</ul>
+															</>
+														) : null}
+													</div>
+												</motion.li>
+											) : item?.node?.label === "Our Programs" ? (
+												<motion.li
+													custom={keys}
+													initial={initial}
+													whileInView="animate"
+													viewport={{once: true}}
+													variants={arrayLoopStaggerChildren}
+													className="relative"
+													onClick={displayOurServicesSublinks}
+												>
+													<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
+														<Link
+															href={`${item?.node?.url}`}
+															className={`${
+																scrollPosition > 50
+																	? "text-black"
+																	: "text-white"
+															} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														>
+															{item?.node?.label}
+														</Link>
+														<Image
+															width={550}
+															height={550}
+															alt="White Arrow Icon"
+															src="/svg/navigation-menu-dropdown-arrow-white.svg"
+															className={`${
+																scrollPosition > 50 || navBackgroundSublinksOpen
+																	? "hidden"
+																	: "block"
+															} group-hover:hidden cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+														/>
+														<Image
+															width={550}
+															height={550}
+															alt="Black Arrow Icon"
+															src="/svg/navigation-menu-dropdown-arrow-black.svg"
+															className={`${
+																scrollPosition > 50 || navBackgroundSublinksOpen
+																	? "block"
+																	: "hidden"
+															} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+														/>
+													</div>
+													{ourProgramsSublinksOpen ? (
+														<>
+															<div
+																onMouseLeave={resetNavbarStyling}
+																onMouseEnter={displayNavBackgroundColor}
+															>
+																<SubMegaMenuLinks />
+															</div>
 														</>
 													) : null}
-												</div>
-											</li>
-										) : item?.node?.label === "Our Programs" ? (
-											<li
-												className="relative"
-												onClick={displayOurServicesSublinks}
-											>
-												<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
-													<Link
-														href={`${item?.node?.url}`}
-														className={`${
-															scrollPosition > 50 ? "text-black" : "text-white"
-														} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
-													>
-														{item?.node?.label}
-													</Link>
-													<Image
-														width={550}
-														height={550}
-														alt="White Arrow Icon"
-														src="/svg/navigation-menu-dropdown-arrow-white.svg"
-														className={`${
-															scrollPosition > 50 || navBackgroundSublinksOpen
-																? "hidden"
-																: "block"
-														} group-hover:hidden cursor-pointer w-[22px] h-[22px] object-contain object-center`}
-													/>
-													<Image
-														width={550}
-														height={550}
-														alt="Black Arrow Icon"
-														src="/svg/navigation-menu-dropdown-arrow-black.svg"
-														className={`${
-															scrollPosition > 50 || navBackgroundSublinksOpen
-																? "block"
-																: "hidden"
-														} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
-													/>
-												</div>
-												{ourProgramsSublinksOpen ? (
-													<>
-														<div
-															onMouseLeave={resetNavbarStyling}
-															onMouseEnter={displayNavBackgroundColor}
-														>
-															<SubMegaMenuLinks />
-														</div>
-													</>
-												) : null}
-											</li>
-										) : item?.node?.url === "/news" ? (
-											<li className="relative">
-												<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
-													<Link
-														href={`${item?.node?.url}`}
-														className={`${
-															scrollPosition > 50 ? "text-black" : "text-white"
-														} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
-													>
-														{item?.node?.label}
-													</Link>
-													<Image
-														width={550}
-														height={550}
-														alt="White Arrow Icon"
-														onClick={displayNewsInsightsSublinks}
-														src="/svg/navigation-menu-dropdown-arrow-white.svg"
-														className={`${
-															scrollPosition > 50 || navBackgroundSublinksOpen
-																? "hidden"
-																: "block"
-														} group-hover:hidden cursor-pointer w-[22px] h-[22px] object-contain object-center`}
-													/>
-													<Image
-														width={550}
-														height={550}
-														alt="Black Arrow Icon"
-														onClick={displayNewsInsightsSublinks}
-														src="/svg/navigation-menu-dropdown-arrow-black.svg"
-														className={`${
-															scrollPosition > 50 || navBackgroundSublinksOpen
-																? "block"
-																: "hidden"
-														} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
-													/>
-												</span>
-												<div
-													onMouseLeave={resetNavbarStyling}
-													className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center"
+												</motion.li>
+											) : item?.node?.url === "/news" ? (
+												<motion.li
+													custom={keys}
+													initial={initial}
+													whileInView="animate"
+													viewport={{once: true}}
+													variants={arrayLoopStaggerChildren}
+													className="relative"
 												>
-													{newsInsightsSublinksOpen ? (
-														<>
-															<ul
-																className={
-																	styles.newsInsightsSublinks +
-																	" p-0 w-full flex flex-col z-[999]"
-																}
-															>
-																{globalContext?.newsInsightSublinks?.length >
-																0 ? (
-																	globalContext?.newsInsightSublinks?.map(
-																		(item: any, keys: any) => (
-																			<Fragment key={keys}>
-																				<Link href={`${item?.node?.url}`}>
-																					<li className="w-full hover:bg-green-two">
+													<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
+														<Link
+															href={`${item?.node?.url}`}
+															className={`${
+																scrollPosition > 50
+																	? "text-black"
+																	: "text-white"
+															} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+														>
+															{item?.node?.label}
+														</Link>
+														<Image
+															width={550}
+															height={550}
+															alt="White Arrow Icon"
+															onClick={displayNewsInsightsSublinks}
+															src="/svg/navigation-menu-dropdown-arrow-white.svg"
+															className={`${
+																scrollPosition > 50 || navBackgroundSublinksOpen
+																	? "hidden"
+																	: "block"
+															} group-hover:hidden cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+														/>
+														<Image
+															width={550}
+															height={550}
+															alt="Black Arrow Icon"
+															onClick={displayNewsInsightsSublinks}
+															src="/svg/navigation-menu-dropdown-arrow-black.svg"
+															className={`${
+																scrollPosition > 50 || navBackgroundSublinksOpen
+																	? "block"
+																	: "hidden"
+															} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+														/>
+													</span>
+													<div
+														onMouseLeave={resetNavbarStyling}
+														className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center"
+													>
+														{newsInsightsSublinksOpen ? (
+															<>
+																<ul
+																	className={
+																		styles.newsInsightsSublinks +
+																		" p-0 w-full flex flex-col z-[999]"
+																	}
+																>
+																	{globalContext?.newsInsightSublinks?.length >
+																	0 ? (
+																		globalContext?.newsInsightSublinks?.map(
+																			(item: any, keys: number) => (
+																				<Fragment key={keys}>
+																					<motion.li
+																						custom={keys}
+																						initial={initial}
+																						whileInView="animate"
+																						viewport={{once: true}}
+																						variants={arrayLoopStaggerChildren}
+																					>
 																						<Link
 																							href={`${item?.node?.url}`}
 																							className={` ${
 																								newsInsightsSublinksOpen
-																									? "text-black hover:text-white"
+																									? "w-full hover:bg-green-two text-black hover:text-white"
 																									: "text-black"
 																							} block p-4 text-tiny`}
 																						>
 																							{item?.node?.label}
 																						</Link>
-																					</li>
-																				</Link>
-																			</Fragment>
+																					</motion.li>
+																				</Fragment>
+																			)
 																		)
-																	)
-																) : (
-																	<></>
-																)}
-															</ul>
-														</>
-													) : null}
-												</div>
-											</li>
-										) : (
-											<li className="hidden xl:block">
-												<Link
-													href={`${item?.node?.url}`}
-													className={`${
-														scrollPosition > 50 ? "text-black" : "text-white"
-													} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+																	) : (
+																		<></>
+																	)}
+																</ul>
+															</>
+														) : null}
+													</div>
+												</motion.li>
+											) : (
+												<motion.li
+													custom={keys}
+													initial={initial}
+													whileInView="animate"
+													viewport={{once: true}}
+													variants={arrayLoopStaggerChildren}
+													className="hidden xl:block"
 												>
-													{item?.node?.label}
-												</Link>
-											</li>
-										)}
-									</Fragment>
-								))
+													<Link
+														href={`${item?.node?.url}`}
+														className={`${
+															scrollPosition > 50 ? "text-black" : "text-white"
+														} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}
+													>
+														{item?.node?.label}
+													</Link>
+												</motion.li>
+											)}
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}

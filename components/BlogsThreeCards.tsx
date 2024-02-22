@@ -1,9 +1,14 @@
 // Imports
+import {
+	initial,
+	stagger,
+	fadeInUp,
+	arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IBlogs} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
-import {initial, fadeInUp, stagger} from "@/animations/animations";
 
 // Components
 import BlogsCard from "./Cards/BlogsCard";
@@ -62,14 +67,23 @@ const BlogsThreeCards: FC<IBlogs> = ({title, italic, paragraph}) => {
 					className="grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 				>
 					{globalContext?.blogsThreeCards?.length > 0 ? (
-						globalContext?.blogsThreeCards?.map((item: any, keys: any) => (
+						globalContext?.blogsThreeCards?.map((item: any, keys: number) => (
 							<Fragment key={keys}>
-								<BlogsCard
-									slug={item?.node?.slug}
-									title={item?.node?.title}
-									paragraph={item?.node?.excerpt}
-									featuredImage={item?.node?.featuredImage}
-								/>
+								<motion.div
+									custom={keys}
+									initial={initial}
+									whileInView="animate"
+									viewport={{once: true}}
+									variants={arrayLoopStaggerChildren}
+									className="w-full"
+								>
+									<BlogsCard
+										slug={item?.node?.slug}
+										title={item?.node?.title}
+										paragraph={item?.node?.excerpt}
+										featuredImage={item?.node?.featuredImage}
+									/>
+								</motion.div>
 							</Fragment>
 						))
 					) : (

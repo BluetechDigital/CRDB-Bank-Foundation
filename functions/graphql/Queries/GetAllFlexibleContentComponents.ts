@@ -407,6 +407,14 @@ export const getAllFlexibleContentComponents = async (
 													target
 												}
 											}
+											... on ${postTypeFlexibleContent}_Newsletter {
+												fieldGroupName
+												title
+            									subtitle
+            									textarea
+            									paragraph
+            									formTitle
+											}
 											... on ${postTypeFlexibleContent}_ContactInfo {
 												fieldGroupName
 												title

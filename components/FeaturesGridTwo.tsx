@@ -1,8 +1,13 @@
 // Imports
+import {
+	initial,
+	stagger,
+	fadeInUp,
+	arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IFeaturesGridTwo} from "@/types/components";
-import fadeInUp, {initial, stagger} from "@/animations/animations";
 
 // Styling
 import styles from "../styles/components/FeaturesGridTwo.module.scss";
@@ -86,13 +91,22 @@ const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
 							gridContent?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
 									<>
-										<FeaturesGridContentCard
-											key={keys}
-											title={item?.card?.title}
-											subtitle={item?.card?.subtitle}
-											paragraph={item?.card?.paragraph}
-											backgroundColor={item?.card?.backgroundColor}
-										/>
+										<motion.div
+											custom={keys}
+											initial={initial}
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+											className="w-full"
+										>
+											<FeaturesGridContentCard
+												key={keys}
+												title={item?.card?.title}
+												subtitle={item?.card?.subtitle}
+												paragraph={item?.card?.paragraph}
+												backgroundColor={item?.card?.backgroundColor}
+											/>
+										</motion.div>
 									</>
 								</Fragment>
 							))

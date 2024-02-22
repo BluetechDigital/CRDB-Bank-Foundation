@@ -5,6 +5,7 @@ import {
 	initial,
 	fadeInUp,
 	initialTwo,
+	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
@@ -427,14 +428,16 @@ const Footer: FC = () => {
 							>
 								{globalContext?.footerMenuLinks?.length > 0 ? (
 									globalContext?.footerMenuLinks?.map(
-										(item: any, keys: any) => (
+										(item: any, keys: number) => (
 											<Fragment key={keys}>
 												{item?.node?.url === "/about" ? (
 													<motion.li
 														className="px-0"
+														custom={keys}
 														initial={initial}
-														whileInView={fadeInUp}
+														whileInView="animate"
 														viewport={{once: true}}
+														variants={arrayLoopStaggerChildren}
 													>
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
@@ -480,18 +483,24 @@ const Footer: FC = () => {
 																		{globalContext?.aboutUsSublinks?.length >
 																		0 ? (
 																			globalContext?.aboutUsSublinks?.map(
-																				(item: any, keys: any) => (
+																				(item: any, keys: number) => (
 																					<Fragment key={keys}>
-																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full ml-2">
-																								<Link
-																									href={`${item?.node?.url}`}
-																									className="text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
-																								>
-																									{item?.node?.label}
-																								</Link>
-																							</li>
-																						</Link>
+																						<motion.li
+																							custom={keys}
+																							initial={initial}
+																							whileInView="animate"
+																							viewport={{once: true}}
+																							variants={
+																								arrayLoopStaggerChildren
+																							}
+																						>
+																							<Link
+																								href={`${item?.node?.url}`}
+																								className="w-full ml-2 text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
 																					</Fragment>
 																				)
 																			)
@@ -506,9 +515,11 @@ const Footer: FC = () => {
 												) : item?.node?.url === "/news" ? (
 													<motion.li
 														className="px-0"
+														custom={keys}
 														initial={initial}
-														whileInView={fadeInUp}
+														whileInView="animate"
 														viewport={{once: true}}
+														variants={arrayLoopStaggerChildren}
 													>
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
@@ -554,18 +565,24 @@ const Footer: FC = () => {
 																		{globalContext?.newsInsightSublinks
 																			?.length > 0 ? (
 																			globalContext?.newsInsightSublinks?.map(
-																				(item: any, keys: any) => (
+																				(item: any, keys: number) => (
 																					<Fragment key={keys}>
-																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full ml-2">
-																								<Link
-																									href={`${item?.node?.url}`}
-																									className="text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
-																								>
-																									{item?.node?.label}
-																								</Link>
-																							</li>
-																						</Link>
+																						<motion.li
+																							custom={keys}
+																							initial={initial}
+																							whileInView="animate"
+																							viewport={{once: true}}
+																							variants={
+																								arrayLoopStaggerChildren
+																							}
+																						>
+																							<Link
+																								href={`${item?.node?.url}`}
+																								className="w-full ml-2 text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
 																					</Fragment>
 																				)
 																			)
@@ -580,9 +597,11 @@ const Footer: FC = () => {
 												) : item?.node?.url === "/careers" ? (
 													<motion.li
 														className="px-0"
+														custom={keys}
 														initial={initial}
-														whileInView={fadeInUp}
+														whileInView="animate"
 														viewport={{once: true}}
+														variants={arrayLoopStaggerChildren}
 													>
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
@@ -628,18 +647,24 @@ const Footer: FC = () => {
 																		{globalContext?.careerSublinks?.length >
 																		0 ? (
 																			globalContext?.careerSublinks?.map(
-																				(item: any, keys: any) => (
+																				(item: any, keys: number) => (
 																					<Fragment key={keys}>
-																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full ml-2">
-																								<Link
-																									href={`${item?.node?.url}`}
-																									className="text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
-																								>
-																									{item?.node?.label}
-																								</Link>
-																							</li>
-																						</Link>
+																						<motion.li
+																							custom={keys}
+																							initial={initial}
+																							whileInView="animate"
+																							viewport={{once: true}}
+																							variants={
+																								arrayLoopStaggerChildren
+																							}
+																						>
+																							<Link
+																								href={`${item?.node?.url}`}
+																								className="w-full ml-2 text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
 																					</Fragment>
 																				)
 																			)
@@ -654,9 +679,11 @@ const Footer: FC = () => {
 												) : (
 													<motion.li
 														className="px-0"
+														custom={keys}
 														initial={initial}
-														whileInView={fadeInUp}
+														whileInView="animate"
 														viewport={{once: true}}
+														variants={arrayLoopStaggerChildren}
 													>
 														<Link
 															href={`${item?.node?.url}`}
@@ -687,13 +714,15 @@ const Footer: FC = () => {
 							>
 								{globalContext?.ourProgramsLinks?.length > 0 ? (
 									globalContext?.ourProgramsLinks?.map(
-										(item: any, keys: any) => (
+										(item: any, keys: number) => (
 											<Fragment key={keys}>
 												<motion.li
 													className="px-0"
+													custom={keys}
 													initial={initial}
-													whileInView={fadeInUp}
+													whileInView="animate"
 													viewport={{once: true}}
+													variants={arrayLoopStaggerChildren}
 												>
 													<Link
 														href={`${item?.node?.url}`}
@@ -853,7 +882,7 @@ const Footer: FC = () => {
 					>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
-							tailwindStyling="text-black text-sm text-center lg:text-left"
+							tailwindStyling="max-w-lg mx-0 text-black text-sm text-center lg:text-left"
 						/>
 						<Link
 							className="inline-block px-1 text-black hover:text-purple-default hover:underline"
@@ -884,12 +913,14 @@ const Footer: FC = () => {
 						className="flex flex-col sm:flex-row -m-6 w-auto gap-4 sm:gap-6 p-6"
 					>
 						{globalContext?.copyrightLinks?.length > 0 ? (
-							globalContext?.copyrightLinks?.map((item: any, keys: any) => (
+							globalContext?.copyrightLinks?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
 									<motion.li
-										initial={initialTwo}
-										whileInView={fadeIn}
+										custom={keys}
+										initial={initial}
+										whileInView="animate"
 										viewport={{once: true}}
+										variants={arrayLoopStaggerChildren}
 									>
 										<Link
 											href={`${item?.node?.url}`}

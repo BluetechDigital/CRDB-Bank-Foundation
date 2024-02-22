@@ -113,6 +113,13 @@ export type IGallery = {
 		}
 	];
 };
+export type INewsletter = {
+	title: string;
+	subtitle: string;
+	textarea: string;
+	paragraph: string;
+	formTitle: string;
+};
 export type IVideoBlock = {
 	title: string;
 	video: string;

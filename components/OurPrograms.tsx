@@ -1,10 +1,15 @@
 // Imports
-import Link from "next/link";
+import {
+	fadeIn,
+	stagger,
+	initial,
+	initialTwo,
+	arrayLoopStaggerChildren,
+} from "../animations/animations";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IOurPrograms} from "@/types/components/index";
-import {fadeIn, initialTwo} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/OurPrograms.module.scss";
@@ -29,7 +34,13 @@ const OurPrograms: FC<IOurPrograms> = ({
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
 				}}
 			>
-				<div className="container relative m-auto flex flex-col items-center gap-6">
+				<motion.div
+					initial={initial}
+					variants={stagger}
+					whileInView="animate"
+					viewport={{once: true}}
+					className="container relative m-auto flex flex-col items-center gap-6"
+				>
 					<div className="flex flex-col items-center">
 						<motion.h4
 							initial={initialTwo}
@@ -54,10 +65,15 @@ const OurPrograms: FC<IOurPrograms> = ({
 					</div>
 					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-16 px-0 sm:px-4 gap-6 items-start justify-center">
 						{programsGrid?.length > 0 ? (
-							programsGrid.map((item: any, keys: any) => (
+							programsGrid.map((item: any, keys: number) => (
 								<Fragment key={keys}>
 									<>
-										<Link
+										<motion.a
+											custom={keys}
+											initial={initial}
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
 											href={`${item?.card?.link?.url}`}
 											target={item?.card?.link?.target}
 											className={styles.card + " group overflow-hidden"}
@@ -244,7 +260,7 @@ const OurPrograms: FC<IOurPrograms> = ({
 													/>
 												</div>
 											</div>
-										</Link>
+										</motion.a>
 									</>
 								</Fragment>
 							))
@@ -252,7 +268,7 @@ const OurPrograms: FC<IOurPrograms> = ({
 							<></>
 						)}
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</>
 	);

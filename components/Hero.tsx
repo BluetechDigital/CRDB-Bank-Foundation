@@ -33,7 +33,6 @@ const Hero: FC<IHero> = ({
 	heroBackgroundColor,
 }) => {
 	let backgroundColor;
-	let linearGradientBackgroundColor;
 
 	switch (heroBackgroundColor) {
 		case "Green":

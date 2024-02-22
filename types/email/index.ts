@@ -18,6 +18,14 @@ export type IBusinessEmail = {
 	html: string;
 };
 
+/* Newsletter Email */
+export type INewsletterEmail = {
+	from: string;
+	to: string;
+	subject: string;
+	html: string;
+};
+
 /* Types Namespace - (EMAIL HEADER)
 Global Email Header (IEmailHeader) */
 export namespace IEmailHeader {
@@ -161,6 +169,82 @@ export namespace IBusinessEmail {
 		phoneNumber?: number;
 		imagesDirUrl?: string;
 		selectedPrograms?: string;
+		themesOptionsContent?: IThemesOptionsContent;
+	};
+	export type IMain = {
+		padding: string;
+		fontFamily: string;
+		backgroundColor: string;
+	};
+	export type IIntroParagraph = {
+		lineHeight: number;
+		fontSize: number;
+		fontWeight: string;
+		padding: string;
+		paddingTop: string;
+	};
+	export type IDetailsParagraph = {
+		lineHeight: number;
+		fontSize: number;
+		fontWeight: string;
+		padding: string;
+	};
+	export type IParagraph = {
+		lineHeight: number;
+		fontSize: number;
+		fontWeight: string;
+		padding: string;
+	};
+	export type IContainer = {
+		maxWidth: string;
+		margin: string;
+		marginBottom: string;
+		backgroundColor: string;
+	};
+	export type IContent = {
+		padding: string;
+	};
+	export type IImageSection = {
+		width: string;
+		padding: string;
+		display: string;
+		alignItems: string;
+		justifyContent: string;
+		backgroundColor: string;
+	};
+	export type ILink = {
+		color: string;
+		textDecoration: string;
+	};
+	export type ILogo = {
+		width: string;
+		height: string;
+		minHeight: string;
+	};
+	export type IFooter = {
+		maxWidth: string;
+		margin: string;
+		marginBottom: string;
+		backgroundColor: string;
+	};
+	export type IFooterLogoSection = {
+		width: string;
+		padding: string;
+		display: string;
+		alignItems: string;
+		justifyContent: string;
+		backgroundColor: string;
+	};
+	export type IFooterLogo = {
+		width: string;
+		height: string;
+	};
+}
+
+export namespace INewsletterEmail {
+	export type INewsletterConfirmationEmail = {
+		email?: string;
+		imagesDirUrl?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type IMain = {

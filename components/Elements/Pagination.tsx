@@ -7,6 +7,7 @@ import {
 	initial,
 	fadeInUp,
 	initialTwo,
+	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Image from "next/image";
 import {motion} from "framer-motion";
@@ -56,56 +57,65 @@ const Pagination: FC<IPagination> = ({
 				className={`${tailwindStyling}`}
 			>
 				{currentImages.length > 0 ? (
-					currentImages.map((item: any, keys: any) => (
+					currentImages.map((item: any, keys: number) => (
 						<Fragment key={keys}>
-							{contentType === `Gallery` ? (
-								<>
-									<Image
-										alt={item?.altText}
-										src={item?.sourceUrl}
-										width={item?.mediaDetails?.width}
-										height={item?.mediaDetails?.height}
-										className={
-											item?.sourceUrl
-												? `block object-cover object-center w-full h-[175px] ${
-														itemsPerPage === 12
-															? "sm:h-[250px]"
-															: "sm:h-[250px] xl:h-[205px]"
-												  }`
-												: `hidden`
-										}
-									/>
-								</>
-							) : contentType === `BlogsCard` ? (
-								<>
-									<BlogsCard
-										slug={item?.node?.slug}
-										title={item?.node?.title}
-										paragraph={item?.node?.excerpt}
-										featuredImage={item?.node?.featuredImage}
-									/>
-								</>
-							) : contentType === `NewsCard` ? (
-								<>
-									<NewsCard
-										title={item?.node?.title}
-										paragraph={item?.node?.excerpt}
-										slug={`news/${item?.node?.slug}`}
-										featuredImage={item?.node?.featuredImage}
-									/>
-								</>
-							) : contentType === `TestimonialsCard` ? (
-								<>
-									<TestimonialsCard
-										name={item?.node?.testimonialReview?.name}
-										image={item?.node?.testimonialReview?.image}
-										jobTitle={item?.node?.testimonialReview?.jobTitle}
-										paragraph={item?.node?.testimonialReview?.paragraph}
-									/>
-								</>
-							) : (
-								<></>
-							)}
+							<motion.div
+								custom={keys}
+								initial={initial}
+								whileInView="animate"
+								viewport={{once: true}}
+								variants={arrayLoopStaggerChildren}
+								className="w-full"
+							>
+								{contentType === `Gallery` ? (
+									<>
+										<Image
+											alt={item?.altText}
+											src={item?.sourceUrl}
+											width={item?.mediaDetails?.width}
+											height={item?.mediaDetails?.height}
+											className={
+												item?.sourceUrl
+													? `block object-cover object-center w-full h-[175px] ${
+															itemsPerPage === 12
+																? "sm:h-[250px]"
+																: "sm:h-[250px] xl:h-[205px]"
+													  }`
+													: `hidden`
+											}
+										/>
+									</>
+								) : contentType === `BlogsCard` ? (
+									<>
+										<BlogsCard
+											slug={item?.node?.slug}
+											title={item?.node?.title}
+											paragraph={item?.node?.excerpt}
+											featuredImage={item?.node?.featuredImage}
+										/>
+									</>
+								) : contentType === `NewsCard` ? (
+									<>
+										<NewsCard
+											title={item?.node?.title}
+											paragraph={item?.node?.excerpt}
+											slug={`news/${item?.node?.slug}`}
+											featuredImage={item?.node?.featuredImage}
+										/>
+									</>
+								) : contentType === `TestimonialsCard` ? (
+									<>
+										<TestimonialsCard
+											name={item?.node?.testimonialReview?.name}
+											image={item?.node?.testimonialReview?.image}
+											jobTitle={item?.node?.testimonialReview?.jobTitle}
+											paragraph={item?.node?.testimonialReview?.paragraph}
+										/>
+									</>
+								) : (
+									<></>
+								)}
+							</motion.div>
 						</Fragment>
 					))
 				) : (

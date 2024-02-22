@@ -134,7 +134,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{/* Menu Link*/}
 															{globalContext?.aboutUsSublinks?.length > 0 ? (
 																globalContext?.aboutUsSublinks?.map(
-																	(item: any, keys: any) => (
+																	(item: any, keys: number) => (
 																		<Fragment key={keys}>
 																			<Link href={`${item?.node?.url}`}>
 																				<li
@@ -199,7 +199,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{/* Menu Link*/}
 															{globalContext?.ourProgramsLinks?.length > 0 ? (
 																globalContext?.ourProgramsLinks?.map(
-																	(item: any, keys: any) => (
+																	(item: any, keys: number) => (
 																		<Fragment key={keys}>
 																			<Link href={`${item?.node?.url}`}>
 																				<li
@@ -265,7 +265,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{globalContext?.newsInsightSublinks?.length >
 															0 ? (
 																globalContext?.newsInsightSublinks?.map(
-																	(item: any, keys: any) => (
+																	(item: any, keys: number) => (
 																		<Fragment key={keys}>
 																			<Link href={`${item?.node?.url}`}>
 																				<li
@@ -330,7 +330,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{/* Menu Link*/}
 															{globalContext?.careerSublinks?.length > 0 ? (
 																globalContext?.careerSublinks?.map(
-																	(item: any, keys: any) => (
+																	(item: any, keys: number) => (
 																		<Fragment key={keys}>
 																			<Link href={`${item?.node?.url}`}>
 																				<li

@@ -1,9 +1,15 @@
 // Imports
+import {
+	fadeIn,
+	initial,
+	stagger,
+	initialTwo,
+	arrayLoopStaggerChildren,
+} from "../animations/animations";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IOurPartners} from "@/types/components/index";
-import {fadeIn, initial, stagger, initialTwo} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/OurPartners.module.scss";
@@ -26,7 +32,7 @@ const OurPartners: FC<IOurPartners> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-lg text-green-two"
+							className="mb-1 text-center text-lg text-green-two"
 						>
 							{subtitle}
 						</motion.h4>
@@ -54,9 +60,15 @@ const OurPartners: FC<IOurPartners> = ({
 							} lg:items-center lg:justify-between pt-12`}
 						>
 							{imageGrid?.length > 0 ? (
-								imageGrid.map((item: any, keys: any) => (
+								imageGrid.map((item: any, keys: number) => (
 									<Fragment key={keys}>
-										<div>
+										<motion.div
+											custom={keys}
+											initial={initial}
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+										>
 											<Image
 												alt={item?.image?.altText}
 												src={item?.image?.sourceUrl}
@@ -68,7 +80,7 @@ const OurPartners: FC<IOurPartners> = ({
 														: `hidden`
 												}
 											/>
-										</div>
+										</motion.div>
 									</Fragment>
 								))
 							) : (

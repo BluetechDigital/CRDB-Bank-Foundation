@@ -1,8 +1,12 @@
 // Imports
+import {
+	initial,
+	stagger,
+	arrayLoopStaggerChildren,
+} from "../animations/animations";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IFAQGrid} from "@/types/components/index";
-import {initial, stagger} from "../animations/animations";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
@@ -45,13 +49,22 @@ const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 						className="grid mb-32 px-4 lg:px-16 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 					>
 						{faqGrid?.length > 0 ? (
-							faqGrid.map((item: any, keys: any) => (
+							faqGrid.map((item: any, keys: number) => (
 								<Fragment key={keys}>
-									<FAQGridCard
-										index={keys}
-										title={item?.card?.title}
-										paragraph={item?.card?.paragraph}
-									/>
+									<motion.div
+										custom={keys}
+										initial={initial}
+										whileInView="animate"
+										viewport={{once: true}}
+										variants={arrayLoopStaggerChildren}
+										className="w-full"
+									>
+										<FAQGridCard
+											index={keys}
+											title={item?.card?.title}
+											paragraph={item?.card?.paragraph}
+										/>
+									</motion.div>
 								</Fragment>
 							))
 						) : (

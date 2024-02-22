@@ -1,17 +1,18 @@
 // Imports
+import {
+	fadeIn,
+	initial,
+	stagger,
+	initialTwo,
+	slideInRightFinish,
+	slideInRightInitial,
+	arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
-import fadeInUp, {
-	fadeIn,
-	initial,
-	initialTwo,
-	slideInRightFinish,
-	slideInRightInitial,
-	stagger,
-} from "@/animations/animations";
 
 // Styling
 import styles from "./../../styles/components/Navbar.module.scss";
@@ -47,20 +48,27 @@ const SubMegaMenuLinks: FC = () => {
 						>
 							{/* Menu Link*/}
 							{globalContext?.ourProgramsLinks?.length > 0 ? (
-								globalContext?.ourProgramsLinks?.map((item: any, keys: any) => (
-									<Fragment key={keys}>
-										<Link href={`${item?.node?.url}`}>
-											<li className="w-full group-scoped hover:bg-green-two border-b-[2px] border-lightGrey hover:border-green-two">
+								globalContext?.ourProgramsLinks?.map(
+									(item: any, keys: number) => (
+										<Fragment key={keys}>
+											<motion.li
+												custom={keys}
+												initial={initial}
+												whileInView="animate"
+												viewport={{once: true}}
+												variants={arrayLoopStaggerChildren}
+												className="w-full group-scoped hover:bg-green-two border-b-[2px] border-lightGrey hover:border-green-two"
+											>
 												<Link
 													href={`${item?.node?.url}`}
 													className="block p-4 text-tiny text-black hover:text-white"
 												>
 													{item?.node?.label}
 												</Link>
-											</li>
-										</Link>
-									</Fragment>
-								))
+											</motion.li>
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}

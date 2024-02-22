@@ -22,7 +22,7 @@ const TestimonialsTwoCard: FC = () => {
 				variants={stagger}
 				whileInView="animate"
 				viewport={{once: true}}
-				className="flex flex-col lg:flex-row lg:items-center justify-center  mx-16"
+				className="flex flex-col lg:flex-row lg:items-center justify-center lg:mx-16"
 			>
 				<Swiper
 					navigation={true}

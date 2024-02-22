@@ -57,7 +57,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center lg:text-left text-paragraph text-green-two"
+								className="text-center lg:text-left text-lg text-green-two"
 							>
 								{subtitle}
 							</motion.h4>
