@@ -241,6 +241,8 @@ export namespace IBusinessEmail {
 	};
 }
 
+/* Types Namespace - (NEWSLETTER)
+Newsletter Confirmation Email */
 export namespace INewsletterEmail {
 	export type INewsletterConfirmationEmail = {
 		email?: string;

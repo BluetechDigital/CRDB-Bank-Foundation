@@ -71,7 +71,7 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-lg text-green-two"
+							className="mb-1 text-center lg:text-center text-paragraph text-green-two"
 						>
 							{subtitle}
 						</motion.h4>

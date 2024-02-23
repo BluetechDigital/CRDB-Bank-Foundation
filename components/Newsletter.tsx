@@ -145,7 +145,7 @@ const Newsletter: FC<INewsletter> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="mb-2 text-center lg:text-left text-lg text-white"
+								className="mb-2 text-center lg:text-left text-paragraph text-white"
 							>
 								{subtitle}
 							</motion.h4>
@@ -213,6 +213,7 @@ const Newsletter: FC<INewsletter> = ({
 											content={textarea}
 											tailwindStyling="mb-2 lg:max-w-3xl mx-auto text-black text-base text-center lg:text-left"
 										/>
+
 										<motion.div
 											initial={initial}
 											whileInView={fadeInUp}
@@ -261,14 +262,8 @@ const Newsletter: FC<INewsletter> = ({
 											className="mt-2 w-full inline-block text-white disabled:bg-opacity-20 disabled:cursor-not-allowed"
 											type="submit"
 										>
-											<span
-												className={
-													messageSent
-														? `${styles.newsletterMessageSent}`
-														: `${styles.newsletterSubmitButton}`
-												}
-											>
-												<h3 className="tracking-widest text-white uppercase text-sm">
+											<span className="w-full flex items-center justify-center gap-3 py-3 px-6 bg-purple-default hover:bg-purple-two transition-all duration-200 ease-in-out">
+												<span className="text-white tracking-widest text-base">
 													{loading
 														? "Sending Message..."
 														: messageSent
@@ -276,7 +271,53 @@ const Newsletter: FC<INewsletter> = ({
 														: errorMessage
 														? "Sending Error!"
 														: "Send Message"}
-												</h3>
+												</span>
+												<span className="hidden group-hover:block">
+													<svg
+														height="35"
+														width="30.237"
+														viewBox="0 0 30.237 35"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<g transform="translate(-4906.763 143)">
+															<path
+																d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
+																transform="translate(4870 -143)"
+																fill="#ffffff"
+															></path>
+															<g transform="translate(4890.311 -1111.861)">
+																<path
+																	d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
+																	transform="translate(0 0)"
+																	fill="#ffffff"
+																></path>
+															</g>
+														</g>
+													</svg>
+												</span>
+												<span className="block group-hover:hidden">
+													<svg
+														height="35"
+														width="30.237"
+														viewBox="0 0 30.237 35"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<g transform="translate(-4906.763 143)">
+															<path
+																d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
+																transform="translate(4870 -143)"
+																fill="#ffffff"
+															></path>
+															<g transform="translate(4890.311 -1111.861)">
+																<path
+																	d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
+																	transform="translate(0 0)"
+																	fill="#ffffff"
+																></path>
+															</g>
+														</g>
+													</svg>
+												</span>
 											</span>
 										</motion.button>
 									</Form>
