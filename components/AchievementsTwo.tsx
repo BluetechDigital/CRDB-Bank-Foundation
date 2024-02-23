@@ -1,5 +1,4 @@
 // Imports
-import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IAchievementsTwo} from "@/types/components";
@@ -13,7 +12,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 	return (
 		<>
 			<div
-				className="py-16 lg:py-10 overflow-hidden bg-cover bg-no-repeat bg-center"
+				className="py-4 pt-6 overflow-hidden bg-cover bg-no-repeat bg-center"
 				style={{
 					backgroundColor: `${backgroundColor}`,
 					clipPath: `polygon(77% 0, 100% 0, 100% 98%, 21% 89%, 0 98%, 0 0)`,
@@ -26,13 +25,13 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 					viewport={{once: true}}
 					className="container px-4 mx-auto"
 				>
-					<div className="flex flex-col lg:flex-row gap-4 lg:gap-16 justify-center items-center -m-8">
-						<div className="w-full lg:w-1/2 xl:w-1/4 p-8">
+					<div className="flex flex-col lg:flex-row gap-4 lg:gap-16 justify-center items-center -mx-8">
+						<div className="w-full lg:w-1/2 xl:w-1/4 pb-8">
 							<motion.h2
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="my-0 lg:my-6 text-white text-center lg:text-left tracking-normal leading-normal sm:leading-[2.75rem] font-semibold text-5xl sm:text-6xl lg:text-7xl"
+								className="my-0 lg:my-2 text-white text-center lg:text-left tracking-normal leading-normal sm:leading-[2.75rem] font-semibold text-5xl sm:text-6xl lg:text-7xl"
 							>
 								{title}
 							</motion.h2>
@@ -42,7 +41,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16 lg:my-10 xl:mb-0 px-4"
+							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-8 mb-16 lg:mb-0 px-4"
 						>
 							{achievementsGrid?.length > 0 ? (
 								achievementsGrid.map((item: any, keys: number) => (

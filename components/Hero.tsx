@@ -92,7 +92,7 @@ const Hero: FC<IHero> = ({
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="flex flex-col items-center justify-center gap-6 pt-8 lg:justify-start sm:flex-row"
+								className="flex flex-col items-center justify-center gap-6 pt-8 lg:justify-start sm:flex-row lg:flex-col xl:flex-row"
 							>
 								<Link
 									href={`${buttonLink?.url}`}
