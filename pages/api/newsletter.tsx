@@ -1,28 +1,19 @@
 // Imports
+import {INewsletterEmail} from "@/types/email";
 import {render} from "@react-email/components";
 import {emailTransporter} from "@/config/nodemailer";
 import type {NextApiRequest, NextApiResponse} from "next";
-import {IBusinessEmail, ICustomerEmail} from "@/types/email";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
+import NewsletterEnquiryConfirmationEmail from "@/components/Emails/NewsletterEnquiryConfirmationEmail";
 
 // Components
-import {CustomerEnquiryConfirmationEmail} from "@/public/emails/CustomerEnquiryConfirmationEmail";
-import BusinessCustomerEnquiryConfirmationEmail from "@/public/emails/BusinessCustomerEnquiryConfirmationEmail";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method === "POST") {
 		const data = req.body;
 
 		// If any of these values are undefined
-		if (
-			!data?.email ||
-			!data?.message ||
-			!data?.subject ||
-			!data?.lastName ||
-			!data?.firstName ||
-			!data?.phoneNumber ||
-			!data?.selectedPrograms
-		) {
+		if (!data?.email) {
 			return res.status(400).json({
 				status: "error",
 				message: "Bad request. Please try again.",
@@ -33,8 +24,25 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 			const imagesDirUrl: any = process.env.IMAGE_DIR_URL;
 			const themesOptionsContent: any = await getThemesOptionsContent();
 
-			// await emailTransporter.sendMail({...customerEmail});
-			// await emailTransporter.sendMail({...businessEmail});
+			/* Render React Newsletter
+			 Confirmation Email Component*/
+			const newsletterEmailHtml: string = render(
+				<NewsletterEnquiryConfirmationEmail
+					email={`${data?.email}`}
+					imagesDirUrl={imagesDirUrl}
+					themesOptionsContent={themesOptionsContent}
+				/>
+			);
+
+			/* NewsletterConfirmation Email */
+			const newsletterEmail: INewsletterEmail = {
+				from: `${themesOptionsContent?.email}`,
+				to: `${data?.email}`,
+				subject: `Thank You for Contacting AWL Carpentry & Developments Ltd`,
+				html: newsletterEmailHtml,
+			};
+
+			await emailTransporter.sendMail({...newsletterEmail});
 
 			return res.status(200).json({
 				status: "success",

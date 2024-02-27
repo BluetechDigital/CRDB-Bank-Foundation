@@ -73,7 +73,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 						<Text style={paragraph}>
 							<strong>Subject:</strong> {subject}
 							<br />
-							<strong>Message:</strong> "{message}"
+							<strong>Message:</strong> &quot;{message}&quot;
 						</Text>
 						<Text style={paragraph}>
 							Can we begin reviewing the details of {firstName}&apos;s inquiry

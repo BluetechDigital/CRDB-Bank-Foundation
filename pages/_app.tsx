@@ -4,6 +4,7 @@ import {motion} from "framer-motion";
 import type {AppProps} from "next/app";
 import {client} from "@/config/apollo";
 import {ApolloProvider} from "@apollo/client";
+import {Analytics} from "@vercel/analytics/react";
 
 // Styling
 import "../styles/globals.scss";
