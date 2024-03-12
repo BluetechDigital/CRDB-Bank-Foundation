@@ -38,7 +38,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 			const newsletterEmail: INewsletterEmail = {
 				from: `${themesOptionsContent?.email}`,
 				to: `${data?.email}`,
-				subject: `Thank You for Contacting AWL Carpentry & Developments Ltd`,
+				subject: `Thank You for Contacting CRDB Bank Foundation`,
 				html: newsletterEmailHtml,
 			};
 

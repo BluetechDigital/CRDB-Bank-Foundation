@@ -38,21 +38,19 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 		<>
 			<Html>
 				<Head />
-				<Preview>
-					Thank You for Contacting AWL Carpentry & Developments Ltd
-				</Preview>
+				<Preview>Thank You for Contacting CRDB Bank Foundation</Preview>
 				<Body style={main}>
 					<Container style={container}>
 						<EmailHeader
-							imagesDirUrl={`${imagesDirUrl}/AWL-Carpentry-Developments-Ltd-Email-Header.png`}
+							imagesDirUrl={`${imagesDirUrl}/CRDB-Bank-Foundation-Email-Header.png`}
 						/>
 						<Section style={content}>
 							<Text style={introParagraph}>Hi {firstName},</Text>
 							<Text style={paragraph}>
-								Thank you for reaching out to AWL Carpentry & Developments Ltd
-								regarding {subject} and our {selectedPrograms} services. We have
-								received your website inquiry on {formattedDate} and are eager
-								to assist you with your goals. At this moment there is no
+								Thank you for reaching out to CRDB Bank Foundation regarding{" "}
+								{subject} and our &quot;{selectedPrograms}&quot; programs. We
+								have received your website inquiry on {formattedDate} and are
+								eager to assist you with your goals. At this moment there is no
 								further action is required from you.
 							</Text>
 							<Text style={paragraph}>
@@ -81,10 +79,10 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 								</Link>
 							</Text>
 							<Text style={paragraph}>
-								Thank you once again for considering AWL Carpentry &
-								Developments Ltd for your kitchen design and installation needs.
-								We look forward to the opportunity to work with you and
-								transform your ideas to reality.
+								Thank you once again for considering CRDB Bank Foundation for
+								your {selectedPrograms} needs. We look forward to the
+								opportunity to work with you and transform your ideas to
+								reality.
 							</Text>
 							<Text style={paragraph}>Best regards,</Text>
 							<Text style={paragraph}>
