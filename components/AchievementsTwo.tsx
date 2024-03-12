@@ -12,7 +12,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 	return (
 		<>
 			<div
-				className="py-4 pt-6 overflow-hidden bg-cover bg-no-repeat bg-center"
+				className="p-4 pt-6 overflow-hidden bg-cover bg-no-repeat bg-center"
 				style={{
 					backgroundColor: `${backgroundColor}`,
 					clipPath: `polygon(77% 0, 100% 0, 100% 98%, 21% 89%, 0 98%, 0 0)`,
