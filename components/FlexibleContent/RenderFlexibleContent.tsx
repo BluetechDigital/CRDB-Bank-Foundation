@@ -45,7 +45,8 @@ const RenderFlexibleContent: FC = () => {
 			{content?.content?.length > 0 ? (
 				content?.content?.map((item: any, keys: number) => (
 					<section key={keys}>
-						{item?.fieldGroupName === `${FlexibleContent}_Hero` ? (
+						{item?.fieldGroupName === `${FlexibleContent}_Hero` &&
+						item?.displaySection ? (
 							<>
 								<Hero
 									video={item?.video}
@@ -59,7 +60,8 @@ const RenderFlexibleContent: FC = () => {
 									heroBackgroundColor={item?.heroBackgroundColor}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_HeroTwo` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_HeroTwo` &&
+						  item?.displaySection ? (
 							<>
 								<HeroTwo
 									title={item?.title}
@@ -67,7 +69,8 @@ const RenderFlexibleContent: FC = () => {
 									backgroundImage={item?.backgroundImage?.sourceUrl}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_TitleParagraph` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_TitleParagraph` &&
+						  item?.displaySection ? (
 							<>
 								<TitleParagraph
 									title={item?.title}
@@ -75,7 +78,8 @@ const RenderFlexibleContent: FC = () => {
 									displayParagraph={item?.displayParagraph}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_VideoBlock` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_VideoBlock` &&
+						  item?.displaySection ? (
 							<>
 								<VideoBlock
 									title={item?.title}
@@ -89,7 +93,8 @@ const RenderFlexibleContent: FC = () => {
 									videoBackgroundImage={item?.videoBackgroundImage?.sourceUrl}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_ContentImage` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_ContentImage` &&
+						  item?.displaySection ? (
 							<>
 								<ContentImage
 									title={item?.title}
@@ -100,14 +105,16 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_JumboContentSection` ? (
+								`${FlexibleContent}_JumboContentSection` &&
+						  item?.displaySection ? (
 							<>
 								<JumboContentSection
 									jumboContentSection={item?.contentSection}
 								/>
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_IndividualExecutiveMember` ? (
+								`${FlexibleContent}_IndividualExecutiveMember` &&
+						  item?.displaySection ? (
 							<>
 								<IndividualExecutiveMember
 									title={item?.title}
@@ -121,8 +128,8 @@ const RenderFlexibleContent: FC = () => {
 									displayBackgroundIcon={item?.displayBackgroundIcon}
 								/>
 							</>
-						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_AchievementsTwo` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_AchievementsTwo` &&
+						  item?.displaySection ? (
 							<>
 								<AchievementsTwo
 									title={item?.title}
@@ -130,7 +137,8 @@ const RenderFlexibleContent: FC = () => {
 									achievementsGrid={item?.achievementsGrid}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_OurPrograms` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_OurPrograms` &&
+						  item?.displaySection ? (
 							<>
 								<OurPrograms
 									title={item?.title}
@@ -139,7 +147,8 @@ const RenderFlexibleContent: FC = () => {
 									programsGrid={item?.programsGrid}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_MainPrograms` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_MainPrograms` &&
+						  item?.displaySection ? (
 							<>
 								<MainPrograms
 									title={item?.title}
@@ -149,7 +158,8 @@ const RenderFlexibleContent: FC = () => {
 									highlightText={item?.highlightText}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_OurPartners` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_OurPartners` &&
+						  item?.displaySection ? (
 							<>
 								<OurPartners
 									title={item?.title}
@@ -158,8 +168,8 @@ const RenderFlexibleContent: FC = () => {
 									imageGrid={item?.imageGrid}
 								/>
 							</>
-						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_FeaturesGridTwo` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_FeaturesGridTwo` &&
+						  item?.displaySection ? (
 							<>
 								<FeaturesGridTwo
 									cardOne={item?.cardOne}
@@ -169,7 +179,8 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_TestimonialsGrid` ? (
+								`${FlexibleContent}_TestimonialsGrid` &&
+						  item?.displaySection ? (
 							<>
 								<TestimonialsGrid
 									title={item?.title}
@@ -178,8 +189,8 @@ const RenderFlexibleContent: FC = () => {
 									highlightText={item?.highlightText}
 								/>
 							</>
-						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_TestimonialsTwo` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_TestimonialsTwo` &&
+						  item?.displaySection ? (
 							<>
 								<TestimonialsTwo
 									title={item?.title}
@@ -189,7 +200,8 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_JobPositionsGrid` ? (
+								`${FlexibleContent}_JobPositionsGrid` &&
+						  item?.displaySection ? (
 							<>
 								<JobPositions
 									title={item?.title}
@@ -199,7 +211,8 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_JobPositionsThreeCardsGrid` ? (
+								`${FlexibleContent}_JobPositionsThreeCardsGrid` &&
+						  item?.displaySection ? (
 							<>
 								<JobPositionsThreeCards
 									title={item?.title}
@@ -208,7 +221,8 @@ const RenderFlexibleContent: FC = () => {
 									highlightText={item?.highlightText}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` &&
+						  item?.displaySection ? (
 							<>
 								<Gallery
 									title={item?.title}
@@ -219,7 +233,8 @@ const RenderFlexibleContent: FC = () => {
 									itemsDisplayedPerPage={item?.itemsDisplayedPerPage}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_Faq` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_Faq` &&
+						  item?.displaySection ? (
 							<>
 								<FAQ
 									title={item?.title}
@@ -230,7 +245,8 @@ const RenderFlexibleContent: FC = () => {
 									faqContent={item?.faqContent}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_FaqGrid` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_FaqGrid` &&
+						  item?.displaySection ? (
 							<>
 								<FAQGrid
 									title={item?.title}
@@ -239,7 +255,8 @@ const RenderFlexibleContent: FC = () => {
 									highlightText={item?.highlightText}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_Cta` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_Cta` &&
+						  item?.displaySection ? (
 							<>
 								<CTA
 									title={item?.title}
@@ -248,7 +265,8 @@ const RenderFlexibleContent: FC = () => {
 									backgroundImage={item?.backgroundImage?.sourceUrl}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_LinkedinCta` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_LinkedinCta` &&
+						  item?.displaySection ? (
 							<>
 								<LinkedInCta
 									title={item?.title}
@@ -259,7 +277,8 @@ const RenderFlexibleContent: FC = () => {
 									displayLinkedinIcon={item?.displayLinkedinIcon}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_Newsletter` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_Newsletter` &&
+						  item?.displaySection ? (
 							<>
 								<Newsletter
 									title={item?.title}
@@ -269,16 +288,19 @@ const RenderFlexibleContent: FC = () => {
 									formTitle={item?.formTitle}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_ContactInfo` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_ContactInfo` &&
+						  item?.displaySection ? (
 							<>
 								<ContactInfo title={item?.title} paragraph={item?.paragraph} />
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` &&
+						  item?.displaySection ? (
 							<>
 								<ContactForm title={item?.title} paragraph={item?.paragraph} />
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_BoardOfDirectorsGrid` ? (
+								`${FlexibleContent}_BoardOfDirectorsGrid` &&
+						  item?.displaySection ? (
 							<>
 								<BoardOfDirectorsGrid
 									title={item?.title}
@@ -288,7 +310,8 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_ExecutiveLeadershipsGrid` ? (
+								`${FlexibleContent}_ExecutiveLeadershipsGrid` &&
+						  item?.displaySection ? (
 							<>
 								<ExecutiveLeadershipsGrid
 									title={item?.title}
@@ -297,7 +320,8 @@ const RenderFlexibleContent: FC = () => {
 									highlightText={item?.highlightText}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_NewsGrid` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_NewsGrid` &&
+						  item?.displaySection ? (
 							<>
 								<News
 									title={item?.title}
@@ -305,7 +329,8 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_NewsThreeCards` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_NewsThreeCards` &&
+						  item?.displaySection ? (
 							<>
 								<NewsThreeCards
 									title={item?.title}
@@ -313,7 +338,8 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_BlogsGrid` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_BlogsGrid` &&
+						  item?.displaySection ? (
 							<>
 								<Blogs
 									title={item?.title}
@@ -321,8 +347,8 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 								/>
 							</>
-						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_BlogsThreeCards` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_BlogsThreeCards` &&
+						  item?.displaySection ? (
 							<>
 								<BlogsThreeCards
 									title={item?.title}
@@ -330,10 +356,11 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 								/>
 							</>
-						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_CaseStudiesGrid` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_CaseStudiesGrid` &&
+						  item?.displaySection ? (
 							<></>
-						) : item?.fieldGroupName === `${FlexibleContent}_Maintenance` ? (
+						) : item?.fieldGroupName === `${FlexibleContent}_Maintenance` &&
+						  item?.displaySection ? (
 							<>
 								<Maintenance
 									title={item?.title}
@@ -342,7 +369,8 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_ErrorPageContent` ? (
+								`${FlexibleContent}_ErrorPageContent` &&
+						  item?.displaySection ? (
 							<>
 								<ErrorPage
 									title={item?.title}

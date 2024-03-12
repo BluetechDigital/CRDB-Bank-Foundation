@@ -25,6 +25,7 @@ export const getAllFlexibleContentComponents = async (
 												video
 												paragraph
 												displayVideo
+												displaySection
 												heroBackgroundColor
 												buttonLink {
 													url
@@ -57,6 +58,7 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												title
 												paragraph
+												displaySection
 												backgroundImage {
 													sourceUrl
 												}
@@ -65,6 +67,7 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												title
 												paragraph
+												displaySection
 												displayParagraph
 											}
 											... on ${postTypeFlexibleContent}_VideoBlock {
@@ -75,6 +78,7 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayVideo
 												highlightText
+												displaySection
 												displayYoutubeIcon
 												buttonLink {
 													url
@@ -90,6 +94,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												displaySection
 												buttonLink {
 													url
 													title
@@ -106,6 +111,7 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_JumboContentSection {
 												fieldGroupName
+												displaySection
 												contentSection {
 													content {
 														title
@@ -143,6 +149,7 @@ export const getAllFlexibleContentComponents = async (
             									subtitle
             									paragraph
             									executiveName
+												displaySection
             									executiveTitle
             									paragraphTitle
             									displayBackgroundIcon
@@ -166,6 +173,7 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_AchievementsTwo {
                       							fieldGroupName
                       							title
+												displaySection
 												backgroundColor
               									achievementsGrid {
               									  textOne
@@ -177,6 +185,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												displaySection
 												imageGrid {
 													link {
 														url
@@ -198,6 +207,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												displaySection
 												programsGrid {
 													card {
 														title
@@ -232,6 +242,7 @@ export const getAllFlexibleContentComponents = async (
             								  	subtitle
             								  	paragraph
             								  	highlightText
+												displaySection
             								  	programsGrid {
 													card {
 														title
@@ -262,6 +273,7 @@ export const getAllFlexibleContentComponents = async (
             								}
 											... on ${postTypeFlexibleContent}_FeaturesGridTwo {
                       							fieldGroupName
+												displaySection
                       							cardOne {
 													title
 													subtitle
@@ -301,6 +313,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												displaySection
 												highlightText
 											}
 											... on ${postTypeFlexibleContent}_TestimonialsTwo {
@@ -308,6 +321,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												displaySection
 												buttonLink {
 													url
 													title
@@ -320,6 +334,7 @@ export const getAllFlexibleContentComponents = async (
 												subtitle
 												paragraph
 												highlightText
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_JobPositionsThreeCardsGrid {
 												fieldGroupName
@@ -327,6 +342,7 @@ export const getAllFlexibleContentComponents = async (
 												subtitle
 												paragraph
 												highlightText
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
@@ -334,6 +350,7 @@ export const getAllFlexibleContentComponents = async (
 												subtitle
 												paragraph
 												highlightText
+												displaySection
 												itemsDisplayedPerPage
 												gallery {
             										altText
@@ -349,6 +366,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												displaySection
 												buttonLink {
 													url
 													title
@@ -374,6 +392,7 @@ export const getAllFlexibleContentComponents = async (
               									title
               									paragraph
               									highlightText
+												displaySection
               									faqGrid {
               										card {
               											title
@@ -385,6 +404,7 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												title
 												paragraph
+												displaySection
 												buttonLink {
 													url
 													title
@@ -398,6 +418,7 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												title
 												highlightText
+												displaySection
 												backgroundColor
 												highlightTextColor
 												displayLinkedinIcon
@@ -414,63 +435,74 @@ export const getAllFlexibleContentComponents = async (
             									textarea
             									paragraph
             									formTitle
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_ContactInfo {
 												fieldGroupName
 												title
 												paragraph
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_ContactForm {
 												fieldGroupName
 												title
 												paragraph
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_BoardOfDirectorsGrid {
 												fieldGroupName
 												title
 												paragraph
 												highlightText
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_ExecutiveLeadershipsGrid {
 												fieldGroupName
 												title
 												paragraph
 												highlightText
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_NewsGrid {
 												fieldGroupName
 												title
 												italic
 												paragraph
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
 												title
 												paragraph
 												highlightText
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_BlogsGrid {
 												fieldGroupName
 												title
 												italic
 												paragraph
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
 												fieldGroupName
 												title
 												paragraph
 												highlightText
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_CaseStudiesGrid {
 												fieldGroupName
 												title
 												paragraph
 												highlightText
+												displaySection
 											}
 											... on ${postTypeFlexibleContent}_Maintenance {
 												fieldGroupName
 												title
 												paragraph
+												displaySection
 												backgroundImage {
 													altText
 													sourceUrl
@@ -484,6 +516,7 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												title
 												paragraph
+												displaySection
 												buttonLink {
 													url
 													title
