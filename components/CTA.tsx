@@ -6,7 +6,6 @@ import {ICTA} from "@/types/components/index";
 import {fadeIn, initial, initialTwo, stagger} from "../animations/animations";
 
 // Components
-import Title from "./Elements/Title";
 import Paragraph from "./Elements/Paragraph";
 import ButtonBorderSliced from "./Elements/ButtonBorderSliced";
 
@@ -55,6 +54,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
+								aria-label={`${buttonLink?.title}`}
 								className={buttonLink?.url ? "block" : "hidden"}
 							>
 								<ButtonBorderSliced

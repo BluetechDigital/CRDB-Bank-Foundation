@@ -60,20 +60,28 @@ const OurPartners: FC<IOurPartners> = ({
 							} lg:items-center lg:justify-between pt-12`}
 						>
 							{imageGrid?.length > 0 ? (
-								imageGrid.map((item: any, keys: number) => (
-									<Fragment key={keys}>
+								imageGrid.map((item: any, index: number) => (
+									<Fragment key={index}>
 										<motion.div
-											custom={keys}
+											custom={index}
 											initial={initial}
 											whileInView="animate"
 											viewport={{once: true}}
 											variants={arrayLoopStaggerChildren}
 										>
 											<Image
-												alt={item?.image?.altText}
+												alt={`${item?.image?.altText}`}
 												src={item?.image?.sourceUrl}
-												width={item?.image?.mediaDetails?.width}
-												height={item?.image?.mediaDetails?.height}
+												width={
+													item?.image?.mediaDetails?.width
+														? item?.image?.mediaDetails?.width
+														: 500
+												}
+												height={
+													item?.image?.mediaDetails?.height
+														? item?.image?.mediaDetails?.height
+														: 500
+												}
 												className={
 													item?.image?.sourceUrl
 														? `block w-[150px] mx-auto h-full sm:w-[150px] lg:w-full lg:h-[125px] object-contain object-center`

@@ -1,16 +1,16 @@
 // Imports
+import {
+	fadeIn,
+	initial,
+	stagger,
+	initialTwo,
+	arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 import {useState, FC, Fragment, useEffect} from "react";
-import {
-	arrayLoopStaggerChildren,
-	fadeIn,
-	initial,
-	initialTwo,
-	stagger,
-} from "@/animations/animations";
 
 // Styling
 import styles from "./../../styles/components/Navbar.module.scss";
@@ -105,7 +105,11 @@ const Navbar: FC = () => {
 						whileInView={fadeIn}
 						viewport={{once: true}}
 					>
-						<Link href="/">
+						<Link
+							href="/"
+							target="_self"
+							aria-label={`CRDB Bank Foundation Homepage Link`}
+						>
 							<Image
 								priority
 								width={500}
@@ -138,11 +142,11 @@ const Navbar: FC = () => {
 						>
 							{globalContext?.navbarMenuLinks?.length > 0 ? (
 								globalContext?.navbarMenuLinks?.map(
-									(item: any, keys: number) => (
-										<Fragment key={keys}>
+									(item: any, index: number) => (
+										<Fragment key={index}>
 											{item?.node?.url === "/about" ? (
 												<motion.li
-													custom={keys}
+													custom={index}
 													initial={initial}
 													whileInView="animate"
 													viewport={{once: true}}
@@ -152,6 +156,12 @@ const Navbar: FC = () => {
 													<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
 														<Link
 															href={`${item?.node?.url}`}
+															target={`${
+																item?.node?.target
+																	? item?.node?.target
+																	: "_self"
+															}`}
+															aria-label={`${item?.node?.label}`}
 															className={`${
 																scrollPosition > 50
 																	? "text-black"
@@ -200,10 +210,10 @@ const Navbar: FC = () => {
 																	{globalContext?.aboutUsSublinks?.length >
 																	0 ? (
 																		globalContext?.aboutUsSublinks?.map(
-																			(item: any, keys: number) => (
-																				<Fragment key={keys}>
+																			(item: any, index: number) => (
+																				<Fragment key={index}>
 																					<motion.li
-																						custom={keys}
+																						custom={index}
 																						initial={initial}
 																						whileInView="animate"
 																						viewport={{once: true}}
@@ -211,6 +221,12 @@ const Navbar: FC = () => {
 																					>
 																						<Link
 																							href={`${item?.node?.url}`}
+																							target={`${
+																								item?.node?.target
+																									? item?.node?.target
+																									: "_self"
+																							}`}
+																							aria-label={`${item?.node?.label}`}
 																							className={` ${
 																								aboutUsSublinksOpen
 																									? "w-full hover:bg-green-two text-black hover:text-white"
@@ -233,7 +249,7 @@ const Navbar: FC = () => {
 												</motion.li>
 											) : item?.node?.label === "Our Programs" ? (
 												<motion.li
-													custom={keys}
+													custom={index}
 													initial={initial}
 													whileInView="animate"
 													viewport={{once: true}}
@@ -244,6 +260,12 @@ const Navbar: FC = () => {
 													<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
 														<Link
 															href={`${item?.node?.url}`}
+															target={`${
+																item?.node?.target
+																	? item?.node?.target
+																	: "_self"
+															}`}
+															aria-label={`${item?.node?.label}`}
 															className={`${
 																scrollPosition > 50
 																	? "text-black"
@@ -288,7 +310,7 @@ const Navbar: FC = () => {
 												</motion.li>
 											) : item?.node?.url === "/news" ? (
 												<motion.li
-													custom={keys}
+													custom={index}
 													initial={initial}
 													whileInView="animate"
 													viewport={{once: true}}
@@ -298,6 +320,12 @@ const Navbar: FC = () => {
 													<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
 														<Link
 															href={`${item?.node?.url}`}
+															target={`${
+																item?.node?.target
+																	? item?.node?.target
+																	: "_self"
+															}`}
+															aria-label={`${item?.node?.label}`}
 															className={`${
 																scrollPosition > 50
 																	? "text-black"
@@ -346,10 +374,10 @@ const Navbar: FC = () => {
 																	{globalContext?.newsInsightSublinks?.length >
 																	0 ? (
 																		globalContext?.newsInsightSublinks?.map(
-																			(item: any, keys: number) => (
-																				<Fragment key={keys}>
+																			(item: any, index: number) => (
+																				<Fragment key={index}>
 																					<motion.li
-																						custom={keys}
+																						custom={index}
 																						initial={initial}
 																						whileInView="animate"
 																						viewport={{once: true}}
@@ -357,6 +385,12 @@ const Navbar: FC = () => {
 																					>
 																						<Link
 																							href={`${item?.node?.url}`}
+																							target={`${
+																								item?.node?.target
+																									? item?.node?.target
+																									: "_self"
+																							}`}
+																							aria-label={`${item?.node?.label}`}
 																							className={` ${
 																								newsInsightsSublinksOpen
 																									? "w-full hover:bg-green-two text-black hover:text-white"
@@ -379,7 +413,7 @@ const Navbar: FC = () => {
 												</motion.li>
 											) : (
 												<motion.li
-													custom={keys}
+													custom={index}
 													initial={initial}
 													whileInView="animate"
 													viewport={{once: true}}
@@ -388,6 +422,10 @@ const Navbar: FC = () => {
 												>
 													<Link
 														href={`${item?.node?.url}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+														aria-label={`${item?.node?.label}`}
 														className={`${
 															scrollPosition > 50 ? "text-black" : "text-white"
 														} group-hover:text-black group-hover:hover:text-green-two text-tiny text-center tracking-[0.075rem] transition-all ease-in-out duration-500`}

@@ -81,6 +81,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 						<Link
 							href={`${buttonLink?.url}`}
 							target={buttonLink?.target}
+							aria-label={`${buttonLink?.title}`}
 							className={
 								buttonLink?.url
 									? "flex mt-6 lg:mt-0 items-center justify-center lg:justify-start"

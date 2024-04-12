@@ -57,10 +57,10 @@ const Pagination: FC<IPagination> = ({
 				className={`${tailwindStyling}`}
 			>
 				{currentImages.length > 0 ? (
-					currentImages.map((item: any, keys: number) => (
-						<Fragment key={keys}>
+					currentImages.map((item: any, index: number) => (
+						<Fragment key={index}>
 							<motion.div
-								custom={keys}
+								custom={index}
 								initial={initial}
 								whileInView="animate"
 								viewport={{once: true}}
@@ -70,10 +70,18 @@ const Pagination: FC<IPagination> = ({
 								{contentType === `Gallery` ? (
 									<>
 										<Image
-											alt={item?.altText}
+											alt={`${item?.altText}`}
 											src={item?.sourceUrl}
-											width={item?.mediaDetails?.width}
-											height={item?.mediaDetails?.height}
+											width={
+												item?.mediaDetails?.width
+													? item?.mediaDetails?.width
+													: 500
+											}
+											height={
+												item?.mediaDetails?.height
+													? item?.mediaDetails?.height
+													: 500
+											}
 											className={
 												item?.sourceUrl
 													? `block object-cover object-center w-full h-[175px] ${

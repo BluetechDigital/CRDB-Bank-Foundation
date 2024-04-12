@@ -17,14 +17,30 @@ export const getThemesOptionsContent = async () => {
 								emailTwo
 								textarea
 								phoneNumber
-								twitterLink
-								facebookLink
-								linkedinLink
-								instagramLink
 								copyrightText
 								phoneNumberTwo
 								displayNoticeBanner
 								noticeBannerTextarea
+								facebookLink {
+									url
+									title
+									target
+								}
+								twitterLink {
+									url
+									title
+									target
+								}
+								linkedinLink {
+									url
+									title
+									target
+								}
+								instagramLink {
+									url
+									title
+									target
+								}
 								menuColumnThree {
 									title
 									paragraph

@@ -92,10 +92,16 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 							className="relative w-full px-4 lg:w-1/2"
 						>
 							<Image
-								alt={image?.altText}
+								alt={`${image?.altText}`}
 								src={image?.sourceUrl}
-								width={image?.mediaDetails?.width}
-								height={image?.mediaDetails?.height}
+								width={
+									image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
+								}
+								height={
+									image?.mediaDetails?.height
+										? image?.mediaDetails?.height
+										: 500
+								}
 								className={
 									image?.sourceUrl
 										? `block object-contain object-center w-full h-[300px] sm:h-[400px] xl:h-[500px]`
@@ -129,10 +135,18 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 								</motion.h4>
 							</div>
 							<Image
-								alt={imageTwo?.altText}
+								alt={`${imageTwo?.altText}`}
 								src={imageTwo?.sourceUrl}
-								width={imageTwo?.mediaDetails?.width}
-								height={imageTwo?.mediaDetails?.height}
+								width={
+									imageTwo?.mediaDetails?.width
+										? imageTwo?.mediaDetails?.width
+										: 500
+								}
+								height={
+									imageTwo?.mediaDetails?.height
+										? imageTwo?.mediaDetails?.height
+										: 500
+								}
 								className={
 									imageTwo?.sourceUrl
 										? `block xl:absolute xl:bottom-[-400px] left-[0px] mt-6 lg:ml-0 lg:left-[-50px] object-cover object-center w-full h-[350px]`

@@ -32,7 +32,11 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 					boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 				}}
 			>
-				<Link href={`/job-positions/${slug}`} target="">
+				<Link
+					target="_self"
+					href={`/job-positions/${slug}`}
+					aria-label={`job-positions/${slug}`}
+				>
 					<motion.div
 						initial={initial}
 						variants={stagger}
@@ -40,7 +44,11 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 						viewport={{once: true}}
 						className="flex flex-col items-baseline justify-between gap-4 p-10"
 					>
-						<Link href={`${slug}`}>
+						<Link
+							target="_self"
+							href={`/job-positions/${slug}`}
+							aria-label={`job-positions/${slug}`}
+						>
 							<motion.h2
 								initial={initial}
 								whileInView={fadeInUp}
@@ -70,8 +78,9 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 							viewport={{once: true}}
 						>
 							<Link
+								target="_self"
 								href={`/job-positions/${slug}`}
-								target=""
+								aria-label={`job-positions/${slug}`}
 								className={slug ? "block" : "hidden"}
 							>
 								<ButtonBorderSliced

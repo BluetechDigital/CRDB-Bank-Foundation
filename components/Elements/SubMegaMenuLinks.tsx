@@ -49,10 +49,10 @@ const SubMegaMenuLinks: FC = () => {
 							{/* Menu Link*/}
 							{globalContext?.ourProgramsLinks?.length > 0 ? (
 								globalContext?.ourProgramsLinks?.map(
-									(item: any, keys: number) => (
-										<Fragment key={keys}>
+									(item: any, index: number) => (
+										<Fragment key={index}>
 											<motion.li
-												custom={keys}
+												custom={index}
 												initial={initial}
 												whileInView="animate"
 												viewport={{once: true}}
@@ -61,6 +61,10 @@ const SubMegaMenuLinks: FC = () => {
 											>
 												<Link
 													href={`${item?.node?.url}`}
+													target={`${
+														item?.node?.target ? item?.node?.target : "_self"
+													}`}
+													aria-label={`${item?.node?.label}`}
 													className="block p-4 text-tiny text-black hover:text-white"
 												>
 													{item?.node?.label}
@@ -91,7 +95,11 @@ const SubMegaMenuLinks: FC = () => {
 							className="flex flex-col items-center justify-center gap-4 mb-6"
 						>
 							<div className="grid grid-cols-2 2xl:flex 2xl:flex-row items-center justify-center gap-4">
-								<Link href="https://crdbbank.co.tz" target="_black">
+								<Link
+									target="_self"
+									href="https://crdbbank.co.tz"
+									aria-label={`CRDB Bank Website Link`}
+								>
 									<motion.button
 										initial={initial}
 										whileInView={fadeIn}
@@ -122,7 +130,11 @@ const SubMegaMenuLinks: FC = () => {
 										</span>
 									</motion.button>
 								</Link>
-								<Link href="https://www.crdbbankmarathon.co.tz" target="_black">
+								<Link
+									target="_self"
+									aria-label={`Marathon Website Link`}
+									href="https://www.crdbbankmarathon.co.tz"
+								>
 									<motion.button
 										initial={initial}
 										whileInView={fadeIn}
@@ -156,8 +168,9 @@ const SubMegaMenuLinks: FC = () => {
 							</div>
 							<div className="grid grid-cols-2 2xl:flex 2xl:flex-row items-center justify-center gap-4">
 								<Link
+									target="_self"
+									aria-label={`Simbanking Website Link`}
 									href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/26"
-									target="_black"
 								>
 									<motion.button
 										initial={initial}
@@ -190,8 +203,9 @@ const SubMegaMenuLinks: FC = () => {
 									</motion.button>
 								</Link>
 								<Link
+									target="_self"
+									aria-label={`Internet Banking Website Link`}
 									href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/25"
-									target="_black"
 								>
 									<motion.button
 										initial={initial}
@@ -268,6 +282,7 @@ const SubMegaMenuLinks: FC = () => {
 							className="flex flex-col items-center justify-center px-6 gap-4"
 						>
 							<Link
+								aria-label={`${globalContext?.themesOptionsContent?.menuColumnThree?.buttonLink?.title}`}
 								href={
 									globalContext?.themesOptionsContent?.menuColumnThree
 										?.buttonLink?.url

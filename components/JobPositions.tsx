@@ -124,20 +124,22 @@ const JobPositions: FC<IJobPositions> = ({
 					{allJobsOpen ? (
 						<>
 							{globalContext?.jobsPositions?.length > 0 ? (
-								globalContext?.jobsPositions?.map((item: any, keys: number) => (
-									<Fragment key={keys}>
-										{keys <= 2 ? (
-											<JobPositionsCard
-												slug={item?.node?.slug}
-												title={item?.node?.title}
-												paragraph={item?.node?.excerpt}
-												tailwindStyling="bg-green-default hover:bg-purple-three"
-											/>
-										) : (
-											<></>
-										)}
-									</Fragment>
-								))
+								globalContext?.jobsPositions?.map(
+									(item: any, index: number) => (
+										<Fragment key={index}>
+											{index <= 2 ? (
+												<JobPositionsCard
+													slug={item?.node?.slug}
+													title={item?.node?.title}
+													paragraph={item?.node?.excerpt}
+													tailwindStyling="bg-green-default hover:bg-purple-three"
+												/>
+											) : (
+												<></>
+											)}
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}
@@ -146,9 +148,9 @@ const JobPositions: FC<IJobPositions> = ({
 						<>
 							{globalContext?.managementsJobs?.length > 0 ? (
 								globalContext?.managementsJobs?.map(
-									(item: any, keys: number) => (
-										<Fragment key={keys}>
-											{keys <= 2 ? (
+									(item: any, index: number) => (
+										<Fragment key={index}>
+											{index <= 2 ? (
 												<JobPositionsCard
 													slug={item?.slug}
 													title={item?.title}
@@ -169,9 +171,9 @@ const JobPositions: FC<IJobPositions> = ({
 						<>
 							{globalContext?.operationsTeamsJobs?.length > 0 ? (
 								globalContext?.operationsTeamsJobs?.map(
-									(item: any, keys: number) => (
-										<Fragment key={keys}>
-											{keys <= 2 ? (
+									(item: any, index: number) => (
+										<Fragment key={index}>
+											{index <= 2 ? (
 												<JobPositionsCard
 													slug={item?.slug}
 													title={item?.title}

@@ -5,6 +5,7 @@ import {
 	initial,
 	fadeInUp,
 	initialTwo,
+	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
@@ -78,7 +79,12 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 					}}
 				>
 					<div className="flex flex-col items-center mb-8">
-						<Link className="mr-auto text-3xl font-bold leading-none" href="/">
+						<Link
+							href="/"
+							target="_self"
+							aria-label={`CRDB Bank Foundation Homepage Link`}
+							className="mr-auto text-3xl font-bold leading-none"
+						>
 							<Image
 								width={500}
 								height={500}
@@ -96,8 +102,8 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							viewport={{once: true}}
 						>
 							{globalContext?.mobileLinks?.length > 0 ? (
-								globalContext?.mobileLinks.map((item: any, keys: number) => (
-									<Fragment key={keys}>
+								globalContext?.mobileLinks.map((item: any, index: number) => (
+									<Fragment key={index}>
 										{item?.node?.url === "/about" ? (
 											<li
 												onClick={displayAboutUsSublinks}
@@ -107,6 +113,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 													<Link
 														onClick={toggleMenu}
 														href={`${item?.node?.url}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+														aria-label={`${item?.node?.label}`}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
@@ -134,25 +144,33 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{/* Menu Link*/}
 															{globalContext?.aboutUsSublinks?.length > 0 ? (
 																globalContext?.aboutUsSublinks?.map(
-																	(item: any, keys: number) => (
-																		<Fragment key={keys}>
-																			<Link href={`${item?.node?.url}`}>
-																				<li
-																					className={`${
-																						keys < 1
-																							? "border-t-[1px] border-darkGrey border-opacity-50"
-																							: "border-t-[0px]"
-																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																	(item: any, index: number) => (
+																		<Fragment key={index}>
+																			<motion.li
+																				custom={index}
+																				initial={initial}
+																				whileInView="animate"
+																				viewport={{once: true}}
+																				variants={arrayLoopStaggerChildren}
+																				className={`${
+																					index < 1
+																						? "border-t-[1px] border-darkGrey border-opacity-50"
+																						: "border-t-[0px]"
+																				} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																			>
+																				<Link
+																					href={`${item?.node?.url}`}
+																					target={`${
+																						item?.node?.target
+																							? item?.node?.target
+																							: "_self"
+																					}`}
+																					aria-label={`${item?.node?.label}`}
+																					className="block p-4 text-base font-semibold"
 																				>
-																					<Link
-																						onClick={toggleMenu}
-																						href={`${item?.node?.url}`}
-																						className="block p-4 text-base font-semibold"
-																					>
-																						{item?.node?.label}
-																					</Link>
-																				</li>
-																			</Link>
+																					{item?.node?.label}
+																				</Link>
+																			</motion.li>
 																		</Fragment>
 																	)
 																)
@@ -172,6 +190,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 													<Link
 														onClick={toggleMenu}
 														href={`${item?.node?.url}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+														aria-label={`${item?.node?.label}`}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
@@ -199,25 +221,33 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{/* Menu Link*/}
 															{globalContext?.ourProgramsLinks?.length > 0 ? (
 																globalContext?.ourProgramsLinks?.map(
-																	(item: any, keys: number) => (
-																		<Fragment key={keys}>
-																			<Link href={`${item?.node?.url}`}>
-																				<li
-																					className={`${
-																						keys < 1
-																							? "border-t-[1px] border-darkGrey border-opacity-50"
-																							: "border-t-[0px]"
-																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																	(item: any, index: number) => (
+																		<Fragment key={index}>
+																			<motion.li
+																				custom={index}
+																				initial={initial}
+																				whileInView="animate"
+																				viewport={{once: true}}
+																				variants={arrayLoopStaggerChildren}
+																				className={`${
+																					index < 1
+																						? "border-t-[1px] border-darkGrey border-opacity-50"
+																						: "border-t-[0px]"
+																				} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																			>
+																				<Link
+																					href={`${item?.node?.url}`}
+																					target={`${
+																						item?.node?.target
+																							? item?.node?.target
+																							: "_self"
+																					}`}
+																					aria-label={`${item?.node?.label}`}
+																					className="block p-4 text-base font-semibold"
 																				>
-																					<Link
-																						onClick={toggleMenu}
-																						href={`${item?.node?.url}`}
-																						className="block p-4 text-base font-semibold"
-																					>
-																						{item?.node?.label}
-																					</Link>
-																				</li>
-																			</Link>
+																					{item?.node?.label}
+																				</Link>
+																			</motion.li>
 																		</Fragment>
 																	)
 																)
@@ -236,7 +266,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														onClick={toggleMenu}
-														href={item?.node?.url}
+														href={`${item?.node?.url}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+														aria-label={`${item?.node?.label}`}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
@@ -265,25 +299,33 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{globalContext?.newsInsightSublinks?.length >
 															0 ? (
 																globalContext?.newsInsightSublinks?.map(
-																	(item: any, keys: number) => (
-																		<Fragment key={keys}>
-																			<Link href={`${item?.node?.url}`}>
-																				<li
-																					className={`${
-																						keys < 1
-																							? "border-t-[1px] border-darkGrey border-opacity-50"
-																							: "border-t-[0px]"
-																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																	(item: any, index: number) => (
+																		<Fragment key={index}>
+																			<motion.li
+																				custom={index}
+																				initial={initial}
+																				whileInView="animate"
+																				viewport={{once: true}}
+																				variants={arrayLoopStaggerChildren}
+																				className={`${
+																					index < 1
+																						? "border-t-[1px] border-darkGrey border-opacity-50"
+																						: "border-t-[0px]"
+																				} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																			>
+																				<Link
+																					href={`${item?.node?.url}`}
+																					target={`${
+																						item?.node?.target
+																							? item?.node?.target
+																							: "_self"
+																					}`}
+																					aria-label={`${item?.node?.label}`}
+																					className="block p-4 text-base font-semibold"
 																				>
-																					<Link
-																						onClick={toggleMenu}
-																						href={`${item?.node?.url}`}
-																						className="block p-4 text-base font-semibold"
-																					>
-																						{item?.node?.label}
-																					</Link>
-																				</li>
-																			</Link>
+																					{item?.node?.label}
+																				</Link>
+																			</motion.li>
 																		</Fragment>
 																	)
 																)
@@ -302,7 +344,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														onClick={toggleMenu}
-														href={item?.node?.url}
+														href={`${item?.node?.url}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+														aria-label={`${item?.node?.label}`}
 														className="text-black text-base font-semibold text-center tracking-[0.05rem] hover:text-green-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
@@ -330,25 +376,33 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															{/* Menu Link*/}
 															{globalContext?.careerSublinks?.length > 0 ? (
 																globalContext?.careerSublinks?.map(
-																	(item: any, keys: number) => (
-																		<Fragment key={keys}>
-																			<Link href={`${item?.node?.url}`}>
-																				<li
-																					className={`${
-																						keys < 1
-																							? "border-t-[1px] border-darkGrey border-opacity-50"
-																							: "border-t-[0px]"
-																					} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																	(item: any, index: number) => (
+																		<Fragment key={index}>
+																			<motion.li
+																				custom={index}
+																				initial={initial}
+																				whileInView="animate"
+																				viewport={{once: true}}
+																				variants={arrayLoopStaggerChildren}
+																				className={`${
+																					index < 1
+																						? "border-t-[1px] border-darkGrey border-opacity-50"
+																						: "border-t-[0px]"
+																				} hover:border-green-two hover:bg-green-two border-y-[1px] border-darkGrey border-opacity-50 text-black hover:text-white`}
+																			>
+																				<Link
+																					href={`${item?.node?.url}`}
+																					target={`${
+																						item?.node?.target
+																							? item?.node?.target
+																							: "_self"
+																					}`}
+																					aria-label={`${item?.node?.label}`}
+																					className="block p-4 text-base font-semibold"
 																				>
-																					<Link
-																						onClick={toggleMenu}
-																						href={`${item?.node?.url}`}
-																						className="block p-4 text-base font-semibold"
-																					>
-																						{item?.node?.label}
-																					</Link>
-																				</li>
-																			</Link>
+																					{item?.node?.label}
+																				</Link>
+																			</motion.li>
 																		</Fragment>
 																	)
 																)
@@ -364,6 +418,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 												<Link
 													onClick={toggleMenu}
 													href={`${item?.node?.url}`}
+													target={`${
+														item?.node?.target ? item?.node?.target : "_self"
+													}`}
+													aria-label={`${item?.node?.label}`}
 													className="block py-4 text-base font-semibold text-black hover:text-green-two"
 												>
 													{item?.node?.label}
@@ -395,7 +453,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											? "inline-block px-1 hover:opacity-70"
 											: "hidden"
 									}`}
-									href={`${globalContext?.themesOptionsContent?.facebookLink}`}
+									href={`${globalContext?.themesOptionsContent?.facebookLink?.url}`}
+									aria-label={`Facebook Social Media Link ${globalContext?.themesOptionsContent?.facebookLink?.title}`}
+									target={
+										globalContext?.themesOptionsContent?.facebookLink?.target
+									}
 								>
 									<svg
 										height="100%"
@@ -423,7 +485,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											? "inline-block px-1 hover:opacity-70"
 											: "hidden"
 									}`}
-									href={`${globalContext?.themesOptionsContent?.twitterLink}`}
+									href={`${globalContext?.themesOptionsContent?.twitterLink?.url}`}
+									aria-label={`Twitter Social Media Link ${globalContext?.themesOptionsContent?.twitterLink?.title}`}
+									target={
+										globalContext?.themesOptionsContent?.twitterLink?.target
+									}
 								>
 									<svg
 										height="100%"
@@ -451,7 +517,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											? "inline-block px-1 hover:opacity-70"
 											: "hidden"
 									}`}
-									href={`${globalContext?.themesOptionsContent?.linkedinLink}`}
+									href={`${globalContext?.themesOptionsContent?.linkedinLink?.url}`}
+									aria-label={`Linkedin Social Media Link ${globalContext?.themesOptionsContent?.linkedinLink.title}`}
+									target={
+										globalContext?.themesOptionsContent?.linkedinLink?.target
+									}
 								>
 									<svg
 										height="100%"
@@ -479,7 +549,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											? "inline-block px-1 hover:opacity-70"
 											: "hidden"
 									}`}
-									href={`${globalContext?.themesOptionsContent?.instagramLink}`}
+									href={`${globalContext?.themesOptionsContent?.instagramLink?.url}`}
+									aria-label={`Instagram Social Media Link ${globalContext?.themesOptionsContent?.instagramLink?.title}`}
+									target={
+										globalContext?.themesOptionsContent?.instagramLink?.target
+									}
 								>
 									<svg
 										fill="#00ab00"
@@ -561,8 +635,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
+										aria-label={`${globalContext?.themesOptionsContent?.email}`}
+										className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									>
 										{globalContext?.themesOptionsContent?.email}
 									</Link>
@@ -595,8 +671,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
+										aria-label={`${globalContext?.themesOptionsContent?.emailTwo}`}
+										className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									>
 										{globalContext?.themesOptionsContent?.emailTwo}
 									</Link>
@@ -636,8 +714,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
+										aria-label={`${globalContext?.themesOptionsContent?.phoneNumber}`}
+										className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									>
 										{globalContext?.themesOptionsContent?.phoneNumber}
 									</Link>
@@ -677,8 +757,10 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`tel:${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
+										aria-label={`${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
+										className="font-medium text-base tracking-wide text-black hover:text-green-two"
 									>
 										{globalContext?.themesOptionsContent?.phoneNumberTwo}
 									</Link>
@@ -697,7 +779,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							CRDB Bank
 						</h4>
 						<div className="flex flex-col items-center justify-center gap-4">
-							<Link href="https://crdbbank.co.tz" target="_black">
+							<Link
+								target="_self"
+								href="https://crdbbank.co.tz"
+								aria-label={`CRDB Bank Website Link`}
+							>
 								<motion.button
 									initial={initial}
 									whileInView={fadeInUp}
@@ -726,7 +812,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 									<span>CRDB Bank</span>
 								</motion.button>
 							</Link>
-							<Link href="https://www.crdbbankmarathon.co.tz" target="_black">
+							<Link
+								target="_self"
+								aria-label={`Marathon Website Link`}
+								href="https://www.crdbbankmarathon.co.tz"
+							>
 								<motion.button
 									initial={initial}
 									whileInView={fadeInUp}
@@ -756,8 +846,9 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								</motion.button>
 							</Link>
 							<Link
+								target="_self"
+								aria-label={`Simbanking Website Link`}
 								href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/26"
-								target="_black"
 							>
 								<motion.button
 									initial={initial}
@@ -788,8 +879,9 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								</motion.button>
 							</Link>
 							<Link
+								target="_self"
+								aria-label={`Internet Banking Website Link`}
 								href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/25"
-								target="_black"
 							>
 								<motion.button
 									initial={initial}

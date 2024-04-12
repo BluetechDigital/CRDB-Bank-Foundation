@@ -49,10 +49,10 @@ const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 						className="grid mb-32 px-4 lg:px-16 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 					>
 						{faqGrid?.length > 0 ? (
-							faqGrid.map((item: any, keys: number) => (
-								<Fragment key={keys}>
+							faqGrid.map((item: any, index: number) => (
+								<Fragment key={index}>
 									<motion.div
-										custom={keys}
+										custom={index}
 										initial={initial}
 										whileInView="animate"
 										viewport={{once: true}}
@@ -60,7 +60,7 @@ const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 										className="w-full"
 									>
 										<FAQGridCard
-											index={keys}
+											index={index}
 											title={item?.card?.title}
 											paragraph={item?.card?.paragraph}
 										/>

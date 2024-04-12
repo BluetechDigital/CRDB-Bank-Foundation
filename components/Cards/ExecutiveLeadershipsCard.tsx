@@ -29,12 +29,24 @@ const ExecutiveLeadershipsCard: FC<IExecutiveLeadershipsCard> = ({
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 					}}
 				>
-					<Link href={slug ? `/executive-leadership/${slug}` : `/`}>
+					<Link
+						target="_self"
+						aria-label={`executive-leadership/${slug}`}
+						href={slug ? `/executive-leadership/${slug}` : `/`}
+					>
 						<Image
-							alt={featuredImage?.node?.altText}
+							alt={`${featuredImage?.node?.altText}`}
 							src={featuredImage?.node?.sourceUrl}
-							width={featuredImage?.node?.mediaDetails?.width}
-							height={featuredImage?.node?.mediaDetails?.height}
+							width={
+								featuredImage?.node?.mediaDetails?.width
+									? featuredImage?.node?.mediaDetails?.width
+									: 500
+							}
+							height={
+								featuredImage?.node?.mediaDetails?.height
+									? featuredImage?.node?.mediaDetails?.height
+									: 500
+							}
 							className="object-cover object-center w-full h-full"
 						/>
 					</Link>
@@ -47,7 +59,11 @@ const ExecutiveLeadershipsCard: FC<IExecutiveLeadershipsCard> = ({
 					className="relative flex flex-row items-center justify-between px-8 pt-2 pb-4"
 				>
 					<div>
-						<Link href={slug ? `/executive-leadership/${slug}` : `/`}>
+						<Link
+							target="_self"
+							aria-label={`executive-leadership/${slug}`}
+							href={slug ? `/executive-leadership/${slug}` : `/`}
+						>
 							<motion.h2
 								initial={initialTwo}
 								whileInView={fadeIn}
@@ -69,6 +85,8 @@ const ExecutiveLeadershipsCard: FC<IExecutiveLeadershipsCard> = ({
 						className="static right-0 bottom-0 flex justify-center"
 					>
 						<Link
+							target="_self"
+							aria-label={`executive-leadership/${slug}`}
 							href={slug ? `/executive-leadership/${slug}` : `/`}
 							className="py-2 px-3"
 						>

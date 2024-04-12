@@ -1,8 +1,8 @@
 // Imports
-import {initial, stagger} from "../../animations/animations";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
+import {initial, stagger} from "../../animations/animations";
 
 import TestimonialsTwoCardElement from "../Elements/TestimonialsTwoCardElement";
 
@@ -36,8 +36,8 @@ const TestimonialsTwoCard: FC = () => {
 					className="mySwiper"
 				>
 					{globalContext?.testimonials?.length > 0 ? (
-						globalContext?.testimonials?.map((item: any, keys: number) => (
-							<Fragment key={keys}>
+						globalContext?.testimonials?.map((item: any, index: number) => (
+							<Fragment key={index}>
 								<SwiperSlide>
 									<TestimonialsTwoCardElement
 										name={item?.node?.testimonialReview?.name}

@@ -62,8 +62,8 @@ const ExecutiveLeadershipsGrid: FC<IExecutiveLeadershipsGrid> = ({
 					>
 						{globalContext?.boardOfDirectorsGrid?.length > 0 ? (
 							globalContext?.boardOfDirectorsGrid?.map(
-								(item: any, keys: number) => (
-									<Fragment key={keys}>
+								(item: any, index: number) => (
+									<Fragment key={index}>
 										<BoardOfDirectorsCard
 											slug={item?.node?.slug}
 											title={item?.node?.title}

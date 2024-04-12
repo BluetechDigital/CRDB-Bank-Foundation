@@ -132,20 +132,22 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 					{allJobsOpen ? (
 						<>
 							{globalContext?.jobsPositions?.length > 0 ? (
-								globalContext?.jobsPositions?.map((item: any, keys: number) => (
-									<Fragment key={keys}>
-										{keys <= 2 ? (
-											<JobPositionsCard
-												slug={item?.node?.slug}
-												title={item?.node?.title}
-												paragraph={item?.node?.excerpt}
-												tailwindStyling="bg-green-default hover:bg-purple-three"
-											/>
-										) : (
-											<></>
-										)}
-									</Fragment>
-								))
+								globalContext?.jobsPositions?.map(
+									(item: any, index: number) => (
+										<Fragment key={index}>
+											{index <= 2 ? (
+												<JobPositionsCard
+													slug={item?.node?.slug}
+													title={item?.node?.title}
+													paragraph={item?.node?.excerpt}
+													tailwindStyling="bg-green-default hover:bg-purple-three"
+												/>
+											) : (
+												<></>
+											)}
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}
@@ -154,9 +156,9 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 						<>
 							{globalContext?.managementsJobs?.length > 0 ? (
 								globalContext?.managementsJobs?.map(
-									(item: any, keys: number) => (
-										<Fragment key={keys}>
-											{keys <= 2 ? (
+									(item: any, index: number) => (
+										<Fragment key={index}>
+											{index <= 2 ? (
 												<JobPositionsCard
 													slug={item?.slug}
 													title={item?.title}
@@ -177,9 +179,9 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 						<>
 							{globalContext?.operationsTeamsJobs?.length > 0 ? (
 								globalContext?.operationsTeamsJobs?.map(
-									(item: any, keys: number) => (
-										<Fragment key={keys}>
-											{keys <= 2 ? (
+									(item: any, index: number) => (
+										<Fragment key={index}>
+											{index <= 2 ? (
 												<JobPositionsCard
 													slug={item?.slug}
 													title={item?.title}
@@ -202,7 +204,9 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 				</motion.div>
 				{
 					<Link
+						target="_self"
 						href="/job-positions"
+						aria-label={`View All Vacancies Button`}
 						className="flex items-center justify-center w-fit mx-auto"
 					>
 						<motion.div

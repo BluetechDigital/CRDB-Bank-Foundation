@@ -60,6 +60,7 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 						<Link
 							href={`${buttonLink?.url}`}
 							target={buttonLink?.target}
+							aria-label={`${buttonLink?.title}`}
 							className={buttonLink?.url ? "block" : "hidden"}
 						>
 							<motion.button

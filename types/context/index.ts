@@ -259,11 +259,27 @@ export type IThemesOptionsContent = {
 	address: string;
 	emailTwo: string;
 	textarea: string;
-	twitterLink: string;
 	phoneNumber: string;
-	linkedinLink: string;
-	facebookLink: string;
-	instagramLink: string;
+	facebookLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	twitterLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	linkedinLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	instagramLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	copyrightText: string;
 	phoneNumberTwo: string;
 	displayNoticeBanner: boolean;

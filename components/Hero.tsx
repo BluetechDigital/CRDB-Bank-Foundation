@@ -95,6 +95,7 @@ const Hero: FC<IHero> = ({
 								className="flex flex-col items-center justify-center gap-6 pt-8 lg:justify-start sm:flex-row lg:flex-col xl:flex-row"
 							>
 								<Link
+									aria-label={`${buttonLink?.title}`}
 									href={`${buttonLink?.url}`}
 									target={buttonLink?.target}
 									className={buttonLink?.url ? "block" : "hidden"}
@@ -159,6 +160,7 @@ const Hero: FC<IHero> = ({
 									</motion.button>
 								</Link>
 								<Link
+									aria-label={`${buttonLink?.title}`}
 									href={`${buttonLinkTwo?.url}`}
 									target={buttonLinkTwo?.target}
 									className={buttonLinkTwo?.url ? "block" : "hidden"}

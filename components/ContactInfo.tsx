@@ -130,7 +130,9 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 								</div>
 								<Link
 									className="font-medium tracking-wide text-black hover:text-green-two"
+									target="_self"
 									href={`mailto:${globalContext?.themesOptionsContent?.email}`}
+									aria-label={`${globalContext?.themesOptionsContent?.email}`}
 								>
 									{globalContext?.themesOptionsContent?.email}
 								</Link>
@@ -164,7 +166,9 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 								</div>
 								<Link
 									className="font-medium tracking-wide text-black hover:text-green-two"
+									target="_self"
 									href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
+									aria-label={`${globalContext?.themesOptionsContent?.emailTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.emailTwo}
 								</Link>

@@ -66,12 +66,13 @@ const MainPrograms: FC<IMainPrograms> = ({
 						className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-16 px-0 sm:px-4 gap-6 items-start justify-center"
 					>
 						{programsGrid?.length > 0 ? (
-							programsGrid.map((item: any, keys: number) => (
-								<Fragment key={keys}>
+							programsGrid.map((item: any, index: number) => (
+								<Fragment key={index}>
 									<>
 										<Link
 											href={`${item?.card?.link?.url}`}
 											target={item?.card?.link?.target}
+											aria-label={`${item?.card?.link?.title}`}
 											className={styles.card + " group overflow-hidden"}
 											style={{
 												boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
@@ -100,10 +101,18 @@ const MainPrograms: FC<IMainPrograms> = ({
 														viewport={{once: true}}
 													>
 														<Image
-															alt={item?.card?.icon?.altText}
+															alt={`${item?.card?.icon?.altText}`}
 															src={item?.card?.icon?.sourceUrl}
-															width={item?.card?.icon?.mediaDetails?.width}
-															height={item?.card?.icon?.mediaDetails?.height}
+															width={
+																item?.card?.icon?.mediaDetails?.width
+																	? item?.card?.icon?.mediaDetails?.width
+																	: 500
+															}
+															height={
+																item?.card?.icon?.mediaDetails?.height
+																	? item?.card?.icon?.mediaDetails?.height
+																	: 500
+															}
 															className={
 																item?.card?.icon?.sourceUrl
 																	? `block group-hover:hidden object-contain object-center w-full h-[50px] lg:h-[60px]`
@@ -244,10 +253,18 @@ const MainPrograms: FC<IMainPrograms> = ({
 														</span>
 													</button>
 													<Image
-														alt={item?.card?.image?.altText}
+														alt={`${item?.card?.image?.altText}`}
 														src={item?.card?.image?.sourceUrl}
-														width={item?.card?.image?.mediaDetails?.width}
-														height={item?.card?.image?.mediaDetails?.height}
+														width={
+															item?.card?.image?.mediaDetails?.width
+																? item?.card?.image?.mediaDetails?.width
+																: 500
+														}
+														height={
+															item?.card?.image?.mediaDetails?.height
+																? item?.card?.image?.mediaDetails?.height
+																: 500
+														}
 														className={
 															item?.card?.image?.sourceUrl
 																? `block group-hover:hidden w-full h-full object-cover object-center`

@@ -83,11 +83,11 @@ const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
 						</div>
 						{/* Remaining Cards */}
 						{gridContent?.length > 0 ? (
-							gridContent?.map((item: any, keys: number) => (
-								<Fragment key={keys}>
+							gridContent?.map((item: any, index: number) => (
+								<Fragment key={index}>
 									<>
 										<FeaturesGridContentCard
-											key={keys}
+											key={index}
 											title={item?.card?.title}
 											subtitle={item?.card?.subtitle}
 											paragraph={item?.card?.paragraph}

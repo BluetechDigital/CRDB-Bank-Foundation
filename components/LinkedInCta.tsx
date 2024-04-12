@@ -47,6 +47,7 @@ const LinkedInCta: FC<ILinkedInCta> = ({
 					<Link
 						href={`${buttonLink?.url}`}
 						target={buttonLink?.target}
+						aria-label={`${buttonLink?.title}`}
 						className={
 							buttonLink?.url ? "block w-full mx-auto max-w-[275px]" : "hidden"
 						}

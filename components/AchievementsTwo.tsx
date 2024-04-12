@@ -44,8 +44,8 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-8 mb-16 lg:mb-0 px-4"
 						>
 							{achievementsGrid?.length > 0 ? (
-								achievementsGrid.map((item: any, keys: number) => (
-									<Fragment key={keys}>
+								achievementsGrid.map((item: any, index: number) => (
+									<Fragment key={index}>
 										<>
 											<div className="md:w-56 mx-auto">
 												<motion.h3

@@ -234,8 +234,10 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
+										aria-label={`${globalContext?.themesOptionsContent?.email}`}
+										className="font-medium tracking-wide text-black hover:text-green-two"
 									>
 										{globalContext?.themesOptionsContent?.email}
 									</Link>
@@ -268,8 +270,10 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
+										aria-label={`${globalContext?.themesOptionsContent?.emailTwo}`}
+										className="font-medium tracking-wide text-black hover:text-green-two"
 									>
 										{globalContext?.themesOptionsContent?.emailTwo}
 									</Link>
@@ -309,8 +313,10 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
+										aria-label={`${globalContext?.themesOptionsContent?.phoneNumber}`}
+										className="font-medium tracking-wide text-black hover:text-green-two"
 									>
 										{globalContext?.themesOptionsContent?.phoneNumber}
 									</Link>
@@ -351,7 +357,9 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									</div>
 									<Link
 										className="font-medium tracking-wide text-black hover:text-green-two"
+										target="_self"
 										href={`tel:${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
+										aria-label={`${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
 									>
 										{globalContext?.themesOptionsContent?.phoneNumberTwo}
 									</Link>
@@ -378,7 +386,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								whileInView={fadeIn}
 								viewport={{once: true}}
 								className={
-									globalContext?.themesOptionsContent?.phoneNumberTwo
+									globalContext?.themesOptionsContent?.address
 										? "flex items-center lg:justify-start justify-center gap-2"
 										: "hidden"
 								}
@@ -616,8 +624,8 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{globalContext?.ourProgramsLinks?.length > 0 ? (
 											globalContext?.ourProgramsLinks?.map(
-												(item: any, keys: number) => (
-													<Fragment key={keys}>
+												(item: any, index: number) => (
+													<Fragment key={index}>
 														<option value={item?.node?.label}>
 															{item?.node?.label}
 														</option>

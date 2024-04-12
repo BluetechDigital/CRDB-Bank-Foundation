@@ -14,7 +14,11 @@ const BackToVacanciesButton: FC<IBackToVacanciesButton> = ({
 		<>
 			<div className="absolute items-center justify-center hidden w-full h-full xl:flex">
 				<div className="fixed left-10 z-20 top-[7.5rem] flex justify-center">
-					<Link href={`${link}`}>
+					<Link
+						target="_self"
+						href={`${link}`}
+						aria-label={`Back To Vacancies Button`}
+					>
 						<motion.button
 							initial={initialTwo}
 							whileInView={fadeIn}

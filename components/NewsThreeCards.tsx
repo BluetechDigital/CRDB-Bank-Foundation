@@ -68,10 +68,10 @@ const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
 					className="grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 				>
 					{globalContext?.newsThreeCards?.length > 0 ? (
-						globalContext?.newsThreeCards?.map((item: any, keys: number) => (
-							<Fragment key={keys}>
+						globalContext?.newsThreeCards?.map((item: any, index: number) => (
+							<Fragment key={index}>
 								<motion.div
-									custom={keys}
+									custom={index}
 									initial={initial}
 									whileInView="animate"
 									viewport={{once: true}}

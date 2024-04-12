@@ -137,10 +137,16 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 							}
 						>
 							<Image
-								alt={image?.altText}
+								alt={`${image?.altText}`}
 								src={image?.sourceUrl}
-								width={image?.mediaDetails?.width}
-								height={image?.mediaDetails?.height}
+								width={
+									image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
+								}
+								height={
+									image?.mediaDetails?.height
+										? image?.mediaDetails?.height
+										: 500
+								}
 								className={
 									image?.sourceUrl
 										? `block object-cover object-center w-full h-[300px] sm:h-[400px]`
@@ -153,11 +159,19 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 							<Image
 								alt={smallImage?.altText}
 								src={smallImage?.sourceUrl}
-								width={smallImage?.mediaDetails?.width}
-								height={smallImage?.mediaDetails?.height}
+								width={
+									smallImage?.mediaDetails?.width
+										? smallImage?.mediaDetails?.width
+										: 500
+								}
+								height={
+									smallImage?.mediaDetails?.height
+										? smallImage?.mediaDetails?.height
+										: 500
+								}
 								className={
 									smallImage?.sourceUrl
-										? `block sm:absolute top-[225px] lg:top-[275px] xl:top-[250px] left-[0px] mt-6 lg:ml-0 lg:left-[-50px] object-cover object-center w-full sm:w-[300px] lg:h-[175px] lg:w-[375px] lg:h-[225px] border-none sm:border-solid border-[0.5rem] ${borderImageColor}`
+										? `block sm:absolute top-[225px] lg:top-[275px] xl:top-[250px] left-[0px] mt-6 lg:ml-0 lg:left-[-50px] object-cover object-center w-full sm:w-[300px] lg:w-[375px] lg:h-[225px] border-none sm:border-solid border-[0.5rem] ${borderImageColor}`
 										: `hidden`
 								}
 								style={{
@@ -201,7 +215,11 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 									tailwindStyling={`w-full lg:max-w-2xl mx-auto py-6 ${paragraphColor} text-center lg:text-left text-paragraph`}
 								/>
 								<div className={buttonLink?.url ? "mx-auto lg:mx-0" : "hidden"}>
-									<Link href={`${buttonLink?.url}`} target={buttonLink?.target}>
+									<Link
+										aria-label={`${buttonLink?.title}`}
+										href={`${buttonLink?.url}`}
+										target={buttonLink?.target}
+									>
 										<ButtonBorderSliced
 											fullWidth={false}
 											title={buttonLink?.title}
@@ -222,10 +240,16 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 							}
 						>
 							<Image
-								alt={image?.altText}
+								alt={`${image?.altText}`}
 								src={image?.sourceUrl}
-								width={image?.mediaDetails?.width}
-								height={image?.mediaDetails?.height}
+								width={
+									image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
+								}
+								height={
+									image?.mediaDetails?.height
+										? image?.mediaDetails?.height
+										: 500
+								}
 								className={
 									image?.sourceUrl
 										? `block object-cover object-center w-full h-[300px] sm:h-[400px]`
@@ -238,11 +262,19 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 							<Image
 								alt={smallImage?.altText}
 								src={smallImage?.sourceUrl}
-								width={smallImage?.mediaDetails?.width}
-								height={smallImage?.mediaDetails?.height}
+								width={
+									smallImage?.mediaDetails?.width
+										? smallImage?.mediaDetails?.width
+										: 500
+								}
+								height={
+									smallImage?.mediaDetails?.height
+										? smallImage?.mediaDetails?.height
+										: 500
+								}
 								className={
 									smallImage?.sourceUrl
-										? `block sm:absolute top-[225px] lg:top-[275px] xl:top-[250px] right-[0px] mt-6 lg:ml-0 lg:right-[-50px] object-cover object-center w-full sm:w-[300px] lg:h-[175px] lg:w-[375px] lg:h-[225px] border-none sm:border-solid border-[0.5rem] ${borderImageColor}`
+										? `block sm:absolute top-[225px] lg:top-[275px] xl:top-[250px] right-[0px] mt-6 lg:ml-0 lg:right-[-50px] object-cover object-center w-full sm:w-[300px] lg:w-[375px] lg:h-[225px] border-none sm:border-solid border-[0.5rem] ${borderImageColor}`
 										: `hidden`
 								}
 								style={{

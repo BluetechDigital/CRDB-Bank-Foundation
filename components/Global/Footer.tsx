@@ -59,7 +59,11 @@ const Footer: FC = () => {
 				<div className="pt-28 pb-20 flex flex-col items-center justify-between gap-6 px-4 -m-6 md:items-start lg:px-8 lg:flex-row">
 					<div className="flex flex-col items-center justify-between w-full lg:w-[35%] py-6 md:py-0 lg:items-start">
 						<div className="mb-10">
-							<Link href="/">
+							<Link
+								href="/"
+								target="_self"
+								aria-label={`CRDB Bank Foundation Homepage Link`}
+							>
 								<Image
 									priority
 									width={500}
@@ -110,7 +114,9 @@ const Footer: FC = () => {
 								</div>
 								<Link
 									className="font-medium text-base tracking-wide text-black hover:text-green-two"
+									target="_self"
 									href={`mailto:${globalContext?.themesOptionsContent?.email}`}
+									aria-label={`${globalContext?.themesOptionsContent?.email}`}
 								>
 									{globalContext?.themesOptionsContent?.email}
 								</Link>
@@ -144,7 +150,9 @@ const Footer: FC = () => {
 								</div>
 								<Link
 									className="font-medium text-base tracking-wide text-black hover:text-green-two"
+									target="_self"
 									href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
+									aria-label={`${globalContext?.themesOptionsContent?.emailTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.emailTwo}
 								</Link>
@@ -185,7 +193,9 @@ const Footer: FC = () => {
 								</div>
 								<Link
 									className="font-medium text-base tracking-wide text-black hover:text-green-two"
+									target="_self"
 									href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
+									aria-label={`${globalContext?.themesOptionsContent?.phoneNumber}`}
 								>
 									{globalContext?.themesOptionsContent?.phoneNumber}
 								</Link>
@@ -226,7 +236,9 @@ const Footer: FC = () => {
 								</div>
 								<Link
 									className="font-medium text-base tracking-wide text-black hover:text-green-two"
+									target="_self"
 									href={`tel:${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
+									aria-label={`${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
 								>
 									{globalContext?.themesOptionsContent?.phoneNumberTwo}
 								</Link>
@@ -254,7 +266,11 @@ const Footer: FC = () => {
 							>
 								<Link
 									className="inline-block text-green"
-									href={`${globalContext?.themesOptionsContent?.facebookLink}`}
+									href={`${globalContext?.themesOptionsContent?.facebookLink?.url}`}
+									aria-label={`Facebook Social Media Link ${globalContext?.themesOptionsContent?.facebookLink?.title}`}
+									target={
+										globalContext?.themesOptionsContent?.facebookLink?.target
+									}
 								>
 									<svg
 										height="100%"
@@ -289,7 +305,11 @@ const Footer: FC = () => {
 							>
 								<Link
 									className="inline-block text-green"
-									href={`${globalContext?.themesOptionsContent?.twitterLink}`}
+									href={`${globalContext?.themesOptionsContent?.twitterLink?.url}`}
+									aria-label={`Twitter Social Media Link ${globalContext?.themesOptionsContent?.twitterLink?.title}`}
+									target={
+										globalContext?.themesOptionsContent?.twitterLink?.target
+									}
 								>
 									<svg
 										height="100%"
@@ -324,7 +344,11 @@ const Footer: FC = () => {
 							>
 								<Link
 									className="inline-block text-green"
-									href={`${globalContext?.themesOptionsContent?.linkedinLink}`}
+									href={`${globalContext?.themesOptionsContent?.linkedinLink?.url}`}
+									aria-label={`Linkedin Social Media Link ${globalContext?.themesOptionsContent?.linkedinLink.title}`}
+									target={
+										globalContext?.themesOptionsContent?.linkedinLink?.target
+									}
 								>
 									<svg
 										height="100%"
@@ -359,7 +383,11 @@ const Footer: FC = () => {
 							>
 								<Link
 									className="inline-block text-green"
-									href={`${globalContext?.themesOptionsContent?.instagramLink}`}
+									href={`${globalContext?.themesOptionsContent?.instagramLink?.url}`}
+									aria-label={`Instagram Social Media Link ${globalContext?.themesOptionsContent?.instagramLink?.title}`}
+									target={
+										globalContext?.themesOptionsContent?.instagramLink?.target
+									}
 								>
 									<svg
 										fill="#00ab00"
@@ -428,12 +456,12 @@ const Footer: FC = () => {
 							>
 								{globalContext?.footerMenuLinks?.length > 0 ? (
 									globalContext?.footerMenuLinks?.map(
-										(item: any, keys: number) => (
-											<Fragment key={keys}>
+										(item: any, index: number) => (
+											<Fragment key={index}>
 												{item?.node?.url === "/about" ? (
 													<motion.li
 														className="px-0"
-														custom={keys}
+														custom={index}
 														initial={initial}
 														whileInView="animate"
 														viewport={{once: true}}
@@ -442,6 +470,12 @@ const Footer: FC = () => {
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
 																className="text-black group-hover:text-black group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
 															>
 																{item?.node?.label}
@@ -483,10 +517,10 @@ const Footer: FC = () => {
 																		{globalContext?.aboutUsSublinks?.length >
 																		0 ? (
 																			globalContext?.aboutUsSublinks?.map(
-																				(item: any, keys: number) => (
-																					<Fragment key={keys}>
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
 																						<motion.li
-																							custom={keys}
+																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
 																							viewport={{once: true}}
@@ -496,6 +530,12 @@ const Footer: FC = () => {
 																						>
 																							<Link
 																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
 																								className="w-full ml-2 text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																							>
 																								{item?.node?.label}
@@ -515,7 +555,7 @@ const Footer: FC = () => {
 												) : item?.node?.url === "/news" ? (
 													<motion.li
 														className="px-0"
-														custom={keys}
+														custom={index}
 														initial={initial}
 														whileInView="animate"
 														viewport={{once: true}}
@@ -524,6 +564,12 @@ const Footer: FC = () => {
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
 																className="text-black group-hover:text-black group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
 															>
 																{item?.node?.label}
@@ -565,10 +611,10 @@ const Footer: FC = () => {
 																		{globalContext?.newsInsightSublinks
 																			?.length > 0 ? (
 																			globalContext?.newsInsightSublinks?.map(
-																				(item: any, keys: number) => (
-																					<Fragment key={keys}>
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
 																						<motion.li
-																							custom={keys}
+																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
 																							viewport={{once: true}}
@@ -578,6 +624,12 @@ const Footer: FC = () => {
 																						>
 																							<Link
 																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
 																								className="w-full ml-2 text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																							>
 																								{item?.node?.label}
@@ -597,7 +649,7 @@ const Footer: FC = () => {
 												) : item?.node?.url === "/careers" ? (
 													<motion.li
 														className="px-0"
-														custom={keys}
+														custom={index}
 														initial={initial}
 														whileInView="animate"
 														viewport={{once: true}}
@@ -606,6 +658,12 @@ const Footer: FC = () => {
 														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
 																className="text-black group-hover:text-black group-hover:hover:text-green-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
 															>
 																{item?.node?.label}
@@ -647,10 +705,10 @@ const Footer: FC = () => {
 																		{globalContext?.careerSublinks?.length >
 																		0 ? (
 																			globalContext?.careerSublinks?.map(
-																				(item: any, keys: number) => (
-																					<Fragment key={keys}>
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
 																						<motion.li
-																							custom={keys}
+																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
 																							viewport={{once: true}}
@@ -660,6 +718,12 @@ const Footer: FC = () => {
 																						>
 																							<Link
 																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
 																								className="w-full ml-2 text-black text-base text-center lg:text-left hover:text-green-three hover:border-b-2 hover:border-solid hover:border-green-dark"
 																							>
 																								{item?.node?.label}
@@ -679,7 +743,7 @@ const Footer: FC = () => {
 												) : (
 													<motion.li
 														className="px-0"
-														custom={keys}
+														custom={index}
 														initial={initial}
 														whileInView="animate"
 														viewport={{once: true}}
@@ -687,6 +751,12 @@ const Footer: FC = () => {
 													>
 														<Link
 															href={`${item?.node?.url}`}
+															target={`${
+																item?.node?.target
+																	? item?.node?.target
+																	: "_self"
+															}`}
+															aria-label={`${item?.node?.label}`}
 															className="text-black text-base text-center lg:text-left hover:text-green-two"
 														>
 															{item?.node?.label}
@@ -714,11 +784,11 @@ const Footer: FC = () => {
 							>
 								{globalContext?.ourProgramsLinks?.length > 0 ? (
 									globalContext?.ourProgramsLinks?.map(
-										(item: any, keys: number) => (
-											<Fragment key={keys}>
+										(item: any, index: number) => (
+											<Fragment key={index}>
 												<motion.li
 													className="px-0"
-													custom={keys}
+													custom={index}
 													initial={initial}
 													whileInView="animate"
 													viewport={{once: true}}
@@ -726,6 +796,10 @@ const Footer: FC = () => {
 												>
 													<Link
 														href={`${item?.node?.url}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+														aria-label={`${item?.node?.label}`}
 														className="text-black text-base text-center lg:text-left hover:text-green-two"
 													>
 														{item?.node?.label}
@@ -744,7 +818,11 @@ const Footer: FC = () => {
 								CRDB BANK
 							</h4>
 							<div className="flex flex-col sm:flex-row items-start justify-start gap-4">
-								<Link href="https://www.crdbbankmarathon.co.tz" target="_black">
+								<Link
+									target="_self"
+									href="https://crdbbank.co.tz"
+									aria-label={`CRDB Bank Website Link`}
+								>
 									<motion.button
 										initial={initial}
 										whileInView={fadeInUp}
@@ -773,7 +851,11 @@ const Footer: FC = () => {
 										<span>CRDB Bank</span>
 									</motion.button>
 								</Link>
-								<Link href="https://www.crdbbankmarathon.co.tz" target="_black">
+								<Link
+									target="_self"
+									aria-label={`Marathon Website Link`}
+									href="https://www.crdbbankmarathon.co.tz"
+								>
 									<motion.button
 										initial={initial}
 										whileInView={fadeInUp}
@@ -805,8 +887,9 @@ const Footer: FC = () => {
 							</div>
 							<div className="flex flex-col sm:flex-row items-start justify-start gap-4">
 								<Link
+									target="_self"
+									aria-label={`Simbanking Website Link`}
 									href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/26"
-									target="_black"
 								>
 									<motion.button
 										initial={initial}
@@ -837,8 +920,9 @@ const Footer: FC = () => {
 									</motion.button>
 								</Link>
 								<Link
+									target="_self"
+									aria-label={`Internet Banking Website Link`}
 									href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/25"
-									target="_black"
 								>
 									<motion.button
 										initial={initial}
@@ -885,9 +969,10 @@ const Footer: FC = () => {
 							tailwindStyling="max-w-lg mx-0 text-black text-sm text-center lg:text-left"
 						/>
 						<Link
-							className="inline-block px-1 text-black hover:text-purple-default hover:underline"
-							href={`https://bluetech-digital.co.uk`}
 							target="_blank"
+							href={`https://bluetech-digital.co.uk`}
+							aria-label={`Bluetech-Digital Homepage Link`}
+							className="inline-block px-1 text-black hover:text-purple-default hover:underline"
 						>
 							<span className="flex items-center justify-center lg:justify-left gap-2">
 								<Image
@@ -913,10 +998,10 @@ const Footer: FC = () => {
 						className="flex flex-col sm:flex-row -m-6 w-auto gap-4 sm:gap-6 p-6"
 					>
 						{globalContext?.copyrightLinks?.length > 0 ? (
-							globalContext?.copyrightLinks?.map((item: any, keys: number) => (
-								<Fragment key={keys}>
+							globalContext?.copyrightLinks?.map((item: any, index: number) => (
+								<Fragment key={index}>
 									<motion.li
-										custom={keys}
+										custom={index}
 										initial={initial}
 										whileInView="animate"
 										viewport={{once: true}}
@@ -924,6 +1009,10 @@ const Footer: FC = () => {
 									>
 										<Link
 											href={`${item?.node?.url}`}
+											target={`${
+												item?.node?.target ? item?.node?.target : "_self"
+											}`}
+											aria-label={`${item?.node?.label}`}
 											className="text-black transition-all duration-200 ease-in-out text-base lg:text-sm hover:text-green-two"
 										>
 											{item?.node?.label}

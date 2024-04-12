@@ -70,6 +70,7 @@ const ContentImage: FC<IContentImage> = ({
 					<Link
 						href={`${buttonLink?.url}`}
 						target={buttonLink?.target}
+						aria-label={`${buttonLink?.title}`}
 						className={
 							buttonLink?.url
 								? "flex mt-6 items-center justify-center lg:justify-start"
@@ -87,7 +88,7 @@ const ContentImage: FC<IContentImage> = ({
 					viewport={{once: true}}
 					initial={slideInRightInitial}
 					whileInView={slideInRightFinish}
-					className="w-full h-full lg:w-1/2 h-[500px] lg:h-[775px] xl:h-[725px] 2xl:h-[635px] bg-cover bg-center bg-no-repeat"
+					className="w-full  lg:w-1/2 h-[500px] lg:h-[775px] xl:h-[725px] 2xl:h-[635px] bg-cover bg-center bg-no-repeat"
 					style={{
 						backgroundImage: `url("${image?.sourceUrl}")`,
 					}}

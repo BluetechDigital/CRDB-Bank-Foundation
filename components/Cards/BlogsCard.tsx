@@ -31,12 +31,24 @@ const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 					}}
 				>
-					<Link target="" href={slug ? `blogs/${slug}` : `/`}>
+					<Link
+						target="_self"
+						aria-label={`blogs/${slug}`}
+						href={slug ? `blogs/${slug}` : `/`}
+					>
 						<Image
-							alt={featuredImage?.node?.altText}
+							alt={`${featuredImage?.node?.altText}`}
 							src={featuredImage?.node?.sourceUrl}
-							width={featuredImage?.node?.mediaDetails?.width}
-							height={featuredImage?.node?.mediaDetails?.height}
+							width={
+								featuredImage?.node?.mediaDetails?.width
+									? featuredImage?.node?.mediaDetails?.width
+									: 500
+							}
+							height={
+								featuredImage?.node?.mediaDetails?.height
+									? featuredImage?.node?.mediaDetails?.height
+									: 500
+							}
 							className={`${
 								featuredImage?.node?.sourceUrl
 									? "object-cover object-center w-full h-full"
@@ -52,7 +64,11 @@ const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 					viewport={{once: true}}
 					className="flex flex-col items-baseline justify-between px-8 pt-10 pb-4"
 				>
-					<Link target="" href={slug ? `blogs/${slug}` : `/`}>
+					<Link
+						target="_self"
+						aria-label={`blogs/${slug}`}
+						href={slug ? `blogs/${slug}` : `/`}
+					>
 						<motion.h2
 							initial={initial}
 							whileInView={fadeInUp}
@@ -83,7 +99,8 @@ const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 						className="mt-6"
 					>
 						<Link
-							target=""
+							target="_self"
+							aria-label={`blogs/${slug}`}
 							href={slug ? `blogs/${slug}` : `/`}
 							className={slug ? "block" : "hidden"}
 						>

@@ -62,10 +62,18 @@ const FAQ: FC<IFAQ> = ({
 								className="relative"
 							>
 								<Image
-									alt={image?.altText}
+									alt={`${image?.altText}`}
 									src={image?.sourceUrl}
-									width={image?.mediaDetails?.width}
-									height={image?.mediaDetails?.height}
+									width={
+										image?.mediaDetails?.width
+											? image?.mediaDetails?.width
+											: 500
+									}
+									height={
+										image?.mediaDetails?.height
+											? image?.mediaDetails?.height
+											: 500
+									}
 									className={
 										image?.sourceUrl
 											? `block object-cover object-center w-full h-[350px] sm:h-[400px]`
@@ -78,6 +86,7 @@ const FAQ: FC<IFAQ> = ({
 								<Link
 									href={`${buttonLink?.url}`}
 									target={buttonLink?.target}
+									aria-label={`${buttonLink?.title}`}
 									className={
 										buttonLink?.url
 											? "block absolute bottom-0 left-0"
@@ -155,10 +164,10 @@ const FAQ: FC<IFAQ> = ({
 							}`}
 						>
 							{faqContent?.length > 0 ? (
-								faqContent.map((item: any, keys: number) => (
-									<Fragment key={keys}>
+								faqContent.map((item: any, index: number) => (
+									<Fragment key={index}>
 										<motion.div
-											custom={keys}
+											custom={index}
 											initial={initial}
 											whileInView="animate"
 											viewport={{once: true}}
@@ -166,7 +175,7 @@ const FAQ: FC<IFAQ> = ({
 											className="w-full"
 										>
 											<FAQCard
-												index={keys}
+												index={index}
 												title={item?.card?.title}
 												paragraph={item?.card?.paragraph}
 											/>

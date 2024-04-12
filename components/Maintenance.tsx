@@ -19,7 +19,7 @@ const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 			<div className={styles.maintenance}>
 				<div
 					className="relative flex flex-col h-full min-h-screen bg-center bg-no-repeat bg-cover"
-					style={{backgroundImage: `url("${backgroundImage}")`}}
+					style={{backgroundImage: `url("${backgroundImage?.sourceUrl}")`}}
 				>
 					{/* Background Video & Image */}
 					<motion.div
@@ -32,8 +32,16 @@ const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 						{/* Image */}
 						<Image
 							priority={true}
-							width={backgroundImage?.mediaDetails?.width}
-							height={backgroundImage?.mediaDetails?.height}
+							width={
+								backgroundImage?.mediaDetails?.width
+									? backgroundImage?.mediaDetails?.width
+									: 500
+							}
+							height={
+								backgroundImage?.mediaDetails?.height
+									? backgroundImage?.mediaDetails?.height
+									: 500
+							}
 							className="block ${mainImageVideoTailwindcss}"
 							src={backgroundImage?.sourceUrl}
 							alt={backgroundImage?.altText}
