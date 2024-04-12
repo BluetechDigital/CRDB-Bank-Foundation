@@ -33,7 +33,7 @@ const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 				>
 					<Link
 						target="_self"
-						aria-label={`blogs/${slug}`}
+						aria-label={`View Blogs Post: ${slug}`}
 						href={slug ? `blogs/${slug}` : `/`}
 					>
 						<Image
@@ -66,7 +66,7 @@ const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 				>
 					<Link
 						target="_self"
-						aria-label={`blogs/${slug}`}
+						aria-label={`View Blogs Post: ${slug}`}
 						href={slug ? `blogs/${slug}` : `/`}
 					>
 						<motion.h2
@@ -100,7 +100,7 @@ const BlogsCard: FC<IBlogsCard> = ({slug, title, paragraph, featuredImage}) => {
 					>
 						<Link
 							target="_self"
-							aria-label={`blogs/${slug}`}
+							aria-label={`View Blogs Post: ${slug}`}
 							href={slug ? `blogs/${slug}` : `/`}
 							className={slug ? "block" : "hidden"}
 						>

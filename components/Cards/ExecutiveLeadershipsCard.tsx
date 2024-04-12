@@ -31,7 +31,7 @@ const ExecutiveLeadershipsCard: FC<IExecutiveLeadershipsCard> = ({
 				>
 					<Link
 						target="_self"
-						aria-label={`executive-leadership/${slug}`}
+						aria-label={`View Executive Leadership: ${slug}`}
 						href={slug ? `/executive-leadership/${slug}` : `/`}
 					>
 						<Image
@@ -61,7 +61,7 @@ const ExecutiveLeadershipsCard: FC<IExecutiveLeadershipsCard> = ({
 					<div>
 						<Link
 							target="_self"
-							aria-label={`executive-leadership/${slug}`}
+							aria-label={`View Executive Leadership: ${slug}`}
 							href={slug ? `/executive-leadership/${slug}` : `/`}
 						>
 							<motion.h2
@@ -86,7 +86,7 @@ const ExecutiveLeadershipsCard: FC<IExecutiveLeadershipsCard> = ({
 					>
 						<Link
 							target="_self"
-							aria-label={`executive-leadership/${slug}`}
+							aria-label={`View Executive Leadership: ${slug}`}
 							href={slug ? `/executive-leadership/${slug}` : `/`}
 							className="py-2 px-3"
 						>

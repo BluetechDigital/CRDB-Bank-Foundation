@@ -31,7 +31,7 @@ const BoardOfDirectorsCard: FC<IBoardOfDirectorsCard> = ({
 				>
 					<Link
 						target="_self"
-						aria-label={`board-of-directors/${slug}`}
+						aria-label={`View Board of Directors: ${slug}`}
 						href={slug ? `/board-of-directors/${slug}` : `/`}
 					>
 						<Image
@@ -61,7 +61,7 @@ const BoardOfDirectorsCard: FC<IBoardOfDirectorsCard> = ({
 					<div>
 						<Link
 							target="_self"
-							aria-label={`board-of-directors/${slug}`}
+							aria-label={`View Board of Directors: ${slug}`}
 							href={slug ? `/board-of-directors/${slug}` : `/`}
 						>
 							<motion.h2
@@ -86,9 +86,9 @@ const BoardOfDirectorsCard: FC<IBoardOfDirectorsCard> = ({
 					>
 						<Link
 							target="_self"
-							aria-label={`board-of-directors/${slug}`}
-							href={slug ? `/board-of-directors/${slug}` : `/`}
 							className="py-2 px-3"
+							aria-label={`View Board of Directors: ${slug}`}
+							href={slug ? `/board-of-directors/${slug}` : `/`}
 						>
 							<span>
 								<svg

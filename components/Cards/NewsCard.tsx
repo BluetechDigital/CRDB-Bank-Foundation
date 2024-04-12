@@ -31,7 +31,11 @@ const NewsCard: FC<INewsCard> = ({slug, title, paragraph, featuredImage}) => {
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 					}}
 				>
-					<Link target="_self" href={`${slug}`} aria-label={`${slug}`}>
+					<Link
+						target="_self"
+						href={`${slug}`}
+						aria-label={`View News Article: ${slug}`}
+					>
 						<Image
 							alt={`${featuredImage?.node?.altText}`}
 							src={featuredImage?.node?.sourceUrl}
@@ -60,7 +64,11 @@ const NewsCard: FC<INewsCard> = ({slug, title, paragraph, featuredImage}) => {
 					viewport={{once: true}}
 					className="flex flex-col items-baseline justify-between px-8 pt-10 pb-4"
 				>
-					<Link target="_self" href={`${slug}`} aria-label={`${slug}`}>
+					<Link
+						target="_self"
+						href={`${slug}`}
+						aria-label={`View News Article: ${slug}`}
+					>
 						<motion.h2
 							initial={initial}
 							whileInView={fadeInUp}
@@ -93,8 +101,8 @@ const NewsCard: FC<INewsCard> = ({slug, title, paragraph, featuredImage}) => {
 						<Link
 							target="_self"
 							href={`${slug}`}
-							aria-label={`${slug}`}
 							className={slug ? "block" : "hidden"}
+							aria-label={`View News Article: ${slug}`}
 						>
 							<ButtonBorderSliced
 								fullWidth={true}

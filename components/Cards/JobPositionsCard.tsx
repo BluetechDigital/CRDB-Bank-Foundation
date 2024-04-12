@@ -35,7 +35,7 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 				<Link
 					target="_self"
 					href={`/job-positions/${slug}`}
-					aria-label={`job-positions/${slug}`}
+					aria-label={`View Job Positions: ${slug}`}
 				>
 					<motion.div
 						initial={initial}
@@ -47,7 +47,7 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 						<Link
 							target="_self"
 							href={`/job-positions/${slug}`}
-							aria-label={`job-positions/${slug}`}
+							aria-label={`View Job Positions: ${slug}`}
 						>
 							<motion.h2
 								initial={initial}
@@ -80,8 +80,8 @@ const JobPositionsCard: FC<IJobPositionsCard> = ({
 							<Link
 								target="_self"
 								href={`/job-positions/${slug}`}
-								aria-label={`job-positions/${slug}`}
 								className={slug ? "block" : "hidden"}
+								aria-label={`View Job Positions: ${slug}`}
 							>
 								<ButtonBorderSliced
 									fullWidth={true}
