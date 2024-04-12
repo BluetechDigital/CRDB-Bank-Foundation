@@ -22,7 +22,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							rgba(0, 0, 0, 0.45),
 							rgba(0, 0, 0, 0.55),
 							rgba(0, 0, 0, 0.65)
-						),url("${backgroundImage}")`,
+						),url("${backgroundImage?.sourceUrl}")`,
 						clipPath: `polygon(0 0, 100% 0, 100% 91%, 64% 98%, 0 94%)`,
 					}}
 				>

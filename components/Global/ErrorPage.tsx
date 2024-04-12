@@ -19,7 +19,7 @@ const ErrorPage: FC<IErrorPage> = ({
 			className="h-[100vh] bg-cover bg-center bg-[no-repeat] flex flex-col justify-center items-center"
 			style={{
 				backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.85),rgba(0, 0, 0, 0.85)),
-									url("${backgroundImage}")`,
+									url("${backgroundImage?.sourceUrl}")`,
 			}}
 		>
 			<div className="px-10 my-auto overflow-hidden py-44">

@@ -2,7 +2,14 @@
 export type ICTA = {
 	title: string;
 	paragraph: string;
-	backgroundImage: string;
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 	buttonLink: {
 		url: string;
 		title: string;
@@ -94,7 +101,14 @@ export type IFAQGrid = {
 export type IHeroTwo = {
 	title: string;
 	paragraph: string;
-	backgroundImage: string;
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 };
 export type IGallery = {
 	title: string;
@@ -442,7 +456,14 @@ export type ILayout = {
 export type IErrorPage = {
 	title: string;
 	paragraph: string;
-	backgroundImage: string;
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 	buttonLink: {
 		url: string;
 		title: string;
