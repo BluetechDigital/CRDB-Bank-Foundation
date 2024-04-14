@@ -20,7 +20,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 							rgba(4, 61, 43, 0.85),
 							rgba(4, 61, 43, 0.85),
 							rgba(4, 61, 43, 0.85)
-						),url("${backgroundImage}")`,
+						),url("${backgroundImage?.sourceUrl}")`,
 				}}
 			>
 				<div

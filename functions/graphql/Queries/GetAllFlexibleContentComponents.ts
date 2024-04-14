@@ -217,14 +217,6 @@ export const getAllFlexibleContentComponents = async (
 															title
 															target
 														}
-														icon {
-															altText
-															sourceUrl
-															mediaDetails {
-																height
-																width
-															}
-														}
 														image {
 															altText
 															sourceUrl
@@ -251,14 +243,6 @@ export const getAllFlexibleContentComponents = async (
 															url
 															title
 															target
-														}
-														icon {
-															altText
-															sourceUrl
-															mediaDetails {
-																height
-																width
-															}
 														}
 														image {
 															altText

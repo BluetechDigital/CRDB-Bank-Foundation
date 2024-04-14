@@ -6,21 +6,20 @@ import {IVideoWrapper} from "@/types/components";
 
 const VideoWrapper: FC<IVideoWrapper> = ({children}) => {
 	const VimeoVideo = styled.div`
-		height: auto;
+		height: 100%;
 		max-width: 100%;
 		overflow: hidden;
 		position: relative;
 
-		iframe,
-		object,
-		embed {
+		iframe {
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
+			margin: 0 auto;
 			position: static;
-			min-height: 275px;
 			max-height: 1000px;
+			min-height: 225px !important;
 		}
 
 		video {
@@ -30,17 +29,34 @@ const VideoWrapper: FC<IVideoWrapper> = ({children}) => {
 			max-height: 1080px;
 		}
 
-		@media screen and (min-width: 992px) {
-			iframe,
-			object,
-			embed {
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				position: static;
-				min-height: 500px;
-				max-height: 1000px;
+		@media screen and (min-width: 425px) {
+			iframe {
+				height: 265px !important;
+			}
+		}
+
+		@media screen and (min-width: 640px) {
+			iframe {
+				height: 400px !important;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+			iframe {
+				height: 425px !important;
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			iframe {
+				height: 600px !important;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			iframe {
+				height: 600px !important;
+				max-height: 600px !important;
 			}
 		}
 	`;

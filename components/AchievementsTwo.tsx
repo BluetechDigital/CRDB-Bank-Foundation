@@ -3,6 +3,7 @@ import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IAchievementsTwo} from "@/types/components";
 import {fadeIn, initial, initialTwo, stagger} from "@/animations/animations";
+import Paragraph from "./Elements/Paragraph";
 
 const AchievementsTwo: FC<IAchievementsTwo> = ({
 	title,
@@ -25,7 +26,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 					viewport={{once: true}}
 					className="container px-4 mx-auto"
 				>
-					<div className="flex flex-col lg:flex-row gap-4 lg:gap-16 justify-center items-center -mx-8">
+					<div className="flex flex-col lg:flex-row gap-4 lg:gap-16 justify-between items-center -mx-8">
 						<div className="w-full lg:w-1/2 xl:w-1/4 pb-8">
 							<motion.h2
 								initial={initialTwo}
@@ -41,13 +42,13 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="w-full xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-8 mb-16 lg:mb-0 px-4"
+							className="w-full lg:w-1/2 xl:w-3/4 grid grid-cols-1 sm:grid-cols-3 items-center lg:items-start justify-between gap-8 mb-16 lg:mb-0 px-4"
 						>
 							{achievementsGrid?.length > 0 ? (
 								achievementsGrid.map((item: any, index: number) => (
 									<Fragment key={index}>
 										<>
-											<div className="md:w-56 mx-auto">
+											<div className="md:w-56 xl:w-full mx-auto">
 												<motion.h3
 													initial={initial}
 													variants={stagger}
@@ -57,15 +58,10 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 												>
 													{item?.textOne}
 												</motion.h3>
-												<motion.p
-													initial={initial}
-													variants={stagger}
-													whileInView="animate"
-													viewport={{once: true}}
-													className="text-paragraph xl:text-lg text-center text-white font-medium leading-normal"
-												>
-													{item?.textTwo}
-												</motion.p>
+												<Paragraph
+													content={item?.textTwo}
+													tailwindStyling="text-paragraph xl:text-medium text-center text-white font-medium leading-normal"
+												/>
 											</div>
 										</>
 									</Fragment>
