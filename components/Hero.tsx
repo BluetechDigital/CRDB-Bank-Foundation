@@ -61,13 +61,13 @@ const Hero: FC<IHero> = ({
 					}}
 				/>
 				<div
-					className={`container mx-auto relative z-50 pb-10 mt-[90px] lg:mt-[-100px] xl:mt-[-40px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row`}
+					className={`container mx-auto relative z-50 pb-10 mt-[90px] lg:mt-[-100px] xl:mt-[-40px] px-4 gap-8 lg:px-0 flex flex-col xl:flex-row`}
 				>
 					<motion.div
 						viewport={{once: true}}
 						initial={slideInLeftInitial}
 						whileInView={slideInRightFinish}
-						className="w-full lg:w-1/2 p-0 relative flex flex-col items-center justify-center mt-[-125px]"
+						className="w-full xl:w-1/2 p-0 relative flex flex-col items-center justify-center mt-[-125px]"
 					>
 						<div
 							className="max-w-2xl lg:max-w-full px-6 py-10 bg-white rounded-sm sm:p-10 lg:border-t-none border-solid border-[5px] border-lightGrey"
@@ -79,20 +79,20 @@ const Hero: FC<IHero> = ({
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="text-center lg:text-left tracking-normal leading-[2.75rem] sm:leading-[3rem] xl:leading-[3.5rem] font-semibold text-4xl sm:text-5xl xl:text-7xl"
+								className="text-center xl:text-left tracking-normal leading-[2.75rem] sm:leading-[3rem] xl:leading-[3.5rem] font-semibold text-4xl sm:text-5xl xl:text-7xl"
 							>
 								{title}
 							</motion.h1>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="w-full lg:max-w-2xl mt-6 text-black text-center lg:text-left text-[1.110rem]"
+								tailwindStyling="w-full xl:max-w-2xl mt-6 text-black text-center xl:text-left text-[1.110rem]"
 							/>
 							<motion.div
 								initial={initial}
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="flex flex-col items-center justify-center gap-6 pt-8 lg:justify-start sm:flex-row lg:flex-col xl:flex-row"
+								className="flex flex-col items-center justify-center gap-6 pt-8 xl:justify-start sm:flex-row xl:flex-col 2xl:flex-row"
 							>
 								<Link
 									aria-label={`${buttonLink?.title}`}
@@ -231,7 +231,7 @@ const Hero: FC<IHero> = ({
 						viewport={{once: true}}
 						initial={slideInRightInitial}
 						whileInView={slideInRightFinish}
-						className={`w-full lg:w-1/2 bg-cover bg-no-repeat bg-center relative mt-0 lg:mt-[-125px] ${
+						className={`w-full xl:w-1/2 bg-cover bg-no-repeat bg-center relative mt-0 xl:mt-[-125px] ${
 							displayVideo
 								? `h-[375px] sm:h-[445px] lg:h-[450px] xl:h-[500px]`
 								: `h-[300px] lg:h-[400px] xl:h-[450px]`
