@@ -26,8 +26,8 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 					viewport={{once: true}}
 					className="container px-4 mx-auto"
 				>
-					<div className="flex flex-col lg:flex-row gap-4 lg:gap-16 justify-between items-center -mx-8">
-						<div className="w-full lg:w-1/2 xl:w-1/4 pb-8">
+					<div className="flex flex-col lg:flex-row gap-4 xl:gap-16 justify-between items-center xl:-mx-8">
+						<div className="w-full lg:w-1/4 pb-8">
 							<motion.h2
 								initial={initialTwo}
 								whileInView={fadeIn}
@@ -42,7 +42,7 @@ const AchievementsTwo: FC<IAchievementsTwo> = ({
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="w-full lg:w-1/2 xl:w-3/4 grid grid-cols-1 sm:grid-cols-3 items-center lg:items-start justify-between gap-8 mb-16 lg:mb-0 px-4"
+							className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-3 items-center lg:items-start justify-between gap-8 mb-16 lg:mb-0 px-4"
 						>
 							{achievementsGrid?.length > 0 ? (
 								achievementsGrid.map((item: any, index: number) => (
