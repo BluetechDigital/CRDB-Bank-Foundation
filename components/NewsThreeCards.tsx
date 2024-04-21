@@ -27,7 +27,7 @@ const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
 					whileInView="animate"
 					viewport={{once: true}}
 					className={
-						title && italic
+						title
 							? "max-w-2xl mx-auto mb-24 text-center flex flex-col items-center lg:max-w-5xl"
 							: "hidden"
 					}

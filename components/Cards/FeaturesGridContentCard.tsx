@@ -1,18 +1,22 @@
 // Imports
 import {FC} from "react";
+import Link from "next/link";
 import {motion} from "framer-motion";
 import {IFeaturesGridContentCard} from "@/types/components";
 import {initial, fadeInUp, stagger} from "@/animations/animations";
 
 // Components
 import Paragraph from "../Elements/Paragraph";
+import ButtonBorderSliced from "../Elements/ButtonBorderSliced";
 
 const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 	title,
 	subtitle,
 	paragraph,
+	buttonLink,
 	backgroundColor,
 }) => {
+	let buttonColor: string;
 	let titleStyling: string;
 	let subtitleStyling: string;
 	let paragraphStyling: string;
@@ -21,6 +25,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 
 	switch (backgroundColor) {
 		case "Green":
+			buttonColor = "white";
 			titleStyling = "text-white";
 			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
@@ -29,6 +34,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 
 			break;
 		case "Grey":
+			buttonColor = "green-Two";
 			titleStyling = "text-black";
 			subtitleStyling = "text-green-two";
 			paragraphStyling = "text-black";
@@ -36,6 +42,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 			backgroundColorStyling = "bg-lightGreyTwo";
 			break;
 		case "GreenStrips":
+			buttonColor = "white";
 			titleStyling = "text-white";
 			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
@@ -43,6 +50,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 			backgroundWaveStyling = "stacked-waves-haikei-green-strips";
 			break;
 		case "PurpleStrips":
+			buttonColor = "white";
 			titleStyling = "text-white";
 			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
@@ -50,6 +58,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 			backgroundWaveStyling = "stacked-waves-haikei-purple";
 			break;
 		case "PurpleWave":
+			buttonColor = "white";
 			titleStyling = "text-white";
 			subtitleStyling = "text-white";
 			paragraphStyling = "text-white";
@@ -57,6 +66,7 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 			backgroundWaveStyling = "blob-scene-haikei-purplewave";
 			break;
 		default:
+			buttonColor = "white";
 			titleStyling = "text-black";
 			subtitleStyling = "text-green-two";
 			paragraphStyling = "text-black";
@@ -107,6 +117,19 @@ const FeaturesGridContentCard: FC<IFeaturesGridContentCard> = ({
 					content={paragraph}
 					tailwindStyling={`${paragraphStyling} text-center lg:text-left text-paragraph`}
 				/>
+				<div className={buttonLink?.url ? "mx-auto lg:mx-0" : "hidden"}>
+					<Link
+						aria-label={`${buttonLink?.title}`}
+						href={`${buttonLink?.url}`}
+						target={buttonLink?.target}
+					>
+						<ButtonBorderSliced
+							fullWidth={false}
+							title={buttonLink?.title}
+							tailwindColor={`${buttonColor}`}
+						/>
+					</Link>
+				</div>
 			</motion.div>
 		</div>
 	);

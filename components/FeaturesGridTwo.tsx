@@ -1,4 +1,5 @@
 // Imports
+import Link from "next/link";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IFeaturesGridTwo} from "@/types/components";
@@ -9,6 +10,7 @@ import styles from "../styles/components/FeaturesGridTwo.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
+import ButtonBorderSliced from "./Elements/ButtonBorderSliced";
 import FeaturesGridContentCard from "./Cards/FeaturesGridContentCard";
 
 const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
@@ -63,6 +65,25 @@ const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
 									content={cardOne?.paragraph}
 									tailwindStyling="text-black text-center lg:text-left text-paragraph"
 								/>
+								<div
+									className={
+										cardOne?.buttonLink?.url
+											? "flex items-center justify-center lg:items-baseline lg:justify-start"
+											: "hidden"
+									}
+								>
+									<Link
+										href={`${cardOne?.buttonLink?.url}`}
+										target={cardOne?.buttonLink?.target}
+										aria-label={`${cardOne?.buttonLink?.title}`}
+									>
+										<ButtonBorderSliced
+											fullWidth={false}
+											title={cardOne?.buttonLink?.title}
+											tailwindColor={`purple-default`}
+										/>
+									</Link>
+								</div>
 							</motion.div>
 						</div>
 						{/* Card Two */}
@@ -91,6 +112,7 @@ const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
 											title={item?.card?.title}
 											subtitle={item?.card?.subtitle}
 											paragraph={item?.card?.paragraph}
+											buttonLink={item?.card?.buttonLink}
 											backgroundColor={item?.card?.backgroundColor}
 										/>
 									</>

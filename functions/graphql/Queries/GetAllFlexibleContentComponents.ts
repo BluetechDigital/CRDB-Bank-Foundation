@@ -21,11 +21,11 @@ export const getAllFlexibleContentComponents = async (
 										flexibleContent {
 											... on ${postTypeFlexibleContent}_Hero {
 												fieldGroupName
+												displaySection
 												title
 												video
 												paragraph
 												displayVideo
-												displaySection
 												heroBackgroundColor
 												buttonLink {
 													url
@@ -56,29 +56,29 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_HeroTwo {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
-												displaySection
 												backgroundImage {
 													sourceUrl
 												}
 											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
-												displaySection
 												displayParagraph
 											}
 											... on ${postTypeFlexibleContent}_VideoBlock {
 												fieldGroupName
+												displaySection
 												title
 												video
 												subtitle
 												paragraph
 												displayVideo
 												highlightText
-												displaySection
 												displayYoutubeIcon
 												buttonLink {
 													url
@@ -91,10 +91,10 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_ContentImage {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
-												displaySection
 												buttonLink {
 													url
 													title
@@ -145,11 +145,11 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_IndividualExecutiveMember {
             									fieldGroupName
+												displaySection
 												title
             									subtitle
             									paragraph
             									executiveName
-												displaySection
             									executiveTitle
             									paragraphTitle
             									displayBackgroundIcon
@@ -172,8 +172,8 @@ export const getAllFlexibleContentComponents = async (
             								}
 											... on ${postTypeFlexibleContent}_AchievementsTwo {
                       							fieldGroupName
-                      							title
 												displaySection
+                      							title
 												backgroundColor
               									achievementsGrid {
               									  textOne
@@ -182,10 +182,10 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_OurPartners {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
-												displaySection
 												imageGrid {
 													link {
 														url
@@ -204,10 +204,10 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_OurPrograms {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
-												displaySection
 												programsGrid {
 													card {
 														title
@@ -230,11 +230,11 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_MainPrograms {
             								  	fieldGroupName
+												displaySection
             								  	title
             								  	subtitle
             								  	paragraph
             								  	highlightText
-												displaySection
             								  	programsGrid {
 													card {
 														title
@@ -262,6 +262,11 @@ export const getAllFlexibleContentComponents = async (
 													title
 													subtitle
 													paragraph
+													buttonLink {
+														url
+														title
+														target
+													}
                       							}
                       							cardTwo {
 													backgroundImage {
@@ -289,23 +294,28 @@ export const getAllFlexibleContentComponents = async (
 														subtitle
 														paragraph
 														backgroundColor
+														buttonLink {
+															url
+															title
+															target
+														}
                       								}
                       							}
 											}
 											... on ${postTypeFlexibleContent}_TestimonialsGrid {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
-												displaySection
 												highlightText
 											}
 											... on ${postTypeFlexibleContent}_TestimonialsTwo {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
-												displaySection
 												buttonLink {
 													url
 													title
@@ -314,27 +324,27 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_JobPositionsGrid {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
 												highlightText
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_JobPositionsThreeCardsGrid {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
 												highlightText
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
 												highlightText
-												displaySection
 												itemsDisplayedPerPage
 												gallery {
             										altText
@@ -347,10 +357,10 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_Faq {
 												fieldGroupName
+												displaySection
 												title
 												subtitle
 												paragraph
-												displaySection
 												buttonLink {
 													url
 													title
@@ -373,10 +383,10 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_FaqGrid {
 												fieldGroupName
+												displaySection
               									title
               									paragraph
               									highlightText
-												displaySection
               									faqGrid {
               										card {
               											title
@@ -386,9 +396,9 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_Cta {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
-												displaySection
 												buttonLink {
 													url
 													title
@@ -400,9 +410,9 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_LinkedinCta {
 												fieldGroupName
+												displaySection
 												title
 												highlightText
-												displaySection
 												backgroundColor
 												highlightTextColor
 												displayLinkedinIcon
@@ -414,79 +424,79 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_Newsletter {
 												fieldGroupName
+												displaySection
 												title
             									subtitle
             									textarea
             									paragraph
             									formTitle
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_ContactInfo {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_ContactForm {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_BoardOfDirectorsGrid {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
 												highlightText
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_ExecutiveLeadershipsGrid {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
 												highlightText
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_NewsGrid {
 												fieldGroupName
+												displaySection
 												title
 												italic
 												paragraph
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
 												highlightText
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_BlogsGrid {
 												fieldGroupName
+												displaySection
 												title
 												italic
 												paragraph
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
 												highlightText
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_CaseStudiesGrid {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
 												highlightText
-												displaySection
 											}
 											... on ${postTypeFlexibleContent}_Maintenance {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
-												displaySection
 												backgroundImage {
 													altText
 													sourceUrl
@@ -498,9 +508,9 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_ErrorPageContent {
 												fieldGroupName
+												displaySection
 												title
 												paragraph
-												displaySection
 												buttonLink {
 													url
 													title

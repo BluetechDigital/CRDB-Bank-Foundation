@@ -302,6 +302,11 @@ export type IFeaturesGridTwo = {
 		title: string;
 		subtitle: string;
 		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
 	};
 	cardTwo: {
 		backgroundImage: {
@@ -316,6 +321,11 @@ export type IFeaturesGridTwo = {
 				subtitle: string;
 				paragraph: string;
 				backgroundColor: string;
+				buttonLink: {
+					url: string;
+					title: string;
+					target: string;
+				};
 			};
 		}
 	];
@@ -362,7 +372,7 @@ export type ITestimonialsGrid = {
 	highlightText: string;
 };
 export type IJumboContentSection = {
-	jumboContentSection: [
+	contentSection: [
 		{
 			content: {
 				title: string;
@@ -540,6 +550,11 @@ export type IFeaturesGridContentCard = {
 	title: string;
 	subtitle: string;
 	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	backgroundColor: string;
 };
 export type IJumboContentSectionCard = {
