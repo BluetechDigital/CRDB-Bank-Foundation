@@ -50,7 +50,7 @@ const Hero: FC<IHero> = ({
 		<>
 			<div className={styles.hero + `relative p-0 overflow-hidden bg-white`}>
 				<div
-					className={`relative w-full h-[40vh] lg:h-[75vh] xl:h-[65vh] bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] ${backgroundColor}`}
+					className={`relative w-full h-[40vh] xl:h-[65vh] bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] ${backgroundColor}`}
 					style={{
 						clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
 						backgroundImage: `url("${
@@ -61,7 +61,7 @@ const Hero: FC<IHero> = ({
 					}}
 				/>
 				<div
-					className={`container mx-auto relative z-50 pb-10 mt-[90px] lg:mt-[-100px] xl:mt-[-40px] px-4 gap-8 lg:px-0 flex flex-col xl:flex-row`}
+					className={`xl:container mx-auto relative z-50 pb-10 lg:px-6 mt-[90px] lg:mt-[100px] xl:mt-[-40px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row items-start justify-center`}
 				>
 					<motion.div
 						viewport={{once: true}}
@@ -79,20 +79,20 @@ const Hero: FC<IHero> = ({
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="text-center xl:text-left tracking-normal leading-[2.75rem] sm:leading-[3rem] xl:leading-[3.5rem] font-semibold text-4xl sm:text-5xl xl:text-7xl"
+								className="text-center xl:text-left tracking-normal leading-[2.75rem] sm:leading-tight xl:leading-[3.5rem] font-semibold text-4xl sm:text-5xl xl:text-7xl"
 							>
 								{title}
 							</motion.h1>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="w-full xl:max-w-2xl mt-6 text-black text-center xl:text-left text-[1.110rem]"
+								tailwindStyling="w-full xl:max-w-2xl mt-6 text-black text-center xl:text-left text-base xl:text-[1.110rem]"
 							/>
 							<motion.div
 								initial={initial}
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="flex flex-col items-center justify-center gap-6 pt-8 xl:justify-start sm:flex-row xl:flex-col 2xl:flex-row"
+								className="flex flex-col items-center justify-center gap-6 lg:gap-2 2xl:gap-6 pt-4 xl:pt-8 xl:justify-start sm:flex-row lg:flex-col 2xl:flex-row"
 							>
 								<Link
 									aria-label={`${buttonLink?.title}`}
@@ -231,7 +231,7 @@ const Hero: FC<IHero> = ({
 						viewport={{once: true}}
 						initial={slideInRightInitial}
 						whileInView={slideInRightFinish}
-						className={`w-full xl:w-1/2 bg-cover bg-no-repeat bg-center relative mt-0 xl:mt-[-125px] ${
+						className={`w-full xl:w-1/2 bg-cover bg-no-repeat bg-center relative mt-0 lg:mt-[-125px] ${
 							displayVideo
 								? `h-[375px] sm:h-[445px] lg:h-[450px] xl:h-[500px]`
 								: `h-[300px] lg:h-[400px] xl:h-[450px]`
