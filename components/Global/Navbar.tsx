@@ -303,19 +303,11 @@ const Navbar: FC = () => {
 																onMouseLeave={resetNavbarStyling}
 																onMouseEnter={displayNavBackgroundColor}
 															>
-																<div className="fixed mt-[1.6rem] w-fit mx-auto left-0 right-0 bg-white flex flex-col items-center justify-center border-l-8 border-solid border-green-two">
-																	<motion.h4
-																		initial={initialTwo}
-																		whileInView={fadeIn}
-																		viewport={{once: true}}
-																		className="my-5 text-base font-semibold tracking-normal text-center uppercase md:text-left text-black"
-																	>
-																		Our Programs
-																	</motion.h4>
+																<div className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center">
 																	<ul
 																		className={
-																			styles.ourServicesSublinks +
-																			" p-4 w-fit grid grid-cols-4 gap-4 z-[999]"
+																			styles.aboutUsSublinks +
+																			" p-0 w-full flex flex-col z-[999]"
 																		}
 																	>
 																		{globalContext?.ourProgramsLinks?.length >
@@ -331,7 +323,6 @@ const Navbar: FC = () => {
 																							variants={
 																								arrayLoopStaggerChildren
 																							}
-																							className="w-full group-scoped bg-white hover:bg-green-two"
 																						>
 																							<Link
 																								href={`${item?.node?.url}`}
@@ -341,7 +332,11 @@ const Navbar: FC = () => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="block p-4 text-tiny text-center text-black hover:text-white"
+																								className={` ${
+																									ourProgramsSublinksOpen
+																										? "w-full hover:bg-green-two text-black hover:text-white"
+																										: "text-black"
+																								} block p-4 text-tiny`}
 																							>
 																								{item?.node?.label}
 																							</Link>
