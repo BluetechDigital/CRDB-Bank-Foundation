@@ -303,7 +303,57 @@ const Navbar: FC = () => {
 																onMouseLeave={resetNavbarStyling}
 																onMouseEnter={displayNavBackgroundColor}
 															>
-																<SubMegaMenuLinks />
+																<div className="fixed mt-[1.6rem] w-fit mx-auto left-0 right-0 bg-white flex flex-col items-center justify-center border-l-8 border-solid border-green-two">
+																	<motion.h4
+																		initial={initialTwo}
+																		whileInView={fadeIn}
+																		viewport={{once: true}}
+																		className="my-5 text-base font-semibold tracking-normal text-center uppercase md:text-left text-black"
+																	>
+																		Our Programs
+																	</motion.h4>
+																	<ul
+																		className={
+																			styles.ourServicesSublinks +
+																			" p-4 w-fit grid grid-cols-4 gap-4 z-[999]"
+																		}
+																	>
+																		{globalContext?.ourProgramsLinks?.length >
+																		0 ? (
+																			globalContext?.ourProgramsLinks?.map(
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
+																						<motion.li
+																							custom={index}
+																							initial={initial}
+																							whileInView="animate"
+																							viewport={{once: true}}
+																							variants={
+																								arrayLoopStaggerChildren
+																							}
+																							className="w-full group-scoped bg-white hover:bg-green-two"
+																						>
+																							<Link
+																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
+																								className="block p-4 text-tiny text-center text-black hover:text-white"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
+																					</Fragment>
+																				)
+																			)
+																		) : (
+																			<></>
+																		)}
+																	</ul>
+																</div>
 															</div>
 														</>
 													) : null}
