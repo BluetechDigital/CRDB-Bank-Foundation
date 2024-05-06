@@ -5,6 +5,7 @@ import type {AppProps} from "next/app";
 import {client} from "@/config/apollo";
 import {ApolloProvider} from "@apollo/client";
 import {Analytics} from "@vercel/analytics/react";
+import {SpeedInsights} from "@vercel/speed-insights/next";
 
 // Styling
 import "../styles/globals.scss";
@@ -67,6 +68,10 @@ export default function App({
 						{/* Cookie Policy Pop Up */}
 						<PostHogContextProvider />
 						<Component {...pageProps} />
+						{/* Vercel Analytics */}
+						<Analytics />
+						{/* Vercel Speed Insights */}
+						<SpeedInsights />
 					</motion.div>
 				</GlobalContextProvider>
 			</ApolloProvider>
@@ -115,7 +120,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		footerMenuLinks,
 		aboutUsSublinks,
 		ourProgramsLinks,
-		newsInsightSublinks,
+		mediaCentersSublinks,
 		themesOptionsContent,
 		news,
 		blogs,
@@ -146,7 +151,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		ourProgramsLinks: ourProgramsLinks,
-		newsInsightSublinks: newsInsightSublinks,
+		mediaCentersSublinks: mediaCentersSublinks,
 		operationsTeamsJobs: operationsTeamsJobs,
 		boardOfDirectorsGrid: boardOfDirectorsGrid,
 		themesOptionsContent: themesOptionsContent,

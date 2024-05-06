@@ -52,7 +52,6 @@ const FAQ: FC<IFAQ> = ({
 							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
 						/>
 					</div>
-
 					<div className="flex flex-col-reverse lg:flex-row gap-4 xl:gap-10">
 						<div className={image?.sourceUrl ? "w-full lg:w-1/2" : `hidden`}>
 							<motion.div
@@ -63,7 +62,7 @@ const FAQ: FC<IFAQ> = ({
 							>
 								<Image
 									alt={`${image?.altText}`}
-									src={image?.sourceUrl}
+									src={image?.sourceUrl ? image?.sourceUrl : "/"}
 									width={
 										image?.mediaDetails?.width
 											? image?.mediaDetails?.width

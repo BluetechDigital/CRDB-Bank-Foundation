@@ -74,7 +74,7 @@ const Newsletter: FC<INewsletter> = ({
 				try {
 					console.log(values);
 					await sendNewsletterForm(values);
-				} catch (error) {
+				} catch (error: unknown) {
 					setErrorMessage(true);
 					throw new Error(
 						"Error Message: Something went wrong with Sending your Message. Please try again."
@@ -102,7 +102,7 @@ const Newsletter: FC<INewsletter> = ({
 				setTimeout(() => {
 					router.reload();
 				}, 3000);
-			} catch (error) {
+			} catch (error: unknown) {
 				setErrorMessage(true);
 				throw new Error(
 					"Error Message: Something went wrong with Sending your Message. Please try again."

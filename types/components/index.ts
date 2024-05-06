@@ -44,8 +44,8 @@ export type IFAQ = {
 };
 export type INews = {
 	title: string;
-	italic: string;
 	paragraph: string;
+	highlightText: string;
 };
 export type IHero = {
 	video: string;
@@ -82,8 +82,8 @@ export type IHero = {
 };
 export type IBlogs = {
 	title: string;
-	italic: string;
 	paragraph: string;
+	highlightText: string;
 };
 export type IFAQGrid = {
 	title: string;
@@ -442,7 +442,17 @@ export type IIndividualExecutiveMember = {
 		};
 	};
 };
-
+export type ITestimonialsTwoManualType = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	testimonialsType: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 // Global
 export type ILayout = {
 	children: React.ReactNode;

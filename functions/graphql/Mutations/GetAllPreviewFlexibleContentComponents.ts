@@ -265,6 +265,11 @@ export const getAllPreviewFlexibleContentComponents = async (
 													title
 													subtitle
 													paragraph
+													buttonLink {
+														url
+														title
+														target
+													}
                       							}
                       							cardTwo {
 													backgroundImage {
@@ -292,6 +297,11 @@ export const getAllPreviewFlexibleContentComponents = async (
 														subtitle
 														paragraph
 														backgroundColor
+														buttonLink {
+															url
+															title
+															target
+														}
                       								}
                       							}
 											}
@@ -454,8 +464,8 @@ export const getAllPreviewFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
-												italic
 												paragraph
+												highlightText
 											}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
@@ -468,7 +478,7 @@ export const getAllPreviewFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
-												italic
+												highlightText
 												paragraph
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
@@ -538,7 +548,7 @@ export const getAllPreviewFlexibleContentComponents = async (
 		return {
 			content: response?.data?.mainContent?.flexibleContent?.flexibleContent,
 		};
-	} catch (error) {
+	} catch (error: unknown) {
 		return loginRedirectURL;
 	}
 };

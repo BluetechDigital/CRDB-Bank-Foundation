@@ -51,8 +51,8 @@ const TestimonialsTwoCardElement: FC<ITestimonialsTwoCardElement> = ({
 						className="flex items-center"
 					>
 						<Image
-							alt={image?.sourceUrl}
-							src={image?.sourceUrl}
+							alt={`${image?.altText}`}
+							src={image?.sourceUrl ? image?.sourceUrl : "/"}
 							width={
 								image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
 							}

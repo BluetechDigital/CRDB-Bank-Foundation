@@ -1,34 +1,48 @@
 // Imports
-import {FC} from "react";
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {ITestimonialsTwo} from "@/types/components/index";
+import {FC, Fragment, useEffect, useState} from "react";
+import {ITestimonialsTwoManualType} from "@/types/components/index";
 import {fadeIn, initial, initialTwo, stagger} from "../animations/animations";
+
+// Queries Functions
+import {getAllTestimonialsContentType} from "@/functions/graphql/Queries/GetAllTestimonials";
 
 // Styling
 import styles from "../styles/components/Testimonials.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
-import TestimonialsTwoCard from "./Cards/TestimonialsTwoCard";
+import TestimonialsTwoCardElement from "./Elements/TestimonialsTwoCardElement";
 
-const TestimonialsTwo: FC<ITestimonialsTwo> = ({
+const TestimonialsTwoManualType: FC<ITestimonialsTwoManualType> = ({
 	title,
 	subtitle,
 	paragraph,
 	buttonLink,
+	testimonialsType,
 }) => {
+	const [testimonialsContent, setTestimonialsContent] = useState([]);
+
+	useEffect(() => {
+		const fetchTestimonials = async () => {
+			try {
+				const content = await getAllTestimonialsContentType(testimonialsType);
+				setTestimonialsContent(content);
+			} catch (error) {
+				console.error("Error fetching testimonials:", error);
+			}
+		};
+
+		fetchTestimonials();
+	}, [testimonialsType]);
+
+	// console.log("Testimonials Type:", testimonialsType);
+	// console.log("Testimonials Content:", testimonialsContent);
+
 	return (
 		<>
-			<div
-				className={
-					styles.testimonialsTwo +
-					` bg-white overflow-hidden bg-cover bg-no-repeat bg-center`
-				}
-				style={{
-					backgroundImage: `url("/svg/background/polygon-scatter-haikei-lightgrey.svg")`,
-				}}
-			>
+			<div className={styles.testimonialsTwo + ` bg-white overflow-hidden`}>
 				<motion.div
 					initial={initial}
 					variants={stagger}
@@ -123,8 +137,18 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 							</motion.button>
 						</Link>
 					</div>
-					<div className="w-full xl:w-2/3 py-8 px-4">
-						<TestimonialsTwoCard />
+					<div className="w-full xl:w-2/3 py-8 px-4 grid grid-cols-1 lg:grid-cols-2 gap-4 bg-black">
+						{testimonialsContent?.length > 0 ? (
+							testimonialsContent?.map((item: any, index: number) => (
+								<Fragment key={index}>
+									<h3 className="text-white">
+										{item?.node?.testimonialReview?.name}
+									</h3>
+								</Fragment>
+							))
+						) : (
+							<></>
+						)}
 					</div>
 				</motion.div>
 			</div>
@@ -132,4 +156,4 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 	);
 };
 
-export default TestimonialsTwo;
+export default TestimonialsTwoManualType;

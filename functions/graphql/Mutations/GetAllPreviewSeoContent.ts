@@ -59,7 +59,7 @@ export const getAllPreviewSeoContent = async (
 		});
 
 		return response?.data?.mainContent?.seo;
-	} catch (error) {
+	} catch (error: unknown) {
 		return loginRedirectURL;
 	}
 };

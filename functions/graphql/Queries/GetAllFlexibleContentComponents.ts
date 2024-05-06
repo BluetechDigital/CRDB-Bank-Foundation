@@ -322,6 +322,19 @@ export const getAllFlexibleContentComponents = async (
 													target
 												}
 											}
+											... on ${postTypeFlexibleContent}_TestimonialsTwoManualType {
+												fieldGroupName
+												displaySection
+												title
+												subtitle
+												paragraph
+												testimonialsType
+												buttonLink {
+													url
+													title
+													target
+												}
+											}
 											... on ${postTypeFlexibleContent}_JobPositionsGrid {
 												fieldGroupName
 												displaySection
@@ -461,8 +474,8 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
-												italic
 												paragraph
+												highlightText
 											}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
@@ -475,7 +488,7 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
-												italic
+												highlightText
 												paragraph
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
@@ -539,7 +552,7 @@ export const getAllFlexibleContentComponents = async (
 				response.data?.mainContent?.edges[0]?.node?.template?.flexibleContent
 					?.flexibleContent,
 		};
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all flexible content components"

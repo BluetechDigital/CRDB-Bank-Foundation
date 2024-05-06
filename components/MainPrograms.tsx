@@ -49,7 +49,11 @@ const MainPrograms: FC<IMainPrograms> = ({
 							className="text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
 						>
 							{title}
-							<span className="p-2 ml-3 bg-green-two text-white">
+							<span
+								className={
+									highlightText ? "p-2 ml-3 bg-green-two text-white" : "hidden"
+								}
+							>
 								{highlightText}
 							</span>
 						</motion.h3>

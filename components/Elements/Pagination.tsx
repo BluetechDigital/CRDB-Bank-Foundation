@@ -71,7 +71,7 @@ const Pagination: FC<IPagination> = ({
 									<>
 										<Image
 											alt={`${item?.altText}`}
-											src={item?.sourceUrl}
+											src={item?.sourceUrl ? item?.sourceUrl : "/"}
 											width={
 												item?.mediaDetails?.width
 													? item?.mediaDetails?.width

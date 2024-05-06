@@ -79,7 +79,7 @@ export const getThemesOptionsContent = async () => {
 		});
 
 		return response?.data?.themeOptions?.edges[0]?.node?.themeOptions;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch themes options content"

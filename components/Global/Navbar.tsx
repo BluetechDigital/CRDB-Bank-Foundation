@@ -41,7 +41,7 @@ const Navbar: FC = () => {
 	// Display all sublinks & Mobile Links
 	const [menuActive, setMenuActive] = useState(false);
 	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
-	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
+	const [mediaCentersSublinksOpen, setMediaCentersSublinksOpen]: any =
 		useState(false);
 	const [navBackgroundSublinksOpen, setNavBackgroundSublinksOpen]: any =
 		useState(false);
@@ -61,28 +61,28 @@ const Navbar: FC = () => {
 
 	// Hides or Display About Us Sublinks
 	const displayAboutUsSublinks = () => {
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setOurProgramsSublinksOpen(false);
 		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
 	};
 
 	// Hides or Display Our Programs Sublinks
-	const displayOurServicesSublinks = () => {
+	const displayOurProgramsSublinks = () => {
 		setAboutUsSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setOurProgramsSublinksOpen(!ourProgramsSublinksOpen);
 	};
 
 	// Hides or Display News & Insights Sublinks
-	const displayNewsInsightsSublinks = () => {
+	const displayMediaCentersSublinks = () => {
 		setAboutUsSublinksOpen(false);
 		setOurProgramsSublinksOpen(false);
-		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
+		setMediaCentersSublinksOpen(!mediaCentersSublinksOpen);
 	};
 
 	const resetNavbarStyling = () => {
 		setAboutUsSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setNavBackgroundSublinksOpen(false);
 		setOurProgramsSublinksOpen(false);
 	};
@@ -124,8 +124,8 @@ const Navbar: FC = () => {
 								priority
 								width={500}
 								height={500}
-								alt="CRDB Bank Foundation Logo"
-								src="/img/logos/crdb-foundation-logo.png"
+								alt="CRDB Bank Foundation Logo White"
+								src="/img/logos/crdb-foundation-logo-white.png"
 								className={`${
 									scrollPosition > 50 ? "hidden" : "block group-hover:hidden"
 								} object-contain object-center w-full h-[50px]`}
@@ -251,13 +251,12 @@ const Navbar: FC = () => {
 												<motion.li
 													custom={index}
 													initial={initial}
+													className="relative"
 													whileInView="animate"
 													viewport={{once: true}}
 													variants={arrayLoopStaggerChildren}
-													className="relative"
-													onClick={displayOurServicesSublinks}
 												>
-													<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
+													<span className="flex flex-row justify-center items-center gap-2 cursor-pointer">
 														<Link
 															href={`${item?.node?.url}`}
 															target={`${
@@ -278,6 +277,7 @@ const Navbar: FC = () => {
 															width={550}
 															height={550}
 															alt="White Arrow Icon"
+															onClick={displayOurProgramsSublinks}
 															src="/svg/navigation-menu-dropdown-arrow-white.svg"
 															className={`${
 																scrollPosition > 50 || navBackgroundSublinksOpen
@@ -289,6 +289,7 @@ const Navbar: FC = () => {
 															width={550}
 															height={550}
 															alt="Black Arrow Icon"
+															onClick={displayOurProgramsSublinks}
 															src="/svg/navigation-menu-dropdown-arrow-black.svg"
 															className={`${
 																scrollPosition > 50 || navBackgroundSublinksOpen
@@ -296,19 +297,60 @@ const Navbar: FC = () => {
 																	: "hidden"
 															} group-hover:block cursor-pointer w-[22px] h-[22px] object-contain object-center`}
 														/>
+													</span>
+													<div
+														onMouseLeave={resetNavbarStyling}
+														className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center"
+													>
+														{ourProgramsSublinksOpen ? (
+															<>
+																<ul
+																	className={
+																		styles.ourProgramsLinks +
+																		" p-0 w-full flex flex-col z-[999]"
+																	}
+																>
+																	{globalContext?.ourProgramsLinks?.length >
+																	0 ? (
+																		globalContext?.ourProgramsLinks?.map(
+																			(item: any, index: number) => (
+																				<Fragment key={index}>
+																					<motion.li
+																						custom={index}
+																						initial={initial}
+																						whileInView="animate"
+																						viewport={{once: true}}
+																						variants={arrayLoopStaggerChildren}
+																					>
+																						<Link
+																							href={`${item?.node?.url}`}
+																							target={`${
+																								item?.node?.target
+																									? item?.node?.target
+																									: "_self"
+																							}`}
+																							aria-label={`${item?.node?.label}`}
+																							className={` ${
+																								ourProgramsSublinksOpen
+																									? "w-full hover:bg-green-two text-black hover:text-white"
+																									: "text-black"
+																							} block p-4 text-tiny`}
+																						>
+																							{item?.node?.label}
+																						</Link>
+																					</motion.li>
+																				</Fragment>
+																			)
+																		)
+																	) : (
+																		<></>
+																	)}
+																</ul>
+															</>
+														) : null}
 													</div>
-													{ourProgramsSublinksOpen ? (
-														<>
-															<div
-																onMouseLeave={resetNavbarStyling}
-																onMouseEnter={displayNavBackgroundColor}
-															>
-																<SubMegaMenuLinks />
-															</div>
-														</>
-													) : null}
 												</motion.li>
-											) : item?.node?.url === "/news" ? (
+											) : item?.node?.url === "/media-center" ? (
 												<motion.li
 													custom={index}
 													initial={initial}
@@ -338,7 +380,7 @@ const Navbar: FC = () => {
 															width={550}
 															height={550}
 															alt="White Arrow Icon"
-															onClick={displayNewsInsightsSublinks}
+															onClick={displayMediaCentersSublinks}
 															src="/svg/navigation-menu-dropdown-arrow-white.svg"
 															className={`${
 																scrollPosition > 50 || navBackgroundSublinksOpen
@@ -350,7 +392,7 @@ const Navbar: FC = () => {
 															width={550}
 															height={550}
 															alt="Black Arrow Icon"
-															onClick={displayNewsInsightsSublinks}
+															onClick={displayMediaCentersSublinks}
 															src="/svg/navigation-menu-dropdown-arrow-black.svg"
 															className={`${
 																scrollPosition > 50 || navBackgroundSublinksOpen
@@ -363,17 +405,17 @@ const Navbar: FC = () => {
 														onMouseLeave={resetNavbarStyling}
 														className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center"
 													>
-														{newsInsightsSublinksOpen ? (
+														{mediaCentersSublinksOpen ? (
 															<>
 																<ul
 																	className={
-																		styles.newsInsightsSublinks +
+																		styles.mediaCentersSublinks +
 																		" p-0 w-full flex flex-col z-[999]"
 																	}
 																>
-																	{globalContext?.newsInsightSublinks?.length >
+																	{globalContext?.mediaCentersSublinks?.length >
 																	0 ? (
-																		globalContext?.newsInsightSublinks?.map(
+																		globalContext?.mediaCentersSublinks?.map(
 																			(item: any, index: number) => (
 																				<Fragment key={index}>
 																					<motion.li
@@ -392,7 +434,7 @@ const Navbar: FC = () => {
 																							}`}
 																							aria-label={`${item?.node?.label}`}
 																							className={` ${
-																								newsInsightsSublinksOpen
+																								mediaCentersSublinksOpen
 																									? "w-full hover:bg-green-two text-black hover:text-white"
 																									: "text-black"
 																							} block p-4 text-tiny`}

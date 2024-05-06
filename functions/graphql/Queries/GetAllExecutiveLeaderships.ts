@@ -31,7 +31,7 @@ export const getAllExecutiveLeadershipsPostsSlugs =
 			});
 
 			return response?.data?.executiveLeadershipsSlugs?.nodes;
-		} catch (error) {
+		} catch (error: unknown) {
 			console.log(error);
 			throw new Error(
 				"Something went wrong trying to fetch the executive leaderships slugs"
@@ -74,7 +74,7 @@ export const getAllExecutiveLeadershipsContent = async () => {
 		});
 
 		return response?.data?.executiveLeadershipsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch executive leaderships content"

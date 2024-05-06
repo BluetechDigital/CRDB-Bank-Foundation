@@ -35,6 +35,7 @@ import BoardOfDirectorsGrid from "../BoardOfDirectorsGrid";
 import JobPositionsThreeCards from "../JobPositionsThreeCards";
 import ExecutiveLeadershipsGrid from "../ExecutiveLeadershipsGrid";
 import IndividualExecutiveMember from "../IndividualExecutiveMember";
+import TestimonialsTwoManualType from "../TestimonialsTwoManualType";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -45,23 +46,23 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_Cta`]: CTA,
 		[`${FlexibleContent}_Faq`]: FAQ,
 		[`${FlexibleContent}_Hero`]: Hero,
-		[`${FlexibleContent}_News`]: News,
 		[`${FlexibleContent}_Blogs`]: Blogs,
+		[`${FlexibleContent}_NewsGrid`]: News,
+		[`${FlexibleContent}_FaqGrid`]: FAQGrid,
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
 		[`${FlexibleContent}_Gallery`]: Gallery,
-		[`${FlexibleContent}_FaqGrid`]: FAQGrid,
+		[`${FlexibleContent}_ErrorPage`]: ErrorPage,
 		[`${FlexibleContent}_Newsletter`]: Newsletter,
 		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
 		[`${FlexibleContent}_ContactForm`]: ContactForm,
 		[`${FlexibleContent}_ContactInfo`]: ContactInfo,
 		[`${FlexibleContent}_OurPartners`]: OurPartners,
 		[`${FlexibleContent}_Maintenance`]: Maintenance,
-		[`${FlexibleContent}_LinkedInCta`]: LinkedInCta,
+		[`${FlexibleContent}_LinkedinCta`]: LinkedInCta,
 		[`${FlexibleContent}_OurPrograms`]: OurPrograms,
 		[`${FlexibleContent}_JobPositions`]: JobPositions,
 		[`${FlexibleContent}_MainPrograms`]: MainPrograms,
 		[`${FlexibleContent}_ContentImage`]: ContentImage,
-		[`${FlexibleContent}_ErrorPage`]: ErrorPage,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_NewsThreeCards`]: NewsThreeCards,
 		[`${FlexibleContent}_TestimonialsTwo`]: TestimonialsTwo,
@@ -73,6 +74,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_BoardOfDirectorsGrid`]: BoardOfDirectorsGrid,
 		[`${FlexibleContent}_JobPositionsThreeCards`]: JobPositionsThreeCards,
 		[`${FlexibleContent}_ExecutiveLeadershipsGrid`]: ExecutiveLeadershipsGrid,
+		[`${FlexibleContent}_TestimonialsTwoManualType`]: TestimonialsTwoManualType,
 		[`${FlexibleContent}_IndividualExecutiveMember`]: IndividualExecutiveMember,
 	};
 

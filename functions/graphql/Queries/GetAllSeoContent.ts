@@ -51,7 +51,7 @@ export const getAllSeoContent = async (slug: string, postType: string) => {
 		});
 
 		return response?.data?.mainContent?.edges[0]?.node?.seo;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			`Something went wrong trying to fetch all ${postType} seo content per page`

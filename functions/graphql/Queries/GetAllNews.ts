@@ -27,7 +27,7 @@ export const getAllNewsPostsSlugs = async (): Promise<ISlug> => {
 		});
 
 		return response?.data?.newsSlugs?.nodes;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch the news slugs");
 	}
@@ -67,7 +67,7 @@ export const getAllNewsContent = async () => {
 		});
 
 		return response?.data?.newsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch all the news posts");
 	}
@@ -107,7 +107,7 @@ export const getThreeNewsContent = async () => {
 		});
 
 		return response?.data?.newsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch all the news posts");
 	}

@@ -30,7 +30,7 @@ export const getAllBoardOfDirectorsPostsSlugs = async (): Promise<ISlug> => {
 		});
 
 		return response?.data?.boardofDirectorsSlugs?.nodes;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch the board of directors slugs"
@@ -73,7 +73,7 @@ export const getAllBoardOfDirectorsContent = async () => {
 		});
 
 		return response?.data?.boardofDirectorsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch board of directors content"

@@ -2,7 +2,6 @@
 import {
 	initial,
 	stagger,
-	fadeInUp,
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import {FC, Fragment} from "react";
@@ -14,7 +13,7 @@ import {useGlobalContext} from "@/context/global";
 import Paragraph from "./Elements/Paragraph";
 import NewsCard from "./Cards/NewsCard";
 
-const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
+const newsThreeCards: FC<INews> = ({title, highlightText, paragraph}) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const globalContext = useGlobalContext();
 
@@ -37,23 +36,16 @@ const newsThreeCards: FC<INews> = ({title, italic, paragraph}) => {
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="my-2 max-w-2xl mx-auto mb-6 text-center font-semibold leading-tight text-4xl lg:text-5xl"
+						className="max-w-2xl mx-auto text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black"
 					>
-						<motion.span
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
+						{title}
+						<span
+							className={
+								highlightText ? "p-2 ml-3 bg-green-two text-white" : "hidden"
+							}
 						>
-							{title}
-						</motion.span>
-						<motion.span
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
-							className="ml-4 font-serif font-normal italic"
-						>
-							{italic}
-						</motion.span>
+							{highlightText}
+						</span>
 					</motion.h2>
 					<Paragraph
 						content={paragraph}

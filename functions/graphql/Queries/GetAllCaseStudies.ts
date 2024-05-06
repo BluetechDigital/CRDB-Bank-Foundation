@@ -27,7 +27,7 @@ export const getAllCaseStudiesSlugs = async (): Promise<ISlug> => {
 		});
 
 		return response?.data?.caseStudiesSlugs?.nodes;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch the case studies slugs"
@@ -70,7 +70,7 @@ export const getAllCaseStudiesContent = async () => {
 		});
 
 		return response?.data?.caseStudiesContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all the case studies content"

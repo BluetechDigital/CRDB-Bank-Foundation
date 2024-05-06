@@ -9,7 +9,7 @@ import {stagger, initial, fadeInUp} from "@/animations/animations";
 import Paragraph from "./Elements/Paragraph";
 import Pagination from "./Elements/Pagination";
 
-const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
+const Blogs: FC<IBlogs> = ({title, highlightText, paragraph}) => {
 	const globalContext = useGlobalContext();
 
 	return (
@@ -20,30 +20,27 @@ const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
 					variants={stagger}
 					whileInView="animate"
 					viewport={{once: true}}
-					className="max-w-2xl mx-auto mb-24 text-center lg:max-w-5xl"
+					className={
+						title
+							? "max-w-2xl mx-auto mb-24 text-center flex flex-col items-center lg:max-w-5xl"
+							: "hidden"
+					}
 				>
 					<motion.h2
 						initial={initial}
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="my-2 mb-6 max-w-2xl mx-auto text-center font-semibold leading-tight text-4xl lg:text-5xl"
+						className="max-w-2xl mx-auto text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black"
 					>
-						<motion.span
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
+						{title}
+						<span
+							className={
+								highlightText ? "p-2 ml-3 bg-green-two text-white" : "hidden"
+							}
 						>
-							{title}
-						</motion.span>
-						<motion.span
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
-							className="ml-4 font-serif font-normal italic"
-						>
-							{italic}
-						</motion.span>
+							{highlightText}
+						</span>
 					</motion.h2>
 					<Paragraph
 						content={paragraph}

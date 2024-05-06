@@ -22,7 +22,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 
 	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
 	const [careersSublinksOpen, setCareersSublinksOpen]: any = useState(false);
-	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
+	const [mediaCentersSublinksOpen, setMediaCentersSublinksOpen]: any =
 		useState(false);
 	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
 		useState(false);
@@ -34,7 +34,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	// Hides or Display About Us Sublinks
 	const displayAboutUsSublinks = () => {
 		setCareersSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setOurServicesSublinksOpen(false);
 		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
 	};
@@ -43,24 +43,24 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	const displayOurServicesSublinks = () => {
 		setAboutUsSublinksOpen(false);
 		setCareersSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setOurServicesSublinksOpen(!ourServicesSublinksOpen);
 	};
 
 	// Hides or Display Careers Sublinks
 	const displayCareersSublinks = () => {
 		setAboutUsSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setOurServicesSublinksOpen(false);
 		setCareersSublinksOpen(!careersSublinksOpen);
 	};
 
 	// Hides or Display News & Insights Sublinks
-	const displayNewsInsightsSublinks = () => {
+	const displayMediaCentersSublinks = () => {
 		setCareersSublinksOpen(false);
 		setAboutUsSublinksOpen(false);
 		setOurServicesSublinksOpen(false);
-		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
+		setMediaCentersSublinksOpen(!mediaCentersSublinksOpen);
 	};
 
 	return (
@@ -260,7 +260,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											</li>
 										) : item?.node?.url === "/news" ? (
 											<li
-												onClick={displayNewsInsightsSublinks}
+												onClick={displayMediaCentersSublinks}
 												className="border-b-[1px] border-green-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
@@ -283,7 +283,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 														className="w-[25px] h-[25px] object-contain object-center"
 													/>
 												</div>
-												{newsInsightsSublinksOpen ? (
+												{mediaCentersSublinksOpen ? (
 													<>
 														<motion.ul
 															initial={initialTwo}
@@ -291,14 +291,14 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 															whileInView="animate"
 															viewport={{once: true}}
 															className={
-																styles.newsInsightsSublinks +
+																styles.mediaCentersSublinks +
 																` flex flex-col my-4 z-[999]`
 															}
 														>
 															{/* Menu Link*/}
-															{globalContext?.newsInsightSublinks?.length >
+															{globalContext?.mediaCentersSublinks?.length >
 															0 ? (
-																globalContext?.newsInsightSublinks?.map(
+																globalContext?.mediaCentersSublinks?.map(
 																	(item: any, index: number) => (
 																		<Fragment key={index}>
 																			<motion.li
@@ -805,7 +805,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											width={500}
 											height={500}
 											alt="CRDB Bank Marathon Logo White"
-											src="/img/logos/CRDB-bank-logo.svg"
+											src="/img/logos/crdb-logo-white.png"
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 									</span>
@@ -847,8 +847,8 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							</Link>
 							<Link
 								target="_self"
-								aria-label={`Simbanking Website Link`}
-								href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/26"
+								aria-label={`Burundi Website Link`}
+								href="https://crdbbank.co.bi/en/"
 							>
 								<motion.button
 									initial={initial}
@@ -856,21 +856,21 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 									viewport={{once: true}}
 									className={
 										styles.borderButton +
-										" block group w-full h-full min-w-[200px] min-h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
+										" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 									}
 								>
 									<span>
 										<Image
 											width={500}
 											height={500}
-											alt="CRDB Bank Simbanking Logo Green"
+											alt="CRDB Bank Burundi Logo Green"
 											src="/img/logos/CRDB-bank-simbanking.svg"
 											className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 										<Image
 											width={500}
 											height={500}
-											alt="CRDB Bank Simbanking Logo White"
+											alt="CRDB Bank Burundi Logo White"
 											src="/img/logos/CRDB-bank-simbanking.svg"
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>

@@ -27,7 +27,7 @@ export const getAllBlogsPostsSlugs = async (): Promise<ISlug> => {
 		});
 
 		return response?.data?.blogsSlugs?.nodes;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch the blogs slugs");
 	}
@@ -67,7 +67,7 @@ export const getAllBlogsContent = async () => {
 		});
 
 		return response?.data?.blogsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch all the blogs posts");
 	}
@@ -107,7 +107,7 @@ export const getThreeBlogsContent = async () => {
 		});
 
 		return response?.data?.blogsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch all the blogs posts");
 	}

@@ -138,7 +138,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 						>
 							<Image
 								alt={`${image?.altText}`}
-								src={image?.sourceUrl}
+								src={image?.sourceUrl ? image?.sourceUrl : "/"}
 								width={
 									image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
 								}
@@ -241,7 +241,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 						>
 							<Image
 								alt={`${image?.altText}`}
-								src={image?.sourceUrl}
+								src={image?.sourceUrl ? image?.sourceUrl : "/"}
 								width={
 									image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
 								}

@@ -35,7 +35,7 @@ const LinkedInCta: FC<ILinkedInCta> = ({
 						className="max-w-6xl mx-auto text-center font-bold leading-normal text-xl lg:text-2xl mb-4 p-4 pl-0 text-white"
 					>
 						<span
-							className="p-2 mr-3 text-white"
+							className={highlightText ? "p-2 mr-3 text-white" : "hidden"}
 							style={{
 								backgroundColor: `${highlightTextColor}`,
 							}}

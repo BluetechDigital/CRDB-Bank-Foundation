@@ -37,7 +37,7 @@ const TestimonialsTwoCard: FC = () => {
 				>
 					{globalContext?.testimonials?.length > 0 ? (
 						globalContext?.testimonials?.map((item: any, index: number) => (
-							<Fragment key={index}>
+							<Fragment key={index - 1}>
 								<SwiperSlide>
 									<TestimonialsTwoCardElement
 										name={item?.node?.testimonialReview?.name}

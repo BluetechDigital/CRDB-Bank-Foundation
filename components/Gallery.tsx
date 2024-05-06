@@ -22,7 +22,13 @@ const Gallery: FC<IGallery> = ({
 	return (
 		<>
 			<div
-				className={styles.gallery + ` py-16 bg-white container px-4 mx-auto`}
+				className={
+					styles.gallery +
+					` py-16 bg-white container px-4 mx-auto bg-cover bg-no-repeat bg-center`
+				}
+				style={{
+					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
+				}}
 			>
 				<motion.div
 					initial={initial}
@@ -30,7 +36,7 @@ const Gallery: FC<IGallery> = ({
 					whileInView="animate"
 					viewport={{once: true}}
 					className={
-						title && highlightText
+						title
 							? "max-w-2xl mx-auto mb-24 text-center flex flex-col items-center lg:max-w-5xl"
 							: "hidden"
 					}
@@ -51,7 +57,11 @@ const Gallery: FC<IGallery> = ({
 						className="max-w-2xl mx-auto text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black"
 					>
 						{title}
-						<span className="p-2 ml-3 bg-green-two text-white">
+						<span
+							className={
+								highlightText ? "p-2 ml-3 bg-green-two text-white" : "hidden"
+							}
+						>
 							{highlightText}
 						</span>
 					</motion.h2>
@@ -65,7 +75,7 @@ const Gallery: FC<IGallery> = ({
 					contentArray={gallery}
 					numberOfItemsRenderedPerPage={12}
 					tailwindStyling={`${
-						gallery.length > 0
+						gallery?.length > 0
 							? `grid gap-4 grid-cols-2 ${
 									parseInt(itemsDisplayedPerPage) === 12
 										? "lg:grid-cols-4"

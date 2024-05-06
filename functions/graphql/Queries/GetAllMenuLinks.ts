@@ -23,7 +23,7 @@ export const getNavbarMenuLinks = async () => {
 		});
 
 		return response?.data?.navbarMenuLinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch main menu links content"
@@ -53,7 +53,7 @@ export const getMobileLinks = async () => {
 		});
 
 		return response?.data?.mobileLinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch mobile links content"
@@ -83,7 +83,7 @@ export const getAboutUsSublinks = async () => {
 		});
 
 		return response?.data?.aboutUsSublinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch main menu links content"
@@ -116,7 +116,7 @@ export const getOurProgramsSublinks = async () => {
 		});
 
 		return response?.data?.ourServicesSublinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch our Programs Sublinks content"
@@ -149,7 +149,7 @@ export const getNewsInsightSublinks = async () => {
 		});
 
 		return response?.data?.newsInsightSublinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch news insight sublinks content"
@@ -182,7 +182,7 @@ export const getCareerSublinks = async () => {
 		});
 
 		return response?.data?.careerSublinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch career sublinks content"
@@ -215,7 +215,7 @@ export const getCopyrightLinks = async () => {
 		});
 
 		return response?.data?.copyrightLinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch copyright links content"
@@ -245,7 +245,7 @@ export const getFooterMenuLinks = async () => {
 		});
 
 		return response?.data?.footerMenuLinks?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch footer menu links content"

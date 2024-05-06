@@ -121,7 +121,7 @@ const SubMegaMenuLinks: FC = () => {
 												width={500}
 												height={500}
 												alt="CRDB Bank Marathon Logo White"
-												src="/img/logos/CRDB-bank-logo.svg"
+												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover/CRDBBank:block object-contain object-center w-full h-[35px] mb-4"
 											/>
 										</span>
@@ -169,8 +169,8 @@ const SubMegaMenuLinks: FC = () => {
 							<div className="grid grid-cols-2 2xl:flex 2xl:flex-row items-center justify-center gap-4">
 								<Link
 									target="_self"
-									aria-label={`Simbanking Website Link`}
-									href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/26"
+									aria-label={`Burundi Website Link`}
+									href="https://crdbbank.co.bi/en/"
 								>
 									<motion.button
 										initial={initial}
@@ -178,28 +178,26 @@ const SubMegaMenuLinks: FC = () => {
 										viewport={{once: true}}
 										className={
 											styles.borderButton +
-											" group/Simbanking w-[200px] h-[125px] xl:w-[150px] xl:h-[150px] 2xl:w-[200px] relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-white after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
+											" block group w-[200px] h-[150px] mt-3 relative px-6 py-3 font-semibold tracking-widest text-base sm:mx-0 border-2 border-solid border-green-two hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] hover:before:bg-green-two before:bg-lightGrey after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-lightGrey hover:after:bg-green-two"
 										}
 									>
 										<span>
 											<Image
 												width={500}
 												height={500}
-												alt="CRDB Bank Simbanking Logo Green"
-												src="/img/logos/CRDB-bank-simbanking.svg"
-												className="block group-hover/Simbanking:hidden object-contain object-center w-full h-[35px] mb-4"
+												alt="CRDB Bank Logo Green"
+												src="/img/logos/CRDB-bank-logo.svg"
+												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
 												width={500}
 												height={500}
-												alt="CRDB Bank Simbanking Logo Green"
-												src="/img/logos/CRDB-bank-simbanking.svg"
-												className="hidden group-hover/Simbanking:block object-contain object-center w-full h-[35px] mb-4"
+												alt="CRDB Bank Logo White"
+												src="/img/logos/crdb-logo-white.png"
+												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 										</span>
-										<span className="text-black group-hover/Simbanking:text-white">
-											Simbanking
-										</span>
+										<span>Simbanking</span>
 									</motion.button>
 								</Link>
 								<Link

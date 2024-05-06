@@ -217,7 +217,7 @@ export type IOurProgramsLinks = [
 		};
 	}
 ];
-export type INewsInsightSublinks = [
+export type IMediaCentersSublinks = [
 	{
 		node: {
 			id: string;
@@ -341,8 +341,8 @@ export type IGlobalProps = {
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	ourProgramsLinks: IOurProgramsLinks;
-	newsInsightSublinks: INewsInsightSublinks;
 	operationsTeamsJobs: IOperationsTeamsJobs;
+	mediaCentersSublinks: IMediaCentersSublinks;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
@@ -363,8 +363,8 @@ export type IGlobalContext = {
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	ourProgramsLinks: IOurProgramsLinks;
-	newsInsightSublinks: INewsInsightSublinks;
 	operationsTeamsJobs: IOperationsTeamsJobs;
+	mediaCentersSublinks: IMediaCentersSublinks;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;

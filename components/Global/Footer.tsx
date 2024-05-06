@@ -23,29 +23,29 @@ const Footer: FC = () => {
 	const globalContext = useGlobalContext();
 
 	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
-	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
+	const [newsInsightsSublinksOpen, setMediaCentersSublinksOpen]: any =
 		useState(false);
 	const [careersSublinksOpen, setCareersSublinksOpen]: any = useState(false);
 
 	// Hides or Display About Us Sublinks
 	const displayAboutUsSublinks = () => {
 		setCareersSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
 	};
 
 	// Hides or Display Careers Sublinks
 	const displayCareersSublinks = () => {
 		setAboutUsSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
+		setMediaCentersSublinksOpen(false);
 		setCareersSublinksOpen(!careersSublinksOpen);
 	};
 
 	// Hides or Display News & Insights Sublinks
-	const displayNewsInsightsSublinks = () => {
+	const displayMediaCentersSublinks = () => {
 		setAboutUsSublinksOpen(false);
 		setCareersSublinksOpen(false);
-		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
+		setMediaCentersSublinksOpen(!newsInsightsSublinksOpen);
 	};
 
 	return (
@@ -552,7 +552,7 @@ const Footer: FC = () => {
 															) : null}
 														</div>
 													</motion.li>
-												) : item?.node?.url === "/news" ? (
+												) : item?.node?.url === "/media-center" ? (
 													<motion.li
 														className="px-0"
 														custom={index}
@@ -578,7 +578,7 @@ const Footer: FC = () => {
 																width={550}
 																height={550}
 																alt="Black Arrow Icon"
-																onClick={displayNewsInsightsSublinks}
+																onClick={displayMediaCentersSublinks}
 																src="/svg/navigation-menu-dropdown-arrow-black.svg"
 																className={
 																	newsInsightsSublinksOpen
@@ -590,7 +590,7 @@ const Footer: FC = () => {
 																width={550}
 																height={550}
 																alt="Black Arrow Icon"
-																onClick={displayNewsInsightsSublinks}
+																onClick={displayMediaCentersSublinks}
 																src="/svg/navigation-menu-dropdown-arrow-black.svg"
 																className={
 																	newsInsightsSublinksOpen
@@ -608,9 +608,9 @@ const Footer: FC = () => {
 																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start ml-2 my-2 border-l-2 border-solid border-green-two"
 																		}
 																	>
-																		{globalContext?.newsInsightSublinks
+																		{globalContext?.mediaCentersSublinks
 																			?.length > 0 ? (
-																			globalContext?.newsInsightSublinks?.map(
+																			globalContext?.mediaCentersSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -836,15 +836,15 @@ const Footer: FC = () => {
 											<Image
 												width={500}
 												height={500}
-												alt="CRDB Bank Marathon Logo White"
+												alt="CRDB Bank Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
 												width={500}
 												height={500}
-												alt="CRDB Bank Marathon Logo White"
-												src="/img/logos/CRDB-bank-logo.svg"
+												alt="CRDB Bank Logo White"
+												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 										</span>
@@ -888,8 +888,8 @@ const Footer: FC = () => {
 							<div className="flex flex-col sm:flex-row items-start justify-start gap-4">
 								<Link
 									target="_self"
-									aria-label={`Simbanking Website Link`}
-									href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/26"
+									aria-label={`Burundi Website Link`}
+									href="https://crdbbank.co.bi/en/"
 								>
 									<motion.button
 										initial={initial}
@@ -904,19 +904,19 @@ const Footer: FC = () => {
 											<Image
 												width={500}
 												height={500}
-												alt="CRDB Bank Simbanking Logo Green"
-												src="/img/logos/CRDB-bank-simbanking.svg"
+												alt="CRDB Bank Logo Green"
+												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
 												width={500}
 												height={500}
-												alt="CRDB Bank Simbanking Logo White"
-												src="/img/logos/CRDB-bank-simbanking.svg"
+												alt="CRDB Bank Logo White"
+												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 										</span>
-										<span>Simbanking</span>
+										<span>Burundi</span>
 									</motion.button>
 								</Link>
 								<Link

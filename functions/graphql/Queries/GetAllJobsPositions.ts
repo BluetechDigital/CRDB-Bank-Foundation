@@ -27,7 +27,7 @@ export const getAllJobsPositionsSlugs = async (): Promise<ISlug> => {
 		});
 
 		return response?.data?.jobsPositionsSlugs?.nodes;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch the jobs positions slugs"
@@ -70,7 +70,7 @@ export const getAllJobsPositionsContent = async () => {
 		});
 
 		return response?.data?.jobsPositionsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all the jobs positions posts"
@@ -110,7 +110,7 @@ export const getThreeJobsPositionsContent = async () => {
 		});
 
 		return response?.data?.jobsPositionsContent?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all the jobs positions posts"
@@ -144,7 +144,7 @@ export const getAllJobsPositionsManagementsSlugs = async () => {
 		});
 
 		return response?.data?.managementsTaxonomySlugs?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all the jobs positions slugs for bravo logistics taxonomy"
@@ -212,7 +212,7 @@ export const getAllManagementsTaxonomyJobs = async () => {
 		});
 
 		return finalArray;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all jobs post for Managements taxonomy"
@@ -245,7 +245,7 @@ export const getAllJobsPositionsOperationsTeamsSlugs = async () => {
 		});
 
 		return response?.data?.operationsTeamsTaxonomySlugs?.edges;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all the jobs positions slugs for Agricoms taxonomy"
@@ -313,7 +313,7 @@ export const getAllOperationsTeamsTaxonomyJobs = async () => {
 		});
 
 		return finalArray;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
 			"Something went wrong trying to fetch all jobs post for operations teams taxonomy"

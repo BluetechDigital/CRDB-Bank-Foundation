@@ -27,7 +27,7 @@ export const getAllPagesSlugs = async (): Promise<ISlug> => {
 		});
 
 		return response?.data?.pageURLs?.nodes;
-	} catch (error) {
+	} catch (error: unknown) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch all pages urls");
 	}

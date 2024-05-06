@@ -113,7 +113,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 				try {
 					console.log(values);
 					await sendContactForm(values);
-				} catch (error) {
+				} catch (error: unknown) {
 					setErrorMessage(true);
 					throw new Error(
 						"Error Message: Something went wrong with Sending your Message. Please try again."
@@ -141,7 +141,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 				setTimeout(() => {
 					router.reload();
 				}, 3000);
-			} catch (error) {
+			} catch (error: unknown) {
 				setErrorMessage(true);
 				throw new Error(
 					"Error Message: Something went wrong with Sending your Message. Please try again."

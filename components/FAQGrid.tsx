@@ -18,7 +18,6 @@ const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 			<div
 				className="relative py-16 lg:py-28 px-4 bg-white bg-cover bg-no-repeat bg-center"
 				style={{
-					clipPath: `polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)`,
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
 				}}
 			>
@@ -32,7 +31,11 @@ const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 							className="text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
 						>
 							{title}
-							<span className="p-2 ml-3 bg-green-two text-white">
+							<span
+								className={
+									highlightText ? "p-2 ml-3 bg-green-two text-white" : "hidden"
+								}
+							>
 								{highlightText}
 							</span>
 						</motion.h3>
