@@ -349,6 +349,61 @@ const Navbar: FC = () => {
 															</>
 														) : null}
 													</div>
+													{ourProgramsSublinksOpen ? (
+														<>
+															<div
+																onMouseLeave={resetNavbarStyling}
+																onMouseEnter={displayNavBackgroundColor}
+															>
+																<div className="fixed mt-[1.65rem] w-[20%] bg-white flex flex-col items-center justify-center">
+																	<ul
+																		className={
+																			styles.aboutUsSublinks +
+																			" p-0 w-full flex flex-col z-[999]"
+																		}
+																	>
+																		{globalContext?.ourProgramsLinks?.length >
+																		0 ? (
+																			globalContext?.ourProgramsLinks?.map(
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
+																						<motion.li
+																							custom={index}
+																							initial={initial}
+																							whileInView="animate"
+																							viewport={{once: true}}
+																							variants={
+																								arrayLoopStaggerChildren
+																							}
+																						>
+																							<Link
+																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
+																								className={` ${
+																									ourProgramsSublinksOpen
+																										? "w-full hover:bg-green-two text-black hover:text-white"
+																										: "text-black"
+																								} block p-4 text-tiny`}
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
+																					</Fragment>
+																				)
+																			)
+																		) : (
+																			<></>
+																		)}
+																	</ul>
+																</div>
+															</div>
+														</>
+													) : null}
 												</motion.li>
 											) : item?.node?.url === "/media-center" ? (
 												<motion.li
