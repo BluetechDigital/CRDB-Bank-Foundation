@@ -446,12 +446,26 @@ export type ITestimonialsTwoManualType = {
 	title: string;
 	subtitle: string;
 	paragraph: string;
-	testimonialsType: string;
 	buttonLink: {
 		url: string;
 		title: string;
 		target: string;
 	};
+	testimonialsContent: [
+		{
+			name: string;
+			jobTitle: string;
+			paragraph: string;
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		}
+	];
 };
 // Global
 export type ILayout = {

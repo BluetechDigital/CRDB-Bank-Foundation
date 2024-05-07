@@ -1,48 +1,29 @@
 // Imports
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {FC, Fragment, useEffect, useState} from "react";
+import {FC, Fragment} from "react";
 import {ITestimonialsTwoManualType} from "@/types/components/index";
 import {fadeIn, initial, initialTwo, stagger} from "../animations/animations";
-
-// Queries Functions
-import {getAllTestimonialsContentType} from "@/functions/graphql/Queries/GetAllTestimonials";
 
 // Styling
 import styles from "../styles/components/Testimonials.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
-import TestimonialsTwoCardElement from "./Elements/TestimonialsTwoCardElement";
+import TestimonialsTwoManualTypeCard from "./Cards/TestimonialsTwoManualTypeCard";
 
 const TestimonialsTwoManualType: FC<ITestimonialsTwoManualType> = ({
 	title,
 	subtitle,
 	paragraph,
 	buttonLink,
-	testimonialsType,
+	testimonialsContent,
 }) => {
-	const [testimonialsContent, setTestimonialsContent] = useState([]);
-
-	useEffect(() => {
-		const fetchTestimonials = async () => {
-			try {
-				const content = await getAllTestimonialsContentType(testimonialsType);
-				setTestimonialsContent(content);
-			} catch (error) {
-				console.error("Error fetching testimonials:", error);
-			}
-		};
-
-		fetchTestimonials();
-	}, [testimonialsType]);
-
-	// console.log("Testimonials Type:", testimonialsType);
-	// console.log("Testimonials Content:", testimonialsContent);
-
 	return (
 		<>
-			<div className={styles.testimonialsTwo + ` bg-white overflow-hidden`}>
+			<div
+				className={styles.testimonialsTwo + ` overflow-hidden bg-lightGreyTwo`}
+			>
 				<motion.div
 					initial={initial}
 					variants={stagger}
@@ -137,13 +118,16 @@ const TestimonialsTwoManualType: FC<ITestimonialsTwoManualType> = ({
 							</motion.button>
 						</Link>
 					</div>
-					<div className="w-full xl:w-2/3 py-8 px-4 grid grid-cols-1 lg:grid-cols-2 gap-4 bg-black">
+					<div className="w-full xl:w-2/3 p-8 lg:px-4 grid grid-cols-1 lg:grid-cols-2 gap-4 ">
 						{testimonialsContent?.length > 0 ? (
 							testimonialsContent?.map((item: any, index: number) => (
-								<Fragment key={index}>
-									<h3 className="text-white">
-										{item?.node?.testimonialReview?.name}
-									</h3>
+								<Fragment key={index - 1}>
+									<TestimonialsTwoManualTypeCard
+										name={item?.name}
+										image={item?.image}
+										jobTitle={item?.jobTitle}
+										paragraph={item?.paragraph}
+									/>
 								</Fragment>
 							))
 						) : (

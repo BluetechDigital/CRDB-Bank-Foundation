@@ -328,12 +328,24 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
-												testimonialsType
 												buttonLink {
 													url
 													title
 													target
 												}
+												testimonialsContent {
+													name
+													jobTitle
+													paragraph
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
 											}
 											... on ${postTypeFlexibleContent}_JobPositionsGrid {
 												fieldGroupName
