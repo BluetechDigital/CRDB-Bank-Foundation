@@ -136,6 +136,16 @@ export type IMediaCenter = {
 		title: string;
 		target: string;
 	};
+	gallery: [
+		{
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		}
+	];
 };
 export type INewsletter = {
 	title: string;
@@ -421,6 +431,75 @@ export type IBoardOfDirectorsGrid = {
 	paragraph: string;
 	highlightText: string;
 };
+export type IMediaCenterCardLinks = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	cardOne: {
+		title: string;
+		link: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	cardTwo: {
+		title: string;
+		link: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	cardThree: {
+		title: string;
+		link: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	cardFour: {
+		title: string;
+		link: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+};
 export type IExecutiveLeadershipsGrid = {
 	title: string;
 	subtitle: string;
@@ -477,6 +556,7 @@ export type ITestimonialsTwoManualType = {
 		}
 	];
 };
+
 // Global
 export type ILayout = {
 	children: React.ReactNode;

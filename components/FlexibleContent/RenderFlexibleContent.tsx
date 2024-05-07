@@ -33,6 +33,7 @@ import BlogsThreeCards from "../BlogsThreeCards";
 import TestimonialsGrid from "../TestimonialsGrid";
 import JumboContentSection from "../JumboContentSection";
 import BoardOfDirectorsGrid from "../BoardOfDirectorsGrid";
+import MediaCenterCardLinks from "../MediaCenterCardLinks";
 import JobPositionsThreeCards from "../JobPositionsThreeCards";
 import ExecutiveLeadershipsGrid from "../ExecutiveLeadershipsGrid";
 import IndividualExecutiveMember from "../IndividualExecutiveMember";
@@ -74,6 +75,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TestimonialsGrid`]: TestimonialsGrid,
 		[`${FlexibleContent}_JumboContentSection`]: JumboContentSection,
 		[`${FlexibleContent}_BoardOfDirectorsGrid`]: BoardOfDirectorsGrid,
+		[`${FlexibleContent}_MediaCenterCardLinks`]: MediaCenterCardLinks,
 		[`${FlexibleContent}_JobPositionsThreeCards`]: JobPositionsThreeCards,
 		[`${FlexibleContent}_ExecutiveLeadershipsGrid`]: ExecutiveLeadershipsGrid,
 		[`${FlexibleContent}_TestimonialsTwoManualType`]: TestimonialsTwoManualType,

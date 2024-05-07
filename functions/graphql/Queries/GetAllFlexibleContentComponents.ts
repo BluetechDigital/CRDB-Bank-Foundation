@@ -391,6 +391,85 @@ export const getAllFlexibleContentComponents = async (
 													title
 													target
 												}
+												gallery {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+												}
+											}
+											... on ${postTypeFlexibleContent}_MediaCenterCardLinks {
+												fieldGroupName
+												displaySection
+												title
+												subtitle
+												paragraph
+												cardOne {
+													title
+													link {
+														url
+														title
+														target
+													}
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
+                      							cardTwo {
+													title
+													link {
+														url
+														title
+														target
+													}
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
+												cardThree {
+													title
+													link {
+														url
+														title
+														target
+													}
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
+                      							cardFour {
+													title
+													link {
+														url
+														title
+														target
+													}
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
 											}
 											... on ${postTypeFlexibleContent}_Faq {
 												fieldGroupName

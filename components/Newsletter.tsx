@@ -153,7 +153,7 @@ const Newsletter: FC<INewsletter> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="my-2 mb-6 text-white text-center lg:text-left font-semibold leading-tight text-4xl lg:text-5xl"
+								className="max-w-xl mx-auto lg:mx-0 my-2 mb-6 text-white text-center lg:text-left font-semibold leading-tight text-4xl lg:text-5xl"
 							>
 								{title}
 							</motion.h3>
