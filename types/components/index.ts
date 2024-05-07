@@ -127,6 +127,16 @@ export type IGallery = {
 		}
 	];
 };
+export type IMediaCenter = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 export type INewsletter = {
 	title: string;
 	subtitle: string;

@@ -47,7 +47,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 						whileInView="animate"
 						viewport={{once: true}}
 						className={
-							title && highlightText && paragraph
+							title && paragraph
 								? "max-w-2xl mx-auto text-center lg:max-w-5xl w-full xl:w-[35%]"
 								: "hidden"
 						}

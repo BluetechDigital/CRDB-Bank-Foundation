@@ -13,6 +13,7 @@ import Gallery from "../Gallery";
 import FAQGrid from "../FAQGrid";
 import Newsletter from "../Newsletter";
 import VideoBlock from "../VideoBlock";
+import MediaCenter from "../MediaCenter";
 import ContactForm from "../ContactForm";
 import ContactInfo from "../ContactInfo";
 import OurPartners from "../OurPartners";
@@ -59,6 +60,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_OurPartners`]: OurPartners,
 		[`${FlexibleContent}_Maintenance`]: Maintenance,
 		[`${FlexibleContent}_LinkedinCta`]: LinkedInCta,
+		[`${FlexibleContent}_MediaCenter`]: MediaCenter,
 		[`${FlexibleContent}_OurPrograms`]: OurPrograms,
 		[`${FlexibleContent}_JobPositions`]: JobPositions,
 		[`${FlexibleContent}_MainPrograms`]: MainPrograms,

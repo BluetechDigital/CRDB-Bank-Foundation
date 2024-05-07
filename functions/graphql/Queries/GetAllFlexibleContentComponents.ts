@@ -380,6 +380,18 @@ export const getAllFlexibleContentComponents = async (
             										}
 												}
 											}
+											... on ${postTypeFlexibleContent}_MediaCenter {
+												fieldGroupName
+												displaySection
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+											}
 											... on ${postTypeFlexibleContent}_Faq {
 												fieldGroupName
 												displaySection
