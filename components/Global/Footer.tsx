@@ -23,7 +23,7 @@ const Footer: FC = () => {
 	const globalContext = useGlobalContext();
 
 	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
-	const [newsInsightsSublinksOpen, setMediaCentersSublinksOpen]: any =
+	const [mediaCentersSublinksOpen, setMediaCentersSublinksOpen]: any =
 		useState(false);
 	const [careersSublinksOpen, setCareersSublinksOpen]: any = useState(false);
 
@@ -45,7 +45,7 @@ const Footer: FC = () => {
 	const displayMediaCentersSublinks = () => {
 		setAboutUsSublinksOpen(false);
 		setCareersSublinksOpen(false);
-		setMediaCentersSublinksOpen(!newsInsightsSublinksOpen);
+		setMediaCentersSublinksOpen(!mediaCentersSublinksOpen);
 	};
 
 	return (
@@ -581,7 +581,7 @@ const Footer: FC = () => {
 																onClick={displayMediaCentersSublinks}
 																src="/svg/navigation-menu-dropdown-arrow-black.svg"
 																className={
-																	newsInsightsSublinksOpen
+																	mediaCentersSublinksOpen
 																		? "hidden"
 																		: "block cursor-pointer w-[22px] h-[22px] object-contain object-center"
 																}
@@ -593,14 +593,14 @@ const Footer: FC = () => {
 																onClick={displayMediaCentersSublinks}
 																src="/svg/navigation-menu-dropdown-arrow-black.svg"
 																className={
-																	newsInsightsSublinksOpen
+																	mediaCentersSublinksOpen
 																		? "block rotate-180 cursor-pointer w-[22px] h-[22px] object-contain object-center"
 																		: "hidden"
 																}
 															/>
 														</span>
 														<div>
-															{newsInsightsSublinksOpen ? (
+															{mediaCentersSublinksOpen ? (
 																<>
 																	<ul
 																		className={

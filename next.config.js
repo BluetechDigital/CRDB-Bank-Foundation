@@ -7,7 +7,7 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "cmscrbankfoundation.com",
 				port: "",
-				pathname: "/**",
+				pathname: "/wp-content/uploads/**",
 			},
 		],
 	},

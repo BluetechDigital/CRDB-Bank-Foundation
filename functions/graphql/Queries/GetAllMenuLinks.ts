@@ -124,13 +124,13 @@ export const getOurProgramsSublinks = async () => {
 	}
 };
 
-// News Insight Sublinks
-export const getNewsInsightSublinks = async () => {
+// Media Center Sublinks
+export const getMediaCenterSublinks = async () => {
 	try {
 		const content: any = gql`
 			{
-				newsInsightSublinks: menuItems(
-					where: {location: NEWS_INSIGHT_SUBLINKS}
+				mediaCenterSublinks: menuItems(
+					where: {location: MEDIA_CENTER_SUBLINKS}
 					first: 10
 				) {
 					edges {
@@ -148,7 +148,7 @@ export const getNewsInsightSublinks = async () => {
 			query: content,
 		});
 
-		return response?.data?.newsInsightSublinks?.edges;
+		return response?.data?.mediaCenterSublinks?.edges;
 	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(

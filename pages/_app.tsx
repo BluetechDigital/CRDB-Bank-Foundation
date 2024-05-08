@@ -22,7 +22,7 @@ import {
 	getFooterMenuLinks,
 	getAboutUsSublinks,
 	getOurProgramsSublinks,
-	getNewsInsightSublinks,
+	getMediaCenterSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
 import {
 	getAllNewsContent,
@@ -97,7 +97,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		getFooterMenuLinks(),
 		getAboutUsSublinks(),
 		getOurProgramsSublinks(),
-		getNewsInsightSublinks(),
+		getMediaCenterSublinks(),
 		getThemesOptionsContent(),
 		getAllNewsContent(),
 		getAllBlogsContent(),
