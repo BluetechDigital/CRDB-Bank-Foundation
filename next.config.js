@@ -2,7 +2,14 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: ["cmscrbankfoundation.com"],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "cmscrbankfoundation.com",
+				port: "",
+				pathname: "/**",
+			},
+		],
 	},
 };
 
