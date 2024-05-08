@@ -126,7 +126,7 @@ const SubMegaMenuLinks: FC = () => {
 											/>
 										</span>
 										<span className="text-black group-hover/CRDBBank:text-white">
-											CRDB Bank
+											Tanzania
 										</span>
 									</motion.button>
 								</Link>

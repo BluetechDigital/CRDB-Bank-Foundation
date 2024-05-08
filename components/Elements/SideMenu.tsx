@@ -809,7 +809,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 									</span>
-									<span>CRDB Bank</span>
+									<span>Tanzania</span>
 								</motion.button>
 							</Link>
 							<Link

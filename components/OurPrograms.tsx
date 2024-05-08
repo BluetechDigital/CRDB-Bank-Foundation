@@ -81,7 +81,7 @@ const OurPrograms: FC<IOurPrograms> = ({
 													: "_self"
 											}`}
 											aria-label={`${item?.card?.link?.title}`}
-											className={styles.card + " group overflow-hidden"}
+											className={styles.card + " group w-full overflow-hidden"}
 											style={{
 												boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 											}}
@@ -100,7 +100,7 @@ const OurPrograms: FC<IOurPrograms> = ({
 												<div
 													className={
 														styles.content +
-														" py-10 px-6 sm:p-10 group-hover:mt-28 sm:group-hover:mt-10 md:group-hover:mt-16 gap-4 sm:gap-8 h-[400px] bg-white group-hover:border-none border-t-4 border-green-two flex flex-col"
+														" py-10 px-6 sm:p-10 group-hover:mt-28 sm:group-hover:mt-10 md:group-hover:mt-16 gap-4 sm:gap-8 h-[400px] bg-white w-full group-hover:border-none border-t-4 border-green-two flex flex-col"
 													}
 												>
 													<motion.div
