@@ -43,23 +43,9 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 								href={`${cardOne?.link?.url}`}
 								target={cardOne?.link?.target}
 								aria-label={`${cardOne?.link?.title}`}
-								className={
-									cardOne?.link?.url
-										? "flex mt-6 xl:mt-0 items-center justify-center xl:justify-start"
-										: "hidden"
-								}
+								className="w-full md:w-[calc(50%-.5rem)]"
 							>
-								<div
-									className="bg-cover bg-no-repeat bg-center"
-									style={{
-										backgroundImage: `linear-gradient(
-														0deg,
-														rgba(0, 128, 0, 0.70),
-														rgba(0, 128, 0, 0.85),
-														rgba(0, 128, 0, 1)
-													),url("${cardOne?.backgroundImage?.sourceUrl}")`,
-									}}
-								>
+								<figure>
 									<Image
 										alt={`${cardOne?.backgroundImage?.altText}`}
 										src={cardOne?.backgroundImage?.sourceUrl}
@@ -79,63 +65,144 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 												: `hidden`
 										}
 									/>
-									<div className="bg-lightGreyTwo flex flex-col gap-4 p-5 xl:p-10">
-										<h3 className="font-extrabold text-green-three text-lg xl:text-xl">
-											{cardOne?.title}
-										</h3>
-										<p className="font-semibold text-black text-medium xl:text-lg">
-											{cardOne?.title}
-										</p>
-									</div>
+								</figure>
+
+								<div className="bg-lightGreyTwo flex flex-col gap-4 p-5 xl:p-10">
+									<motion.h3
+										initial={initialTwo}
+										whileInView={fadeIn}
+										viewport={{once: true}}
+										className="font-extrabold text-black text-xl xl:text-2xl"
+									>
+										{cardOne?.title}
+									</motion.h3>
+									<Paragraph
+										content={cardOne?.link?.title}
+										tailwindStyling="font-semibold text-black text-paragraph"
+									/>
 								</div>
 							</Link>
 							<Link
 								href={`${cardTwo?.link?.url}`}
 								target={cardTwo?.link?.target}
 								aria-label={`${cardTwo?.link?.title}`}
-								className={
-									cardTwo?.link?.url
-										? "flex mt-6 xl:mt-0 items-center justify-center xl:justify-start"
-										: "hidden"
-								}
+								className="w-full md:w-[calc(50%-.5rem)]"
 							>
-								<div
-									className="bg-cover bg-no-repeat bg-center"
-									style={{
-										backgroundImage: `linear-gradient(
-														0deg,
-														rgba(0, 128, 0, 0.70),
-														rgba(0, 128, 0, 0.85),
-														rgba(0, 128, 0, 1)
-													),url("${cardTwo?.backgroundImage?.sourceUrl}")`,
-									}}
-								>
+								<figure>
 									<Image
-										alt={`${cardTwo?.backgroundImage?.altText}`}
-										src={cardTwo?.backgroundImage?.sourceUrl}
+										alt={`${cardOne?.backgroundImage?.altText}`}
+										src={cardOne?.backgroundImage?.sourceUrl}
 										width={
-											cardTwo?.backgroundImage?.mediaDetails?.width
-												? cardTwo?.backgroundImage?.mediaDetails?.width
+											cardOne?.backgroundImage?.mediaDetails?.width
+												? cardOne?.backgroundImage?.mediaDetails?.width
 												: 500
 										}
 										height={
-											cardTwo?.backgroundImage?.mediaDetails?.height
-												? cardTwo?.backgroundImage?.mediaDetails?.height
+											cardOne?.backgroundImage?.mediaDetails?.height
+												? cardOne?.backgroundImage?.mediaDetails?.height
 												: 500
 										}
 										className={
-											cardTwo?.backgroundImage?.sourceUrl
+											cardOne?.backgroundImage?.sourceUrl
 												? `block group-hover:hidden object-cover object-center w-full h-[300px]`
 												: `hidden`
 										}
 									/>
-									<div className="bg-lightGreyTwo flex flex-col gap-4 p-5 xl:p-10">
-										<h3 className="font-extrabold text-green-three text-lg xl:text-xl">
-											{cardTwo?.title}
-										</h3>
-										<p className="font-semibold text-black text-medium xl:text-lg">
-											{cardTwo?.title}
-										</p>
+								</figure>
+
+								<div className="bg-lightGreyTwo flex flex-col gap-4 p-5 xl:p-10">
+									<motion.h3
+										initial={initialTwo}
+										whileInView={fadeIn}
+										viewport={{once: true}}
+										className="font-extrabold text-black text-xl xl:text-2xl"
+									>
+										{cardTwo?.title}
+									</motion.h3>
+									<Paragraph
+										content={cardTwo?.link?.title}
+										tailwindStyling="font-semibold text-black text-paragraph"
+									/>
+								</div>
+							</Link>
+							<Link
+								href={`${cardThree?.link?.url}`}
+								target={cardThree?.link?.target}
+								aria-label={`${cardThree?.link?.title}`}
+								className="w-full"
+							>
+								<div
+									className="bg-black bg-cover bg-no-repeat bg-center"
+									style={{
+										backgroundImage: `url("${cardThree?.backgroundImage?.sourceUrl}")`,
+									}}
+								>
+									<div className="h-full p-10 w-full min-h-[250px] lg:min-h-[350px] flex flex-col gap-4 items-baseline justify-end bg-black/25 hover:bg-black/75 bg-blend-multiply bg-center bg-cover bg-no-repeat transition-all duration-500 ease-in-out">
+										<motion.h3
+											initial={initialTwo}
+											whileInView={fadeIn}
+											viewport={{once: true}}
+											className="font-extrabold text-white text-xl xl:text-2xl"
+										>
+											{cardThree?.title}
+										</motion.h3>
+										<Paragraph
+											content={cardThree?.link?.title}
+											tailwindStyling="font-semibold text-white text-paragraph"
+										/>
+									</div>
+								</div>
+							</Link>
+						</div>
+
+						<div className="w-full lg:w-[calc(33%-.5rem)]">
+							<Link
+								href={`${cardFour?.link?.url}`}
+								target={cardFour?.link?.target}
+								aria-label={`${cardFour?.link?.title}`}
+								className="w-full lg:h-full group"
+							>
+								<div
+									className="relative lg:h-full bg-cover bg-no-repeat bg-center"
+									style={{
+										backgroundImage: `url("${cardFour?.backgroundImage?.sourceUrl}")`,
+									}}
+								>
+									<figure className="w-full lg:hidden">
+										<Image
+											alt={`${cardFour?.backgroundImage?.altText}`}
+											src={cardFour?.backgroundImage?.sourceUrl}
+											width={
+												cardFour?.backgroundImage?.mediaDetails?.width
+													? cardFour?.backgroundImage?.mediaDetails?.width
+													: 500
+											}
+											height={
+												cardFour?.backgroundImage?.mediaDetails?.height
+													? cardFour?.backgroundImage?.mediaDetails?.height
+													: 500
+											}
+											className={
+												cardFour?.backgroundImage?.sourceUrl
+													? `block group-hover:hidden object-cover object-center w-full h-[300px]`
+													: `hidden`
+											}
+										/>
+									</figure>
+
+									<div className="bg-green-two inline-flex flex-col gap-4 p-10 w-full lg:absolute lg:bottom-0 lg:left-0 group-hover:bg-green-three transition-all duration-500 ease-in-out">
+										<motion.h3
+											initial={initialTwo}
+											whileInView={fadeIn}
+											viewport={{once: true}}
+											className="font-extrabold text-white text-xl xl:text-2xl"
+										>
+											{cardFour?.title}
+										</motion.h3>
+										<Paragraph
+											content={cardFour?.link?.title}
+											tailwindStyling="font-semibold text-white text-paragraph"
+										/>
 									</div>
 								</div>
 							</Link>

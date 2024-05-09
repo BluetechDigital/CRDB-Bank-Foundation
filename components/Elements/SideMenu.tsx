@@ -880,8 +880,8 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							</Link>
 							<Link
 								target="_self"
-								aria-label={`Internet Banking Website Link`}
-								href="https://crdbbank.co.tz/en/product/personal/Ways%20to%20Bank/25"
+								aria-label={`Media Center Website Link`}
+								href="https://crdb-bank-foundation.vercel.app/media-center"
 							>
 								<motion.button
 									initial={initial}
@@ -896,19 +896,19 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 										<Image
 											width={500}
 											height={500}
-											alt="CRDB Bank Internet Banking Logo Green"
-											src="/img/logos/CRDB-bank-internet_banking.svg"
+											alt="CRDB Bank Media Center Logo Green"
+											src="/img/logos/CRDB-bank-logo.svg"
 											className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 										<Image
 											width={500}
 											height={500}
-											alt="CRDB Bank Internet Banking Logo White"
-											src="/img/logos/CRDB-bank-internet_banking.svg"
+											alt="CRDB Bank Media Center Logo White"
+											src="/img/logos/crdb-logo-white.png"
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 									</span>
-									<span>Internet Banking</span>
+									<span>Media Center</span>
 								</motion.button>
 							</Link>
 						</div>
