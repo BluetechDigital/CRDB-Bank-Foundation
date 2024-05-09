@@ -438,38 +438,6 @@ export const getAllFlexibleContentComponents = async (
 														}
 													}
                       							}
-												cardThree {
-													title
-													link {
-														url
-														title
-														target
-													}
-													backgroundImage {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-                      							}
-                      							cardFour {
-													title
-													link {
-														url
-														title
-														target
-													}
-													backgroundImage {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-                      							}
 											}
 											... on ${postTypeFlexibleContent}_Faq {
 												fieldGroupName

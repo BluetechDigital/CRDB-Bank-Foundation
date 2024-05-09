@@ -467,38 +467,6 @@ export type IMediaCenterCardLinks = {
 			};
 		};
 	};
-	cardThree: {
-		title: string;
-		link: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		backgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-	cardFour: {
-		title: string;
-		link: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		backgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
 };
 export type IExecutiveLeadershipsGrid = {
 	title: string;
@@ -720,7 +688,21 @@ export type IJobPositionsThreeCardsGrid = {
 	paragraph: string;
 	highlightText: string;
 };
-
+export type IMediaCenterCardLinksNewsCard = {
+	slug: string;
+	title: string;
+	excerpt: string;
+	featuredImage: {
+		node: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+};
 // Elements
 export type ITitle = {
 	content: string;

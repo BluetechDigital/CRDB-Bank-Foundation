@@ -32,7 +32,7 @@ const ExecutiveLeadershipsGrid: FC<IExecutiveLeadershipsGrid> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-paragraph text-green-two"
+							className="mb-1 text-center text-paragraph text-green-two"
 						>
 							{subtitle}
 						</motion.h4>

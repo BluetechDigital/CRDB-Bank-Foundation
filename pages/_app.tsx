@@ -24,16 +24,10 @@ import {
 	getOurProgramsSublinks,
 	getMediaCenterSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
-import {
-	getAllNewsContent,
-	getThreeNewsContent,
-} from "@/functions/graphql/Queries/GetAllNews";
-import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
-import {
-	getAllBlogsContent,
-	getThreeBlogsContent,
-} from "@/functions/graphql/Queries/GetAllBlogs";
+import {getAllNewsContent} from "@/functions/graphql/Queries/GetAllNews";
+import {getAllBlogsContent} from "@/functions/graphql/Queries/GetAllBlogs";
 import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
+import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
 import {
 	getAllJobsPositionsContent,
@@ -102,8 +96,6 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		getAllNewsContent(),
 		getAllBlogsContent(),
 		getAllCaseStudiesContent(),
-		getThreeNewsContent(),
-		getThreeBlogsContent(),
 		getAllTestimonialsContent(),
 		getAllJobsPositionsContent(),
 		getAllManagementsTaxonomyJobs(),
@@ -125,8 +117,6 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		news,
 		blogs,
 		caseStudies,
-		newsThreeCards,
-		blogsThreeCards,
 		testimonials,
 		jobsPositions,
 		managementsJobs,
@@ -144,17 +134,15 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		jobsPositions: jobsPositions,
 		careerSublinks: careerSublinks,
 		copyrightLinks: copyrightLinks,
-		newsThreeCards: newsThreeCards,
-		blogsThreeCards: blogsThreeCards,
 		managementsJobs: managementsJobs,
 		aboutUsSublinks: aboutUsSublinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		ourProgramsLinks: ourProgramsLinks,
-		mediaCentersSublinks: mediaCentersSublinks,
 		operationsTeamsJobs: operationsTeamsJobs,
 		boardOfDirectorsGrid: boardOfDirectorsGrid,
 		themesOptionsContent: themesOptionsContent,
+		mediaCentersSublinks: mediaCentersSublinks,
 		executiveLeadershipsGrid: executiveLeadershipsGrid,
 	};
 

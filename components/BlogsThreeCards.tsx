@@ -59,26 +59,28 @@ const BlogsThreeCards: FC<IBlogs> = ({title, highlightText, paragraph}) => {
 					viewport={{once: true}}
 					className="grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
 				>
-					{globalContext?.blogsThreeCards?.length > 0 ? (
-						globalContext?.blogsThreeCards?.map((item: any, index: number) => (
-							<Fragment key={index}>
-								<motion.div
-									custom={index}
-									initial={initial}
-									whileInView="animate"
-									viewport={{once: true}}
-									variants={arrayLoopStaggerChildren}
-									className="w-full"
-								>
-									<BlogsCard
-										slug={item?.node?.slug}
-										title={item?.node?.title}
-										paragraph={item?.node?.excerpt}
-										featuredImage={item?.node?.featuredImage}
-									/>
-								</motion.div>
-							</Fragment>
-						))
+					{globalContext?.blogs?.length > 0 ? (
+						globalContext?.blogs
+							?.slice(0, 3)
+							?.map((item: any, index: number) => (
+								<Fragment key={index}>
+									<motion.div
+										custom={index}
+										initial={initial}
+										whileInView="animate"
+										viewport={{once: true}}
+										variants={arrayLoopStaggerChildren}
+										className="w-full"
+									>
+										<BlogsCard
+											slug={item?.node?.slug}
+											title={item?.node?.title}
+											paragraph={item?.node?.excerpt}
+											featuredImage={item?.node?.featuredImage}
+										/>
+									</motion.div>
+								</Fragment>
+							))
 					) : (
 						<></>
 					)}

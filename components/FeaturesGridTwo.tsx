@@ -47,7 +47,7 @@ const FeaturesGridTwo: FC<IFeaturesGridTwo> = ({
 											initial={initial}
 											whileInView={fadeInUp}
 											viewport={{once: true}}
-											className="mb-2 text-center lg:text-center text-paragraph text-green-two"
+											className="mb-2 text-center text-paragraph text-green-two"
 										>
 											{cardOne?.subtitle}
 										</motion.h4>

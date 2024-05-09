@@ -328,8 +328,6 @@ export type IPageContext = {
 export type IGlobalProps = {
 	news: INews;
 	blogs: IBlogs;
-	newsThreeCards: INews;
-	blogsThreeCards: IBlogs;
 	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
@@ -350,8 +348,6 @@ export type IGlobalProps = {
 export type IGlobalContext = {
 	news: INews;
 	blogs: IBlogs;
-	newsThreeCards: INews;
-	blogsThreeCards: IBlogs;
 	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;

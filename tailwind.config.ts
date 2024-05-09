@@ -58,17 +58,6 @@ const config: Config = {
 					darker: "#720004",
 					darkerTwo: "#4e0104",
 				},
-				yellow: {
-					default: "#f6ad37",
-					two: "#e8b042",
-					three: "#fac546",
-					four: "#de8b27",
-					five: "#d8781d",
-					six: "#d16415",
-					light: "#fbbc57",
-					dark: "#e4a002",
-					darker: "#bc7700",
-				},
 				purple: {
 					default: "#5a287d",
 					two: "#51177a",

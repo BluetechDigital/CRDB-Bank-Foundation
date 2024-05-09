@@ -111,7 +111,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 				}
 				style={{
 					clipPath: `${
-						backgroundDisplay === "YellowWave" ||
+						backgroundDisplay === "greenWave" ||
 						backgroundDisplay === "lightGrey"
 							? "polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)"
 							: "none"
@@ -198,7 +198,7 @@ const JumboContentSectionCard: FC<IJumboContentSectionCard> = ({
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className={`mb-1 text-center lg:text-center text-paragraph ${subtitleColor}`}
+									className={`mb-1 text-center text-paragraph ${subtitleColor}`}
 								>
 									{subtitle}
 								</motion.h4>

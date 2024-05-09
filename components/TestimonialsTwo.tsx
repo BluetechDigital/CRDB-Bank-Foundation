@@ -41,7 +41,7 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-paragraph text-black"
+							className="mb-1 text-center text-paragraph text-black"
 						>
 							{subtitle}
 						</motion.h4>

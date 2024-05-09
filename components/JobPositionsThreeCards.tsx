@@ -78,7 +78,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="mb-1 text-center lg:text-center text-paragraph text-green-two"
+						className="mb-1 text-center text-paragraph text-green-two"
 					>
 						{subtitle}
 					</motion.h4>
@@ -167,7 +167,7 @@ const JobPositionsThreeCardsGrid: FC<IJobPositionsThreeCardsGrid> = ({
 													slug={item?.slug}
 													title={item?.title}
 													paragraph={item?.excerpt}
-													tailwindStyling="bg-green-three hover:bg-yellow-dark"
+													tailwindStyling="bg-green-three hover:bg-green-dark"
 												/>
 											) : (
 												<></>
