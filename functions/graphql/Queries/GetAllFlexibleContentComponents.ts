@@ -170,6 +170,29 @@ export const getAllFlexibleContentComponents = async (
             										}
             									}
             								}
+											... on ${postTypeFlexibleContent}_SocialMediaGrid {
+												fieldGroupName
+												displaySection
+												title
+												highlightsGrid {
+													hearts
+													comments
+													textarea
+													link {
+														url
+														title
+														target
+													}
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_AchievementsTwo {
                       							fieldGroupName
 												displaySection

@@ -173,6 +173,28 @@ export const getAllPreviewFlexibleContentComponents = async (
             										}
             									}
             								}
+											... on ${postTypeFlexibleContent}_SocialMediaGrid {
+												fieldGroupName
+												displaySection
+												highlightsGrid {
+													hearts
+													comments
+													textarea
+													link {
+														url
+														title
+														target
+													}
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_AchievementsTwo {
                       							fieldGroupName
 												displaySection
@@ -325,6 +347,31 @@ export const getAllPreviewFlexibleContentComponents = async (
 													target
 												}
 											}
+											... on ${postTypeFlexibleContent}_TestimonialsTwoManualType {
+												fieldGroupName
+												displaySection
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+												testimonialsContent {
+													name
+													jobTitle
+													paragraph
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
+											}
 											... on ${postTypeFlexibleContent}_JobPositionsGrid {
 												fieldGroupName
 												displaySection
@@ -357,6 +404,65 @@ export const getAllPreviewFlexibleContentComponents = async (
             											width
             										}
 												}
+											}
+											... on ${postTypeFlexibleContent}_MediaCenter {
+												fieldGroupName
+												displaySection
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+												gallery {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+												}
+											}
+											... on ${postTypeFlexibleContent}_MediaCenterCardLinks {
+												fieldGroupName
+												displaySection
+												title
+												subtitle
+												paragraph
+												cardOne {
+													title
+													link {
+														url
+														title
+														target
+													}
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
+                      							cardTwo {
+													title
+													link {
+														url
+														title
+														target
+													}
+													backgroundImage {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                      							}
 											}
 											... on ${postTypeFlexibleContent}_Faq {
 												fieldGroupName

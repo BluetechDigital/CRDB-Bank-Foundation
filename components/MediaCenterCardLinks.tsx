@@ -19,6 +19,7 @@ import styles from "../styles/components/Gallery.module.scss";
 // Components
 import Paragraph from "./Elements/Paragraph";
 import MediaCenterCardLinksNewsCard from "./Cards/MediaCenterCardLinksNewsCard";
+import ButtonBorderSliced from "./Elements/ButtonBorderSliced";
 
 const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 	title,
@@ -55,7 +56,7 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="mb-1 text-center lg:text-left text-paragraph text-green-two"
+								className="text-center xl:text-left text-paragraph text-green-two mb-5"
 							>
 								{subtitle}
 							</motion.h4>
@@ -103,87 +104,72 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 							) : (
 								<></>
 							)}
-							<Link
-								href={`${cardOne?.link?.url}`}
-								target={cardOne?.link?.target}
-								aria-label={`${cardOne?.link?.title}`}
-								className="w-full"
-							>
+							<div className="w-full">
 								<div
 									className="bg-black bg-cover bg-no-repeat bg-center"
 									style={{
 										backgroundImage: `url("${cardOne?.backgroundImage?.sourceUrl}")`,
 									}}
 								>
-									<div className="h-full p-10 w-full min-h-[250px] lg:min-h-[350px] flex flex-col gap-4 items-baseline justify-end bg-black/25 hover:bg-green-flatDark/75 bg-blend-multiply bg-center bg-cover bg-no-repeat transition-all duration-500 ease-in-out">
+									<div className="h-full p-10 w-full min-h-[300px] lg:min-h-[350px] flex flex-col gap-2 items-baseline justify-end bg-black/25 hover:bg-green-flatDark/75 bg-blend-multiply bg-center bg-cover bg-no-repeat transition-all duration-500 ease-in-out">
 										<motion.h3
 											initial={initialTwo}
 											whileInView={fadeIn}
 											viewport={{once: true}}
-											className="font-extrabold text-white text-xl xl:text-2xl"
+											className="leading-snug font-semibold text-white text-xl xl:text-2xl"
 										>
 											{cardOne?.title}
 										</motion.h3>
-										<Paragraph
-											content={cardOne?.link?.title}
-											tailwindStyling="text-white text-paragraph"
-										/>
+										<Link
+											target="_self"
+											href={`${cardOne?.link?.url}`}
+											className={cardOne?.link?.url ? "block" : "hidden"}
+											aria-label={`View News Article: ${cardOne?.link?.title}`}
+										>
+											<ButtonBorderSliced
+												fullWidth={false}
+												tailwindColor="white"
+												title={cardOne?.link?.title}
+											/>
+										</Link>
 									</div>
 								</div>
-							</Link>
+							</div>
 						</div>
-
 						<div className="w-full lg:w-[calc(33%-.5rem)]">
-							<Link
-								href={`${cardTwo?.link?.url}`}
-								target={cardTwo?.link?.target}
-								aria-label={`${cardTwo?.link?.title}`}
-								className="w-full lg:h-full group"
-							>
+							<div className="w-full lg:h-full">
 								<div
-									className="relative lg:h-full bg-cover bg-no-repeat bg-center"
+									className="relative min-h-[500px] lg:h-full flex flex-col item-center justify-end bg-black/25 hover:bg-green-flatDark/75 bg-blend-multiply bg-center bg-cover bg-no-repeat transition-all duration-500 ease-in-out"
 									style={{
 										backgroundImage: `url("${cardTwo?.backgroundImage?.sourceUrl}")`,
 									}}
 								>
-									<figure className="w-full lg:hidden">
-										<Image
-											alt={`${cardTwo?.backgroundImage?.altText}`}
-											src={cardTwo?.backgroundImage?.sourceUrl}
-											width={
-												cardTwo?.backgroundImage?.mediaDetails?.width
-													? cardTwo?.backgroundImage?.mediaDetails?.width
-													: 500
-											}
-											height={
-												cardTwo?.backgroundImage?.mediaDetails?.height
-													? cardTwo?.backgroundImage?.mediaDetails?.height
-													: 500
-											}
-											className={
-												cardTwo?.backgroundImage?.sourceUrl
-													? `block group-hover:hidden object-cover object-center w-full h-[300px]`
-													: `hidden`
-											}
-										/>
-									</figure>
+									<figure className="hidden" />
 
-									<div className="bg-green-two inline-flex flex-col gap-4 p-10 w-full lg:absolute lg:bottom-0 lg:left-0 group-hover:bg-purple-three transition-all duration-500 ease-in-out">
+									<div className="inline-flex flex-col gap-2 p-10 w-full lg:absolute lg:bottom-0 lg:left-0">
 										<motion.h3
 											initial={initialTwo}
 											whileInView={fadeIn}
 											viewport={{once: true}}
-											className="font-extrabold text-white text-xl xl:text-2xl"
+											className="leading-snug font-semibold text-white text-xl xl:text-2xl"
 										>
 											{cardTwo?.title}
 										</motion.h3>
-										<Paragraph
-											content={cardTwo?.link?.title}
-											tailwindStyling="text-white text-paragraph"
-										/>
+										<Link
+											target="_self"
+											href={`${cardTwo?.link?.url}`}
+											className={cardTwo?.link?.url ? "block" : "hidden"}
+											aria-label={`View News Article: ${cardTwo?.link?.title}`}
+										>
+											<ButtonBorderSliced
+												fullWidth={false}
+												tailwindColor="white"
+												title={cardTwo?.link?.title}
+											/>
+										</Link>
 									</div>
 								</div>
-							</Link>
+							</div>
 						</div>
 					</div>
 				</motion.div>

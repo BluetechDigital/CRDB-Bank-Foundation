@@ -30,6 +30,7 @@ import TestimonialsTwo from "../TestimonialsTwo";
 import AchievementsTwo from "../AchievementsTwo";
 import FeaturesGridTwo from "../FeaturesGridTwo";
 import BlogsThreeCards from "../BlogsThreeCards";
+import SocialMediaGrid from "../SocialMediaGrid";
 import TestimonialsGrid from "../TestimonialsGrid";
 import JumboContentSection from "../JumboContentSection";
 import BoardOfDirectorsGrid from "../BoardOfDirectorsGrid";
@@ -71,6 +72,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TestimonialsTwo`]: TestimonialsTwo,
 		[`${FlexibleContent}_AchievementsTwo`]: AchievementsTwo,
 		[`${FlexibleContent}_FeaturesGridTwo`]: FeaturesGridTwo,
+		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
 		[`${FlexibleContent}_BlogsThreeCards`]: BlogsThreeCards,
 		[`${FlexibleContent}_TestimonialsGrid`]: TestimonialsGrid,
 		[`${FlexibleContent}_JumboContentSection`]: JumboContentSection,

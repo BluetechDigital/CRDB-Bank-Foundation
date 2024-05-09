@@ -375,6 +375,29 @@ export type IAchievementsTwo = {
 		}
 	];
 };
+export type ISocialMediaGrid = {
+	title: string;
+	highlightsGrid: [
+		{
+			hearts: number;
+			comments: number;
+			textarea: string;
+			link: {
+				url: string;
+				title: string;
+				target: string;
+			};
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		}
+	];
+};
 export type IBlogsThreeCards = {
 	title: string;
 	italic: string;

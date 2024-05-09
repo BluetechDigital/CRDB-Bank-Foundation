@@ -46,12 +46,20 @@ const MediaCenterCardLinksNewsCard: FC<IMediaCenterCardLinksNewsCard> = ({
 					/>
 				</figure>
 
-				<div className="bg-white flex flex-col gap-4 p-5 xl:py-8 xl:px-5">
+				<div className="bg-lightGrey flex flex-col gap-4 p-5 xl:py-8 xl:px-5">
+					<motion.h4
+						initial={initialTwo}
+						whileInView={fadeIn}
+						viewport={{once: true}}
+						className="text-center xl:text-left text-base text-green-two mb-2"
+					>
+						News Article
+					</motion.h4>
 					<motion.h3
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="font-extrabold text-black text-lg"
+						className="leading-snug font-semibold text-black text-lg lg:text-xl"
 					>
 						{title}
 					</motion.h3>
@@ -66,7 +74,7 @@ const MediaCenterCardLinksNewsCard: FC<IMediaCenterCardLinksNewsCard> = ({
 									? excerpt?.substring(0, 200) + "..."
 									: excerpt
 							}
-							tailwindStyling="block px-0 text-base text-darkGrey"
+							tailwindStyling="block px-0 text-base text-black"
 						/>
 					</motion.div>
 					<motion.div
@@ -83,7 +91,7 @@ const MediaCenterCardLinksNewsCard: FC<IMediaCenterCardLinksNewsCard> = ({
 							<ButtonBorderSliced
 								fullWidth={false}
 								title="Read Article"
-								tailwindColor="green-default"
+								tailwindColor="lightGrey"
 							/>
 						</Link>
 					</motion.div>
