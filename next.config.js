@@ -4,10 +4,15 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: "https",
+				protocol: "http",
 				hostname: "cmscrbankfoundation.com",
 				port: "",
 				pathname: "/wp-content/uploads/**",
+			},
+			{
+				protocol: "https",
+				hostname: "**.cdninstagram.com",
+				port: "",
 			},
 		],
 	},

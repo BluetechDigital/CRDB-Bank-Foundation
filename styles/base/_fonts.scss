@@ -17,3 +17,11 @@
 // Font Stack Properties
 $main: "Kanit";
 $body: "PlusJakartaSans", "Inter";
+
+.font-Kanit {
+	font-family: $main;
+}
+
+.font-PlusJakartaSans {
+	font-family: $body;
+}

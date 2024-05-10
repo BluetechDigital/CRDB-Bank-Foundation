@@ -66,7 +66,9 @@ const VideoBlock: FC<IVideoBlock> = ({
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="leading-[3.5rem] my-2 max-w-2xl mx-auto mb-6 text-center xl:text-left font-semibold text-4xl lg:text-5xl"
+								className={`${
+									highlightText ? "leading-[3.5rem]" : "leading-snug"
+								} my-2 max-w-2xl mx-auto mb-6 text-center xl:text-left font-semibold text-4xl lg:text-5xl`}
 							>
 								{title}
 								<span

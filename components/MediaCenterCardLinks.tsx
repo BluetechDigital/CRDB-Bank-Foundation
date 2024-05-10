@@ -12,9 +12,6 @@ import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 import {IMediaCenterCardLinks} from "@/types/components";
 
-// Styling
-import styles from "../styles/components/Gallery.module.scss";
-
 // Components
 import Paragraph from "./Elements/Paragraph";
 import MediaCenterCardLinksNewsCard from "./Cards/MediaCenterCardLinksNewsCard";
@@ -31,7 +28,7 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 
 	return (
 		<>
-			<div className={styles.mediaCenter + ` py-16 px-4 bg-white`}>
+			<div className="py-16 px-4 bg-white">
 				<motion.div
 					initial={initial}
 					variants={stagger}
@@ -46,7 +43,7 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 						viewport={{once: true}}
 						className={
 							title
-								? "w-full mb-24 text-center grid grid-cols-1 lg:grid-cols-2 items-center lg:items-baseline"
+								? "w-full mb-8 text-center grid grid-cols-1 lg:grid-cols-2 items-center lg:items-baseline"
 								: "hidden"
 						}
 					>
@@ -55,7 +52,7 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center xl:text-left text-paragraph text-green-two mb-5"
+								className="font-PlusJakartaSans text-center xl:text-left text-paragraph text-green-two mb-5"
 							>
 								{subtitle}
 							</motion.h4>

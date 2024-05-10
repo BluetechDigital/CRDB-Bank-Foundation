@@ -51,7 +51,7 @@ const MediaCenterCardLinksNewsCard: FC<IMediaCenterCardLinksNewsCard> = ({
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="text-center xl:text-left text-base text-green-two mb-2"
+						className="text-left text-base text-green-two mb-2"
 					>
 						News Article
 					</motion.h4>

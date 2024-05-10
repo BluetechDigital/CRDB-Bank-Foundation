@@ -9,7 +9,7 @@ export const getAllInstagramFeedContent = async () => {
 	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
-			"Something went wrong trying to fetch testimonials content"
+			"Something went wrong trying to fetch Instagram feed content"
 		);
 	}
 };

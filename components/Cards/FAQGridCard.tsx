@@ -1,13 +1,13 @@
 // Imports
-import {FC} from "react";
-import {motion} from "framer-motion";
-import {IFAQGridCard} from "@/types/components/index";
 import {
 	fadeIn,
 	initial,
-	initialTwo,
 	stagger,
+	initialTwo,
 } from "../../animations/animations";
+import {FC} from "react";
+import {motion} from "framer-motion";
+import {IFAQGridCard} from "@/types/components/index";
 
 // Components
 import Paragraph from "../Elements/Paragraph";

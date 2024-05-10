@@ -174,24 +174,6 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
-												highlightsGrid {
-													hearts
-													comments
-													textarea
-													link {
-														url
-														title
-														target
-													}
-													image {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-												}
 											}
 											... on ${postTypeFlexibleContent}_AchievementsTwo {
                       							fieldGroupName
