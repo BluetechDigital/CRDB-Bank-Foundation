@@ -1,10 +1,10 @@
 // Imports
-import {fadeIn, initial, fadeInUp, initialTwo} from "@/animations/animations";
 import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IMediaCenterCardLinksNewsCard} from "@/types/components";
+import {fadeIn, initial, fadeInUp, initialTwo} from "@/animations/animations";
 
 // Components
 import Paragraph from "../Elements/Paragraph";
