@@ -7,7 +7,6 @@ import {
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
-import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
@@ -65,7 +64,7 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="max-w-2xl mx-auto lg:mx-0 text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black text-center lg:text-left "
+								className="max-w-2xl mx-auto lg:mx-0 font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black text-center lg:text-left "
 							>
 								{title}
 								<span className="ml-3 text-grey">Latest News</span>

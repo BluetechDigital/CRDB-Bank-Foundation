@@ -726,6 +726,7 @@ export type IMediaCenterCardLinksNewsCard = {
 		};
 	};
 };
+
 // Elements
 export type ITitle = {
 	content: string;

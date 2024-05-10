@@ -24,16 +24,17 @@ import {
 	getOurProgramsSublinks,
 	getMediaCenterSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
-import {getAllNewsContent} from "@/functions/graphql/Queries/GetAllNews";
-import {getAllBlogsContent} from "@/functions/graphql/Queries/GetAllBlogs";
-import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
-import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
-import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
 import {
 	getAllJobsPositionsContent,
 	getAllManagementsTaxonomyJobs,
 	getAllOperationsTeamsTaxonomyJobs,
 } from "@/functions/graphql/Queries/GetAllJobsPositions";
+import {getAllNewsContent} from "@/functions/graphql/Queries/GetAllNews";
+import {getAllBlogsContent} from "@/functions/graphql/Queries/GetAllBlogs";
+import {getAllInstagramFeedContent} from "@/functions/socialMedia/InstagramFeed";
+import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
+import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
+import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
 
 // Components
 import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
@@ -97,6 +98,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		getAllBlogsContent(),
 		getAllCaseStudiesContent(),
 		getAllTestimonialsContent(),
+		getAllInstagramFeedContent(),
 		getAllJobsPositionsContent(),
 		getAllManagementsTaxonomyJobs(),
 		getAllOperationsTeamsTaxonomyJobs(),
@@ -118,6 +120,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		blogs,
 		caseStudies,
 		testimonials,
+		instagramFeed,
 		jobsPositions,
 		managementsJobs,
 		operationsTeamsJobs,
@@ -131,6 +134,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		mobileLinks: mobileLinks,
 		caseStudies: caseStudies,
 		testimonials: testimonials,
+		instagramFeed: instagramFeed,
 		jobsPositions: jobsPositions,
 		careerSublinks: careerSublinks,
 		copyrightLinks: copyrightLinks,

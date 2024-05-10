@@ -144,6 +144,27 @@ export type IJobsPositions = [
 		};
 	}
 ];
+export type IInstagramFeed = [
+	{
+		node: {
+			id: string;
+			slug: string;
+			date: string;
+			title: string;
+			excerpt: string;
+			featuredImage: {
+				node: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		};
+	}
+];
 export type ICareerSublinks = [
 	{
 		node: {
@@ -331,12 +352,13 @@ export type IGlobalProps = {
 	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
+	instagramFeed: IInstagramFeed;
 	jobsPositions: IJobsPositions;
-	managementsJobs: IManagementsJobs;
 	careerSublinks: ICareerSublinks;
 	copyrightLinks: ICopyrightLinks;
 	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;
+	managementsJobs: IManagementsJobs;
 	footerMenuLinks: IFooterMenuLinks;
 	ourProgramsLinks: IOurProgramsLinks;
 	operationsTeamsJobs: IOperationsTeamsJobs;
@@ -351,6 +373,7 @@ export type IGlobalContext = {
 	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
+	instagramFeed: IInstagramFeed;
 	jobsPositions: IJobsPositions;
 	careerSublinks: ICareerSublinks;
 	copyrightLinks: ICopyrightLinks;
