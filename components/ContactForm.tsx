@@ -445,7 +445,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									viewport={{once: true}}
 									className="flex items-center justify-center my-4 mb-8 gap-x-2"
 								>
-									<h3 className="text-xl font-semibold text-center uppercase text-blue-darker">
+									<h3 className="text-xl font-semibold text-center uppercase text-red-default">
 										Error Message: Something went wrong with sending your
 										message. Please try again.
 									</h3>
@@ -484,7 +484,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{formik?.touched?.firstName && formik?.errors?.firstName ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-blue-darker ">
+												<p className="py-1 text-left text-tiny text-red-default ">
 													{formik?.errors?.firstName}
 												</p>
 											</div>
@@ -496,7 +496,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.firstName}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
 										/>
 									</motion.div>
 									<motion.div
@@ -507,7 +507,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{formik?.touched?.lastName && formik?.errors?.lastName ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-blue-darker ">
+												<p className="py-1 text-left text-tiny text-red-default ">
 													{formik?.errors?.lastName}
 												</p>
 											</div>
@@ -519,7 +519,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.lastName}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
 										/>
 									</motion.div>
 								</div>
@@ -533,7 +533,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										{formik?.touched?.phoneNumber &&
 										formik?.errors?.phoneNumber ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-blue-darker ">
+												<p className="py-1 text-left text-tiny text-red-default ">
 													{formik?.errors?.phoneNumber}
 												</p>
 											</div>
@@ -546,7 +546,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.phoneNumber}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
 										/>
 									</motion.div>
 									<motion.div
@@ -557,7 +557,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{formik?.touched?.subject && formik?.errors?.subject ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-blue-darker ">
+												<p className="py-1 text-left text-tiny text-red-default ">
 													{formik?.errors?.subject}
 												</p>
 											</div>
@@ -570,7 +570,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.subject}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
 										/>
 									</motion.div>
 								</div>
@@ -582,7 +582,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								>
 									{formik?.touched?.email && formik?.errors?.email ? (
 										<div>
-											<p className="py-1 text-left text-tiny text-blue-darker ">
+											<p className="py-1 text-left text-tiny text-red-default ">
 												{formik?.errors?.email}
 											</p>
 										</div>
@@ -595,7 +595,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										onBlur={formik?.handleBlur}
 										onChange={formik?.handleChange}
 										value={formik?.values?.email}
-										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
 									/>
 								</motion.div>
 								<motion.div
@@ -607,7 +607,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									{formik?.touched?.selectedPrograms &&
 									formik?.errors?.selectedPrograms ? (
 										<div>
-											<p className="py-1 text-left text-tiny text-blue-darker ">
+											<p className="py-1 text-left text-tiny text-red-default ">
 												{formik?.errors?.selectedPrograms}
 											</p>
 										</div>
@@ -620,7 +620,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										onBlur={formik?.handleBlur}
 										onChange={formik?.handleChange}
 										value={formik?.values?.selectedPrograms}
-										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
 									>
 										{globalContext?.ourProgramsLinks?.length > 0 ? (
 											globalContext?.ourProgramsLinks?.map(
@@ -644,7 +644,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								>
 									{formik?.touched?.message && formik?.errors?.message ? (
 										<div>
-											<p className="py-1 text-left text-tiny text-blue-darker ">
+											<p className="py-1 text-left text-tiny text-red-default ">
 												{formik?.errors?.message}
 											</p>
 										</div>
@@ -657,7 +657,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										onBlur={formik?.handleBlur}
 										onChange={formik?.handleChange}
 										value={formik?.values?.message}
-										className="p-4 w-full h-48  text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker resize-none focus:ring-[1px] focus:ring-blue-darker"
+										className="p-4 w-full h-48  text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker resize-none focus:ring-[1px] focus:ring-green-darker"
 									/>
 								</motion.div>
 								<motion.div

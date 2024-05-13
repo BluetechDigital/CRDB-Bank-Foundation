@@ -222,7 +222,7 @@ const Newsletter: FC<INewsletter> = ({
 										>
 											{formik?.touched?.email && formik?.errors?.email ? (
 												<div>
-													<p className="py-1 text-left text-tiny text-blue-darker ">
+													<p className="py-1 text-left text-tiny text-red-default ">
 														{formik?.errors?.email}
 													</p>
 												</div>
@@ -235,7 +235,7 @@ const Newsletter: FC<INewsletter> = ({
 												onBlur={formik?.handleBlur}
 												onChange={formik?.handleChange}
 												value={formik?.values?.email}
-												className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
+												className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
 											/>
 										</motion.div>
 										<motion.div
@@ -263,61 +263,20 @@ const Newsletter: FC<INewsletter> = ({
 											type="submit"
 										>
 											<span className="w-full flex items-center justify-center gap-3 py-3 px-6 bg-purple-default hover:bg-purple-two transition-all duration-200 ease-in-out">
-												<span className="text-white tracking-widest text-base">
+												<motion.h3
+													initial={initialTwo}
+													whileInView={fadeIn}
+													viewport={{once: true}}
+													className="text-white tracking-widest text-paragraph uppercase"
+												>
 													{loading
-														? "Sending Message..."
+														? "Subscribing..."
 														: messageSent
 														? "Message Sent!"
 														: errorMessage
 														? "Sending Error!"
-														: "Send Message"}
-												</span>
-												<span className="hidden group-hover:block">
-													<svg
-														height="35"
-														width="30.237"
-														viewBox="0 0 30.237 35"
-														xmlns="http://www.w3.org/2000/svg"
-													>
-														<g transform="translate(-4906.763 143)">
-															<path
-																d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-																transform="translate(4870 -143)"
-																fill="#ffffff"
-															></path>
-															<g transform="translate(4890.311 -1111.861)">
-																<path
-																	d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-																	transform="translate(0 0)"
-																	fill="#ffffff"
-																></path>
-															</g>
-														</g>
-													</svg>
-												</span>
-												<span className="block group-hover:hidden">
-													<svg
-														height="35"
-														width="30.237"
-														viewBox="0 0 30.237 35"
-														xmlns="http://www.w3.org/2000/svg"
-													>
-														<g transform="translate(-4906.763 143)">
-															<path
-																d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-																transform="translate(4870 -143)"
-																fill="#ffffff"
-															></path>
-															<g transform="translate(4890.311 -1111.861)">
-																<path
-																	d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-																	transform="translate(0 0)"
-																	fill="#ffffff"
-																></path>
-															</g>
-														</g>
-													</svg>
-												</span>
+														: "Subscribe"}
+												</motion.h3>
 											</span>
 										</motion.button>
 									</Form>

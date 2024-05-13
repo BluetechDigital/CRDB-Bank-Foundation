@@ -105,6 +105,7 @@ const Pagination: FC<IPagination> = ({
 								) : contentType === `NewsCard` ? (
 									<>
 										<NewsCard
+											date={item?.node?.date}
 											title={item?.node?.title}
 											paragraph={item?.node?.excerpt}
 											slug={`news/${item?.node?.slug}`}

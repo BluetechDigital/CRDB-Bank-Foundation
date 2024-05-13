@@ -73,6 +73,7 @@ const newsThreeCards: FC<INews> = ({title, highlightText, paragraph}) => {
 										className="w-full"
 									>
 										<NewsCard
+											date={item?.node?.date}
 											slug={item?.node?.slug}
 											title={item?.node?.title}
 											paragraph={item?.node?.excerpt}

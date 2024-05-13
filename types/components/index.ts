@@ -565,6 +565,7 @@ export type IFAQCard = {
 };
 export type INewsCard = {
 	slug: string;
+	date: string;
 	title: string;
 	paragraph: string;
 	featuredImage: {

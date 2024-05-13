@@ -9,6 +9,7 @@ import {
 import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {INewsCard} from "@/types/components";
 
@@ -16,7 +17,13 @@ import {INewsCard} from "@/types/components";
 import Paragraph from "../Elements/Paragraph";
 import ButtonBorderSliced from "../Elements/ButtonBorderSliced";
 
-const NewsCard: FC<INewsCard> = ({slug, title, paragraph, featuredImage}) => {
+const NewsCard: FC<INewsCard> = ({
+	slug,
+	date,
+	title,
+	paragraph,
+	featuredImage,
+}) => {
 	return (
 		<>
 			<div
@@ -64,6 +71,47 @@ const NewsCard: FC<INewsCard> = ({slug, title, paragraph, featuredImage}) => {
 					viewport={{once: true}}
 					className="flex flex-col items-baseline justify-between px-8 pt-10 pb-4"
 				>
+					<div className="flex mb-2 items-center">
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-green-three bg-opacity-60 rounded-full"
+						>
+							Article
+						</motion.span>
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="inline-block mx-4"
+						>
+							<svg
+								width="1"
+								height="20"
+								viewBox="0 0 1 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<line
+									x1="0.5"
+									y1="2.18558e-08"
+									x2="0.499999"
+									y2="20"
+									stroke="black"
+									stroke-opacity="0.2"
+								></line>
+							</svg>
+						</motion.span>
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="text-sm text-black"
+						>
+							{dateFormat(date, "dddd, mmmm d, yyyy")}
+						</motion.span>
+					</div>
 					<Link
 						target="_self"
 						href={`${slug}`}

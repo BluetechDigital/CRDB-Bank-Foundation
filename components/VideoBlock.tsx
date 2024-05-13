@@ -108,11 +108,11 @@ const VideoBlock: FC<IVideoBlock> = ({
 						initial={slideInRightInitial}
 						whileInView={slideInRightFinish}
 						className={`${
-							displayVideo ? "h-fit" : "h-[300px] lg:h-[500px]"
+							displayVideo ? "h-fit" : "h-[300px] lg:h-[500px] 2xl:h-[600px]"
 						} bg-center bg-no-repeat bg-cover mt-6 lg:mt-0 w-full xl:w-[65%]`}
 						style={{
 							backgroundImage: `url("${
-								displayVideo ? "none" : videoBackgroundImage
+								displayVideo ? "none" : videoBackgroundImage?.sourceUrl
 							}")`,
 							boxShadow: `${
 								displayVideo ? "none" : "28px 28px 2px -20px rgba(0,0,0,0.1)"
