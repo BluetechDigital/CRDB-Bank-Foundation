@@ -48,7 +48,9 @@ const Hero: FC<IHero> = ({
 	}
 	return (
 		<>
-			<div className={styles.hero + `relative p-0 overflow-hidden bg-white`}>
+			<div
+				className={styles.hero + `relative z-50 p-0 overflow-hidden bg-white`}
+			>
 				<div
 					className={`relative w-full h-[40vh] xl:h-[65vh] bg-center bg-no-repeat bg-cover pt-0 md:pt-0 lg:pt-60 xl:pt-44 2xl:pt-28 rounded-sm border-t-[75px] lg:border-t-[75px] border-b-[0px] border-r-none xl:border-r-[50px] 2xl:border-r-[107px] ${backgroundColor}`}
 					style={{
@@ -61,7 +63,7 @@ const Hero: FC<IHero> = ({
 					}}
 				/>
 				<div
-					className={`xl:container mx-auto relative z-50 pb-10 lg:px-6 mt-[90px] lg:mt-[100px] xl:mt-[-40px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row items-start justify-center`}
+					className={`xl:container mx-auto relative z-50 pb-10 mt-[90px] lg:mt-[100px] xl:mt-[-40px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row items-start justify-center`}
 				>
 					<motion.div
 						viewport={{once: true}}
