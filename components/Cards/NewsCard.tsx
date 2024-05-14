@@ -99,7 +99,7 @@ const NewsCard: FC<INewsCard> = ({
 									x2="0.499999"
 									y2="20"
 									stroke="black"
-									stroke-opacity="0.2"
+									strokeOpacity="0.2"
 								></line>
 							</svg>
 						</motion.span>

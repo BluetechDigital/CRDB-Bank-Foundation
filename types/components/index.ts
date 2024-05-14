@@ -45,7 +45,37 @@ export type IFAQ = {
 export type INews = {
 	title: string;
 	paragraph: string;
+	latestVideo: string;
+	displayVideo: boolean;
 	highlightText: string;
+	newsHighlight: {
+		date: string;
+		readTime: string;
+		title: string;
+		paragraph: string;
+		articleType: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		image: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	videoBackgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 };
 export type IHero = {
 	video: string;
@@ -168,7 +198,12 @@ export type IVideoBlock = {
 		target: string;
 	};
 	videoBackgroundImage: {
+		altText: string;
 		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
 	};
 };
 export type IContactInfo = {
@@ -727,6 +762,18 @@ export type IVideoWrapper = {
 };
 export type IBackHoverButton = {
 	link: string;
+};
+export type INewsVideoElement = {
+	latestVideo: string;
+	displayVideo: boolean;
+	videoBackgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 };
 export type IButtonBorderSliced = {
 	title: string;
