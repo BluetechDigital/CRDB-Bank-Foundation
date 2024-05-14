@@ -37,7 +37,7 @@ const News: FC<INews> = ({
 
 	return (
 		<>
-			<div className="py-10 bg-white container px-4 mx-auto">
+			<div className="py-10 bg-white container px-4 lg:px-0 mx-auto">
 				<motion.div
 					initial={initial}
 					variants={stagger}
@@ -366,7 +366,7 @@ const News: FC<INews> = ({
 					contentType="NewsCard"
 					numberOfItemsRenderedPerPage={9}
 					contentArray={globalContext?.news?.slice(3, 100)}
-					tailwindStyling={`grid mb-32 lg:mt-6 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3 lg:mb-14`}
+					tailwindStyling={`grid mb-32 lg:mt-6 px-4 lg:-m-4 gap-y-12 gap-8 lg:gap-4 xl:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3 lg:mb-14`}
 				/>
 			</div>
 		</>
