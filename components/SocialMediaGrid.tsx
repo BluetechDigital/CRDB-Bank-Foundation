@@ -63,7 +63,7 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 													}")`,
 												}}
 											>
-												<div className="h-full flex flex-col items-end justify-between p-2 group-hover:bg-green-darker/80 transition-all delay-100 duration-500 ease-in-out">
+												<div className="h-full flex flex-col items-end justify-between p-2">
 													<div className="flex items-start justify-end">
 														<Image
 															width={550}
@@ -81,7 +81,7 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 															} object-contain object-center transition-all duration-500 ease-in-out`}
 														/>
 													</div>
-													<div className="mx-auto lg:mx-0 flex flex-col sm:self-end items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all delay-100 duration-500 ease-in-out">
+													{/* <div className="mx-auto lg:mx-0 flex flex-col sm:self-end items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all delay-100 duration-500 ease-in-out">
 														<div className="activity flex gap-8 items-center justify-center text-white">
 															<div className="flex gap-4">
 																<Image
@@ -118,7 +118,7 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 															}
 															tailwindStyling="hidden md:block w-full pt-4 pb-8 text-lightGreyTwo text-center lg:text-left text-tiny"
 														/>
-													</div>
+													</div> */}
 												</div>
 											</motion.div>
 										</Link>
