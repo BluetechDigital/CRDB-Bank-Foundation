@@ -35,6 +35,9 @@ const Pagination: FC<IPagination> = ({
 
 	const totalPages = Math.ceil(contentArray?.length / itemsPerPage);
 
+	// Styling
+	const buttonStyling: string = `flex items-center justify-center cursor-pointer mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-black hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two`;
+
 	const handleNextPage = () => {
 		if (currentPage < totalPages) {
 			setCurrentPage(currentPage + 1);
@@ -175,7 +178,7 @@ const Pagination: FC<IPagination> = ({
 								viewport={{once: true}}
 								onClick={handlePrevPage}
 								disabled={currentPage === 1}
-								className="flex items-center justify-center cursor-pointer mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-black hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
+								className={buttonStyling}
 							>
 								<span className="hidden group-hover:block">
 									<svg
@@ -234,7 +237,7 @@ const Pagination: FC<IPagination> = ({
 								viewport={{once: true}}
 								onClick={handleNextPage}
 								disabled={currentPage === totalPages}
-								className="flex items-center justify-center cursor-pointer mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-black hover:bg-green-two hover:border-green-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-green-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-green-two"
+								className={buttonStyling}
 							>
 								<span>Next</span>
 								<span className="hidden group-hover:block">

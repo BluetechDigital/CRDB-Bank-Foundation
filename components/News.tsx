@@ -222,15 +222,15 @@ const News: FC<INews> = ({
 							<NewsletterElement />
 						</div>
 						<div>
-							<motion.h2
+							<motion.h3
 								initial={initial}
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="mb-4 text-2xl font-semibold text-black"
+								className="my-4 lg:mb-4 text-2xl font-semibold text-black text-center lg:text-left"
 							>
 								Latest Video
-							</motion.h2>
+							</motion.h3>
 							<NewsVideoElement
 								videoLink={videoLink}
 								latestVideo={latestVideo}
@@ -239,6 +239,16 @@ const News: FC<INews> = ({
 							/>
 						</div>
 						<div className="flex flex-col gap-4">
+							<motion.h3
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								viewport={{once: true}}
+								className="my-4 lg:mb-0 text-2xl font-semibold text-black text-center lg:text-left"
+							>
+								Latest Articles
+							</motion.h3>
+
 							{globalContext?.news?.length > 0 ? (
 								globalContext?.news
 									?.slice(0, 3)
@@ -248,7 +258,7 @@ const News: FC<INews> = ({
 												href={`${item?.node?.link?.url}`}
 												target={item?.node?.link?.target}
 												aria-label={`${item?.node?.link?.title}`}
-												className="group block mb-6 py-2 px-4 lg:px-0"
+												className="group block py-0 px-4 lg:px-0"
 											>
 												<div
 													className="block lg:hidden relative px-0 h-[300px] border-r-[5px] lg:border-r-[10px] border-t-[5px] border-b-0 border-lightGrey"
@@ -354,9 +364,9 @@ const News: FC<INews> = ({
 				</motion.div>
 				<Pagination
 					contentType="NewsCard"
-					numberOfItemsRenderedPerPage={12}
-					contentArray={globalContext?.news}
-					tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3`}
+					numberOfItemsRenderedPerPage={9}
+					contentArray={globalContext?.news?.slice(3, 100)}
+					tailwindStyling={`grid mb-32 lg:mt-6 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3 lg:mb-14`}
 				/>
 			</div>
 		</>
