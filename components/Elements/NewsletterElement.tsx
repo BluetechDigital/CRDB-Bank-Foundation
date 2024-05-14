@@ -193,7 +193,11 @@ const NewsletterElement: FC = () => {
 							reCaptchaResult === null ||
 							reCaptchaResult === undefined
 						}
-						className="mt-1 w-full lg:w-fit inline-block text-white disabled:bg-opacity-20 disabled:cursor-not-allowed"
+						className={
+							formik?.touched?.email
+								? "mt-1 w-full lg:w-fit inline-block text-white disabled:bg-opacity-20 disabled:cursor-not-allowed"
+								: "hidden"
+						}
 					>
 						<span className="w-full flex items-center justify-center gap-3 py-4 px-6 lg:px-10 bg-green-default hover:bg-green-two transition-all duration-200 ease-in-out">
 							<motion.h3

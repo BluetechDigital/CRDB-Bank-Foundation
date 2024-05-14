@@ -1,4 +1,13 @@
 // Imports
+import {
+	fadeIn,
+	initial,
+	stagger,
+	fadeInUp,
+	initialTwo,
+	slideInLeftInitial,
+	slideInRightFinish,
+} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
@@ -6,12 +15,6 @@ import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {INews} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
-import fadeInUp, {
-	stagger,
-	initial,
-	fadeIn,
-	initialTwo,
-} from "@/animations/animations";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
@@ -85,7 +88,12 @@ const News: FC<INews> = ({
 							aria-label={`${newsHighlight?.buttonLink?.title}`}
 							className="block p-0 rounded-xl border border-white border-opacity-20 hover:border-yellowGreen-500 ring ring-transparent hover:ring-yellowGreen-500"
 						>
-							<div className="h-112 overflow-hidden">
+							<motion.div
+								viewport={{once: true}}
+								initial={slideInLeftInitial}
+								whileInView={slideInRightFinish}
+								className="h-112 overflow-hidden"
+							>
 								<Image
 									className="block w-full h-full object-cover object-center"
 									src={newsHighlight?.image?.sourceUrl}
@@ -101,7 +109,7 @@ const News: FC<INews> = ({
 											: 500
 									}
 								/>
-							</div>
+							</motion.div>
 							<div className="pt-8 px-2 pb-4">
 								<div className="flex mb-4 items-center">
 									<motion.span

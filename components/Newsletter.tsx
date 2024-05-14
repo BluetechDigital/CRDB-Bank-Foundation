@@ -250,6 +250,7 @@ const Newsletter: FC<INewsletter> = ({
 											/>
 										</motion.div>
 										<motion.button
+											type="submit"
 											initial={initial}
 											whileInView={fadeInUp}
 											viewport={{once: true}}
@@ -259,8 +260,11 @@ const Newsletter: FC<INewsletter> = ({
 												reCaptchaResult === null ||
 												reCaptchaResult === undefined
 											}
-											className="mt-2 w-full inline-block text-white disabled:bg-opacity-20 disabled:cursor-not-allowed"
-											type="submit"
+											className={
+												formik?.touched?.email
+													? "mt-2 w-full inline-block text-white disabled:bg-opacity-20 disabled:cursor-not-allowed"
+													: "hidden"
+											}
 										>
 											<span className="w-full flex items-center justify-center gap-3 py-3 px-6 bg-purple-default hover:bg-purple-two transition-all duration-200 ease-in-out">
 												<motion.h3
