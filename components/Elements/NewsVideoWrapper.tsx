@@ -37,8 +37,7 @@ const VideoWrapper: FC<IVideoWrapper> = ({children}) => {
 
 		@media screen and (min-width: 640px) {
 			iframe {
-				height: 300px !important;
-				max-height: 300px !important;
+				height: 275px !important;
 			}
 		}
 	`;

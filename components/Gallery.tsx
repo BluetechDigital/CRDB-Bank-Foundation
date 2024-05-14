@@ -24,7 +24,7 @@ const Gallery: FC<IGallery> = ({
 			<div
 				className={
 					styles.gallery +
-					` py-16 bg-white container px-4 mx-auto bg-cover bg-no-repeat bg-center`
+					` py-10 bg-white container px-4 mx-auto bg-cover bg-no-repeat bg-center`
 				}
 				style={{
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,

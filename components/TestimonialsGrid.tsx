@@ -25,7 +25,7 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 			<div
 				className={
 					styles.testimonials +
-					` relative py-16 lg:py-28 px-4 bg-white bg-cover bg-no-repeat bg-center`
+					` relative py-10 px-4 bg-white bg-cover bg-no-repeat bg-center`
 				}
 				style={{
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
@@ -37,7 +37,11 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="flex flex-col items-center"
+						className={
+							title
+								? "max-w-2xl mx-auto mb-2 text-center flex flex-col items-center lg:max-w-5xl"
+								: "hidden"
+						}
 					>
 						<motion.h4
 							initial={initialTwo}
@@ -47,12 +51,12 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 						>
 							{subtitle}
 						</motion.h4>
-						<motion.h3
+						<motion.h2
 							initial={initial}
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="max-w-none lg:max-w-3xl mx-auto text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
+							className="max-w-2xl mx-auto text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black"
 						>
 							{title}
 							<span
@@ -62,17 +66,17 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 							>
 								{highlightText}
 							</span>
-						</motion.h3>
+						</motion.h2>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
+							tailwindStyling="max-w-3xl mx-auto text-black text-paragraph"
 						/>
 					</motion.div>
 					<Pagination
 						contentType="TestimonialsCard"
 						numberOfItemsRenderedPerPage={12}
 						contentArray={globalContext?.testimonials}
-						tailwindStyling={`grid px-4 lg:px-16 lg:-m-4 gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`}
+						tailwindStyling={`grid px-4 lg:px-16 lg:-m-4 gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`}
 					/>
 				</div>
 			</div>

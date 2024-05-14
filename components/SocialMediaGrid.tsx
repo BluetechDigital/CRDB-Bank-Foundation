@@ -1,6 +1,5 @@
 // Imports
 import {
-	fadeInUp,
 	stagger,
 	initial,
 	arrayLoopStaggerChildren,

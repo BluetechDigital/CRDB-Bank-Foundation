@@ -1,15 +1,15 @@
 // Imports
-import {Readable} from "stream";
-import {SitemapStream, streamToPromise} from "sitemap";
 import {
 	getAllJobsPositionsSlugs,
 	getAllOperationsTeamsTaxonomyJobs,
 	getAllJobsPositionsManagementsSlugs,
 } from "@/functions/graphql/Queries/GetAllJobsPositions";
+import {Readable} from "stream";
+import {SitemapStream, streamToPromise} from "sitemap";
+import {getAllNewsPostsSlugs} from "@/functions/graphql/Queries/GetAllNews";
 import {getAllPagesSlugs} from "@/functions/graphql/Queries/GetAllPagesSlugs";
 import {getAllBlogsPostsSlugs} from "@/functions/graphql/Queries/GetAllBlogs";
 import {getAllCaseStudiesSlugs} from "@/functions/graphql/Queries/GetAllCaseStudies";
-import {getAllNewsPostsSlugs} from "@/functions/graphql/Queries/GetAllNews";
 import {getAllBoardOfDirectorsPostsSlugs} from "@/functions/graphql/Queries/GetAllBoardOfDirectors";
 import {getAllExecutiveLeadershipsPostsSlugs} from "@/functions/graphql/Queries/GetAllExecutiveLeaderships";
 

@@ -550,12 +550,47 @@ export const getAllPreviewFlexibleContentComponents = async (
 												highlightText
 											}
 											... on ${postTypeFlexibleContent}_NewsGrid {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												highlightText
-											}
+                								fieldGroupName
+                								displaySection
+                								title
+                								paragraph
+                								latestVideo
+                								displayVideo
+                								highlightText
+												videoLink {
+                									url
+                									title
+                									target
+                								}
+                								newsHighlight {
+                									date
+                									title
+													readTime
+													paragraph
+													articleType
+                									image {
+                										altText
+                										sourceUrl
+                										mediaDetails {
+                											height
+                											width
+                										}
+                									}
+                									buttonLink {
+                										url
+                										title
+                										target
+                									}
+                								}
+                								videoBackgroundImage {
+                									altText
+                									sourceUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
+                							}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
 												displaySection

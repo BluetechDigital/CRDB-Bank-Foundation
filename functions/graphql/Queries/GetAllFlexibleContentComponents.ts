@@ -554,6 +554,11 @@ export const getAllFlexibleContentComponents = async (
                 								latestVideo
                 								displayVideo
                 								highlightText
+												videoLink {
+                									url
+                									title
+                									target
+                								}
                 								newsHighlight {
                 									date
                 									title

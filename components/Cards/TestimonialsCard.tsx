@@ -24,7 +24,6 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({
 				className="p-6 w-full h-full min-h-[250px] flex flex-col items-center lg:items-baseline gap-6 overflow-hidden bg-lightGrey"
 				style={{
 					boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
-					clipPath: `polygon(95% 0, 100% 10%, 100% 100%, 0 100%, 0 0)`,
 				}}
 			>
 				<div className="flex items-center justify-start gap-6 w-full">
@@ -62,7 +61,7 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({
 								}
 							/>
 							<div className={image?.sourceUrl ? "ml-5" : "ml-0"}>
-								<span className="block mb-3 text-base text-black font-semibold leading-none">
+								<span className="block mb-3 font-Kanit medium lg:text-lg text-black font-semibold leading-none">
 									{name}
 								</span>
 								<motion.div

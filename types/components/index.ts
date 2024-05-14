@@ -48,6 +48,11 @@ export type INews = {
 	latestVideo: string;
 	displayVideo: boolean;
 	highlightText: string;
+	videoLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	newsHighlight: {
 		date: string;
 		readTime: string;
@@ -764,6 +769,11 @@ export type IBackHoverButton = {
 	link: string;
 };
 export type INewsVideoElement = {
+	videoLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	latestVideo: string;
 	displayVideo: boolean;
 	videoBackgroundImage: {

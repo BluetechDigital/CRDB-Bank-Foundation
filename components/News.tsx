@@ -26,6 +26,7 @@ import NewsVideoElement from "./Elements/NewsVideoElement";
 const News: FC<INews> = ({
 	title,
 	paragraph,
+	videoLink,
 	latestVideo,
 	displayVideo,
 	newsHighlight,
@@ -220,7 +221,7 @@ const News: FC<INews> = ({
 						<div className="block lg:hidden">
 							<NewsletterElement />
 						</div>
-						<div className="">
+						<div>
 							<motion.h2
 								initial={initial}
 								variants={stagger}
@@ -231,6 +232,7 @@ const News: FC<INews> = ({
 								Latest Video
 							</motion.h2>
 							<NewsVideoElement
+								videoLink={videoLink}
 								latestVideo={latestVideo}
 								displayVideo={displayVideo}
 								videoBackgroundImage={videoBackgroundImage}

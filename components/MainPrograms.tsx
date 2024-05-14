@@ -24,7 +24,7 @@ const MainPrograms: FC<IMainPrograms> = ({
 			<div
 				className={
 					styles.mainPrograms +
-					" relative py-16 lg:py-28 px-4 bg-white bg-cover bg-no-repeat bg-center"
+					" relative py-16 px-4 bg-white bg-cover bg-no-repeat bg-center"
 				}
 				style={{
 					clipPath: `polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)`,

@@ -16,7 +16,7 @@ const FAQGrid: FC<IFAQGrid> = ({title, faqGrid, paragraph, highlightText}) => {
 	return (
 		<>
 			<div
-				className="relative py-16 lg:py-28 px-4 bg-white bg-cover bg-no-repeat bg-center"
+				className="relative py-16 px-4 bg-white bg-cover bg-no-repeat bg-center"
 				style={{
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
 				}}

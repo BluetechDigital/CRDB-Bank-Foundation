@@ -20,7 +20,7 @@ const ExecutiveLeadershipsGrid: FC<IExecutiveLeadershipsGrid> = ({
 	return (
 		<>
 			<div
-				className="relative py-16 lg:py-28 px-4 bg-white bg-cover bg-no-repeat bg-center"
+				className="relative py-16 px-4 bg-white bg-cover bg-no-repeat bg-center"
 				style={{
 					clipPath: `polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)`,
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
