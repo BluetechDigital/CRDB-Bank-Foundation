@@ -72,12 +72,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 						: `hidden ${styles.nav}`
 				}
 			>
-				<div
-					className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-white  bg-cover bg-center bg-no-repeat"
-					style={{
-						backgroundImage: `url("/svg/background/polygon-scatter-haikei-lightgrey-two.svg")`,
-					}}
-				>
+				<div className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-white">
 					<div className="flex flex-col items-center mb-8">
 						<Link
 							href="/"
@@ -258,7 +253,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 													</>
 												) : null}
 											</li>
-										) : item?.node?.url === "/news" ? (
+										) : item?.node?.url === "/media-center" ? (
 											<li
 												onClick={displayMediaCentersSublinks}
 												className="border-b-[1px] border-green-dark border-opacity-50 cursor-pointer"
