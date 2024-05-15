@@ -255,9 +255,9 @@ const News: FC<INews> = ({
 									?.map((item: any, index: number) => (
 										<Fragment key={index}>
 											<Link
-												href={`${item?.node?.link?.url}`}
-												target={item?.node?.link?.target}
-												aria-label={`${item?.node?.link?.title}`}
+												target="_self"
+												href={`news/${item?.node?.slug}`}
+												aria-label={`Insights:${item?.node?.title}`}
 												className="group block py-0 px-4 lg:px-0"
 											>
 												<div

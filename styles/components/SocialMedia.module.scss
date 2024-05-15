@@ -5,27 +5,7 @@
 .socialMediaGrid {
 	.title {
 		a {
-			@apply hover:underline hover:decoration-green-three hover:text-green-three transition-all duration-500 ease-in-out;
+			@apply underline decoration-green-three text-green-three hover:decoration-green-dark hover:text-green-dark transition-all duration-500 ease-in-out;
 		}
-	}
-}
-
-.socialMediaHighlight {
-	background-image: none;
-
-	.title {
-		a {
-			@apply hover:underline hover:decoration-green-three hover:text-green-three lg:hover:text-white lg:hover:decoration-white transition-all duration-500 ease-in-out;
-		}
-	}
-
-	.textarea {
-		strong {
-			@apply decoration-green-three text-green-three hover:text-green-dark transition-all duration-500 ease-in-out;
-		}
-	}
-
-	@media screen and (min-width: 1280px) {
-		background-image: url("/svg/background/layered-peaks-haikei-green-flatgreen-two.svg");
 	}
 }

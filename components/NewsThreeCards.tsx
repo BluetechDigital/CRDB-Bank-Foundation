@@ -74,9 +74,9 @@ const newsThreeCards: FC<INews> = ({title, highlightText, paragraph}) => {
 									>
 										<NewsCard
 											date={item?.node?.date}
-											slug={item?.node?.slug}
 											title={item?.node?.title}
 											paragraph={item?.node?.excerpt}
+											slug={`news/${item?.node?.slug}`}
 											featuredImage={item?.node?.featuredImage}
 										/>
 									</motion.div>
