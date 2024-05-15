@@ -362,12 +362,23 @@ const News: FC<INews> = ({
 						</div>
 					</div>
 				</motion.div>
-				<Pagination
-					contentType="NewsCard"
-					numberOfItemsRenderedPerPage={9}
-					contentArray={globalContext?.news?.slice(3, 100)}
-					tailwindStyling={`grid mb-32 lg:mt-6 px-4 lg:-m-4 gap-y-12 gap-8 lg:gap-4 xl:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3 lg:mb-14`}
-				/>
+				<div className="flex flex-col gap-4 mt-6">
+					<motion.h3
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
+						viewport={{once: true}}
+						className="mb-4 lg:mb-0 text-2xl font-semibold text-black text-center lg:text-left"
+					>
+						News Timeline
+					</motion.h3>
+					<Pagination
+						contentType="NewsCard"
+						numberOfItemsRenderedPerPage={9}
+						contentArray={globalContext?.news?.slice(3, 100)}
+						tailwindStyling={`grid mb-32 lg:mt-6 px-4 lg:-m-4 gap-y-12 gap-8 lg:gap-4 xl:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3 lg:mb-14`}
+					/>
+				</div>
 			</div>
 		</>
 	);
