@@ -96,7 +96,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 				>
 					{title}
 				</motion.h4>
-				<motion.div
+				<motion.article
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
@@ -109,7 +109,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 						}
 						tailwindStyling="block px-0 text-tiny text-darkGrey"
 					/>
-				</motion.div>
+				</motion.article>
 			</Link>
 		</>
 	);

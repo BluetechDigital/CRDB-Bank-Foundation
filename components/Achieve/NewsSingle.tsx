@@ -263,14 +263,16 @@ const NewsSingle: FC<INewsSingle> = ({
 								</motion.div>
 							</motion.div>
 						</div>
-						<Paragraph
-							content={boldParagraph}
-							tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-black text-paragraph font-semibold"
-						/>
-						<Paragraph
-							content={paragraph}
-							tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-black text-paragraph"
-						/>
+						<article>
+							<Paragraph
+								content={boldParagraph}
+								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-black text-paragraph font-semibold"
+							/>
+							<Paragraph
+								content={paragraph}
+								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-black text-paragraph"
+							/>
+						</article>
 					</div>
 					<div className="w-full lg:w-4/12 flex flex-col gap-4 lg:gap-10">
 						<NewsletterElement />

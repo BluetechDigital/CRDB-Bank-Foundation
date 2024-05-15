@@ -126,7 +126,7 @@ const NewsCard: FC<INewsCard> = ({
 							{title}
 						</motion.h2>
 					</Link>
-					<motion.div
+					<motion.article
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
@@ -139,7 +139,7 @@ const NewsCard: FC<INewsCard> = ({
 							}
 							tailwindStyling="block px-0 text-base text-darkGrey"
 						/>
-					</motion.div>
+					</motion.article>
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
