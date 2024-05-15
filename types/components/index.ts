@@ -162,25 +162,12 @@ export type IGallery = {
 		}
 	];
 };
-export type IMediaCenter = {
+export type INewsSingle = {
 	title: string;
-	subtitle: string;
+	readTime: string;
 	paragraph: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	gallery: [
-		{
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		}
-	];
+	articleType: string;
+	boldParagraph: string;
 };
 export type INewsletter = {
 	title: string;
@@ -210,6 +197,26 @@ export type IVideoBlock = {
 			height: number;
 		};
 	};
+};
+export type IMediaCenter = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	gallery: [
+		{
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		}
+	];
 };
 export type IContactInfo = {
 	title: string;
@@ -794,6 +801,23 @@ export type IJobsCategoryButton = {
 	title: string;
 	active: boolean;
 	onClick: any;
+};
+export type INewsLatestArticles = {
+	slug: string;
+	date: string;
+	title: string;
+	excerpt: string;
+	articleType?: string;
+	featuredImage: {
+		node: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
 };
 export type IBackToVacanciesButton = {
 	link: string;

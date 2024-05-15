@@ -588,6 +588,15 @@ export const getAllFlexibleContentComponents = async (
                 									}
                 								}
                 							}
+											... on ${postTypeFlexibleContent}_NewsSingle {
+                								fieldGroupName
+                								displaySection
+                								title
+                								readTime
+												paragraph
+												articleType
+                								boldParagraph
+                							}
 											... on ${postTypeFlexibleContent}_NewsThreeCards {
 												fieldGroupName
 												displaySection

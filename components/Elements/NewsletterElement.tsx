@@ -100,7 +100,11 @@ const NewsletterElement: FC = () => {
 	return (
 		<>
 			<Formik onSubmit={formik?.onSubmit} initialValues={formik?.initialValues}>
-				<Form action="#" className="w-full bg-green-flatDark py-6 px-8">
+				<Form
+					action="#"
+					id="NewsletterElement"
+					className="w-full bg-green-flatDark py-6 px-8"
+				>
 					<div className="mb-4">
 						{loading ? (
 							<motion.h3

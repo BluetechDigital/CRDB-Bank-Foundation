@@ -19,9 +19,10 @@ import {useGlobalContext} from "@/context/global";
 // Components
 import Paragraph from "./Elements/Paragraph";
 import Pagination from "./Elements/Pagination";
+import NewsVideoElement from "./Elements/NewsVideoElement";
 import NewsletterElement from "./Elements/NewsletterElement";
 import ButtonBorderSliced from "./Elements/ButtonBorderSliced";
-import NewsVideoElement from "./Elements/NewsVideoElement";
+import NewsLatestArticles from "./Elements/NewsLatestArticles";
 
 const News: FC<INews> = ({
 	title,
@@ -254,106 +255,13 @@ const News: FC<INews> = ({
 									?.slice(0, 3)
 									?.map((item: any, index: number) => (
 										<Fragment key={index}>
-											<Link
-												target="_self"
-												href={`news/${item?.node?.slug}`}
-												aria-label={`Insights:${item?.node?.title}`}
-												className="group block py-0 px-4 lg:px-0"
-											>
-												<div
-													className="block lg:hidden relative px-0 h-[300px] border-r-[5px] lg:border-r-[10px] border-t-[5px] border-b-0 border-lightGrey"
-													style={{
-														clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
-													}}
-												>
-													<Image
-														alt={`${item?.node?.featuredImage?.node?.altText}`}
-														src={item?.node?.featuredImage?.node?.sourceUrl}
-														width={
-															item?.node?.featuredImage?.node?.mediaDetails
-																?.width
-																? item?.node?.featuredImage?.node?.mediaDetails
-																		?.width
-																: 500
-														}
-														height={
-															item?.node?.featuredImage?.node?.mediaDetails
-																?.height
-																? item?.node?.featuredImage?.node?.mediaDetails
-																		?.height
-																: 500
-														}
-														className={`${
-															item?.node?.featuredImage?.node?.sourceUrl
-																? "object-cover object-center w-full h-full"
-																: "hidden"
-														}`}
-													/>
-												</div>
-												<div className="flex mt-6 mb-2 items-center">
-													<motion.span
-														initial={initial}
-														whileInView={fadeInUp}
-														viewport={{once: true}}
-														className="inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-green-three bg-opacity-60 rounded-full"
-													>
-														Insights
-													</motion.span>
-													<motion.span
-														initial={initial}
-														whileInView={fadeInUp}
-														viewport={{once: true}}
-														className="inline-block mx-4"
-													>
-														<svg
-															width="1"
-															height="20"
-															viewBox="0 0 1 20"
-															fill="none"
-															xmlns="http://www.w3.org/2000/svg"
-														>
-															<line
-																x1="0.5"
-																y1="2.18558e-08"
-																x2="0.499999"
-																y2="20"
-																stroke="black"
-																strokeOpacity="0.2"
-															></line>
-														</svg>
-													</motion.span>
-													<motion.span
-														initial={initial}
-														whileInView={fadeInUp}
-														viewport={{once: true}}
-														className="text-sm text-black"
-													>
-														{dateFormat(item?.node?.date, "dddd, mmmm d, yyyy")}
-													</motion.span>
-												</div>
-												<motion.h4
-													initial={initial}
-													whileInView={fadeInUp}
-													viewport={{once: true}}
-													className="mb-2 text-lg font-semibold text-black transition-all ease-in-out duration-200 hover:text-green-two"
-												>
-													{item?.node?.title}
-												</motion.h4>
-												<motion.div
-													initial={initial}
-													whileInView={fadeInUp}
-													viewport={{once: true}}
-												>
-													<Paragraph
-														content={
-															paragraph?.length > 200
-																? paragraph?.substring(0, 200) + "..."
-																: paragraph
-														}
-														tailwindStyling="block px-0 text-tiny text-darkGrey"
-													/>
-												</motion.div>
-											</Link>
+											<NewsLatestArticles
+												date={item?.node?.date}
+												title={item?.node?.title}
+												excerpt={item?.node?.excerpt}
+												slug={`news/${item?.node?.slug}`}
+												featuredImage={item?.node?.featuredImage}
+											/>
 										</Fragment>
 									))
 							) : (

@@ -246,9 +246,9 @@ const Footer: FC = () => {
 						</div>
 						<motion.div
 							initial={initial}
-							viewport={{once: true}}
 							variants={stagger}
 							whileInView="animate"
+							viewport={{once: true}}
 							className={
 								styles.socialLinks +
 								" flex items-center justify-start gap-6 text-center"

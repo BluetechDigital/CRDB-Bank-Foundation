@@ -24,6 +24,7 @@ import JobPositions from "../JobPositions";
 import MainPrograms from "../MainPrograms";
 import ContentImage from "../ContentImage";
 import ErrorPage from "../Global/ErrorPage";
+import NewsSingle from "../Achieve/NewsSingle";
 import TitleParagraph from "../TitleParagraph";
 import NewsThreeCards from "../NewsThreeCards";
 import TestimonialsTwo from "../TestimonialsTwo";
@@ -55,6 +56,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
 		[`${FlexibleContent}_Gallery`]: Gallery,
 		[`${FlexibleContent}_ErrorPage`]: ErrorPage,
+		[`${FlexibleContent}_NewsSingle`]: NewsSingle,
 		[`${FlexibleContent}_Newsletter`]: Newsletter,
 		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
 		[`${FlexibleContent}_ContactForm`]: ContactForm,
