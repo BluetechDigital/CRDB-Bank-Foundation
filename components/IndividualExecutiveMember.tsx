@@ -95,12 +95,12 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 								alt={`${image?.altText}`}
 								src={image?.sourceUrl ? image?.sourceUrl : "/"}
 								width={
-									image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
+									image?.mediaDetails?.width ? image?.mediaDetails?.width : 1000
 								}
 								height={
 									image?.mediaDetails?.height
 										? image?.mediaDetails?.height
-										: 500
+										: 1000
 								}
 								className={
 									image?.sourceUrl
@@ -140,12 +140,12 @@ const IndividualExecutiveMember: FC<IIndividualExecutiveMember> = ({
 								width={
 									imageTwo?.mediaDetails?.width
 										? imageTwo?.mediaDetails?.width
-										: 500
+										: 1000
 								}
 								height={
 									imageTwo?.mediaDetails?.height
 										? imageTwo?.mediaDetails?.height
-										: 500
+										: 1000
 								}
 								className={
 									imageTwo?.sourceUrl

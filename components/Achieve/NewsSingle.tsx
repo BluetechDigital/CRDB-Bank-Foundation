@@ -52,8 +52,8 @@ const NewsSingle: FC<INewsSingle> = ({
 							>
 								<div className="flex items-center gap-4 flex-col sm:flex-row">
 									<Image
-										width={500}
-										height={500}
+										width={1000}
+										height={1000}
 										alt="CRDB Bank Foundation Logo"
 										src="/img/logos/CRDB-bank-logo-circle.jpg"
 										className="object-center object-cover w-20 h-20"

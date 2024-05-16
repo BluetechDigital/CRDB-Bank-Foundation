@@ -62,8 +62,8 @@ const FAQCard: FC<IFAQCard> = ({title, paragraph}) => {
 							</motion.h4>
 							<div>
 								<Image
-									width={500}
-									height={500}
+									width={1000}
+									height={1000}
 									src="/svg/circle-arrow-right.svg"
 									alt="White arrow in a black circle"
 									className={`transition-opacity duration-200 ease-in-out w-full h-[30px] hover:opacity-70 ${

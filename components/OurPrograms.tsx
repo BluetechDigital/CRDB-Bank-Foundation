@@ -114,12 +114,12 @@ const OurPrograms: FC<IOurPrograms> = ({
 															width={
 																item?.card?.icon?.mediaDetails?.width
 																	? item?.card?.icon?.mediaDetails?.width
-																	: 500
+																	: 1000
 															}
 															height={
 																item?.card?.icon?.mediaDetails?.height
 																	? item?.card?.icon?.mediaDetails?.height
-																	: 500
+																	: 1000
 															}
 															className={
 																item?.card?.icon?.sourceUrl
@@ -266,12 +266,12 @@ const OurPrograms: FC<IOurPrograms> = ({
 														width={
 															item?.card?.image?.mediaDetails?.width
 																? item?.card?.image?.mediaDetails?.width
-																: 500
+																: 1000
 														}
 														height={
 															item?.card?.image?.mediaDetails?.height
 																? item?.card?.image?.mediaDetails?.height
-																: 500
+																: 1000
 														}
 														className={
 															item?.card?.image?.sourceUrl

@@ -81,8 +81,8 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							className="mr-auto text-3xl font-bold leading-none"
 						>
 							<Image
-								width={500}
-								height={500}
+								width={1000}
+								height={1000}
 								alt="CRDB Bank Foundation Logo"
 								src="/img/logos/crdb-foundation-logo.png"
 								className="object-contain object-center w-full h-[50px]"
@@ -433,9 +433,9 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 					<div className="mt-20">
 						<motion.div
 							initial={initial}
-							viewport={{once: true}}
 							variants={stagger}
 							whileInView="animate"
+							viewport={{once: true}}
 							className="flex flex-col items-center justify-between gap-4"
 						>
 							<h4 className="mb-5 text-base font-semibold tracking-normal text-center uppercase md:text-left text-black">
@@ -790,15 +790,15 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								>
 									<span>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Marathon Logo Green"
 											src="/img/logos/CRDB-bank-logo.svg"
 											className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Marathon Logo White"
 											src="/img/logos/crdb-logo-white.png"
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -823,15 +823,15 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								>
 									<span>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Marathon Logo Green"
 											src="/img/logos/CRDB-bank-marathon-logo-green.webp"
 											className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Marathon Logo White"
 											src="/img/logos/CRDB-bank-marathon-logo-white.webp"
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -856,15 +856,15 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								>
 									<span>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Burundi Logo Green"
 											src="/img/logos/CRDB-bank-simbanking.svg"
 											className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Burundi Logo White"
 											src="/img/logos/CRDB-bank-simbanking.svg"
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -889,15 +889,15 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								>
 									<span>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Media Center Logo Green"
 											src="/img/logos/CRDB-bank-logo.svg"
 											className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 										/>
 										<Image
-											width={500}
-											height={500}
+											width={1000}
+											height={1000}
 											alt="CRDB Bank Media Center Logo White"
 											src="/img/logos/crdb-logo-white.png"
 											className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"

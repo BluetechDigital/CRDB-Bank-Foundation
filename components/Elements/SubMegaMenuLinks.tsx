@@ -111,15 +111,15 @@ const SubMegaMenuLinks: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Marathon Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover/CRDBBank:hidden object-contain object-center w-full h-[35px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Marathon Logo White"
 												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover/CRDBBank:block object-contain object-center w-full h-[35px] mb-4"
@@ -146,15 +146,15 @@ const SubMegaMenuLinks: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Marathon Logo Green"
 												src="/img/logos/CRDB-bank-marathon-logo-green.webp"
 												className="block group-hover/Marathon:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Marathon Logo White"
 												src="/img/logos/CRDB-bank-marathon-logo-white.webp"
 												className="hidden group-hover/Marathon:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -183,15 +183,15 @@ const SubMegaMenuLinks: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Logo White"
 												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -216,15 +216,15 @@ const SubMegaMenuLinks: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Media Center Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover/InternetBanking:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Media Center Logo Green"
 												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover/InternetBanking:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"

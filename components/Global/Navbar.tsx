@@ -112,8 +112,8 @@ const Navbar: FC = () => {
 						>
 							<Image
 								priority
-								width={500}
-								height={500}
+								width={1000}
+								height={1000}
 								alt="CRDB Bank Foundation Logo"
 								src="/img/logos/crdb-foundation-logo.png"
 								className={`${
@@ -122,8 +122,8 @@ const Navbar: FC = () => {
 							/>
 							<Image
 								priority
-								width={500}
-								height={500}
+								width={1000}
+								height={1000}
 								alt="CRDB Bank Foundation Logo White"
 								src="/img/logos/crdb-foundation-logo-white.png"
 								className={`${

@@ -103,12 +103,12 @@ const News: FC<INews> = ({
 									width={
 										newsHighlight?.image?.mediaDetails?.width
 											? newsHighlight?.image?.mediaDetails?.width
-											: 500
+											: 1000
 									}
 									height={
 										newsHighlight?.image?.mediaDetails?.height
 											? newsHighlight?.image?.mediaDetails?.height
-											: 500
+											: 1000
 									}
 								/>
 							</motion.div>

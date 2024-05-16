@@ -66,8 +66,8 @@ const Footer: FC = () => {
 							>
 								<Image
 									priority
-									width={500}
-									height={500}
+									width={1000}
+									height={1000}
 									alt="CRDB Bank Foundation Logo"
 									src="/img/logos/crdb-foundation-logo.png"
 									className="object-contain object-center w-full h-[85px]"
@@ -834,15 +834,15 @@ const Footer: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Logo White"
 												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -867,15 +867,15 @@ const Footer: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Marathon Logo Green"
 												src="/img/logos/CRDB-bank-marathon-logo-green.webp"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Marathon Logo White"
 												src="/img/logos/CRDB-bank-marathon-logo-white.webp"
 												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -902,15 +902,15 @@ const Footer: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Logo White"
 												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -935,15 +935,15 @@ const Footer: FC = () => {
 									>
 										<span>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Media Center Logo Green"
 												src="/img/logos/CRDB-bank-logo.svg"
 												className="block group-hover:hidden object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
 											/>
 											<Image
-												width={500}
-												height={500}
+												width={1000}
+												height={1000}
 												alt="CRDB Bank Media Center Logo White"
 												src="/img/logos/crdb-logo-white.png"
 												className="hidden group-hover:block object-contain object-center w-full h-[40px] lg:h-[50px] mb-4"
@@ -977,8 +977,8 @@ const Footer: FC = () => {
 							<span className="flex items-center justify-center lg:justify-left gap-2">
 								<Image
 									priority
-									width={500}
-									height={500}
+									width={1000}
+									height={1000}
 									alt="BluetechDigital Logo"
 									src="/img/logos/BluetechDigital-Logo-color.png"
 									className="object-contain object-center w-[25px] h-[25px]"

@@ -792,6 +792,18 @@ export type INewsVideoElement = {
 		};
 	};
 };
+export type IInstagramFeedModal = {
+	id: string;
+	caption: string;
+	username: string;
+	mediaURL: string;
+	permalink: string;
+	timestamp: string;
+	mediaType: string;
+	setModalActive: any;
+	modalActive: boolean;
+	thumbnailURL: string;
+};
 export type IButtonBorderSliced = {
 	title: string;
 	fullWidth: boolean;

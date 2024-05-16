@@ -54,10 +54,10 @@ const TestimonialsTwoCardElement: FC<ITestimonialsTwoCardElement> = ({
 							alt={`${image?.altText}`}
 							src={image?.sourceUrl ? image?.sourceUrl : "/"}
 							width={
-								image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
+								image?.mediaDetails?.width ? image?.mediaDetails?.width : 1000
 							}
 							height={
-								image?.mediaDetails?.height ? image?.mediaDetails?.height : 500
+								image?.mediaDetails?.height ? image?.mediaDetails?.height : 1000
 							}
 							className={
 								image?.sourceUrl
@@ -66,14 +66,14 @@ const TestimonialsTwoCardElement: FC<ITestimonialsTwoCardElement> = ({
 							}
 						/>
 						<div>
-							<motion.h2
+							<motion.h3
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
 								className="text-black text-left font-semibold leading-tight text-paragraph"
 							>
 								{name}
-							</motion.h2>
+							</motion.h3>
 							<motion.span
 								initial={initialTwo}
 								whileInView={fadeIn}

@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import {
 	stagger,
@@ -6,8 +8,8 @@ import {
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
-import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
+import {FC, Fragment, useState} from "react";
 import {ISocialMediaGrid} from "@/types/components";
 
 // Styling
@@ -17,9 +19,17 @@ import styles from "../styles/components/SocialMedia.module.scss";
 import Title from "@/components/Elements/Title";
 import {useGlobalContext} from "@/context/global";
 import Paragraph from "@/components/Elements/Paragraph";
+import InstagramFeedModal from "./Elements/InstagramFeedModal";
 
 const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 	const globalContext = useGlobalContext();
+
+	// Loading, Send & Error Message States
+	const [modalActive, setModalActive] = useState(false);
+
+	const toggleModal = () => {
+		setModalActive(!modalActive);
+	};
 
 	return (
 		<>
@@ -42,10 +52,8 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 								?.slice(0, 9)
 								?.map((item: any, index: number) => (
 									<Fragment key={index}>
-										<Link
-											key={index}
-											target="_blank"
-											href={`${item?.media_url}`}
+										<button
+											onClick={toggleModal}
 											aria-label={`Instagram Feed Post: ${item?.caption}`}
 										>
 											<motion.div
@@ -63,7 +71,7 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 													}")`,
 												}}
 											>
-												<div className="h-full flex flex-col items-end justify-between p-2">
+												<div className="relative h-full flex flex-col items-end justify-between p-2">
 													<div className="flex items-start justify-end">
 														<Image
 															width={550}
@@ -81,47 +89,23 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 															} object-contain object-center transition-all duration-500 ease-in-out`}
 														/>
 													</div>
-													{/* <div className="mx-auto lg:mx-0 flex flex-col sm:self-end items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all delay-100 duration-500 ease-in-out">
-														<div className="activity flex gap-8 items-center justify-center text-white">
-															<div className="flex gap-4">
-																<Image
-																	width={550}
-																	height={550}
-																	alt="Instagram Heart Icon"
-																	src="/svg/Instagram-heart.svg"
-																	className="w-8 h-8 object-contain object-center transition-all duration-500 ease-in-out"
-																/>
-																<span className={item?.hearts ? "" : "hidden"}>
-																	{item?.hearts}
-																</span>
-															</div>
-															<div className="flex gap-4">
-																<Image
-																	width={550}
-																	height={550}
-																	alt="Instagram Comments Icon"
-																	src="/svg/Instagram-speech-bubble.svg"
-																	className="w-7 h-7 object-contain object-center transition-all duration-500 ease-in-out"
-																/>
-																<span
-																	className={item?.comments ? "" : "hidden"}
-																>
-																	{item?.comments}
-																</span>
-															</div>
-														</div>
-														<Paragraph
-															content={
-																item?.caption?.length > 500
-																	? item?.caption?.substring(0, 500) + "..."
-																	: item?.caption
-															}
-															tailwindStyling="hidden md:block w-full pt-4 pb-8 text-lightGreyTwo text-center lg:text-left text-tiny"
+													{modalActive && index === 0 ? (
+														<InstagramFeedModal
+															id={item?.id}
+															caption={item?.caption}
+															username={item?.username}
+															timestamp={item?.timestamp}
+															permalink={item?.permalink}
+															mediaURL={item?.media_url}
+															mediaType={item?.media_type}
+															modalActive={modalActive}
+															setModalActive={setModalActive}
+															thumbnailURL={item?.thumbnail_url}
 														/>
-													</div> */}
+													) : null}
 												</div>
 											</motion.div>
-										</Link>
+										</button>
 									</Fragment>
 								))
 						) : (
