@@ -11,7 +11,6 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
-import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {INews} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
