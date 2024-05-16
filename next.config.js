@@ -11,6 +11,12 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "cmscbf.com",
+				port: "",
+				pathname: "/wp-content/uploads/**",
+			},
+			{
+				protocol: "https",
 				hostname: "**.cdninstagram.com",
 				port: "",
 			},
