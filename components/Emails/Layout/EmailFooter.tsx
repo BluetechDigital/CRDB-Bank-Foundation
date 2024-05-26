@@ -12,48 +12,88 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 			<Section style={{border: "5px solid", borderColor: "#00ab00"}}></Section>
 			<Section style={footer}>
 				<Section style={footerLogoSection}>
-					<Link href={`https://awlcarpentrydevelopments.co.uk`}>
+					<Link href={`https://crdbbankfoundation.co.tz`}>
 						<Img
 							width="105px"
 							height="105px"
 							style={footerLogo}
 							alt="CRDB Bank Foundation (CBF) Logo White"
-							src={`${imagesDirUrl}/awl-carpentry-developments-logo-white.png`}
+							src={`${imagesDirUrl}/2024/05/crdb-foundation-logo-white.png`}
 						/>
 					</Link>
 				</Section>
-				<Row>
-					<Column align="right" style={{width: "33%", paddingRight: "8px"}}>
+				<Section
+					style={{
+						width: "100%",
+						display: "grid",
+						gridGap: "1rem",
+						padding: "1rem 0rem",
+						alignItems: "center",
+						justifyContent: "center",
+						gridTemplateColumns: "repeat(4)",
+					}}
+				>
+					<Column
+						style={{
+							width: "25%",
+							padding: "0px 8px",
+						}}
+					>
 						<Link href={themesOptionsContent?.facebookLink?.url} style={link}>
 							<Img
 								width="100%"
 								height="35px"
 								style={{width: "35px", height: "35px"}}
-								src={`${imagesDirUrl}/facebook-round-white.png`}
+								src={`${imagesDirUrl}/2024/02/facebook-round-white.png`}
 							/>
 						</Link>
 					</Column>
-					<Column align="center" style={{width: "33%", paddingLeft: "8px"}}>
+					<Column
+						style={{
+							width: "25%",
+							padding: "0px 8px",
+						}}
+					>
 						<Link href={themesOptionsContent?.instagramLink?.url} style={link}>
 							<Img
 								width="100%"
 								height="35px"
 								style={{width: "35px", height: "35px"}}
-								src={`${imagesDirUrl}/instagram-round-white.png`}
+								src={`${imagesDirUrl}/2024/02/instagram-round-white.png`}
 							/>
 						</Link>
 					</Column>
-					<Column align="left" style={{width: "33%", paddingLeft: "8px"}}>
+					<Column
+						style={{
+							width: "25%",
+							padding: "0px 8px",
+						}}
+					>
 						<Link href={themesOptionsContent?.twitterLink?.url} style={link}>
 							<Img
 								width="100%"
 								height="35px"
 								style={{width: "35px", height: "35px"}}
-								src={`${imagesDirUrl}/twitter-round-white.png`}
+								src={`${imagesDirUrl}/2024/02/twitter-round-white.png`}
 							/>
 						</Link>
 					</Column>
-				</Row>
+					<Column
+						style={{
+							width: "25%",
+							padding: "0px 8px",
+						}}
+					>
+						<Link href={themesOptionsContent?.linkedinLink?.url} style={link}>
+							<Img
+								width="100%"
+								height="35px"
+								style={{width: "35px", height: "35px"}}
+								src={`${imagesDirUrl}/2024/05/linkedin-round-white.png`}
+							/>
+						</Link>
+					</Column>
+				</Section>
 				<Row>
 					<Text
 						style={{
@@ -75,7 +115,7 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 export default EmailFooter;
 
 const link: IEmailFooter.ILink = {
-	color: "#20ce88",
+	color: "#43b02a",
 	textDecoration: "underline",
 };
 
@@ -94,7 +134,7 @@ const footerLogoSection: IEmailFooter.IFooterLogoSection = {
 
 const footerLogo: IEmailFooter.IFooterLogo = {
 	width: "100%",
-	height: "85px",
-	margin: "0 auto",
+	height: "75px",
+	margin: "15px auto",
 	maxWidth: "125px",
 };

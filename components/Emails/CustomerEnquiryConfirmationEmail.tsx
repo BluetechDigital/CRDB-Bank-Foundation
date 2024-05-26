@@ -42,7 +42,7 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 				<Body style={main}>
 					<Container style={container}>
 						<EmailHeader
-							imagesDirUrl={`${imagesDirUrl}/CRDB-Bank-Foundation-Email-Header.png`}
+							imagesDirUrl={`${imagesDirUrl}/2024/05/CRDB-Bank-Foundation-Email-Header.png`}
 						/>
 						<Section style={content}>
 							<Text style={introParagraph}>Hi {firstName},</Text>

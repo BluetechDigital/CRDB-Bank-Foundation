@@ -1,11 +1,11 @@
 // Imports
-import {postType, errorPage, flexibleContentType} from "@/context/pages";
-import {GetStaticProps, NextPage} from "next";
 import {IPageContext} from "@/types/context";
+import {GetStaticProps, NextPage} from "next";
+import {postType, errorPage, flexibleContentType} from "@/context/pages";
 
 // Queries Functions
-import {getAllFlexibleContentComponents} from "@/functions/graphql/Queries/GetAllFlexibleContentComponents";
 import {getAllSeoContent} from "@/functions/graphql/Queries/GetAllSeoContent";
+import {getAllFlexibleContentComponents} from "@/functions/graphql/Queries/GetAllFlexibleContentComponents";
 
 // Components
 import PageContextProvider from "@/components/Context/PageContextProvider";

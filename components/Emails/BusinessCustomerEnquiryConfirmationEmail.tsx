@@ -42,7 +42,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 			<Body style={main}>
 				<Container style={container}>
 					<EmailHeader
-						imagesDirUrl={`${imagesDirUrl}/CRDB-Bank-Foundation-Ltd-Email-Header-1.png`}
+						imagesDirUrl={`${imagesDirUrl}/2024/05/CRDB-Bank-Foundation-Ltd-Email-Header-Admin.png`}
 					/>
 					<Section style={content}>
 						<Text style={introParagraph}>Hello Team,</Text>
@@ -138,6 +138,6 @@ const content: IBusinessEmail.IContent = {
 	padding: "10px",
 };
 const link: IBusinessEmail.ILink = {
-	color: "#20ce88",
+	color: "#43b02a",
 	textDecoration: "underline",
 };

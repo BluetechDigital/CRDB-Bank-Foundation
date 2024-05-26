@@ -635,6 +635,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										) : (
 											<></>
 										)}
+										<option value="Other">Other</option>
 									</Field>
 								</motion.div>
 								<motion.div
