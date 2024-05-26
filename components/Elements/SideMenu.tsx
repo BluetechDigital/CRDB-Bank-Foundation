@@ -24,7 +24,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	const [careersSublinksOpen, setCareersSublinksOpen]: any = useState(false);
 	const [mediaCentersSublinksOpen, setMediaCentersSublinksOpen]: any =
 		useState(false);
-	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
+	const [ourProgramsSublinksOpen, setOurProgramsSublinksOpen]: any =
 		useState(false);
 
 	const toggleMenu = () => {
@@ -35,7 +35,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	const displayAboutUsSublinks = () => {
 		setCareersSublinksOpen(false);
 		setMediaCentersSublinksOpen(false);
-		setOurServicesSublinksOpen(false);
+		setOurProgramsSublinksOpen(false);
 		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
 	};
 
@@ -44,14 +44,14 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 		setAboutUsSublinksOpen(false);
 		setCareersSublinksOpen(false);
 		setMediaCentersSublinksOpen(false);
-		setOurServicesSublinksOpen(!ourServicesSublinksOpen);
+		setOurProgramsSublinksOpen(!ourProgramsSublinksOpen);
 	};
 
 	// Hides or Display Careers Sublinks
 	const displayCareersSublinks = () => {
 		setAboutUsSublinksOpen(false);
 		setMediaCentersSublinksOpen(false);
-		setOurServicesSublinksOpen(false);
+		setOurProgramsSublinksOpen(false);
 		setCareersSublinksOpen(!careersSublinksOpen);
 	};
 
@@ -59,7 +59,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	const displayMediaCentersSublinks = () => {
 		setCareersSublinksOpen(false);
 		setAboutUsSublinksOpen(false);
-		setOurServicesSublinksOpen(false);
+		setOurProgramsSublinksOpen(false);
 		setMediaCentersSublinksOpen(!mediaCentersSublinksOpen);
 	};
 
@@ -201,7 +201,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 														className="w-[25px] h-[25px] object-contain object-center"
 													/>
 												</div>
-												{ourServicesSublinksOpen ? (
+												{ourProgramsSublinksOpen ? (
 													<>
 														<motion.ul
 															initial={initialTwo}

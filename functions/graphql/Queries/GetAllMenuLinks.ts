@@ -36,7 +36,10 @@ export const getMobileLinks = async () => {
 	try {
 		const content: any = gql`
 			{
-				mobileLinks: menuItems(where: {location: MOBILE_LINKS}, first: 10) {
+				mobileLinks: menuItems(
+					where: {location: MOBILE_NAVIGATION}
+					first: 10
+				) {
 					edges {
 						node {
 							id
@@ -66,7 +69,7 @@ export const getAboutUsSublinks = async () => {
 	try {
 		const content: any = gql`
 			{
-				aboutUsSublinks: menuItems(where: {location: ABOUT_SUBLINKS}) {
+				aboutUsSublinks: menuItems(where: {location: ABOUT_US_SUBLINKS}) {
 					edges {
 						node {
 							id
@@ -96,8 +99,8 @@ export const getOurProgramsSublinks = async () => {
 	try {
 		const content: any = gql`
 			{
-				ourServicesSublinks: menuItems(
-					where: {location: OUR_PROGRAMS}
+				ourProgramsSublinks: menuItems(
+					where: {location: OUR_PROGRAMS_SUBLINKS}
 					first: 10
 				) {
 					edges {
@@ -115,7 +118,7 @@ export const getOurProgramsSublinks = async () => {
 			query: content,
 		});
 
-		return response?.data?.ourServicesSublinks?.edges;
+		return response?.data?.ourProgramsSublinks?.edges;
 	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
@@ -163,7 +166,7 @@ export const getCareerSublinks = async () => {
 		const content: any = gql`
 			{
 				careerSublinks: menuItems(
-					where: {location: CAREER_SUBLINKS}
+					where: {location: CAREERS_SUBLINKS}
 					first: 10
 				) {
 					edges {
