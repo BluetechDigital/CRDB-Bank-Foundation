@@ -3,7 +3,7 @@ import {FC} from "react";
 import Link from "next/link";
 import {motion} from "framer-motion";
 import {IErrorPage} from "@/types/components/index";
-import {fadeInUp, initial} from "@/animations/animations";
+import {fadeInUp, initial, stagger} from "@/animations/animations";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
@@ -27,7 +27,13 @@ const ErrorPage: FC<IErrorPage> = ({
 				}}
 			>
 				<div className="px-10 my-auto overflow-hidden py-44">
-					<div className="container p-0 mx-auto">
+					<motion.div
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
+						viewport={{once: true}}
+						className="container p-0 mx-auto"
+					>
 						<motion.h1
 							initial={initial}
 							whileInView={fadeInUp}
@@ -107,7 +113,7 @@ const ErrorPage: FC<IErrorPage> = ({
 								</motion.button>
 							</Link>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</section>
 		</>
