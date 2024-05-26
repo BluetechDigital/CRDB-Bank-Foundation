@@ -12,8 +12,8 @@ import {getAllPreviewFlexibleContentComponents} from "@/functions/graphql/Mutati
 
 // Components
 import Layout from "@/components/Layout/Layout";
-import BackToTopButton from "@/components/Elements/BackToTopButton";
 import PageContextProvider from "@/components/Context/PageContextProvider";
+import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
 
 const dynamicPreviewPosts: NextPage<IPageContext> = ({
 	seo,
@@ -28,7 +28,7 @@ const dynamicPreviewPosts: NextPage<IPageContext> = ({
 				postTypeFlexibleContent={postTypeFlexibleContent}
 			>
 				<Layout>
-					<BackToTopButton link={`#`} />
+					<RenderFlexibleContent />
 				</Layout>
 			</PageContextProvider>
 		</>

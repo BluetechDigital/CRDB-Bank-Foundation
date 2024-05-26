@@ -16,7 +16,7 @@ const fetchInstagramFeed = async () => {
 		const data = await fetch(url);
 		const {data: feedData}: {data?: InstagramFeedItem[]} = await data.json();
 		instagramFeed = feedData || [];
-		console.log("Instagram feed content updated successfully");
+		// console.log("Instagram feed content updated successfully");
 	} catch (error) {
 		console.error(error);
 		throw new Error(
