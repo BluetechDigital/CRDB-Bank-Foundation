@@ -19,8 +19,11 @@ const ErrorPage: FC<IErrorPage> = ({
 			<section
 				className="h-[100vh] bg-cover bg-center bg-[no-repeat] flex flex-col justify-center items-center"
 				style={{
-					backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.85),rgba(0, 0, 0, 0.85)),
-									url("${backgroundImage?.sourceUrl}")`,
+					backgroundImage: `linear-gradient(
+						0deg,
+						rgba(1, 35, 1, 0.75),
+						rgba(1, 35, 1, 0.75)),
+						url("${backgroundImage?.sourceUrl}")`,
 				}}
 			>
 				<div className="px-10 my-auto overflow-hidden py-44">
@@ -38,39 +41,71 @@ const ErrorPage: FC<IErrorPage> = ({
 							tailwindStyling="mx-auto my-10 text-lg leading-relaxed text-center text-white md:max-w-md"
 						/>
 						<div className="flex flex-col items-center justify-center mx-auto md:max-w-max">
-							<motion.button
-								initial={initial}
-								whileInView={fadeInUp}
-								viewport={{once: true}}
-								type="button"
+							<Link
+								aria-label={`${buttonLink?.title}`}
+								href={`${buttonLink?.url}`}
+								target={buttonLink?.target}
+								className={buttonLink?.url ? "block" : "hidden"}
 							>
-								<Link
-									aria-label={`${buttonLink?.title}`}
-									href={buttonLink?.url}
-									target={buttonLink?.target}
-									className="flex flex-row px-6 py-4 leading-4 text-white transition-all duration-500 ease-in-out rounded-lg lg:py-6 lg:px-20 bg-purple-default hover:bg-green-darker"
+								<motion.button
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className={
+										buttonLink?.title
+											? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-green-two border-green-two hover:bg-green-three hover:border-green-three transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-green-two hover:before:bg-green-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-green-two hover:after:bg-green-three`
+											: `hidden`
+									}
 								>
-									<svg
-										className="mr-2.5 text-white"
-										width="16"
-										height="16"
-										viewBox="0 0 16 16"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M6.66667 12.6666L2 7.99998M2 7.99998L6.66667 3.33331M2 7.99998L14 7.99998"
-											stroke="currentColor"
-											strokeWidth="1.5"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-										></path>
-									</svg>
-									<span className="text-medium tracking-wider text-white font-[900]">
-										{buttonLink?.title}
+									<span>{buttonLink?.title}</span>
+									<span className="hidden group-hover:block">
+										<svg
+											height="35"
+											width="30.237"
+											viewBox="0 0 30.237 35"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<g transform="translate(-4906.763 143)">
+												<path
+													d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
+													transform="translate(4870 -143)"
+													fill="#ffffff"
+												></path>
+												<g transform="translate(4890.311 -1111.861)">
+													<path
+														d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
+														transform="translate(0 0)"
+														fill="#ffffff"
+													></path>
+												</g>
+											</g>
+										</svg>
 									</span>
-								</Link>
-							</motion.button>
+									<span className="block group-hover:hidden">
+										<svg
+											height="35"
+											width="30.237"
+											viewBox="0 0 30.237 35"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<g transform="translate(-4906.763 143)">
+												<path
+													d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
+													transform="translate(4870 -143)"
+													fill="#ffffff"
+												></path>
+												<g transform="translate(4890.311 -1111.861)">
+													<path
+														d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
+														transform="translate(0 0)"
+														fill="#ffffff"
+													></path>
+												</g>
+											</g>
+										</svg>
+									</span>
+								</motion.button>
+							</Link>
 						</div>
 					</div>
 				</div>
