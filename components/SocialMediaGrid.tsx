@@ -8,8 +8,8 @@ import {
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
+import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {FC, Fragment, useState} from "react";
 import {ISocialMediaGrid} from "@/types/components";
 
 // Styling
@@ -18,18 +18,9 @@ import styles from "../styles/components/SocialMedia.module.scss";
 // Components
 import Title from "@/components/Elements/Title";
 import {useGlobalContext} from "@/context/global";
-import Paragraph from "@/components/Elements/Paragraph";
-import InstagramFeedModal from "./Elements/InstagramFeedModal";
 
 const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 	const globalContext = useGlobalContext();
-
-	// Loading, Send & Error Message States
-	const [modalActive, setModalActive] = useState(false);
-
-	const toggleModal = () => {
-		setModalActive(!modalActive);
-	};
 
 	return (
 		<>
@@ -52,8 +43,9 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 								?.slice(0, 9)
 								?.map((item: any, index: number) => (
 									<Fragment key={index}>
-										<button
-											onClick={toggleModal}
+										<Link
+											target="_blank"
+											href={`${item?.permalink}`}
 											aria-label={`Instagram Feed Post: ${item?.caption}`}
 										>
 											<motion.div
@@ -89,23 +81,9 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 															} object-contain object-center transition-all duration-500 ease-in-out`}
 														/>
 													</div>
-													{modalActive && index === 0 ? (
-														<InstagramFeedModal
-															id={item?.id}
-															caption={item?.caption}
-															username={item?.username}
-															timestamp={item?.timestamp}
-															permalink={item?.permalink}
-															mediaURL={item?.media_url}
-															mediaType={item?.media_type}
-															modalActive={modalActive}
-															setModalActive={setModalActive}
-															thumbnailURL={item?.thumbnail_url}
-														/>
-													) : null}
 												</div>
 											</motion.div>
-										</button>
+										</Link>
 									</Fragment>
 								))
 						) : (
