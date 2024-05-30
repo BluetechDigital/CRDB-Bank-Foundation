@@ -641,11 +641,6 @@ export type IBlogsCard = {
 		};
 	};
 };
-export type IFAQGridCard = {
-	index: number;
-	title: string;
-	paragraph: string;
-};
 export type IJobPositionsCard = {
 	slug: string;
 	title: string;

@@ -330,9 +330,9 @@ const NewsSingle: FC<INewsSingle> = ({
 								<path
 									d="M4.99984 10.6667H15.4165M15.4165 10.6667L10.4165 5.66675M15.4165 10.6667L10.4165 15.6667"
 									stroke="currentColor"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									stroke-linejoin="round"
+									strokeWidth="1.5"
+									strokeLinecap="round"
+									strokeLinejoin="round"
 								></path>
 							</svg>
 						</Link>
