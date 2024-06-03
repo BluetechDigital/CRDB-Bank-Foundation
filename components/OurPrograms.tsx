@@ -74,13 +74,13 @@ const OurPrograms: FC<IOurPrograms> = ({
 											whileInView="animate"
 											viewport={{once: true}}
 											variants={arrayLoopStaggerChildren}
-											href={`${item?.card?.link?.url}`}
 											target={`${
 												item?.card?.link?.target
 													? item?.card?.link?.target
 													: "_self"
 											}`}
 											aria-label={`${item?.card?.link?.title}`}
+											href={item?.card?.link?.url ? item?.card?.link?.url : "/"}
 											className={styles.card + " group w-full overflow-hidden"}
 											style={{
 												boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
