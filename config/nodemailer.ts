@@ -7,14 +7,12 @@ const password: any = process.env.EMAIL_PASS;
 
 export const emailTransporter: any = nodemailer.createTransport({
 	host: host,
+	secure: false,
 	port: 25,
-	tls: {
-		rejectUnauthorized: false,
-	},
 	auth: {
 		user: email,
 		pass: password,
 	},
-	logger: true,
-	debug: true,
+	logger: false,
+	debug: false,
 });
