@@ -7,9 +7,8 @@ const password: any = process.env.EMAIL_PASS;
 
 export const emailTransporter: any = nodemailer.createTransport({
 	host: host,
-	port: 587,
+	port: 25,
 	tls: {
-		ciphers: "SSLv3",
 		rejectUnauthorized: false,
 	},
 	auth: {
