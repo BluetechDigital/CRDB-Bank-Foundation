@@ -737,6 +737,7 @@ export type IJobPositionsThreeCardsGrid = {
 };
 export type IMediaCenterCardLinksNewsCard = {
 	slug: string;
+	date: string;
 	title: string;
 	excerpt: string;
 	featuredImage: {

@@ -2,6 +2,7 @@
 import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {IMediaCenterCardLinksNewsCard} from "@/types/components";
 import {fadeIn, initial, fadeInUp, initialTwo} from "@/animations/animations";
@@ -12,6 +13,7 @@ import ButtonBorderSliced from "../Elements/ButtonBorderSliced";
 
 const MediaCenterCardLinksNewsCard: FC<IMediaCenterCardLinksNewsCard> = ({
 	slug,
+	date,
 	title,
 	excerpt,
 	featuredImage,
@@ -47,14 +49,24 @@ const MediaCenterCardLinksNewsCard: FC<IMediaCenterCardLinksNewsCard> = ({
 				</figure>
 
 				<div className="bg-lightGrey flex flex-col gap-4 p-5 xl:py-8 xl:px-5">
-					<motion.h4
-						initial={initialTwo}
-						whileInView={fadeIn}
-						viewport={{once: true}}
-						className="text-left text-base text-green-two mb-2"
-					>
-						News Article
-					</motion.h4>
+					<div className="mb-2">
+						<motion.h4
+							initial={initialTwo}
+							whileInView={fadeIn}
+							viewport={{once: true}}
+							className="text-left text-base text-green-two"
+						>
+							News Article
+						</motion.h4>
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="text-sm text-black"
+						>
+							{dateFormat(date, "dddd, mmmm d, yyyy")}
+						</motion.span>
+					</div>
 					<motion.h3
 						initial={initialTwo}
 						whileInView={fadeIn}

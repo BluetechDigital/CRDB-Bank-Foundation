@@ -13,6 +13,6 @@ export const emailTransporter: any = nodemailer.createTransport({
 		user: email,
 		pass: password,
 	},
-	logger: false,
-	debug: false,
+	logger: true,
+	debug: true,
 });

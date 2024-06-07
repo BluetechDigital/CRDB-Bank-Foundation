@@ -63,7 +63,7 @@ const Hero: FC<IHero> = ({
 					}}
 				/>
 				<div
-					className={`xl:container mx-auto relative z-50 pb-10 mt-[90px] lg:mt-[100px] xl:mt-[-40px] px-4 gap-8 lg:px-0 flex flex-col lg:flex-row items-start justify-center`}
+					className={`xl:container mx-auto relative z-50 pb-10 mt-[90px] lg:mt-[100px] xl:mt-[-40px] px-4 gap-8 xl:px-0 flex flex-col lg:flex-row items-start justify-center`}
 				>
 					<motion.div
 						viewport={{once: true}}
