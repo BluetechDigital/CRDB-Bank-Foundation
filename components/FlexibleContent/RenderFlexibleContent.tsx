@@ -40,6 +40,8 @@ import JobPositionsThreeCards from "../JobPositionsThreeCards";
 import ExecutiveLeadershipsGrid from "../ExecutiveLeadershipsGrid";
 import IndividualExecutiveMember from "../IndividualExecutiveMember";
 import TestimonialsTwoManualType from "../TestimonialsTwoManualType";
+import {useGlobalContext} from "@/context/global";
+import CustomerEnquiryConfirmationEmail from "../Emails/CustomerEnquiryConfirmationEmail";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -86,6 +88,11 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_IndividualExecutiveMember`]: IndividualExecutiveMember,
 	};
 
+	const fromEmailHtml: any = process.env.EMAIL_FROM;
+	const globalContext = useGlobalContext();
+	const imagesDirUrl: any =
+		"https://cbf.crdbbankfoundation.co.tz/wp-content/uploads";
+
 	return (
 		<>
 			{content?.content?.length > 0 ? (
@@ -106,6 +113,17 @@ const RenderFlexibleContent: FC = () => {
 			) : (
 				<></>
 			)}
+
+			<CustomerEnquiryConfirmationEmail
+				email={`toddowenmpeli02@gmail.com.`}
+				imagesDirUrl={imagesDirUrl}
+				subject={`Test Five: Website Contact Form`}
+				lastName={`Mpeli`}
+				phoneNumber={7497866035}
+				firstName={`Todd`}
+				themesOptionsContent={globalContext?.themesOptionsContent}
+				selectedPrograms={`Financial Literacy`}
+			/>
 		</>
 	);
 };

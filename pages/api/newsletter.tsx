@@ -21,6 +21,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 		}
 
 		try {
+			const fromEmailHtml: any = process.env.EMAIL_FROM;
+			const toEmailHtml: any = process.env.EMAIL_TO;
 			const imagesDirUrl: any = process.env.IMAGE_DIR_URL;
 			const themesOptionsContent: any = await getThemesOptionsContent();
 
@@ -36,8 +38,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			/* NewsletterConfirmation Email */
 			const newsletterEmail: INewsletterEmail = {
-				from: `${themesOptionsContent?.email}`,
-				to: `${data?.email}`,
+				from: `${fromEmailHtml}`,
+				to: `${toEmailHtml}`,
 				subject: `Thank You for Contacting CRDB Bank Foundation`,
 				html: newsletterEmailHtml,
 			};

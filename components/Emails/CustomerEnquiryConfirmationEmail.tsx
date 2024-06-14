@@ -80,9 +80,8 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 							</Text>
 							<Text style={paragraph}>
 								Thank you once again for considering CRDB Bank Foundation for
-								your {selectedPrograms} needs. We look forward to the
-								opportunity to work with you and transform your ideas to
-								reality.
+								your {selectedPrograms} needs. We are looking forward to working
+								with you.
 							</Text>
 							<Text style={paragraph}>Best regards,</Text>
 							<Text style={paragraph}>

@@ -27,6 +27,7 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 						width: "100%",
 						display: "grid",
 						gridGap: "1rem",
+						margin: "0 auto",
 						padding: "1rem 0rem",
 						alignItems: "center",
 						justifyContent: "center",

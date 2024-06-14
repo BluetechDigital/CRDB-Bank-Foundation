@@ -30,6 +30,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 		}
 
 		try {
+			const fromEmailHtml: any = process.env.EMAIL_FROM;
+			const toEmailHtml: any = process.env.EMAIL_TO;
 			const imagesDirUrl: any = process.env.IMAGE_DIR_URL;
 			const themesOptionsContent: any = await getThemesOptionsContent();
 
@@ -66,7 +68,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			/* Customer Enquiry Confirmation Email */
 			const customerEmail: ICustomerEmail = {
-				from: `${themesOptionsContent?.email}`,
+				from: `${fromEmailHtml}`,
 				to: `${data?.email}`,
 				subject: `Thank You for Contacting CRDB Bank Foundation`,
 				html: customerEmailHtml,
@@ -74,8 +76,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			/* Business Customer Enquiry Confirmation Email */
 			const businessEmail: IBusinessEmail = {
-				from: `${themesOptionsContent?.email}`,
-				to: `${themesOptionsContent?.email}`,
+				from: `${fromEmailHtml}`,
+				to: `${toEmailHtml}`,
 				subject: `New Website Inquiry: ${data?.subject}`,
 				html: businessEmailHtml,
 			};

@@ -417,55 +417,42 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 					>
 						<Form className="container mx-auto py-10 md:max-w-xl">
 							{loading ? (
-								<motion.div
+								<motion.h3
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="flex items-center justify-center my-4 mb-8 gap-x-2"
+									className="flex items-center justify-center my-4 mb-8 gap-x-2 text-xl font-semibold uppercase text-green-two"
 								>
-									<h3 className="text-xl font-semibold uppercase text-blue-default">
-										Sending Message...
-									</h3>
-								</motion.div>
+									Sending Message...
+								</motion.h3>
 							) : messageSent ? (
-								<motion.div
+								<motion.h3
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="flex items-center justify-center my-4 mb-8 gap-x-2"
+									className="flex items-center justify-center my-4 mb-8 gap-x-2 text-xl font-semibold text-center uppercase text-green-two"
 								>
-									<h3 className="text-xl font-semibold text-center uppercase text-aqua-default">
-										Message Sent!
-									</h3>
-								</motion.div>
+									Message Sent!
+								</motion.h3>
 							) : errorMessage ? (
-								<motion.div
+								<motion.h3
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
 									className="flex items-center justify-center my-4 mb-8 gap-x-2"
 								>
-									<h3 className="text-xl font-semibold text-center uppercase text-red-default">
-										Error Message: Something went wrong with sending your
-										message. Please try again.
-									</h3>
-								</motion.div>
+									Error Message: Something went wrong with sending your message.
+									Please try again.
+								</motion.h3>
 							) : (
-								<motion.div
+								<motion.h3
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="mb-6"
+									className="mb-6 max-w-xl mx-auto xl:mx-0 text-center font-semibold leading-tight text-4xl lg:text-5xl text-black"
 								>
-									<motion.h2
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="max-w-xl mx-auto xl:mx-0 mb-6 text-center font-semibold leading-tight text-4xl lg:text-5xl text-black"
-									>
-										Get In Touch
-									</motion.h2>
-								</motion.div>
+									Get In Touch
+								</motion.h3>
 							)}
 
 							<motion.div
