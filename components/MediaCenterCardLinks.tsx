@@ -90,6 +90,7 @@ const MediaCenterCardLinks: FC<IMediaCenterCardLinks> = ({
 											>
 												<MediaCenterCardLinksNewsCard
 													slug={item?.node?.slug}
+													date={item?.node?.date}
 													title={item?.node?.title}
 													excerpt={item?.node?.excerpt}
 													featuredImage={item?.node?.featuredImage}
