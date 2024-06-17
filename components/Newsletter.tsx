@@ -8,12 +8,14 @@ import {
 	fadeInUp,
 	initialTwo,
 } from "../animations/animations";
+import Link from "next/link";
 import {FC, useState} from "react";
 import {motion} from "framer-motion";
 import {INewsletter} from "@/types/components/index";
 
 import router from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
+import {useGlobalContext} from "@/context/global";
 import {Field, Form, Formik, useFormik} from "formik";
 import {sendNewsletterForm} from "@/lib/newsletterForm";
 
@@ -30,6 +32,8 @@ const Newsletter: FC<INewsletter> = ({
 	paragraph,
 	formTitle,
 }) => {
+	const globalContext = useGlobalContext();
+
 	// Loading, Send & Error Message States
 	const [loading, setLoading] = useState(false);
 	const [messageSent, setMessageSent] = useState(false);
@@ -164,7 +168,55 @@ const Newsletter: FC<INewsletter> = ({
 						</motion.div>
 						<div className="w-full lg:w-1/2 px-4">
 							<div className="lg:max-w-md lg:ml-auto py-6 px-10 bg-white">
-								<Formik
+								<motion.h3
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className="my-2 text-xl font-bold text-center lg:text-left text-black"
+								>
+									{formTitle}
+								</motion.h3>
+								<Paragraph
+									content={textarea}
+									tailwindStyling="mb-2 lg:max-w-3xl mx-auto text-black text-base text-center lg:text-left"
+								/>
+								<motion.div
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className={
+										globalContext?.themesOptionsContent?.email
+											? "flex items-center justify-center lg:justify-start gap-2"
+											: "hidden"
+									}
+								>
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-two sm:mr-3">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M2.5 6.66669L9.0755 11.0504C9.63533 11.4236 10.3647 11.4236 10.9245 11.0504L17.5 6.66669M4.16667 15.8334H15.8333C16.7538 15.8334 17.5 15.0872 17.5 14.1667V5.83335C17.5 4.91288 16.7538 4.16669 15.8333 4.16669H4.16667C3.24619 4.16669 2.5 4.91288 2.5 5.83335V14.1667C2.5 15.0872 3.24619 15.8334 4.16667 15.8334Z"
+												stroke="white"
+												strokeWidth="1.5"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+											></path>
+										</svg>
+									</div>
+									<Link
+										target="_self"
+										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
+										aria-label={`${globalContext?.themesOptionsContent?.email}`}
+										className="font-medium tracking-wide text-black hover:text-green-two"
+									>
+										{globalContext?.themesOptionsContent?.email}
+									</Link>
+								</motion.div>
+								{/* <Formik
 									onSubmit={formik?.onSubmit}
 									initialValues={formik?.initialValues}
 									className="w-full lg:w-1/2"
@@ -284,7 +336,7 @@ const Newsletter: FC<INewsletter> = ({
 											</span>
 										</motion.button>
 									</Form>
-								</Formik>
+								</Formik> */}
 							</div>
 						</div>
 					</motion.div>

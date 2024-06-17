@@ -184,6 +184,8 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								tailwindStyling="lg:max-w-lg text-center lg:text-left text-black text-paragraph"
 							/>
 						</motion.div>
+					</div>
+					<div className="w-full lg:w-1/2">
 						<motion.div
 							initial={initial}
 							viewport={{once: true}}
@@ -410,7 +412,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 							</motion.div>
 						</motion.div>
 					</div>
-					<Formik
+					{/* <Formik
 						onSubmit={formik?.onSubmit}
 						initialValues={formik?.initialValues}
 						className="w-full lg:w-1/2"
@@ -697,7 +699,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								</motion.button>
 							</motion.div>
 						</Form>
-					</Formik>
+					</Formik> */}
 				</div>
 			</div>
 		</>
